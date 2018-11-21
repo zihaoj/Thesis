@@ -1,0 +1,12 @@
+The identification of jets containing a $b$-hadron, typically referred to as $b$-tagging, plays a vital role for the ATLAS experiment~\cite{ref:AtlasDet}. It is important for both precise Standard Model measurements, including the Higgs sector, and for exploring new physics scenarios in the $\sqrt{s}=13$~TeV proton-proton collisions now being delivered in Run 2 of the LHC. The identification of $b$-quark jets in ATLAS is based on three low-level $b$-tagging algorithms: impact parameter-based (IP) algorithms, inclusive secondary vertex-based algorithms, and decay chain multi-vertex reconstruction algorithms~\cite{ref:btagPaper}.  The output of these algorithms are combined in a multivariate discriminant called MV2 which is the default algorithm used by ATLAS~\cite{ATL-PHYS-PUB-2016-012}.
+
+While IP algorithms have the benefit that discrimination is possible even if no secondary vertex is explicitly reconstructed, they typically assign per-track probabilities that a track originated from a jet of a given flavor and combine these probabilities as a likelihood product.
+The probabilities are estimated by referencing binned likelihood distributions from simulation which ignore any correlations between track parameters of different tracks in a given jet.
+This simplification is driven by practical limitations in the likelihood algorithm: accounting for the impact parameters and track quality for every track in a jet would quickly drive the likelihood algorithm to a space of unmanagably large dimensionality.
+To overcome these challenges, a new algorithm is introduced based on track properties and recurrent neural networks (RNN).
+
+RNNs are a subclass of neural networks architectures that allow extensions to sequence-based and temporal domains (see~\cite{ref:RNNthesis} and references therein).
+They are typically used in natural language processing~\cite{languagemodel,DBLP:journals/corr/abs-1303-5778}, machine translation~\cite{MT,MT2}, and time-series analysis~\cite{timeseries,timeseries2}.
+In the case of $b$-tagging, the tracks in a $b$-jet can be treated as a variable-length sequence to recast $b$-tagging into a domain where RNNs have proven to be useful. This note introduces one such algorithm, and shows how it can improve upon and extend current impact parameter based taggers.
+
+

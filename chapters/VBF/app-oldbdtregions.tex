@@ -1,0 +1,67 @@
+
+The previous version of this analysis used two to three signal regions and a control region per channel.  The following text documents that original strategy, which is no longer used due to concerns about the validity of using a linear transfer factor between the control and signal regions.  The BDT is the same as in section~\ref{sec:bdt}.
+
+
+To constrain the background estimate, we define control regions to have less than 1\% (3\%) VBF signal acceptance for \twocentral(\fourcentral) channel. Around 20.4(32.7)\% of the \fourcentral(\twocentral) background events pass this cut. To select the optimal signal regions in the \fourcentral channel, we scan the VBF signal events in the top forty percentile of BDT scores to maximize the sum of $\frac{S}{\sqrt{B}}$ in the Higgs mass window (100~\GeV$<\Mbb<$140~\GeV).  The number of signal events, $S$, is the sum of the VBF and $ggF$ events in the considered BDT range.  The number of background events is estimated by scaling the number of events in the Higgs mass window of the 0-tag sample by the ratio of the events in the sidebands for the 2- and 0-tag samples. Specifically $B$ is given by $N_{\rm 0~tag, mw}\times \frac{N_{\rm 2~tag, sb}}{N_{\rm 0~tag, sb}}$ where  $N_{\rm 0~tag, mw}$ is the number of events from the 0-tag sample in the Higgs mass window, and $N_{\rm 2(0)~tag, sb}$ is the number of events in the side-band regions for 2(0)-tag sample. For the \twocentral channel, we cut the BDT scores to make three signal regions such that they contain the top 30\%, 30\%-40\% and 40\%-60\% VBF signal.   These regions are chosen such that $S/\sqrt{B}$ is high and the \Mbb{} distribution is well-behaved in the low-mass sideband as the BDT score correlation with\ Mbb{} is non-linear for very high BDT scores.  See Appendix~\ref{sec:app-bdt} for details on the correlation between \Mbb, BDT score and \pTbb. 
+
+The definition of the signal and control regions, the yields of each processes and the estimation of sensitivity are listed in Tables~\ref{tab:BDTReg2cen} and ~\ref{tab:BDTReg4cen}. 
+ 
+
+
+\begin{table}[htbp]
+\centering
+\caption{Signal and control region definitions, yields and sensitivities for the \twocentral channel. }
+\label{tab:BDTReg2cen}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Region          & SR I               & SR II               & SR III             & CR                    \\ \hline
+BDT Score Range & \textgreater0.046  & {[}0.037, 0.046{]}  & {[}0.018, 0.037{]} & \textless-0.04        \\ \hline
+\multicolumn{5}{|c|}{Total Yield}                                                        \\ \hline
+QCD $Z$ & $50.78 \pm 18.50$ & $27.15 \pm 12.43$ & $193.09 \pm 40.50$   &  $894.99 \pm 84.80$    \\ \cline{2-5} 
+EWK $Z$&  $15.96 \pm 1.09$ &  $8.00 \pm 0.88$  & $17.73 \pm 1.18$  &  $13.35 \pm 1.06$    \\ \hline
+
+\multicolumn{5}{|c|}{Sideband}  \\ \hline
+Non-res. (sideband low)     & $1781 \pm 42.20$  & $1481 \pm 38.48 $ & $5171 \pm 71.91$ & $25992 \pm 161.22$    \\ \cline{2-5} 
+Non-res. (sideband high)    & $2974 \pm 54.53$  & $2574 \pm 50.73 $ & $8866 \pm 94.16$ & $43051 \pm 207.49$    \\ \hline
+
+\multicolumn{5}{|c|}{Yield in Higgs Mass Window}                                                        \\ \hline
+VBF             & $40.50 \pm 0.48$   & $12.62\pm 0.51$     & $23.87\pm 0.72$    & $2.61 \pm 0.18$       \\ \cline{2-5} 
+ggF             & $3.13 \pm 0.10$    & $1.11\pm 0.16$      & $5.38\pm 0.30$     & $28.26\pm 0.60$       \\ \cline{2-5}
+No-res. (extrapolated)    & $2466.82 \pm 49.67$ & $2364.68 \pm 48.63$ & $7240.39\pm 85.09$ & $38117.09 \pm 195.24$ \\ \hline
+\multicolumn{5}{|c|}{Expected Sensitivity}                                                              \\ \hline
+$S/ \sqrt(B)$   & 0.88               & 0.30                & 0.33               & 0.15                  \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[htbp]
+\centering
+\caption{Signal and control region definitions, yields and sensitivities for the \fourcentral channel. }
+\label{tab:BDTReg4cen}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Region              & SR I       & SR II     & CR    \\ \hline
+\hline
+BDT Score Range &  >0.039 & [0.022, 0.039]   & <-0.033 \\ \hline
+
+\multicolumn{4}{|c|}{Total Yield}                                                        \\ \hline
+QCD $Z$  & $342.52 \pm 65.08$   &  $1444.29 \pm 106.55$  & $2223.93 \pm 122.32$     \\ \cline{2-4} 
+EWK $Z$  & $65.85 \pm 1.78$   &  $73.94 \pm 1.89$ &    $10.59 \pm 0.66$  \\ \hline
+
+\multicolumn{4}{|c|}{Sideband}  \\ \hline
+Non-res. (sideband low)   & $ 7884 \pm 88.79$  & $26059 \pm 161.43 $ & $50004 \pm 223.62  $    \\ \cline{2-4} 
+Non-res. (sideband high)  & $ 11244 \pm 106.04$  & $34136 \pm 184.76 $ & $72620 \pm 269.48 $   \\ \hline
+
+\multicolumn{4}{|c|}{Yield in Higgs Mass Window} \\
+\hline
+VBF                     & $49.50\pm 0.80$                  & $ 47.06\pm 0.78$                 & $1.96 \pm 0.16$                    \\ \hline
+ggF                     & $8.02 \pm 0.32$                  & $27.70 \pm 0.60$                 & $75.3 \pm 0.99$                    \\ \hline
+%Zbb QCD                 & 1.44                  & 17.30                 & 56.76                   \\ \hline
+%Zbb EWK                 & 0.21                  & 0.98                  & 0.43                    \\ \hline
+No-res. (extrapolated) & $6974.30 \pm 83.51$                & $31640.83 \pm 177.88$               &  $80625.16 \pm 283.95$                  \\ \hline
+\hline 
+\multicolumn{4}{|c|}{Expected Sensitivity} \\
+\hline
+$S/ \sqrt(B)$           & 0.69                  & 0.39                  & 0.27                    \\ \hline
+\end{tabular}
+\end{table}

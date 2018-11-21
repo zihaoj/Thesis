@@ -1,0 +1,44 @@
+
+The simulated samples used in this analysis are provided by the MC15c
+production campaign of the ATLAS MC Production
+Group \cite{TWiki_AtlasProductionGroup}. 
+Simulated samples are used for the SM Higgs boson
+ggF and VBF production, and strong and electroweak \zjets{} production.
+
+For all signal samples, the detector response is simulated with the \geantFour{}
+package~\cite{Agostinelli:2002hh}.
+For the \zjets{} background samples, the detector response is simulated 
+with the fast-simulation
+package \atlfastTwo{}~\cite{Richter-Was:683751}.
+Pile-up effects are taken into account by using minimum bias events
+generated with \pythia{}~\cite{Sjostrand:2014zea} where the mean number of interactions
+per bunch crossing is adjusted to the data-taking period.
+
+VBF and ggF Higgs boson samples are generated with the next-to-leading order (NLO)
+generator \powheg{}~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} using the
+CT10 PDF set~\cite{Lai:2010vv} and interfaced with \pythia{} for parton showering
+and fragmentation with the AZNLO tune.
+%Alternative samples, obtained by processing the same generated events with 
+%\herwig{}~\cite{Bahr:2008pv,Bellm:2015jjp}
+%for parton showering and fragmentation, are used for assessing modeling uncertainties.
+We use two \zjets{} samples generated with \madgraph{}~\cite{Alwall:2014hca} 
+using the NNPDF PDF set~\cite{nnpdf} and interfaced with \pythia{} for parton showering
+and fragmentation with the A14 tune. One sample is used to model QCD production.
+In this sample electro-weak (EWK) production of $Z$
+(e.g., $q+q \rightarrow W^{+} + W^{-} + qq  \rightarrow Z + qq$)
+is explicitly not generated. To improve the efficiency of the sample
+for our final state, two light partons (light quarks or gluons) are
+required in the final state ($pp \rightarrow Z+ q/g + q/g$).
+The second sample contains exclusively electroweak $Z$ production.
+The cross sections of MC samples we use in this analysis are presented Table. \ref{tab:xsec}.
+
+\begin{table}[]
+\centering
+\caption{MC sample cross section times branching ratio}
+\label{tab:xsec}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+                   & VBF $h\rightarrow b \bar b$  & ggF $h\rightarrow b \bar b$  & QCD \zjets{} & EWK \zjets{} \\ \hline
+$\sigma \times$ Br (Pb) & 2.22 & 25.91 & 666.52         & 4.86         \\ \hline
+\end{tabular}
+\end{table}

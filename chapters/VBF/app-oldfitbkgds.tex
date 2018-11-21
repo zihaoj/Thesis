@@ -1,0 +1,453 @@
+This section describes the background estimation and likelihood fit strategy, which are determined together.
+
+In order to describe the data, we consider three contributions to the \Mbb{} distribution:  
+\begin{itemize}
+  \item Signal $H\rightarrow b \bar b$ from either VBF or ggF production
+  \item Resonant \zjets{} from QCD and EW production
+  \item Non-resonant processes dominated by QCD multi-jet production
+\end{itemize}
+
+%The shape of the signal and \zjets{} contributions are taken from simulation, as described in Section~\ref{sec:datamc} 
+The shapes of the signal and \zjets{} contributions are each parametrized by a Bukin function. The non-resonant background is taken from data using a fit with an analytical function in the \Mbb{} sidebands of the signal regions and control region as described in Section~\ref{sec:nonres-old}.
+The signal strength is measured with a profile likelihood fit performed
+simultaneously for all signal and control regions.  The $Z$ normalization is treated as a nuisance parameter in the fit.  The Higgs mass window, 100 \GeV$<\Mbb<$140\GeV, is blinded for the signal regions.  
+
+\subsubsection{Parameterization of signal and \zjets{}}
+
+We parameterize the signal and \zjets{} Monte Carlo templates to smooth out the local fluctuations coming from the limited statistics using a histogrammed Bukin function. The MC templates and parametrization of signal and \zjets{} \Mbb{} distributions are shown in Figures~\ref{fig:sigpar-old} and \ref{fig:zpar-old}. The $\chi^2$ between simulated and fitted distributions are summarized in Table~\ref{tab:sigpar-old}. In general, the $\Mbb$ distributions for the Higgs signal and \zjets{} are well represented by the Bukin function. The potential bias of using smoothed MC templates is studied in the full profile likelihood fit. Asimov data is built by combining the non-resonant background prediction from the background-only fit described in \ref{sec:nonres-old} with signal and \zjets{} templates from simulation and fitted with the same non-resonant background function and the smoothed MC templates to test closure. Perfect closure is obtained with $\mu_{H}=1$ and $\mu_{Z}=1$, as injected in the Asimov data.  Therefore we conclude that the parameterized templates produce no significant bias.  The likelihood fit is described in detail later in this section.
+
+ 
+\begin{figure}[htbp]
+  \centering    
+ \includegraphics[width=0.32\textwidth]{figures/SigPar/sig_2cen_SRI.pdf}
+ \includegraphics[width=0.32\textwidth]{figures/SigPar/sig_2cen_SRII.pdf}
+ \includegraphics[width=0.32\textwidth]{figures/SigPar/sig_2cen_SRIII.pdf}\\
+ \includegraphics[width=0.32\textwidth]{figures/SigPar/sig_4cen_SRI.pdf}
+ \includegraphics[width=0.32\textwidth]{figures/SigPar/sig_4cen_SRII.pdf}
+
+\caption{Bukin function parametrization of signal \Mbb{} distribution in SR I - SR III of \twocentral (top) and SR I - SR II of \fourcentral (bottom)}
+  \label{fig:sigpar-old}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering    
+ \includegraphics[width=0.45\textwidth]{figures/SigPar/z_2cen.pdf}
+ \includegraphics[width=0.45\textwidth]{figures/SigPar/z_4cen.pdf}
+
+\caption{Bukin function parametrization of \zjets~\Mbb{} distribution in \twocentral (left) and \fourcentral (right)}
+  \label{fig:zpar-old}
+\end{figure}
+
+
+\begin{table}[]
+\centering
+\caption{Goodness of fit for the Bukin parametertizationns and signal and \zjets{} \Mbb{} distributions.}
+\label{tab:sigpar-old}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Process  & Signal \twocentral SR I  & Signal \twocentral SR II  & Signal \twocentral SR III \\ \hline
+$\chi^2$ ($\chi^2$ prob) & 1.27 (0.21)                     & 0.79 (0.70)                      & 0.54 (0.93)                      \\ \hline
+Process  & Signal \fourcentral SR I & Signal \fourcentral SR II &                           \\ \hline
+$\chi^2$ ($\chi^2$ prob) & 0.74 (0.75)                     & 1.14 (0.31)                      &                           \\ \hline
+Process  & \zjets \twocentral       & \zjets \fourcentral       &                           \\ \hline
+$\chi^2$ ($\chi^2$ prob) & 1.7 (0.04)                      & 1.32 (0.17)                      &                           \\ \hline
+\end{tabular}
+\end{table}
+
+
+\subsubsection{Non-resonant \Mbb{} distribution}
+\label{sec:nonres-old}
+
+Given that the BDT discriminant is not highly correlated with \Mbb{}, the shape of the non-resonant distribution does not change significantly between
+control and signal regions.  We hypothesize that the difference between the shapes in the various regions can be described by a linear transfer function.  
+Figures~\ref{fig:mbb_2tag_2cen-old}~and~\ref{fig:mbb_2tag_4cen-old} and 
+Tables~\ref{tab:mbb_lin_2cen-old}~and~\ref{tab:mbb_lin_4cen-old} show that the ratios
+ between each region are compatible with a linear fit. 
+Therefore,  the profile likelihood assumes that the shape for the non-resonant background
+is the same in all regions up to a linear correction. The function parameters are therefore
+shared across all regions except for two coefficients specific to each region, reducing the total number of function parameters from 28 to 18.
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.45\textwidth]{figures/Mbb_SRI_SRII_2cen.pdf}
+ \includegraphics[width=0.45\textwidth]{figures/Mbb_SRI_SRIII_2cen.pdf}\\
+ \includegraphics[width=0.45\textwidth]{figures/Mbb_SRI_SRIII_2cen.pdf}
+ \includegraphics[width=0.45\textwidth]{figures/Mbb_CR_SRI_2cen.pdf}\\
+ \includegraphics[width=0.45\textwidth]{figures/Mbb_CR_SRII_2cen.pdf}
+ \includegraphics[width=0.45\textwidth]{figures/Mbb_CR_SRIII_2cen.pdf}\\
+
+\caption{\Mbb~shape comparison between CR and both SR for the \twocentral channel.  The bottom panel in each plot shows the ratio of the two plotted distributions. The $\chi^2$/ndof of the linear fits are reported in Table~\ref{tab:mbb_lin_2cen-old}.}
+  \label{fig:mbb_2tag_2cen-old}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.45\textwidth]{figures/Mbb_CR_SRI_4cen.pdf}
+ \includegraphics[width=0.45\textwidth]{figures/Mbb_CR_SRII_4cen.pdf}\\
+ \includegraphics[width=0.45\textwidth]{figures/Mbb_SRI_SRII_4cen.pdf}\\
+\caption{\Mbb~shape comparison between CR and both SR for the \fourcentral channel.  The bottom panel in each plot shows the ratio of the two plotted distributions.  The $\chi^2$/ndof of the linear fits are reported in Table~\ref{tab:mbb_lin_4cen-old}.}
+  \label{fig:mbb_2tag_4cen-old}
+\end{figure}
+
+
+\begin{table}[htbp]
+\centering
+\caption{$\chi^2$ of linear fit to signal and control region ratios for the \twocentral channel.}
+\label{tab:mbb_lin_2cen-old}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Region                   & SR I Vs. SR II & SR I Vs. SR III & SR II Vs. SR III \\ \hline
+Linear Fit $\chi^2$ /nodf & 81.2 / 78   & 83.4 / 78    & 93.0 / 78      \\ \hline
+Linear Fit $Prob(\chi^2)$ & 0.38         & 0.32           & 0.12              \\ \hline
+Region                   & SR I Vs. CR & SR II Vs. CR & SR III Vs. CR \\ \hline
+Linear Fit $\chi^2$ /nodf & 83.5 / 78   & 87.2 / 78    & 71.2 / 78      \\ \hline
+Linear Fit $Prob(\chi^2)$ & 0.31         & 0.22           & 0.69              \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[htbp]
+\centering
+\caption{$\chi^2$ of linear fit to signal and control region ratios for the \fourcentral channel.}
+\label{tab:mbb_lin_4cen-old}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Region                   & SR I Vs. CR & SR II Vs. CR & SR I Vs. SR II \\ \hline
+Linear Fit $\chi^2$ /nodf & 67.0 / 78   & 92.5/ 78    & 75.2 / 78      \\ \hline
+Linear Fit $Prob(\chi^2)$ & 0.81         & 0.13           & 0.58              \\ \hline
+\end{tabular}
+\end{table}
+
+\paragraph{Function choice}
+
+Several functions are considered and tested. The functions are required to pass two conditions:
+
+\begin{itemize}
+\item Compatibility: The function must be statistically 
+compatible with the sidebands of the \Mbb{} distribution in the signal regions,
+where the Higgs mass range $100<\Mbb<140$ GeV is ignored. The compatibility criterion is defined as $P(\chi^2)>0.05$ and $P(F-\rm{test})>0.05$, 
+where the $\chi^2$ and $F-\rm{test}$ probabilities are considered, respectively.
+The $F-\rm{test}$ is performed with respect to the $n+1$ order function.  Only statistical errors are considered in these fits. 
+
+\item Spurious Signal: No significant spurious signal in the Higgs mass window of the control region should arise.  The spurious signal is defined as the size of the apparent signal strength, $\mu_{\rm sp}$, in the control region.  It could arise if the residual between the fitting function and data is biased, and the bias is compatible with the shape of a resonance. The spurious signal induced in the Higgs mass region is estimated 
+for each candidate function using the full \Mbb{} distribution in the control region
+fitted with the resonant signal distribution for each signal region.
+To calculate the apparent strength appropriately for each region, the signal distribution is scaled by the ratio of the number of events in the control region side-bands to the number of events in the signal region sidebands.%to match the control region statistics.
+Only statistical errors are considered in these fits. The chosen function is required 
+to yield a statistically insignificant spurious signal.  It must be less than one $\sigma$  deviation from 0.  
+
+The spurious signal test has the limitation that it is subject to the statistical power of the control region, which is not very high for this analysis.  However, it is currently the most well-defined test we have for assessing the potential bias of the fitting function given that we do not have non-resonant background MC events.
+
+\end{itemize}
+
+ 
+Among the candidates satisfying the conditions above, the function with the smallest
+number of degrees of freedom is chosen.
+For this study, the \zjets{} component is included in the fit, 
+normalized to the SM prediction.
+
+The family of functions considered is that of the Bernstein polynomials listed in Equation~\ref{eq:bernstein}, which were
+used successfully in the previous iteration of this analysis.  The product of Bernstein and exponential functions were also tried but did not give any improvements with respect to the Bernstein-only functions.
+
+%\begin{equation}
+%\label{eq:bernstein}
+%\begin{aligned}
+%\textnormal{Berstein O2} &= a_1(1-k)^2 + 2a_2(1-k)k + a_3k^2, \\
+%\textnormal{Berstein O3} &= a_1(1-k)^3 + 3a_2(1-k)^2k + 3a_3(1-k)k^2 + a_4k^3, \\
+%\textnormal{Berstein O4} &= a_1(1-k)^4 + 4a_2(1-k)^3k + 6a_3(1-k)^2k^2 + 4a_4(1-k)k^3 + a_5k^4,\\
+%\textnormal{Berstein O5} &= a_1(1-k)^5 + 5a_2(1-k)^4k + 10a_3(1-k)^3k^2 + 10a_4(1-k)^2k^3 + 5a_5(1-k)k^4 +a_6k^5, \\
+%\textnormal{where } k &\equiv \frac{(x-80)}{120}
+%\end{aligned}
+%\end{equation}
+
+
+The $\chi^2$ values and probabilities  
+and $F-\rm{test}$ probabilities are summarized in Tables~\ref{tab:chi2-old} and ~\ref{tab:f-test-old}. The $\chi^2$ test criteria are met for the O(3) Bernstein function in all regions. The $F$-test is passed for the O(3) for all signal regions and samples.  
+  
+The spurious signal fits are shown in Figures~\ref{fig:Fit_SP_2cen-old} and~\ref{fig:Fit_SP_4cen-old}.   The spurious signal sizes and errors scaled by the ratio of the number of events in the signal and control region side-bands are given in Table~\ref{tab:spurious-old}.  It can be seen that, for the \twocentral channel, an O(3) Bernstein gives a statistically insignificant spurious signal in all signal regions.   
+
+We choose the O(3) Bernstein as our default fit function for both the \twocentral channel and the \fourcentral channel as it satisfies the function conditions in all signal regions.
+
+\begin{table}[htbp]
+\centering
+\caption{Background Only Fit $\chi^2$ and Prob($\chi^2$)}
+\label{tab:chi2-old}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+Channel                     & \multicolumn{3}{c|}{\twocentral} & \multicolumn{2}{c|}{\fourcentral} \\ \hline
+Region                      & SR I     & SR II     & SR III    & SR I     & SR II     \\ \hline
+Bernstein O2 $\chi^2$/ndof  & 1.19     & 1.15      & 1.15      & 1.16     & 1.29      \\ \hline
+Bernstein O2 prob($\chi^2$) & 0.22     & 0.21      & 0.17      & 0.19     & 0.10      \\ \hline
+Bernstein O3 $\chi^2$/ndof  & 1.13     & 1.13      & 1.11      & 0.87     & 1.13      \\ \hline
+Bernstein O3 prob($\chi^2$) & 0.20     & 0.21      & 0.25      & 0.75     & 0.27      \\ \hline
+Bernstein O4 $\chi^2$/ndof  & 1.04     & 1.13      & 1.07      & 0.88     & 1.02      \\ \hline
+Bernstein O4 prob($\chi^2$) & 0.39     & 0.21      & 0.32      & 0.72     & 0.43      \\ \hline
+Bernstein O5 $\chi^2$/ndof  & 1.03     & 1.14      & 1.06      & 0.89     & 0.95      \\ \hline
+Bernstein O5 prob($\chi^2$) & 0.40     & 0.18      & 0.33      & 0.70     & 0.56      \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[]
+\centering
+\caption{Background Only Fit F-test}
+\label{tab:f-test-old}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+Channel          & \multicolumn{3}{c|}{\twocentral} & \multicolumn{2}{c|}{\fourcentral} \\ \hline
+Region           & SR I     & SR II     & SR III    & SR I     & SR II   \\ \hline
+Bernstein O2/ O3 & 0.52     & 0.52      & 0.43      & 0.34     & 0.14    \\ \hline
+Bernstein O3/ O4 & 0.35     & 0.51      & 0.44      & 0.38     & 0.52    \\ \hline
+Bernstein O4/ O5 & 0.49     & 0.52      & 0.49      & 0.41     & 0.51    \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[htbp]
+\centering
+\caption{Spurious signal size normalized by the ratio of the number of events in the signal  to control region sidebands.}
+\label{tab:spurious-old}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+ & \multicolumn{5}{c|}{$\mu_{\rm sp}(\sigma_{\mu})$}\\ \hline
+Channel       & \multicolumn{3}{c|}{\twocentral}       & \multicolumn{2}{c|}{\fourcentral}       \\ \hline
+Region        & SR I        & SR II      & SR III      & SR I        & SR II        \\ \hline
+Bernstein  O2 & -1.67(0.64) & -3.86(1.34) & -7.01(2.25) & -3.84(1.49) & -11.76(3.10) \\ \hline
+Bernstein  O3 & -0.07(0.81) & -0.61(1.77) & -1.64(3.21) & 0.08(1.24) & 0.31(4.21) \\ \hline
+Bernstein  O4 & -0.11(0.79) & -0.68(1.76) & -1.85(3.20) & 0.11(1.25) & 0.37(4.17) \\ \hline
+Bernstein  O5 & 0.78(1.08) & 1.44(2.52) & 1.95(5.14)  & 1.79(1.75) & 7.53(6.59) \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.24\textwidth]{figures/Fit2cen_SP/spurious_O2_testVBF_ICHEP_2cen_SRI_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit2cen_SP/spurious_O3_testVBF_ICHEP_2cen_SRI_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit2cen_SP/spurious_O4_testVBF_ICHEP_2cen_SRI_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit2cen_SP/spurious_O5_testVBF_ICHEP_2cen_SRI_CTRL.pdf}\\
+ \includegraphics[width=0.24\textwidth]{figures/Fit2cen_SP/spurious_O2_testVBF_ICHEP_2cen_SRII_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit2cen_SP/spurious_O3_testVBF_ICHEP_2cen_SRII_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit2cen_SP/spurious_O4_testVBF_ICHEP_2cen_SRII_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit2cen_SP/spurious_O5_testVBF_ICHEP_2cen_SRII_CTRL.pdf}\\
+ \includegraphics[width=0.24\textwidth]{figures/Fit2cen_SP/spurious_O2_testVBF_ICHEP_2cen_SRIII_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit2cen_SP/spurious_O3_testVBF_ICHEP_2cen_SRIII_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit2cen_SP/spurious_O4_testVBF_ICHEP_2cen_SRIII_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit2cen_SP/spurious_O5_testVBF_ICHEP_2cen_SRIII_CTRL.pdf}\\
+\caption{Spurious signal fit for \twocentral channel in signal region I (top), II (middle) and III (bottom) with Bernstein O2 - O5 polynomials from left to right.  The bottom panel shows the pulls, defined to be $\frac{N_{\rm data} - N_{\rm fit}}{\sqrt{N_{\rm data}}}$ where $N_{\rm fit}$ includes the spurious signal. For all signal regions, the data in the Higgs mass window is taken from the control region and rescaled to match the normalization in the sidebands.}
+  \label{fig:Fit_SP_2cen-old}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.24\textwidth]{figures/Fit4cen_SP/spurious_O2_testVBF_ICHEP_4cen_SRI_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit4cen_SP/spurious_O3_testVBF_ICHEP_4cen_SRI_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit4cen_SP/spurious_O4_testVBF_ICHEP_4cen_SRI_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit4cen_SP/spurious_O5_testVBF_ICHEP_4cen_SRI_CTRL.pdf}\\
+ \includegraphics[width=0.24\textwidth]{figures/Fit4cen_SP/spurious_O2_testVBF_ICHEP_4cen_SRII_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit4cen_SP/spurious_O3_testVBF_ICHEP_4cen_SRII_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit4cen_SP/spurious_O4_testVBF_ICHEP_4cen_SRII_CTRL.pdf}
+ \includegraphics[width=0.24\textwidth]{figures/Fit4cen_SP/spurious_O5_testVBF_ICHEP_4cen_SRII_CTRL.pdf}\\
+\caption{Spurious signal fit for the \fourcentral channel in signal region I (top) and II (bottom) with Bernstein O2 - O5 polynomials from left to right. The bottom panel shows the pulls, defined to be $\frac{N_{\rm data} - N_{\rm fit}}{\sqrt{N_{\rm data}}}$ where $N_{\rm fit}$ includes the spurious signal.}
+  \label{fig:Fit_SP_4cen-old}
+\end{figure}
+
+\clearpage
+
+\subsubsection{Treatment of \zjets{} contribution}
+\label{sec:app-ztreat}
+
+The \zjets{} contribution plays an important role in the overall fitting procedure due to the fact that it comprises a significant fraction lower \Mbb{} sideband ( 5--6(3--4)\% of the \fourcentral(\twocentral) selection) , yet the sideband does not extend to low enough \Mbb{} values to reliably constrain its contribution using the shape templates.  Therefore, the non-resonant background fit can be partially compensated by the $Z$-yield and vice-versa.  To mitigate the impact of this degeneracy, we could fix the contributions of \zjets{} in the fits to predictions from MC.  However, our \zjets{} MC is only leading order ($Z+$2 partons), and large or varying $k$-factors may be present in the different BDT regions.  However, we can compare \zmujets{} production in data and MC in order to determine the accuracy of modeling of the $Z$ contribution and  use the ratio of events in \zmujets{}  to \zjets{} MC to constrain the data to MC modeling.  
+  %The jets in the \zmujets{} sample should have the same kinematic distributions as those the non-$b$ jets in the \zjets{} sample.  
+%Therefore we can check the data to MC modeling of a relatively pure data  \zmujets{} sample, and  use the ratio of events in \zmujets{}  to \zjets{} MC to constrain the data to MC modeling.  
+
+The details of the \zmujets{} selection and study are found in Appendix~\ref{sec:app-zmm}.  Cuts are applied to the dimuon $Z$-candidate to emulate the di-\bjet selection of the Higgs candidate.  The cross-section ratios of data to MC after pre-selection are calculated to be 0.74$\pm$0.1 and 0.79$\pm$0.1 for \twocentral and \fourcentral channels respectively.  The errors include the statistical uncertainties on the data and MC. The relative ratios of the number of events in data and MC, and between \zjets{} and \zmujets{} MC are shown in Table~\ref{tab:z_ratios-old} for all of the regions considered in the analysis.  Large deviations from 1 are seen for many of the ratios.  Notably the \zmujets{} to \zjets MC ratio is not close to one in some regions, which may be due to the fact that different generators are used for the electro-weak production events, or due to residual differences in the \bjet and muon events arising from a different mis-tag rate and different final state QCD radiation effects.
+
+Due to limited \zjets{} MC statistics, we do not take the product of the ratio of data to MC \zmujets{} events and the ratio of the \zmujets{} to \zjets{} to correct the \zjets{} MC prediction.  Instead, we use the data to MC ratio of \zmujets{} as the overall normalization factor with a  single gaussian nuisance parameter with a width equal to the uncertainty on the ratio.  Then in each BDT region the cross-section is scaled to the ratio of $\frac{Z\rightarrow \mu \bar \mu(Data)}{Z\rightarrow \mu \bar \mu(MC)}$ and we adopt one nuisance parameter per region.  The width of this parameter is the uncertainty on the ratio as derived from the data and MC statistics.   
+
+%What we do instead is take the ratio \zmujets/\zjets as nuisance parameter on the  overall $Z$ normalization factor and use the difference between the two in MC as the uncertainty.  The overall Z normalization is taken from data.  Then, each individual BDT region normalization is scaled to the \zmujets{} data/ MC ratio with no uncertainty.
+
+
+
+\begin{table}[]
+\centering
+\caption{Relative Ratios of $Z\rightarrow \mu \bar \mu$(Data) to \zjets{}(MC) in each BDT region}
+\label{tab:z_ratios-old}
+\begin{tabular}{|l|r|r|}
+\hline
+Region       &  $\frac{Z\rightarrow \mu \bar \mu(Data)}{Z\rightarrow \mu \bar \mu(MC)}$ & $\frac{Z\rightarrow b \bar b(MC)}{Z\rightarrow \mu \bar \mu(MC)}$   \\ \hline
+SRI (2cen)   & 0.82 (0.15) & 0.43 (0.12)\\ \hline
+SRII (2cen)  & 0.42 (0.13) & 0.35 (0.14)\\ \hline
+SRIII (2cen) & 0.61 (0.11) & 0.91 (0.17)\\ \hline
+CR (2cen)    & 1.26 (0.11) & 1.26 (0.13)\\ \hline
+SRI (4cen)   & 0.74 (0.05) & 0.64 (0.07)\\ \hline
+SRII (4cen)  & 0.80 (0.03) & 0.86 (0.05)\\ \hline
+CR (4cen)    & 1.47 (0.07) & 1.40 (0.09)\\ \hline
+
+\end{tabular}
+\end{table}
+
+
+%We have evaluated the Z(mumu)+jets yield in data and MC for the various BDT regions.  Unfortunately, the Zbb and Zmumu MC have very little statistics in the SR1.  This is not surprising because, again, this is a rather weird corner of phase space.   Nonetheless, the comparison between the relative Z(mumu) and Z(bb) yield in MC, together with the Z(mumu) data yield, gives an ?envelope" of predictions (Ideally, we would use Z(bb,MC)*Z(mumu, data)/Z(mumu,MC) and propagate the uncertainties, but we don?t have Z(bb) and Z(mumu) decayed from the same MC events, therefore this would amplify the already large statistical fluctuations).  What we do instead is take the ratio Z(mumu, data)/Z(mumu,MC) as nuisance parameter on the  the Z normalization factor and use the difference between the Z(mumu) to Z(bb) MC as the uncertainty {LT NOTE: This seems a bit strange to me ? let?s talk about it.}  	Then, each individual BDT region normalization is scaled to the Z(mumu) Data/ MC ratio with no uncertainty
+
+
+\subsection{Uncertainties}
+\label{sec:uncertainties-old}
+The treatment of the uncertainties are unchanged from the main text.
+%-------------------------------------------------------------------------------
+%\input{tex/uncertainties}
+
+
+\subsection{Profile Likelihood and yield determination}
+
+The negative log-likelihood is constructed as shown in Eq.\ref{likelihood-old}, 
+where $Y_{ijk}$ denotes the yield of $k^{th}$ bin of $j^{th}$ region of $i^{th}$ channel. 
+Nuisance parameters, which have external constraints $f(\alpha_l)$, are penalized in the negative log-likelihood. 
+b
+The  \fourcentral{} channel consists of two signal regions and its corresponding control region, while the \twocentral{} channel consists of three signal regions and its control region,
+for a total of seven \Mbb{} distributions.
+The yield of each region is calculated with Eq.\ref{yield-old}.
+Note that the yields of signal regions and control regions are calculated differently
+following the assumption that signal contributions in the control regions are negligible. 
+
+The control regions are used to constrain the background shape as well as to determine 
+the bias introduced by the functional form chosen to describe the background ($\mu_{sp}$).
+To propagate the uncertainty of the spurious signal and correct its impact on the signal strength, 
+the spurious signal is a free parameter in the profile likelihood.
+Other free parameters are the normalizations of the non-resonant background in each control and
+signal region, denoted with $N_B$.
+The signal normalizations $N_H$ are set to the Standard Model expectation from simulation,
+while $\mu$ represents the observed signal strength.
+The shapes of Higgs, Z and non-resonant background are $H$, $Z$ and $B$, respectively.
+The linear correction for the background parameterization across signal and control regions is denoted with $T$. 
+
+\begin{equation}
+\label{likelihood-old}
+-\log\mathcal{L}(\mu, \{\alpha_{l}\} )= -\log \prod_{i=1}^{\textnormal{Channels}} \prod_{j=1}^{\textnormal{Regions}} \prod_{k=1}^{\textnormal{Bins}} \frac{e^{-Y_{ijk}(\mu, \{\alpha_l\})} \times Y_{ijk}N_{ijk}^{Obs} }{N_{ijk}^{Obs}} - \log \prod_{l}^{\textnormal{Nuisance Pars}} f(\alpha_l)
+\end{equation}
+
+\begin{equation}
+\label{yield-old}
+\begin{split}
+Y_{CR} &= \mu N_{H}(CR)H(CR)+  \mu_{sp}\hat{N}_{H}H(SRI) \\
+       &+ N_{B}(CR)B+ \alpha_{z}(Norm)\alpha_{z}(CR)N_{Z}(CR)Z  \\
+Y_{SRI} &= (\mu+\mu_{sp})N_{H}(SRI)H(SRI) \\
+        &+ N_{B}(SRI)BT(CR\rightarrow SRI) + \alpha_{z}(Norm)\alpha_{z}(SRI)N_{Z}(SRI)Z\\
+Y_{SRII} &= (\mu+\mu_{sp}\frac{N_{B}(SRII)}{N_{B}(SRI)})N_{H}(SRII)H(SRII) \\
+         & + N_{B}(SRII)BT(CR\rightarrow SRII) + \alpha_{z}(Norm)\alpha_{z}(SRII)N_{Z}(SRII)Z \\
+Y_{SRIII} &= (\mu+\mu_{sp}\frac{N_{B}(SRIII)}{N_{B}(SRI)})N_{H}(SRIII)H(SRIII) \\
+          & + N_{B}(SRIII)BT(CR\rightarrow SRIII) + \alpha_{z}(Norm)\alpha_{z}(SRIII)N_{Z}(SRIII)Z\\
+\hat{N}_H &= N_B(CR)/N_B(SRI)\times N_{H}(SRI)
+\end{split}
+\end{equation}
+
+The nuisance parameter $\alpha_{z}$ controls the overall normalization for the \zjets{} template 
+and is constrained with a Gaussian prior with width 0.1. The overall normalization is scaled to 0.74 and 0.79 for \twocentral and \fourcentral channels, respectively, determined as described in Section~\ref{sec:ztreat}.
+We also adopt independent NPs for each BDT region to account the data/MC shape difference of \zjets{}. 
+%The chosen values are motivated by the validation study in data described in Appendix~\ref{sec:zjets}. 
+
+
+\subsubsection{Fit toy experiments}
+
+To determine if the fit procedure yields bias, we build 1000 toy experiments from the background function determined in background only fit and inject the \Zjets{} component fixed at the Standard Model prediction. The Higgs signals are injected of different strengths at $\mu_{inj} = 0.5, 1.0, 2.0, 5.0$. The pulls of the toy experiment fits defined as $(\mu_{fit}-\mu_{inj})/ \sigma$ are shown in Figures \ref{fig:MCToy-old}. The distributions of pulls are fitted with Gaussian distribution to determine means and widths, which are consistent with 0 and 1 within statistical uncertainties. For $\mu_{inj}=1.0$ test, we fit back $\hat{\mu}=1.00\pm 1.14$. The expected signal significance in this case is 0.87. The asymptotic Asimov fit for $\mu_{inj}=1.0$ is shown in Fig. \ref{fig:Asimov-old}
+
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.45\textwidth]{figures/FitCombined/mu05.PNG}
+ \includegraphics[width=0.45\textwidth]{figures/FitCombined/mu1.PNG}\\
+ \includegraphics[width=0.45\textwidth]{figures/FitCombined/mu2.PNG}
+ \includegraphics[width=0.45\textwidth]{figures/FitCombined/mu5.PNG}\\
+\caption{Pull distribution of toy experiment fits. We inject Higgs signal strength of 0.5 (top left), 1.0 (top right), 2.0 (bottom left) and 5.0 (bottom right) times the Standard Model prediction. The pulls are fitted with Gaussian to determine the means and widths which are unbiased. }
+  \label{fig:MCToy-old}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.32\textwidth]{figures/FitCombined/Asimov_testVBF_ICHEP_2cen_SRI.pdf}
+ \includegraphics[width=0.32\textwidth]{figures/FitCombined/Asimov_testVBF_ICHEP_2cen_SRII.pdf}
+ \includegraphics[width=0.32\textwidth]{figures/FitCombined/Asimov_testVBF_ICHEP_2cen_SRIII.pdf}\\
+ \includegraphics[width=0.32\textwidth]{figures/FitCombined/Asimov_testVBF_ICHEP_4cen_SRI.pdf}
+ \includegraphics[width=0.32\textwidth]{figures/FitCombined/Asimov_testVBF_ICHEP_4cen_SRII.pdf}\\
+
+\caption{Asymptotic Asimov fit for both channels. Fits from SR I to SR III (SR II) for 2 central (top) and 4 central (bottom) are shown.}
+  \label{fig:Asimov-old}
+\end{figure}
+
+
+\subsubsection{Fit pseudo-data}
+
+Another check to test the robustness of the fit method as well as a check of the nuisance parameter pulls 
+is to use pseudo-data as close as possible to the real data. 
+For each signal region we construct the pseudo data by adding together three components:
+\begin{enumerate}
+\item Sideband ($80~\GeV <\Mbb<100$~\GeV~and $140~\GeV<\Mbb<200~\GeV$)
+\item Control region data in the Higgs mass window re-weighted linearly to the signal region using the fits described in Section~\ref{sec:nonres-old}.
+\item Signal MC scaled to Standard Model expectation for Higgs and \zjets{} production.
+\end{enumerate}
+
+The fit is performed simultaneously with both channels. We obtain closure as the best fitted signal strength is $\hat \mu = 0.56 \pm 1.15$. The fits are shown in Figures~\ref{fig:Fit_combined-old}. The post-fit impact of nuisance parameters and pulls for the simultaneous fit are shown in Figure~\ref{fig:pull-old}.  
+The parameters are defined as:
+\begin{itemize}
+\item nbkg\_X\_Y stands for background normalization in region X channel Y
+\item spurious stands for the strength of spurious signal
+OB\item  Lin\_X\_Y stands for the linear slope correction in region X channel Y
+\item x()2cen, x()4cen stands for Bernstein polynomial parameters in the \twocentral and \fourcentral channels respectively
+\item $\alpha\_z$ stands for the Z normalization NP
+\end{itemize} 
+The other parameter names follow the CP group definitions.  
+The largest contributions to the uncertainty on $\mu$ are from the background normalization and 
+control to signal region linear transfer factors. 
+%The only parameter pulled significantly is the $Z$ normalization, 
+%which is expected as we use a leading order generator for our $Z$+jets contribution.  
+%Further studies of the $Z$-contribution are discussed in Section~\ref{sec:znorm}.  
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.32\textwidth]{figures/FitCombined/zcon_testVBF_ICHEP_2cen_SRI.pdf}
+ \includegraphics[width=0.32\textwidth]{figures/FitCombined/zcon_testVBF_ICHEP_2cen_SRII.pdf}
+ \includegraphics[width=0.32\textwidth]{figures/FitCombined/zcon_testVBF_ICHEP_2cen_SRIII.pdf}\\
+ \includegraphics[width=0.32\textwidth]{figures/FitCombined/zcon_testVBF_ICHEP_4cen_SRI.pdf}
+ \includegraphics[width=0.32\textwidth]{figures/FitCombined/zcon_testVBF_ICHEP_4cen_SRII.pdf}\\
+
+\caption{Pseudo data fit for both channels. Fits from SR I to SR III (SR II) for 2 central (top) and 4 central (bottom) are shown.}
+  \label{fig:Fit_combined-old}
+\end{figure}
+
+
+%\begin{figure}[htbp]
+ % \centering
+ %\includegraphics[width=0.5\textwidth]{figures/PseudoDataToys.pdf}
+%\caption{Fitted signal strength of pseudo data toys.}
+%  \label{fig:PseudoToy}
+%\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.9\textwidth]{figures/FitCombined/VBFHbb_pulls_125_Asimov.pdf}
+
+\caption{Nuisance parameter post-fit impact and pulls are plotted for the simultaneous Asimov fit of two channels. The background normalizations are pre-fixed as "nbkg''. The Linear transfer function are pre-fixed as "Lin''. The spurious signal size are pre-fixed as "spurious''. The background parameterizations are pre-fixed as  "x()2cen'' for 2 central channel and "x()4cen'' for 4 central channel. The JES and JER parameters are prefixed by ``alpha\_ATLAS\_JET".  The \btagging parameters are prefixed by ``alpha\_ATLAS\_eigen". The most significant contribution to the uncertainty of signal strength comes from background normalization.}
+  \label{fig:pull_asimov-old}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.95\textwidth]{figures/FitCombined/Correlation.pdf}
+
+\caption{Nuisance parameter correlation for Asimov fit}
+  \label{fig:corr_asimov-old}
+\end{figure}
+
+
+
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.9\textwidth]{figures/FitCombined/VBFHbb_pulls_125.pdf}
+
+\caption{Nuisance parameter post-fit impact and pulls are plotted for the simultaneous fit of two channels for the pseudodata. The background normalizations are pre-fixed as "nbkg''. The Linear transfer function are pre-fixed as "Lin''. The spurious signal size are pre-fixed as "spurious''. The background parameterizations are pre-fixed as  "x()2cen'' for 2 central channel and "x()4cen'' for 4 central channel. The JES and JER parameters are prefixed by ``alpha\_ATLAS\_JET".  The \btagging parameters are prefixed by ``alpha\_ATLAS\_eigen". The most significant contribution to the uncertainty of signal strength comes from background normalization.}
+  \label{fig:pull-old}
+\end{figure}

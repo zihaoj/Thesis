@@ -1,0 +1,34 @@
+\subsection{MC Datasets}
+Higgs signal datasets  \texttt{(DAOD\_HIGG5D3.e3988\_a766\_a821\_r7676\_p2666):}
+\begin{itemize}
+\item  \begin{verbatim}
+mc15_13TeV.341565.PowhegPythia8EvtGen_CT10_AZNLOCTEQ6L1_ggH125_bb_EF4jets.merge\end{verbatim}
+\item  \begin{verbatim}
+mc15_13TeV.341566.PowhegPythia8EvtGen_CT10_AZNLOCTEQ6L1_VBFH125_bb.merge\end{verbatim}
+\end{itemize}
+\zjets{} datasets \texttt{(DAOD\_HIGG5D3.e4191\_a766\_a821\_r7676\_p2719):}
+\begin{itemize}
+\item  \begin{verbatim}
+mc15_13TeV.342195.MadGraphPythia8EvtGen_A14NNPDF23_QCDZbbjj_Incl.merge\end{verbatim}
+\item  \begin{verbatim}
+mc15_13TeV.342196.MadGraphPythia8EvtGen_A14NNPDF23_EWKZbbjj_Incl.merge\end{verbatim}
+\end{itemize}
+\zmujets{} datasets \texttt{(AOD.e3898\_s2608\_s2183\_r7725\_r7676):}
+\begin{itemize}
+\item  \begin{verbatim}
+mc15_13TeV.36150*.MadGraphPythia8EvtGen_A14NNPDF23LO_Zmumu_Np*.merge\end{verbatim}
+\item \begin{verbatim}
+mc15_13TeV.304020.Sherpa_CT10_Zmumu2JetsEW1JetQCD15GeVM40.merge
+\end{verbatim}
+\end{itemize}
+
+
+\subsection{Analysis Code}
+The analysis code was built on top of the \href{https://gitlab.cern.ch/CxAODFramework}{CxAOD Framework} which runs on centrally produced derived xAOD. The \twocentral derivations use the  list of tags documented here: \url{https://twiki.cern.ch/twiki/pub/AtlasProtected/HSG5RunIIVBFHbb/data16.txt}.  They use the r26-00 the tag of the CxAOD framework.
+
+The following analysis code packages and revisions are used:
+\begin{itemize}
+\item \href{https://gitlab.cern.ch/CxAODFramework/CxAODTools_VBFHbb}{CxAODTools\_VBFHbb} ; 64ec4e87
+\item \href{https://gitlab.cern.ch/CxAODFramework/CxAODMaker_VBFHbb}{CxAODMaker\_VBFHbb} ; af55b92d
+\item Analysis Package 1, etc.
+\end{itemize}

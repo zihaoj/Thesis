@@ -1,0 +1,213 @@
+% Stanford University PhD thesis style -- modifications to the report style
+% This is unofficial so you should always double check against the
+% Registrar's office rules
+% See http://library.stanford.edu/research/bibliography-management/latex-and-bibtex
+%
+% Example of use below
+% See the suthesis-2e.sty file for documentation
+%
+\documentclass{report}
+\usepackage{Suthesis-2e}
+\usepackage{notation}
+\usepackage{seqsplit}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xspace}
+\usepackage{subfig}
+\usepackage{amsmath,diagbox,tabu}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+
+\dept{Physics}
+
+\begin{document}
+\title{ Search of the Higgs Boson Produced through Vector Boson Fusion Decaying to a pair of $b \bar{b}$ with the ATLAS Detector}
+\author{Zihao Jiang}
+\principaladviser{Lauren Tompkins}
+\firstreader{Dong Su}
+\secondreader{Ariel Schwartzman}
+\thirdreader{somebody}
+\fourthreader{somebody}
+
+\beforepreface
+\prefacesection{Abstract}
+\input{chapters/preface}
+
+\prefacesection{Acknowledgments}
+\input{chapters/acknowledgement}
+
+\afterpreface
+
+\chapter{Introduction}
+\label{chap:intro}
+\input{chapters/intro}
+
+\chapter{Standard Model and Theory of the Higgs Boson}
+\label{chap:theory}
+\section{Standard Model}
+\subsection{Particles as Fields}
+\subsection{Gauge Theory}
+\subsection{Quantum Chormodynamics}
+
+\section{Higgs Physics}
+
+\subsection{The Broken Symmetry}
+\subsection{Unification of EW and Higgs Mechanism}
+\subsection{Higgs Phenomenology}
+
+\chapter{The Large Hadron Collider}
+\label{chap:collider}
+\section{Design of the Machine}
+\section{Luminosity and Energy}
+
+\chapter{ATLAS Detector}
+\label{chap:detector}
+\section{Inner Detector}
+\subsection{Pixel Detector}
+\subsection{SCT}
+\subsection{TRT}
+\section{Calorimeter}
+\subsection{LAr}
+\subsection{HCal}
+\section{Muon Spectrometer}
+
+\section{Trigger and Data Acquisition}
+\subsection{L1 and HLT}
+\subsection{FastTracKer}
+
+\chapter{Physics Objects Reconstruction}
+\label{chap:reconstruction}
+\section{ID Tracks and Vertices}
+\section{Jets}
+\subsection{Calorimeter Jets}
+\subsection{Track Jets}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  VBF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{VBF $h\rightarrow b\bar{b}$ Search with 2016 dataset}
+\label{chap:vbf}
+\section{Introduction}
+\input{chapters/VBF/intro}
+
+\section{Datasets}
+\subsection{Simulations}
+\input{chapters/VBF/mc}
+\subsection{Data}
+\input{chapters/VBF/data}
+
+\section{Selections}
+\subsection{Objects}
+\input{chapters/VBF/objsel}
+\subsection{Event Selection}
+\input{chapters/VBF/evtsel}
+\subsection{Event Weights}
+\input{chapters/VBF/weights}
+
+\section{Multi-variate Analysis}
+\input{chapters/VBF/bdt}
+
+\section{Statistical Analysis}
+\subsection{Signal and \zjets Parameterization}
+\input{chapters/VBF/signalandz}
+\subsection{Non-resonant Background Estimation}
+\input{chapters/VBF/fitbkgds}
+\subsection{Uncertainties}
+\input{chapters/VBF/uncertainties}
+\subsection{Binned Likelihood Maximization}
+\input{chapters/VBF/likelihood}
+\section{Results}
+\subsection{VBF Unblinded Results}
+\input{chapters/VBF/results}
+\subsection{Combination with other Higgs analyses}
+%\input{chapters/VBF/combination}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  RNN b-tagging
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Identification of bottom quarks with Recurrent Neural Network}
+\label{chap:btagging}
+\section{Introduction}
+\input{chapters/RNN/intro}
+
+\section{Recurrent Neural Network for \btagging}
+\input{chapters/RNN/rnn}
+
+\section{RNN IP Tagger}
+\input{chapters/RNN/implementation}
+
+\section{Performance}
+\input{chapters/RNN/results}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  qg tagging
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Identification of light quarks and gluons}
+\label{chap:qgtagging}
+\section{Introduction}
+\input{chapters/CNN/intro}
+
+\section{Jets as Images}
+\input{chapters/CNN/images}
+
+\section{Convolutional Neural Network}
+need to fill in
+
+\section{CNN q/g tagger}
+\input{chapters/CNN/tagger}
+
+\section{Performance}
+\input{chapters/CNN/results}
+
+\section{Visualization}
+\input{chapters/CNN/learning}
+
+\section{Limitations}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  gbb
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Measuremnts of $g\rightarrow b\bar{b}$ splitting in dense environment}
+\label{chap:gbb}
+\section{Introduction}
+\input{chapters/gbb/intro}
+
+\section{Vertex Variables}
+\input{chapters/gbb/variables}
+
+\section{Dataset}
+\input{chapters/gbb/data}
+
+\section{Selections}
+\subsection{Objects}
+\input{chapters/gbb/objects}
+\subsection{Event Selection}
+\input{chapters/gbb/evtselection}
+
+\section{Background Estimates}
+\input{chapters/gbb/backgrounds}
+\input{chapters/gbb/data_mc_comp}
+
+\section{Unfolding}
+\input{chapters/gbb/unfold}
+
+\section{Results}
+\input{chapters/gbb/results}
+
+\chapter{Prospects and Future Work}
+\chapter{Conclusions}
+
+\appendix
+\chapter{Design of the FTK DataFormatter Firmware}
+\chapter{Fast Simulation of Pattern Based Tracking Algorithm with Generative Adversarial Networks}
+\chapter{Adversarial Neural Network for Feature Invariant Classification Problem}
+
+\bibliographystyle{plain}
+\bibliography{bibtex/bib/ATLAS,bibtex/bib/CMS,bibtex/bib/ConfNotes,bibtex/bib/PubNotes,bibtex/vbf,bibtex/RNN,bibtex/qgnote,bibtex/gbb,bibtex/VBFPaper2016}
+\end{document}

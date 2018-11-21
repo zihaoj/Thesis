@@ -1,0 +1,45 @@
+Multiple strategies were considered for the treatment of \zjets{} contribution. Ultimately, strategy 4 was chosen. Note that these approaches were studied in prior iteration of the analysis where the BDT regions were as described in Appendix~\ref{sec:app-alternative2cen}.
+
+\begin{enumerate}
+
+\item Use variations in generator, parton distribution functions and the renormalization and factorization scales in the \zjets{} Monte Carlo generation to derive theoretical uncertainties which account for the potential BDT shape uncertainty. We lack the systematics variation samples ($\alpha_s$, renomalization scale) to compute the theoretical uncertainties. Nor do we have \zjets{} samples from other generators. This approach is not feasible for the current round of analysis. 
+
+\item Use data to MC \zmujets{} as scale factor for \zjets{} BDT shape: Since the BDT input variables are largely independent of the $Z$ decay process, we can select a pure \zmujets{} sample in data and MC to determine the accuracy of modeling of the BDT shape for $Z$ events as well as the total cross section of $Z$ production in data after the pre-selection. This method would be valid if we also observe a ratio close to unity of $\frac{\zjets{}(MC)}{\zmujets{}(MC)}$.  
+
+This approach is detailed in Appendix~\ref{sec:app-zmm}.  Cuts are applied to the dimuon $Z$-candidate to emulate the di-\bjet selection of the Higgs candidate. The cross-section ratios of data to MC after pre-selection are calculated to be 0.81$\pm$0.06 and 0.75$\pm$0.06 for \twocentral~and \fourcentral~channels respectively. The errors include the statistical uncertainties on the data and MC. 
+
+The relative ratios of the number of events in data and MC, and between \zjets{} and \zmujets{} MC are shown in Table~\ref{tab:z_ratios} for all of the regions considered in the analysis. Notably, the \zmujets{} to \zjets{} MC ratio is not close to one in some regions, which may be due to the fact that different generators are used for the electro-weak production events, or due to residual differences in the \bjet{} and muon events.  These difference could arise from \pT-dependent \btagging effects and different final state QCD radiation effects. Hence applying the scale factors we derived from \zmujets{} study may not be directly applicable to \zjets{}. 
+
+\item Use two-point uncertainty for \zjets{} process: The difference between using the data-derived \zmujets{}ratios and the nominal \zjets{} MC could be taken as the uncertainty.  %From the injection study (Appendix~\ref{sec:app-zmm}) one could also quote an uncertainty of $mu_H$ due to the variation of $Z$ contribution independent of other systematics. However the method can not profile the $Z$ systematics in the likelihood fit. 
+
+\item \label{item:z-treat-4} Float the contribution of $Z$ in all BDT regions: Assume no prior knowledge of $Z$ contribution in all BDT regions and allow the contribution to float in the profile likelihood fit. This is the most conservative strategy and yields the largest decrease in overall sensitivity. 
+
+\item \label{item:z-treat-5} Float the contribution of $Z$ in SR I and SR II of \twocentral channel and the total cross section of $Z$; Constrain the $Z$ shape variation to 50\% of the \zjets{} MC for all other BDT regions.   %Besides the SR I and SR II of the \twocentral channel, all other BDT regions we have reasonable constraints as shown in Table~\ref{tab:z_ratios}. 
+As shown in Table~\ref{tab:z_ratios}, the regions other than SR I and SR II of the \twocentral channel, have good closure between \zjets{} and \zmujets{} MC as well as small difference across \zmujets{} MCs. Therefore we can make the assumption that the \zmujets{} data to MC ratios are applicable to \zjets{}. We also know the ratios $\frac{\zmujets{}(Data)}{\zmujets{}(MC)}$ are close to one, hence we can quote the difference between 1 and $\frac{\zmujets{}(Data)}{\zmujets{}(MC)}$ as systematics. To be conservative, we quote 50\% shape variations for all these regions. This method yields smaller systematics than the strategy of floating all $Z$ contributions and better reflects our knowledge of the $Z$ contribution.
+
+\end{enumerate}
+
+
+
+\begin{table}[]
+\centering
+\caption{Relative Ratios of $\frac{\zmujets{}(Data)}{\zmujets{}(MC)}$, 
+$\frac{\zjets{}(MC)}{\zmujets{}(MC)}$ 
+and $\frac{\zmujets{}(\textnormal{Powheg})}{\zmujets{}(\textnormal{Madgraph})}$}
+\label{tab:z_ratios}
+\begin{tabular}{|l|r|r|r|}
+\hline
+Region       &  $\frac{\zmujets{}(Data)}{\zmujets{}(MC)}$ & $\frac{\zjets{}(MC)}{\zmujets{}(MC)}$ & $\frac{\zmujets{}(\textnormal{Powheg})}{\zmujets{}(\textnormal{Madgraph})}$  \\ \hline
+SR I   (2cen)  & 0.73 (0.14) & 0.35 (0.10) & 1.06 (0.28)\\ \hline
+SR II  (2cen)  & 0.50 (0.08) & 0.54 (0.10) & 1.40 (0.35)\\ \hline
+SR III (2cen)  & 0.91 (0.09) & 1.03 (0.12) & 0.95 (0.14)\\ \hline
+SR IV  (2cen)  & 1.16 (0.07) & 1.14 (0.08) & 0.97 (0.09)\\ \hline
+SR I   (4cen)  & 0.82 (0.06) & 0.74 (0.08) & 1.00 (0.11)\\ \hline
+SR II  (4cen)  & 0.83 (0.05) & 0.95 (0.09) & 0.89 (0.08)\\ \hline
+SR III (4cen)  & 0.96 (0.03) & 1.05 (0.04) & 1.07 (0.06)\\ \hline
+SR IV  (4cen)  & 1.06 (0.02) & 1.01 (0.03) & 0.99 (0.04)\\ \hline
+
+\end{tabular}
+\end{table}
+
+

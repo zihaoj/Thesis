@@ -1,0 +1,6 @@
+As mentioned in Section~\ref{sec:evtsel}, the trigger simulation for the Monte Carlo samples used in the analysis is incomplete and, in particular, the simulated trigger decision is missing for some of the adopted triggers. 
+Nevertheless, all the reconstructed quantities used to compute the trigger decision, 
+including online-reconstructed tracks, vertexes, jets and $b$-jet weights are available
+and can be used to recompute the missing trigger decision bits. 
+This is done, using the official emulation tool~\cite{trigemu} developed and mantained 
+by the \textit{$b$-Jet Trigger Signature Group}, configured to reproduce the selections required by the \twocentral channel triggers, in terms of jet multiplicity, jet kinematics and \btagging weights. The emulation tool is proved to be working as expected on the adopted samples, requiring a perfect match between the emulated decision and the one stored in simulated data, for a set of triggers already correctly simulated in the Monte Carlo.

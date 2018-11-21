@@ -1,0 +1,40 @@
+In order to compare with the distributions observed in data, the simulated samples are normalized
+to the number of events expected based on the theoretical cross section and the integrated luminosity.
+An event weight $w_{MC}$ is applied, defined as:
+\begin{equation}\label{eq:mcweight}
+w_{MC} = \frac{\sigma\times k}{N} L,
+\end{equation}
+where $\sigma$ is the theoretical cross section for the process considered, $N$ is the
+number of simulated events, $L$ the integrated luminosity and $k$ a
+correction to the LO cross section to reproduce a higher--order
+(e.g. NLO) calculation for the process of interest.
+
+In addition, a weight is applied  to account for the pile--up
+conditions in data. While events are generated for the whole spectrum
+of number of interactions per bunch crossing $<\mu>$, the proportions
+are not the same as in data. The pile--up weight, $w_{PU}$ ensures that the
+$<\mu>$ distribution in simulated samples matches the one in data.
+
+To ensure an accurate modeling of the detector effects, reconstruction
+and selection efficiencies $\epsilon$ are calibrated with {\it scale factors}
+(SF) defined as 
+\begin{equation}
+SF = \frac{\epsilon_{data}}{\epsilon_{MC}},
+\end{equation}
+where $\epsilon_{data}$ and $\epsilon_{MC}$ are measured in dedicated
+data calibration samples and in the equivalent MC simulation, respectively.
+We apply scale factors for offline \btagging, JVT and \ntrk. 
+
+We apply efficiency scale factors to jets which pass the offline \btagging working point in simulated events. 
+The scale factors of \bjets and $c-$jets are derived from $t\bar t$ events while scale factors of light jet are derived from di-jet events. 
+We also apply inefficiency scale factors to jets which fail \btagging. The total \btagging weight, $w_{b-tag}$, is calculated as the product of the scale factors of all jets passing the preselection. Similarly per-jet SFs are applied for JVT efficiency and \ntrk for all jets passing the preselection and we multiply the SFs to get JVT and \ntrk weights $w_{JVT}$ and $w_{\ntrk}$.
+
+The online \btagging and offline \btagging use the same tagging algorithm but different track collections. 
+We correct the simulated event weights by the ratio (scale factor) of online b-tagging efficiency with respect to offline b-tagging efficiency at different working points. 
+The scale factors are parameterized as a function of online \bjet $p_T$ and measured in $t\bar t$ events. 
+The trigger weight is calculated as $w_{trig} = \prod_{i} SF(p_T)_{i}$, where $SF(p_T)_i$ denotes the scale factor of $i^{th}$ signal jet matched to an online b-jet of a given $p_T$. 
+
+The final event weight of a simulated event is $w = w_{MC}\times w_{PU} \times w_{b-tag} \times w_{JVT} \times w_{\ntrk} \times w_{trig}$. 
+
+
+
