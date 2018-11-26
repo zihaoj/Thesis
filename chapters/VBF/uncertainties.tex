@@ -8,14 +8,14 @@ on the yields in a particular BDT region will be ignored in the profile likeliho
 that particular region. 
 
 \subsubsection{Luminosity}
-\label{sec:syst_lumi}
+\label{sec:vbf-syst_lumi}
 
 The integrated luminosity measurement has an uncertainty of 3.4\%. This systematic uncertainty
 is applied to all physics processes estimated with MC simulated samples normalized 
 to the measured integrated luminosity: \zjets{} and Higgs production. {\it Ed. Note: this will be updated after the unblinding.}
 
 \subsubsection{Uncertainties on object definitions}
-\label{sec:syst_objects}
+\label{sec:vbf-syst_objects}
 
 Several uncertainties are applied to the MC simulation samples to take into account the limited knowledge of the detector and reconstruction performance.
 
@@ -32,7 +32,7 @@ The corresponding uncertainty is evaluated by shifting the per-jet scale factors
 accounting for the efficiency uncertainty~\cite{JVTwiki}.
 
 \paragraph{Jet energy scale}
-%\label{sec:syst_jes}
+%\label{sec:vbf-syst_jes}
 The jet energy scale and its uncertainty have been derived combining information from test-beam data, 
 LHC collision data and simulation \cite{JESwiki}. The jet
 energy scale uncertainty is split into 4 uncorrelated sources, 
@@ -43,7 +43,7 @@ The variation in the jet energies as a result of these systematic uncertainties 
 observables computed using jet kinematics.
 
 \paragraph{Jet energy resolution}
-%\label{sec:syst_jer}
+%\label{sec:vbf-syst_jer}
 [The jet energy resolution (JER) has been measured separately for data and simulation 
 using in-situ techniques. The \texttt{JERUncertaintyProvider}
 tool~\cite{jeruncertaintyprovider} was used to obtain the expected fractional
@@ -62,7 +62,7 @@ We compute the normalization and shape uncertainties in the final distributions
 and symmetrize them to define a corresponding "down'' variation.
 
 \paragraph{\btagging}
-%\label{sec:syst_btag}
+%\label{sec:vbf-syst_btag}
 
 The effects of uncertainties in efficiencies for the heavy flavor tagging of jets by
 the MV2c10 tagger have been evaluated. This analysis uses the operating points 
@@ -92,7 +92,7 @@ described in Ref.~\cite{qgtagging}. A total of 5 nuisance parameters is used to 
 uncertainties and the impact on the results presented in this note is found to be negligible.
 
 \subsubsection{Analytical and Theoretical Modeling uncertainties of signal}
-\label{sec:syst_model}
+\label{sec:vbf-syst_model}
 
 Uncertainties in the modeling both of the non-resonant background shape and the theory and phenomenological modeling uncertainties of the Monte Carlo simulation samples are described here.
 
@@ -105,15 +105,15 @@ size is then quoted the width of a gaussian constraint which is included in the 
 Eq.~\ref{likelihood}.
 
 %\paragraph{\zjets{} normalization}
-%\label{sec:zjets}
+%\label{sec:vbf-zjets}
 %
-%Strategy~\label{item:z-treat-5} of section~\ref{sec:ztreat} is taken for the systematic uncertainties on the \zjets{} normalization.
+%Strategy~\label{item:z-treat-5} of section~\ref{sec:vbf-ztreat} is taken for the systematic uncertainties on the \zjets{} normalization.
 %
 %The bias on the signal $\mu$ value caused by this rescaling (or lack thereof) is estimated 
 %with an injection test where the scaled pseudodata is fit with the non-scaled template. 
 %The bias is found to be less than $10\%$ and therefore negligible with respect to the overall uncertainty.
 %Therefore no relative rescaling is applied to the \zjets{} MC prediction in each region.
-%Additional details of these studies are provided in Appendix ~\ref{sec:app-zmm}.
+%Additional details of these studies are provided in Appendix ~\ref{sec:vbf-app-zmm}.
 
 %The normalization of the \zjets{} background, simulated at LO, is 
 %affected by potentially large uncertainties~\cite{zkfactors}. 
@@ -226,13 +226,12 @@ The yield is also assigned with 100\% uncertainty.
 %In the fit, we take the actual shape of \ttH treating it as a background. 
 
 
-
 \begin{figure}[htbp]
   \centering
- \includegraphics[width=0.45\textwidth]{figures/VBF/Mbb_VH_2cen.pdf}
- \includegraphics[width=0.45\textwidth]{figures/VBF/Mbb_ttH_2cen.pdf}\\
- \includegraphics[width=0.45\textwidth]{figures/VBF/Mbb_VH_4cen.pdf}
- \includegraphics[width=0.45\textwidth]{figures/VBF/Mbb_ttH_4cen.pdf}
+ \includegraphics[width=0.42\textwidth]{figures/VBF/Mbb_VH_2cen.pdf}
+ \includegraphics[width=0.42\textwidth]{figures/VBF/Mbb_ttH_2cen.pdf}\\
+ \includegraphics[width=0.42\textwidth]{figures/VBF/Mbb_VH_4cen.pdf}
+ \includegraphics[width=0.42\textwidth]{figures/VBF/Mbb_ttH_4cen.pdf}
  \caption{\Mbb distributions of \VH (left) and \ttH (right) for \twocentral (top) and \fourcentral (bottom) channels passing event pre-selection. }
   \label{fig:Mbb-ttH-VH}
 \end{figure}
@@ -245,119 +244,73 @@ The yield is also assigned with 100\% uncertainty.
 \hline
      & \multicolumn{2}{l|}{\twocentral SR I}    & \multicolumn{2}{l|}{\twocentral SR II}  \\ \hline
      & Expected Yied  & Fraction of Total Yield & Expected Yied & Fraction of Total Yield \\ \hline
-\VH  & 0.23           & 0.16\%                  & 9.25          & 6.75\%                  \\ \hline
-\ttH & 4.24           & 2.90\%                  & 30.02         & 19.69\%                 \\ \hline
+\VH  & 0.2           & 0.2\%                  & 9.3          & 6.8\%                  \\ \hline
+\ttH & 4.2           & 2.9\%                  & 30.0         & 19.7\%                 \\ \hline
      & \multicolumn{2}{l|}{\fourcentral SR I}   & \multicolumn{2}{l|}{\fourcentral SR II} \\ \hline
      & Expected Yied  & Fraction of Total Yield & Expected Yied & Fraction of Total Yield \\ \hline
-\VH  & 1.42           & 1.96\%                  & 0.71          & 1.38\%                  \\ \hline
-\ttH & 0.58           & 0.80\%                  & 2.20          & 4.17\%                  \\ \hline
+\VH  & 1.4           & 2.0\%                  & 0.7          & 1.4\%                  \\ \hline
+\ttH & 0.6           & 0.8\%                  & 2.2          & 4.2\%                  \\ \hline
      & \multicolumn{2}{l|}{\fourcentral SR III} & \multicolumn{2}{l|}{\fourcentral SR IV} \\ \hline
      & Expected Yied  & Fraction of Total Yield & Expected Yied & Fraction of Total Yield \\ \hline
-\VH  & 6.01           & 5.23\%                  & 34.13         & 13.5\%                  \\ \hline
-\ttH & 12.39          & 10.19\%                 & 42.44         & 15.45\%                 \\ \hline
+\VH  & 6.0           & 5.2\%                  & 34.1         & 13.5\%                  \\ \hline
+\ttH & 12.4          & 10.2\%                 & 42.4         & 15.5\%                 \\ \hline
 \end{tabular}
 \end{table}
 
+\clearpage
 
 \subsubsection{Summary}
-Table. \ref{tab:systnames} gives a summary of the names and meaning of the nuisance parameters profiled in the likelihood fit. 
-
-
 The typical signal yield changes due to a few representative systematic uncertainties are 
 shown in Tables. \ref{tab:syst-2cen} and \ref{tab:syst-4cen}.  The theory uncertainties, especially from the QCD scale dominate, at the 20\% level across all signal regions.  The largest experimental uncertainties are from \btagging, at the 3--4\% level.
 
 \begin{table}[hbpt]
 \centering
-\caption{Yield change in percentage due to $\pm 1 \sigma$ variation of systematics for \twocentral for combined signal, VBF and ggF production modes. }
-\label{tab:syst-2cen}
+\scriptsize
 \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
                  & \multicolumn{6}{c|}{\twocentral}                     \\ \hline
                  & \multicolumn{3}{c|}{SRI} & \multicolumn{3}{c|}{SRII} \\ \hline
                  & Total  & VBF    & ggF    & Total   & VBF    & ggF    \\ \hline
-JES\_EffNP\_1    & 0.75   & 1.19   & 1.14   & 2.54    & 4.11   & 2.07   \\ \hline
-JES\_BJES        & 1.52   & 1.62   & 1.08   & 2.21    & 2.71   & 2.06   \\ \hline
-JER              & 1.65   & 3.03   & 4.11   & 2.16    & 4.69   & 4.19   \\ \hline
-QG\_nchargedEXP  & 0.65   & 0.73   & 0.28   & 1.39    & 2.12   & 1.18   \\ \hline
-PRW\_DATASF      & 0.49   & 0.18   & 1.74   & 0.18    & 0.99   & 0.54   \\ \hline
-BTAG\_B\_0\_70WP & 2.66   & 2.67   & 2.60   & 2.88    & 2.74   & 2.92   \\ \hline
-BTAG\_B\_0\_85WP & 0.80   & 0.87   & 0.52   & 1.26    & 1.08   & 1.31   \\ \hline
-BTrig\_J1\_SF    & 0.47   & 0.49   & 0.40   & 0.78    & 0.77   & 0.78   \\ \hline
-BTrig\_J2\_SF    & 0.85   & 0.78   & 1.14   & 0.81    & 0.72   & 0.84   \\ \hline
-TH\_alpha\_s     & 0.73   & 0.14   & 3.18   & 2.66    & 3.95   & 3.35   \\ \hline
-TH\_QCDScaleVBF  & 9.92   & 12.29  & 0      & 2.41    & 10.50  & 0      \\ \hline
-TH\_QCDScaleggF  & 8.17   & 0      & 42.33  & 29.61   & 0      & 41.91  \\ \hline
-TH\_PDFVar       & 10.08  & 11.52  & 4.16   & 6.36    & 9.56   & 5.42   \\ \hline
-TH\_PS           & 0.34   & 1.06   & 2.69   & 0.62    & 1.92   & 0.24   \\ \hline
+Jet Energy Scale NP1           & 0.75   & 1.19   & 1.14   & 2.54    & 4.11   & 2.07   \\ \hline
+Jet Energy Scale \bjets        & 1.52   & 1.62   & 1.08   & 2.21    & 2.71   & 2.06   \\ \hline
+Jet Energy Resolution          & 1.65   & 3.03   & 4.11   & 2.16    & 4.69   & 4.19   \\ \hline
+\qgtagging                     & 0.65   & 0.73   & 0.28   & 1.39    & 2.12   & 1.18   \\ \hline
+Pile-up Reweighting            & 0.49   & 0.18   & 1.74   & 0.18    & 0.99   & 0.54   \\ \hline
+\btagging NP0 70WP             & 2.66   & 2.67   & 2.60   & 2.88    & 2.74   & 2.92   \\ \hline
+\btagging NP0 85WP             & 0.80   & 0.87   & 0.52   & 1.26    & 1.08   & 1.31   \\ \hline
+$\alpha_s$                     & 0.73   & 0.14   & 3.18   & 2.66    & 3.95   & 3.35   \\ \hline
+QCD scale VBF                  & 9.92   & 12.29  & 0      & 2.41    & 10.50  & 0      \\ \hline
+QCD scale ggF                  & 8.17   & 0      & 42.33  & 29.61   & 0      & 41.91  \\ \hline
+PDF Variations                 & 10.08  & 11.52  & 4.16   & 6.36    & 9.56   & 5.42   \\ \hline
+Parton Shower                  & 0.34   & 1.06   & 2.69   & 0.62    & 1.92   & 0.24   \\ \hline
 \end{tabular}
+\caption{Yield change in percentage due to $\pm 1 \sigma$ variation of systematics for \twocentral for combined signal, VBF and ggF production modes. }
+\label{tab:syst-2cen}
 \end{table}
 
 
 \begin{table}[hbpt]
 \centering
-\caption{Yield change in percentage due to $\pm 1 \sigma$ variation of systematics for \fourcentral for combined signal, VBF and ggF production modes.}
-\label{tab:syst-4cen}
-\resizebox{\textwidth}{!}{
+\scriptsize
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
                     & \multicolumn{12}{c|}{\fourcentral}                                                                                \\ \hline
                     & \multicolumn{3}{c|}{SR I} & \multicolumn{3}{c|}{SR II} & \multicolumn{3}{c|}{SR III} & \multicolumn{3}{c|}{SR IV} \\ \hline
                     & Total   & VBF    & ggF    & Total   & VBF     & ggF    & Total   & VBF     & ggF     & Total   & VBF     & ggF    \\ \hline
-JES\_EffectiveNP\_1 & 3.38    & 1.05   & 18.50  & 0.65    & 0.57    & 3.10   & 1.56    & 2.43    & 0.76    & 1.12    & 0.59    & 1.44   \\ \hline
-JES\_BJES\_Response & 0.21    & 0.64   & 1.67   & 1.48    & 1.57    & 12.9   & 0.49    & 1.35    & 0.31    & 1.66    & 2.25    & 1.46   \\ \hline
-JER                 & 1.16    & 1.25   & 12.04  & 0.35    & 2.20    & 3.38   & 3.96    & 1.14    & 8.64    & 1.13    & 0.79    & 1.78   \\ \hline
-QG\_nchargedExp     & 3.98    & 2.41   & 10.69  & 0.21    & 0.60    & 1.86   & 0.33    & 1.81    & 0.22    & 0.11    & 4.27    & 1.56   \\ \hline
-PRW\_DATASF         & 0.34    & 0.38   & 0.17   & 2.17    & 2.06    & 4.19   & 1.49    & 0.19    & 3.04    & 2.55    & 2.23    & 2.66   \\ \hline
-BTAG\_B\_0\_70WP    & 4.37    & 4.33   & 4.53   & 4.19    & 4.17    & 4.23   & 4.30    & 4.12    & 4.47    & 4.21    & 4.15    & 4.25   \\ \hline
-BTrig\_J1\_SF       & 1.25    & 1.22   & 1.35   & 1.11    & 1.07    & 1.23   & 1.28    & 0.99    & 1.55    & 1.22    & 1.04    & 1.28   \\ \hline
-BTrig\_J2\_SF       & 0.60    & 0.59   & 0.64   & 0.59    & 0.59    & 0.58   & 0.70    & 0.70    & 0.60    & 0.59    & 0.58    & 0.60   \\ \hline
-TH\_alpha\_s        & 0.76    & 0.16   & 3.35   & 1.32    & 0.23    & 3.45   & 1.85    & 0.34    & 3.23    & 2.85    & 0.90    & 3.49   \\ \hline
-TH\_QCDScaleVBF     & 6.69    & 8.25   & 0      & 5.39    & 8.06    & 0      & 3.86    & 8.08    & 0       & 1.98    & 7.95    & 0      \\ \hline
-TH\_QCDScaleggF     & 7.83    & 0      & 41.56  & 12.86   & 0       & 40.66  & 22.67   & 0       & 43.42   & 31.99   & 0       & 42.60  \\ \hline
-TH\_PDFVar          & 6.19    & 6.44   & 5.16   & 5.62    & 6.33    & 4.18   & 5.03    & 6.11    & 4.05    & 4.95    & 7.23    & 4.19   \\ \hline
-TH\_PS              & 3.24    & 4.14   & 0.62   & 1.75    & 3.56    & 1.87   & 2.36    & 0.31    & 0.96    & 0.26    & 0.32    & 0.24   \\ \hline
-\end{tabular}}
+Jet Energy Scale NP1      & 3.38    & 1.05   & 18.50  & 0.65    & 0.57    & 3.10   & 1.56    & 2.43    & 0.76    & 1.12    & 0.59    & 1.44   \\ \hline
+Jet Energy Scale \bjets   & 0.21    & 0.64   & 1.67   & 1.48    & 1.57    & 12.9   & 0.49    & 1.35    & 0.31    & 1.66    & 2.25    & 1.46   \\ \hline
+Jet Energy Resolution     & 1.16    & 1.25   & 12.04  & 0.35    & 2.20    & 3.38   & 3.96    & 1.14    & 8.64    & 1.13    & 0.79    & 1.78   \\ \hline
+\qgtagging                & 3.98    & 2.41   & 10.69  & 0.21    & 0.60    & 1.86   & 0.33    & 1.81    & 0.22    & 0.11    & 4.27    & 1.56   \\ \hline
+Pile-up Reweighting       & 0.34    & 0.38   & 0.17   & 2.17    & 2.06    & 4.19   & 1.49    & 0.19    & 3.04    & 2.55    & 2.23    & 2.66   \\ \hline
+\btagging NP0 77WP        & 4.37    & 4.33   & 4.53   & 4.19    & 4.17    & 4.23   & 4.30    & 4.12    & 4.47    & 4.21    & 4.15    & 4.25   \\ \hline
+$\alpha_s$                & 0.76    & 0.16   & 3.35   & 1.32    & 0.23    & 3.45   & 1.85    & 0.34    & 3.23    & 2.85    & 0.90    & 3.49   \\ \hline
+QCD scale VBF             & 6.69    & 8.25   & 0      & 5.39    & 8.06    & 0      & 3.86    & 8.08    & 0       & 1.98    & 7.95    & 0      \\ \hline
+QCD scale ggF             & 7.83    & 0      & 41.56  & 12.86   & 0       & 40.66  & 22.67   & 0       & 43.42   & 31.99   & 0       & 42.60  \\ \hline
+PDF Variations            & 6.19    & 6.44   & 5.16   & 5.62    & 6.33    & 4.18   & 5.03    & 6.11    & 4.05    & 4.95    & 7.23    & 4.19   \\ \hline
+Parton Shower             & 3.24    & 4.14   & 0.62   & 1.75    & 3.56    & 1.87   & 2.36    & 0.31    & 0.96    & 0.26    & 0.32    & 0.24   \\ \hline
+\end{tabular}
+\caption{Yield change in percentage due to $\pm 1 \sigma$ variation of systematics for \fourcentral for combined signal, VBF and ggF production modes.}
+\label{tab:syst-4cen}
+
 \end{table}
 
-
-
-\begin{table}[]
-\centering
-\caption{Summary of systematic uncertainties considered and the naming of the corresponding nuisance parameters in the profile likelihood fit}
-\label{tab:systnames}
-\resizebox{\textwidth}{!}{
-\begin{tabular}{|l|l|}
-\hline
-Nuisance Parameter Name                   & Description                                                                                          \\ \hline
-alpha\_ATLAS\_lumi\_2016                  & luminosity uncertainty of ATLAS 2016 dataset                                                         \\ \hline
-alpha\_ATLAS\_PRW\_DATASF                 & pile-up reweighting uncertainty                                                                      \\ \hline
-alpha\_ATLAS\_JET\_EffectiveNP            & jet energy scale uncertainty from effective nuisance parameters from in situ analyses (8 components) \\ \hline
-alpha\_ATLAS\_JET\_EtaIntercalibration    & jet energy scale uncertainty from $|\eta|$-intercalibration (3 components)                           \\ \hline
-alpha\_ATLAS\_JET\_Pileup                 & jet energy scale uncertainty from pile-up (4 components)                                             \\ \hline
-alpha\_ATLAS\_JET\_Flavor\_Composition    & jet energy scale uncertainty from flavor composition of the calibration sample                       \\ \hline
-alpha\_ATLAS\_JET\_Flavor\_Response       & jet energy scale uncertainty from flavor response of the calibration sample                          \\ \hline
-alpha\_ATLAS\_JET\_BJES\_Response         & jet energy scale uncertainty from b-jets                                                             \\ \hline
-alpha\_ATLAS\_JET\_PunchThrough           & jet energy scale uncertainty from punch-through jets                                                 \\ \hline
-alpha\_ATLAS\_JET\_RelavtiveNonClosure    & jet energy scale uncertainty from closure relative to MC15c                                          \\ \hline
-alpha\_ATLAS\_JET\_SingleParticle\_HighPt & jet energy scale uncertainty from high $p_T$ jets                                                    \\ \hline
-alpha\_ATLAS\_JER\_SINGLE\_NP             & jet energy resolution effective nuisance parameter                                                   \\ \hline
-alpha\_Eigen\_B                           & b-tagging efficiency systematics eigenvectors for b-jets (3 components)                              \\ \hline
-alpha\_Eigen\_C                           & b-tagging efficiency systematics eigenvectors for c-jets (4 components)                              \\ \hline
-alpha\_Eigen\_Light                       & b-tagging efficiency systematics eigenvectors for light-jets (5 components)                          \\ \hline
-alpha\_Eigen\_extrapolation               & b-tagging efficiency systematics eigenvectors for high $p_T$ jets (5 components)                     \\ \hline
-alpah\_ATLAS\_JET\_QG\_nchargedExp        & Q/G tagging uncertainty from unfolding                                                               \\ \hline
-alpah\_ATLAS\_JET\_QG\_nchargedPDF        & Q/G tagging uncertainty from PDF choice                                                              \\ \hline
-alpah\_ATLAS\_JET\_QG\_trackME            & Q/G tagging uncertainty from generator choice                                                        \\ \hline
-alpah\_ATLAS\_JET\_QG\_trackEfficiency    & Q/G tagging uncertainty from track efficiency                                                        \\ \hline
-alpah\_ATLAS\_JET\_QG\_trackFakes         & Q/G tagging uncertainty from track fake rate                                                         \\ \hline
-alpha\_ATLAS\_BTrig\_SF                   & uncertainty on b-jet trigger efficiency (4 components)                                               \\ \hline
-alpha\_ATLAS\_BTrig\_ETA\_LeadingJet      & uncertainty on primary vertex finding inefficiency for b-jet trigger                                 \\ \hline
-alpha\_ATLAS\_TH\_alpha\_s                & theoretical uncertainty from $\alpha_s$                                                              \\ \hline
-alpha\_ATLAS\_TH\_alpha\_PS               & theoretical uncertainty from parton shower model                                                     \\ \hline
-alpha\_ATLAS\_TH\_alpha\_QCDScaleVBF      & theoretical uncertainty from QCD scale for VBF process                                               \\ \hline
-alpha\_ATLAS\_TH\_alpha\_QCDScaleggF      & theoretical uncertainty from QCD scale for ggF process (9 components)                                \\ \hline
-alpha\_ATLAS\_TH\_alpha\_PDFVar           & theoretical uncertainty from PDF variations                                                          \\ \hline
-alpha\_VH                                 & yield varition for \VH process                                                                       \\ \hline
-alpha\_ttH                                & yield varition for \ttH process                                                                      \\ \hline
-\end{tabular}}
-\end{table}

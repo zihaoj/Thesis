@@ -1,5 +1,6 @@
 \label{sec:vbf-likelihood}
-\subsection{Profile Likelihood and yield determination}
+
+\subsubsection{Yield and likelihood}
 The negative log-likelihood is constructed as shown in Equation~\ref{likelihood}, 
 where $Y_{ijk}$ denotes the yield of $k^{th}$ bin of $j^{th}$ region of $i^{th}$ channel. 
 Nuisance parameters, which have external constraints $f(\alpha_l)$, are penalized in the negative log-likelihood. 
@@ -49,10 +50,8 @@ Eq.\ref{yield_float} adopts the strategy floating the $Z$ contributions in all B
 
 \subsubsection{Fits on toy experiments}
 
-To determine if the fit procedure yields bias, we build 2000 toy experiments from the background function determined in background only fit and inject the \zjets{} component fixed at the Standard Model prediction. The Higgs signals are injected of different strengths at $\mu_{inj} = 0.5, 1.0, 2.0, 5.0$. The pulls of the toy experiment fits defined as $(\mu_{fit}-\mu_{inj})/ \sigma$ are shown in Figures \ref{fig:MCToy}. The distributions of pulls are fitted with Gaussian distribution to determine means and widths, which are consistent with 0 and 1, respectively, within statistical uncertainties. For $\mu_{inj}=1.0$ test, as shown in Figures~\ref{fig:2cenAsimov} and~~\ref{fig:4cenAsimov}, we fit back $\hat{\mu}=1.0\pm 1.9$. %treating all NPs except the analytical background parameterization and normalization as systeamtics. 
+To determine if the fit procedure yields bias, we build 2000 toy experiments from the background function determined in background only fit and inject the \zjets{} component fixed at the Standard Model prediction. The Higgs signals are injected of different strengths at $\mu_{inj} = 0.5, 1.0, 2.0, 5.0$. The pulls of the toy experiment fits defined as $(\mu_{fit}-\mu_{inj})/ \sigma$ are shown in Figures \ref{fig:MCToy}. The distributions of pulls are fitted with Gaussian distribution to determine means and widths, which are consistent with 0 and 1, respectively, within statistical uncertainties. For $\mu_{inj}=1.0$ test, we fit back $\hat{\mu}=1.0\pm 1.9$. %treating all NPs except the analytical background parameterization and normalization as systeamtics. 
 The expected signal significance in this case is 0.54. The dominant uncertainty is statistical which encompasses the normalization and parameterization of the non-resonant background. The Z signal strength is shown in Table \ref{tab:zstrength}. The effective combined Z signal strength is $1.0\pm 0.1$. %(If we adopt the strategy to only float the $Z$ contribution in SR I and SR II of \twocentral channel, we get $\hat{\mu}=1.00\pm 1.35$). 
- The uncertainties and pulls in the fit are shown in Figure~\ref{fig:pull_asimov} and the correlation matrix is shown in Figure~\ref{fig:corr_asimov}.  We observe, as expected, the Higgs signal is mildly anti-correlated with background normalization, Z strength and spurious signal size. The Z signal strength also shows as expected to be anti-correlated to background normalization given the degeneracy between the Z mass region and the low-mass sideband. The background parameters within a given channel are highly correlated as the variation of the contribution of one base function will need the variation of other bases to maintain the same background shape. 
-
 
 \begin{figure}[htbp]
   \centering
@@ -63,28 +62,6 @@ The expected signal significance in this case is 0.54. The dominant uncertainty 
 \caption{Pull distribution of toy experiment fits. We inject Higgs signal strength of 0.5 (top left), 1.0 (top right), 2.0 (bottom left) and 5.0 (bottom right) times the Standard Model prediction. The pulls are fitted with Gaussian to determine the means and widths which are unbiased. }
   \label{fig:MCToy}
 \end{figure}
-
-
-\begin{figure}[htbp]
-  \centering
- \includegraphics[width=0.48\textwidth]{figures/VBF/Asimov_testVBF_ICHEP_2cen_SRI.pdf}
- \includegraphics[width=0.48\textwidth]{figures/VBF/Asimov_testVBF_ICHEP_2cen_SRII.pdf}\\
-\caption{Asymptotic Asimov fits for SRI and SRII for the \twocentral channel.}
-  \label{fig:2cenAsimov}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
- \includegraphics[width=0.48\textwidth]{figures/VBF/Asimov_testVBF_ICHEP_4cen_SRI.pdf}
- \includegraphics[width=0.48\textwidth]{figures/VBF/Asimov_testVBF_ICHEP_4cen_SRII.pdf}
- \includegraphics[width=0.48\textwidth]{figures/VBF/Asimov_testVBF_ICHEP_4cen_SRIII.pdf}
- \includegraphics[width=0.48\textwidth]{figures/VBF/Asimov_testVBF_ICHEP_4cen_SRIV.pdf}\\
-
-\caption{Asymptotic Asimov fits for SRI to SRIV for the \fourcentral channel.}
-  \label{fig:4cenAsimov}
-\end{figure}
-
-
 
 \begin{table}[htbp]
 \centering
@@ -102,17 +79,43 @@ SR IV, \fourcentral  & $ 1.00 \pm 0.2$             \\ \hline
 \end{tabular}
 \end{table}
 
-\begin{figure}[htbp]
-  \centering
- \includegraphics[width=0.9\textwidth]{figures/VBF/VBFHbb_Asimov_pulls_125.pdf}
- \caption{Nuisance parameter post-fit impact ($>1$ \%) and pulls are plotted for the simultaneous Asimov fit. Only the constrained NPs are shown. The uncertainties follow the naming defined in Table. \ref{tab:systnames}. The leading systematics are the jet energy scale and jet energy resolution}
-  \label{fig:pull_asimov}
-\end{figure}
+
+
+%The uncertainties and pulls in the fit are shown in Figure~\ref{fig:pull_asimov} and the correlation matrix is shown in Figure~\ref{fig:corr_asimov}.
+The fit correlation matrix is shown in Figure~\ref{fig:corr_asimov}. We observe, as expected, the Higgs signal is mildly anti-correlated with background normalization, Z strength and spurious signal size. The Z signal strength also shows as expected to be anti-correlated to background normalization given the degeneracy between the Z mass region and the low-mass sideband. The background parameters within a given channel are highly correlated as the variation of the contribution of one base function will need the variation of other bases to maintain the same background shape. 
+
+
+%\begin{figure}[htbp]
+%  \centering
+% \includegraphics[width=0.48\textwidth]{figures/VBF/Asimov_testVBF_ICHEP_2cen_SRI.pdf}
+% \includegraphics[width=0.48\textwidth]{figures/VBF/Asimov_testVBF_ICHEP_2cen_SRII.pdf}\\
+%\caption{Asymptotic Asimov fits for SRI and SRII for the \twocentral channel.}
+%  \label{fig:2cenAsimov}
+%\end{figure}
+%
+%\begin{figure}[htbp]
+%  \centering
+% \includegraphics[width=0.48\textwidth]{figures/VBF/Asimov_testVBF_ICHEP_4cen_SRI.pdf}
+% \includegraphics[width=0.48\textwidth]{figures/VBF/Asimov_testVBF_ICHEP_4cen_SRII.pdf}
+% \includegraphics[width=0.48\textwidth]{figures/VBF/Asimov_testVBF_ICHEP_4cen_SRIII.pdf}
+% \includegraphics[width=0.48\textwidth]{figures/VBF/Asimov_testVBF_ICHEP_4cen_SRIV.pdf}\\
+%
+%\caption{Asymptotic Asimov fits for SRI to SRIV for the \fourcentral channel.}
+%  \label{fig:4cenAsimov}
+%\end{figure}
+
+
+%\begin{figure}[htbp]
+%  \centering
+% \includegraphics[width=0.9\textwidth]{figures/VBF/VBFHbb_Asimov_pulls_125.pdf}
+% \caption{Nuisance parameter post-fit impact ($>1$ \%) and pulls are plotted for the simultaneous Asimov fit. Only the constrained NPs are shown. The uncertainties follow the naming defined in Table. \ref{tab:systnames}. The leading systematics are the jet energy scale and jet energy resolution}
+%  \label{fig:pull_asimov}
+%\end{figure}
 
 
 \begin{figure}[htbp]
   \centering
- \includegraphics[width=0.95\textwidth]{figures/VBF/Correlation.pdf}
+ \includegraphics[width=0.8\textwidth]{figures/VBF/Correlation.pdf}
 
 \caption{Nuisance parameter correlation for Asimov fit. Only parameters with $>0.2$ correlations are shown. The background normalizations are pre-fixed as ``nbkg''. The spurious signal size are pre-fixed as ``sp''. The background parameterizations are pre-fixed as ``a1,a2,...,a5'' as defined in \ref{eq:bernstein}. The Z floating parameters are pre-fixed as ``sf\_z''. }
   \label{fig:corr_asimov}

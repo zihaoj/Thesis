@@ -1,18 +1,30 @@
-The following performance plots are produced from simulated $t\bar{t}$ production corresponding to $\sqrt{s}=$13~TeV proton-proton collisions.
-Events are generated with the next-to-leading order generator \powheg{}~\cite{bib:powheg} and the \textsc{CT10}~\cite{Lai:2010vv} parton distribution functions, interfaced with \pythia{}~\cite{pythia2} for parton showing and fragmentation. \textsc{EvtGen}~\cite{Lange:2001uf} is used to model the decays of the $b$ and $c$-hadrons. Minimum bias interactions are generated with \textsc{Pythia8}~\cite{Pythia8} and are overlaid on the $t\bar{t}$ events. Particles are passed through the ATLAS detector simulation~\cite{atlas_simulation} which is based on \textsc{GEANT4}~\cite{geant}.
+The simulated $t\bar{t}$ production corresponding to $\sqrt{s}=$13~TeV proton-proton
+collisions is used to evaluate tagger performance. Events are generated with the
+next-to-leading order generator \powheg{}~\cite{bib:powheg} and the \textsc{CT10}~\cite{Lai:2010vv}
+parton distribution functions, interfaced with \pythia{}~\cite{pythia2} for parton showing and
+fragmentation. \textsc{EvtGen}~\cite{Lange:2001uf} is used to model the decays of
+the $b$ and $c$-hadrons. Minimum bias interactions are generated with \textsc{Pythia8}~\cite{Pythia8}
+and are overlaid on the $t\bar{t}$ events. Particles are passed through the ATLAS detector
+simulation~\cite{atlas_simulation} which is based on \textsc{GEANT4}~\cite{geant}.
 
-
-Events are selected by requiring a reconstructed primary vertex. \todo{cite primary vertex paper}If the event has several candidate vertices, the primary vertex is defined as the vertex with the largest sum of squared transverse momenta of the associated tracks. Jets are reconstructed by clustering energy deposits in the calorimeter with the anti-$k_t$ algorithm~\cite{AntiKt} and a radius parameter of 0.4, where clusters are calibrated at the electromagnetic  energy scale and the hadronic scale is obtained through a transverse momentum, $\pt$, and pseudorapidity\footnote{ATLAS uses a right-handed coordinate system with its origin at the nominal interaction point in the centre of the detector and the $z$-axis along the beam pipe. The $x$-axis points from the interaction point to the centre of the LHC ring, and the $y$-axis points upward. Cylindrical coordinates $(r,\phi)$ are used in the transverse plane, $\phi$ being the azimuthal angle around the $z$-axis. The pseudorapidity is defined in terms of the polar angle $\theta$ as $\eta=-\ln\tan(\theta/2)$, and the $\Delta R$ between two objects is defined in terms of angular separation in $\eta$ and $\phi$, $\Delta R = ((\Delta \eta)^2 + (\Delta \phi)^2)^{1/2}$},$\eta$, dependent correction factor. A preliminary version of the Run-2 jet energy scale calibration is applied to the jets~\cite{JES}. In this note, only jets with $\pt$ above 20 GeV and $|\eta| < 2.5$ are considered.
-A jet vertex tagger (JVT) is used to reject jets from pileup~\cite{JVT}.
+Event vertex, track and jet reconstructions follow exactly the same approach as described in \ref{sec:vbf-objsel}.
+Events are selected by requiring a reconstructed primary vertex. The anti-$k_t$ R=0.4 jets with JVT pile-up cleaning are used for this study.
 
 The tracks used in the $b$-tagging algorithms are associated to jets
-using the angular separation $\Delta R$ between the track and the jet axis. The $\Delta R$ requirement varies as a
-function of jet $\pt$, being wide for low $\pt$ jets and narrower for high $\pt$ jets which tend to be more
-collimated. For instance, at 20~GeV, it is $\Delta R<0.45$ while for more energetic jets with a $\pt$ of 150~GeV the
-threshold is $\Delta R<0.26$~\cite{ref:btagPaper}.
-A similar geometric matching scheme is used to label jets as $b$, $c$, light, or $\tau$ jets in simulation~\cite{ATL-PHYS-PUB-2015-022}.
+using the angular separation $\Delta R$ between the track and the jet axis.
+The $\Delta R$ requirement varies as a function of jet $\pt$,
+being wide for low $\pt$ jets and narrower for high $\pt$ jets which tend to be more
+collimated~\cite{ref:btagPaper}.
+A similar geometric matching scheme to match jets with truth $B$-hadrons, $C$-hadrons and $\tau$-leptons
+is used to label the flavor jets as $b$, $c$, light, or $\tau$ jets in simulation as described in ~\cite{ATL-PHYS-PUB-2015-022}.
 
-The MV2c10 high-level $b$-tagging algorithm~\cite{ATL-PHYS-PUB-2016-012} employs a boosted decision tree based on jet kinematics and properties computed from an impact parameter tagging algorithm (IP3D), an inclusive secondary vertex finding algorithm (SV1),  and a decay chain vertex finding algorithm (JetFitter). MV2c10 is trained with $b$-jets as signal, and a mix of approximately 89\% light-flavor jets, 4\% $tau$ jets and 7\% $c$-jets as background. More detailed descriptions of these algorithms can be found in references~\cite{ref:btagPaper,ATL-PHYS-PUB-2015-022,ATL-PHYS-PUB-2016-012}.
-
-For a jet to be considered $b$-tagged, the output of the multivariate $b$-tagging algorithm is required to be above a fixed threshold value. Several such thresholds, or ``working points'' (WP), are defined, in such a way as to correspond to a well-defined average efficiency when applied to $b$-jets from a sample of inclusive $t\bar{t}$ events. In this note, emphasis will be placed on WP that are tuned to an average 70\% $b$-tagging efficiency. In addition, ``flat efficiency" working points will also be discussed, in which the threshold for the tagger discriminant is varied with jet $\pt$ in order to achieve an uniform efficiency as a function of $\pt$.
-
+A jet is considered as $b$-tagged if the output
+discriminant of the tagging algorithm
+is above certain threshold. Several such thresholds,
+or ``working points'' (WP), are defined, in such a way as to correspond to
+a average efficiency when applied to $b$-jets from a sample of
+inclusive $t\bar{t}$ events. This study focuses on the tagger performance at
+70\% $b$-tagging efficiency WP, which would retain the majority of the $b$-jets.
+In addition, tagger performance for ``flat efficiency" working points will also be considered,
+which are $\pt$ dependent threshold for the tagger discriminant such that the \btagging efficiency
+is uniform as a function of $\pt$.

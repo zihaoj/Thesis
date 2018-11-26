@@ -78,7 +78,7 @@
 \subsection{L1 and HLT}
 \subsection{FastTracKer}
 
-\chapter{Physics Objects Reconstruction}
+\chapter{Physics Objects Reconstruction and Identification}
 \label{chap:reconstruction}
 \section{ID Tracks and Vertices}
 \section{Jets}
@@ -92,12 +92,14 @@
 \label{chap:vbf}
 \section{Introduction}
 \input{chapters/VBF/intro}
+\clearpage
 
 \section{Datasets}
 \subsection{Simulations}
 \input{chapters/VBF/mc}
 \subsection{Data}
 \input{chapters/VBF/data}
+\clearpage
 
 \section{Selections}
 \subsection{Objects}
@@ -106,33 +108,35 @@
 \input{chapters/VBF/evtsel}
 \subsection{Event Weights}
 \input{chapters/VBF/weights}
+\clearpage
 
 \section{Multi-variate Analysis}
 \input{chapters/VBF/bdt}
+\clearpage
 
 \section{Statistical Analysis}
-\subsection{Signal and \zjets Parameterization}
-\input{chapters/VBF/signalandz}
-\subsection{Non-resonant Background Estimation}
-\input{chapters/VBF/fitbkgds}
-\subsection{Uncertainties}
-\input{chapters/VBF/uncertainties}
-\subsection{Binned Likelihood Maximization}
-\input{chapters/VBF/likelihood}
+\input{chapters/VBF/statanalysis}
+\clearpage
+
 \section{Results}
-\subsection{VBF Unblinded Results}
+\subsection{VBF \Hbb Unblinded Results}
 \input{chapters/VBF/results}
 \subsection{Combination with other Higgs analyses}
 %\input{chapters/VBF/combination}
+
+\clearpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%  RNN b-tagging
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Identification of bottom quarks with Recurrent Neural Network}
+\chapter{Identification of $b$-quarks with Recurrent Neural Network}
 \label{chap:btagging}
 \section{Introduction}
 \input{chapters/RNN/intro}
+
+\section{Datasets and Object Definition}
+\input{chapters/RNN/samples}
 
 \section{Recurrent Neural Network for \btagging}
 \input{chapters/RNN/rnn}
@@ -204,6 +208,14 @@ need to fill in
 \chapter{Conclusions}
 
 \appendix
+\chapter{Auxiliary Materials for VBF \Hbb Analysis}
+\section{Input Variables for BDT}
+\input{chapters/VBF/app-bdtinput}
+\section{Definition of Bernstein Functions}
+\input{chapters/VBF/app-bernstein}
+\section{Non-resonant Background Function Choice}
+\input{chapters/VBF/app-nonresbkg}
+
 \chapter{Design of the FTK DataFormatter Firmware}
 \chapter{Fast Simulation of Pattern Based Tracking Algorithm with Generative Adversarial Networks}
 \chapter{Adversarial Neural Network for Feature Invariant Classification Problem}
