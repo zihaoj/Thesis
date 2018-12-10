@@ -1,0 +1,14 @@
+\label{sec:cnn-cnn}
+
+Rule-based and closed-form solutions to image classification problems were the main stream techniques until the advent of deep CNNs. The AlexNet in 2012's ImageNet contest suddenly improved the performance of image classifiers by a significant margin and profoundly changed the landscape of this research area.
+
+CNNs are a class of neural networks based on convolutional layers which are modular sets of weights (convolutional filters) that operate on a small $m\times n$ patch of the input image at a time. The output of each filter is the dot-product between the weights and the pixels in the corresponding patch. Each filter is then \emph{convolved} with the input image, sliding across the entire image with a pre-determined stride and taking dot-products. It is important to note that the same set of weights for a given filter is used for the entire image otherwise the number of parameters for a CNN will explode and the network is impossible to train. The output of the operation is a new convolved image with size smaller or equal to the original image. A non-linear activation function is typically applied to each pixel of the convolved image.
+Common to CNN architectures are non-covolutional down-sampling layers such as Max-pooling~\cite{MAXPOOL}.
+Such layer takes non-overlapping patches of convolution outputs as input, and outputs the maximum value for each patch.
+Typical CNNs are built with convolutional layers interleaved with pooling layers. 
+
+%The depth of the network is determined by the number of convolutions concatenated in the network.
+%The sets of filters, the activations and the Max-pooling constitute the fundamental building block for CNNs.
+
+
+

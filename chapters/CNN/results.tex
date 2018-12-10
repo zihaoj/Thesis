@@ -1,17 +1,31 @@
+Overall, the performance of CNN tagger is better than the jet level quantities and their combination in both kinematic regimes considered, $150<\pt<200~\GeV$ and $400<\pt<500~\GeV$.
+
+\begin{figure}[htpb]
+\begin{center}
+\subfloat[][]{\includegraphics[width=0.5\textwidth]{figures/CNN/ROC_pt150_200_classifier.pdf}\label{lowpt}}
+\subfloat[][]{\includegraphics[width=0.5\textwidth]{figures/CNN/ROC_pt400_500_classifier.pdf}\label{highpt}}
+\caption{Gluon jet rejection as a function of the quark jet efficiency using physics motivated observables and jet image discriminants
+for jets with \protect\subref{lowpt} $150<\pt<200~\GeV$ and \protect\subref{highpt} $400<\pt<500~\GeV$.  The LLH is a tagger constructed from the optimal (likelihood) combination of $n_\text{track}$ and jet width. }
+\label{fig:classifiers}
+\end{center}
+\end{figure}
+
+The rest of the study probes where and how the CNN is able to outperform simple jet quantities as discriminant and its limitations.
+
 \subsection{Inputs}
 
-The performance of the CNN tagger strongly depends on the choice of physics objects used to build the input images.
-Each input type is affected by experimental effects in different ways. 
-Tracks only account for the charged particles in the jet; 
-calorimeter towers include both charged and neutral component of the shower, but do not attempt to resolve individual particles. 
-Calorimeter clusters aim at retaining the full granularity of the calorimeters while applying a zero suppression. 
-They often merge close by particles and have a worse energy resolution than the track momentum resolution at low 
-and moderate particle $p_\text{T}$.
-In addition, both calorimeter towers and clusters are more strongly affected by pile-up contributions.
-Figure~\ref{fig:cnn-input} shows that the best discriminating performance is achieved by combining tower or topocluster images and track images as input for the CNN tagger.
-The two types of image are stacked so that the input to the CNN is a multi-dimensional array of size $16\times 16\times 2$.
-In the lower $p_\text{T}$ range shown in Fig.~\ref{fig:cnn-input}, this combination actually saturates the achievable performance at low $p_\text{T}$ bound set by using truth particles.  
-There is a small gap in the higher $p_\text{T}$ bin, suggesting further experimental improvements may help improve performance. 
+As mentioned in Sec.\ref{sec:cnn-image}, three types input images are considered for the study at reconstruction level.
+It is expected that the tagger based on different inputs would have different performance as they are affected
+by different experimental effects. While the calorimeter towers and cluster images include both neutral and charged quark
+and gluon decay daughters, the tracks only account the charged particles the momenta of which have better resolution
+in general for low and moderate \pt particles. While the tower images have fixed spatial resolution,
+clusters retains the full granularity of the calorimeters. The calorimeter based images shall have larger dependence on pile-ups.
+The best CNN q/g tagger performance is obtained using combined image of calorimeter tower and track images as shown in
+Figure~\ref{fig:cnn-input}.
+The two types of image can be thought as two different colors of the image and hence the input image is of size $16\times 16\times 2$.
+As shown in the left plot of Fig.~\ref{fig:cnn-input}, the reconstruction image at low \pt regime can achieve performance as good as
+the truth image which has full resolution. This suggests that the image formation is optimal and reached the theoretical best. On the other hand,
+there is a small performance gap between the truth and reconstructed image for high \pt regime as shown in the right plot of Fig.~\ref{fig:cnn-input}.
 
 \begin{figure}[htpb]
 \begin{center}
@@ -23,50 +37,55 @@ for jets with \protect\subref{lowpt} $150<\pt<200~\GeV$ and \protect\subref{high
 \end{center}
 \end{figure}
 
-The difference between the full truth-particle line and the calorimeter + reconstructed tracks lines in Figure~\ref{fig:cnn-input} 
-depends on many details of the detector response, angular resolution, reconstruction efficiency, etc.  
-However, it is possible to isolate one component of the difference by focusing only on the charged-particles.  Figure~\ref{fig:cnn-tracktruth}(a) shows the performance of a track-only-image at both particle-level and detector-level.  As might be expected, due to the precise measurement of charged-particle trajectories, there is little difference between the particle- and detector-levels.  Degradation due to efficiency and resolution effects are only expected at much lower and higher transverse momenta.
+
+%The difference between the full truth-particle line and the calorimeter + reconstructed tracks lines in Figure~\ref{fig:cnn-input} 
+%depends on many details of the detector response, angular resolution, reconstruction efficiency, etc.  
+%However, it is possible to isolate one component of the difference by focusing only on the charged-particles.  Figure~\ref{fig:cnn-tracktruth}(a) shows the performance of a track-only-image at both particle-level and detector-level.  As might be expected, due to the precise measurement of charged-particle trajectories, there is little difference between the particle- and detector-levels.  Degradation due to efficiency and resolution effects are only expected at much lower and higher transverse momenta.
+
+
+\subsection{Detector Regions and Pile-ups}
+\label{sec:cnn-detectorregion}
+
+The robustness of the CNN q/g tagger is tested against experimental effects. In particular, the $\eta$ and pile-up effects are tested,
+by training the tagger for the full range of different conditions and test tagger in a particular phase space.
+For the jets considred in this study, part of them are fully within the barrel of the calorimeter $|\eta|<2.1$ and some of them
+are in the barrel-endcap transition region $1.2<|\eta|<2.1$. As shown in Fig.\ref{fig:cnn-tracktruth} the $|\eta|$ dependence is negligible. 
+
+%Both tower and topocluster inputs are projected onto a regular grid, but variations in the underlying geometry of the calorimeter could have an impact on performance.  
+%Focusing on towers, Figure~\ref{fig:tracktruth}(b) shows that similar performance is achieved when testing the tagger on jets that are predominately in the barrel ($|\eta|<1.2$) 
+%to those that are in the transition region between the barrel and endcap calorimeters ().
+%The full $|\eta|$ range ($|\eta|<2.1$) is used for training.
 
 \begin{figure}[htpb]
 \begin{center}
-\subfloat[][]{\includegraphics[width=0.5\textwidth]{figures/CNN/ROC_pt150_200_track.pdf}\label{tracktruth}}
-\subfloat[][]{\includegraphics[width=0.5\textwidth]{figures/CNN/ROC_pt150_200_eta.pdf}  \label{kinematics}}
-\caption{Gluon jet rejection as a function of the quark jet efficiency using the CNN tagger for jets with $150<\pt<200~\GeV$.
-\protect\subref{tracktruth} Comparison between using track images and truth charge particle images as input.
-\protect\subref{kinematics} Comparison between different $|\eta|$ ranges. The full $|\eta|$ range ($|\eta|<2.1$) is used for training.}
+ \includegraphics[width=0.6\textwidth]{figures/CNN/ROC_pt150_200_eta.pdf}
+\caption{Gluon jet rejection as a function of the quark jet efficiency using the CNN tagger for jets with $150<\pt<200~\GeV$ in different $|\eta|$ regions}
+%\protect\subref{tracktruth} Comparison between using track images and truth charge particle images as input.
+%\protect\subref{kinematics} Comparison between different $|\eta|$ ranges. The full $|\eta|$ range ($|\eta|<2.1$) is used for training.}
 \label{fig:cnn-tracktruth}
 \end{center}
 \end{figure}
 
 \subsection{Pile-ups}
+\label{sec:cnn-pile-ups}
 
-The impact of pileup effects on the performance of the CNN tagger is evaluated 
-by considering events with a different number of reconstructed primary vertices ($N_\text{PV}$).
-The test sample is divided into three bins: $N_\text{PV}<13$, $13<N_\text{PV}<20$ and $N_\text{PV}>20$.  
-The distributions of the pixel intensities do vary with pileup, 
-but the performance of the CNN tagger is found to be robust. 
-This is demonstrated by Figure~\ref{fig:cnn-pileup}. 
-% shows that the efficiencies for a specific working point vary with the pileup conditions (by a similar amount as jet width), but the overall discriminating performance is not significantly degraded (ROC curve is largely invariant).
+The impact of pileup effects is also evaluated as the tower image is subject to contamination from pileup objects
+. The test sample is divided into both bins of $N_\text{PV}$
+and bins of $\mu$. As shown in Fig.~\ref{fig:cnn-pileup} and \ref{fig:cnn-pileup2}, the tagger is also robust agaisnt
+to in-time ($N_\text{PV}$) as well as out-of-time pile-up ($\mu$) variations.
 
 \begin{figure}[htpb]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{figures/CNN/ROC_pt150_200_NPV.pdf}
-%\subfloat[][]{\includegraphics[width=0.5\textwidth]{figures/roc/ROC_pt150_200_NPV.pdf}\label{roc}}
-%\subfloat[][]{\includegraphics[width=0.5\textwidth]{figures/roc/NPVEff.pdf}\label{eff}}
 \caption{Gluon jet rejection as a function of the quark jet efficiency %\protect\subref{roc} 
 evaluated at different pileup conditions, 
 quantified by the number of reconstructed primary vertices ($N_\text{PV}$).}
-%\protect\subref{eff} 
-%Quark and gluon jet efficiency as a function of NPV for the CNN tagger.
-%Jets are selected by requiring a minimum value of the CNN tagger, 
-%where the threshold is chosen to give an overall 60\% quark jet efficiency.
-%The efficiencies for jet width are shown for reference.}
 \label{fig:cnn-pileup}
 \end{center}
 \end{figure}
 
-Calorimeter-based discrimination is not only effected by in-time pileup (quantified by $N_\text{PV}$) but also by out-of-time pileup. 
-Figure~\ref{fig:cnn-pileup2} compares the tagger performance in two different regimes of the average number of collisions per bunch crossing ($\mu$) regimes corresponding to the out-of-time pileup representative of LHC Run 2 conditions.
+%Calorimeter-based discrimination is not only effected by in-time pileup (quantified by $N_\text{PV}$) but also by out-of-time pileup. 
+%Figure~\ref{fig:cnn-pileup2} compares the tagger performance in two different regimes of the average number of collisions per bunch crossing ($\mu$) regimes corresponding to the out-of-time pileup representative of LHC Run 2 conditions.
 
 \begin{figure}[htpb]
 \begin{center}
@@ -82,28 +101,29 @@ The two $\mu$ bins where chosen to have roughly the same number of events.}
 
 \subsection{Modeling}
 
-Quark versus gluon tagging is sensitive to the detailed modeling of perturbative and non-perturbative effects involved with fragmentation.  
-We compare images and image classification performance with two very different fragmentation models.  
-Figure~\ref{fig:cnn-avg:pythiasherpa} shows the average image (differences) between quark and gluon jets simulated with 
-\textsc{Pythia} 8 and with \textsc{Herwig++}.  
-The radiation pattern inside gluon jets is similar between the two models, whereas there are larger differences for quark jets.  
-In particular, quark and gluon jets are more different according to \textsc{Pythia} 8 relative to \textsc{Herwig++}.  
-This is observed with the CNN in Fig.~\ref{fig:cnn-pythiasherpa}.  
-As gluon jets in \textsc{Herwig++} are more similar to quark jets than in \textsc{Pythia} 8, 
-any observable (including the CNN tagger output) tends to have less discrimination power when tested in \textsc{Herwig++}.
-The training sample determines the nature of the observable the CNN tagger learns. 
-By comparing the CNN tagger trained on \textsc{Pythia} 8 events with the one trained on \textsc{Herwig++} events
-using the same test sample (\textsc{Pythia} 8),
-we see a smaller discrepancy, indicating that the learned feature is not strongly sensitive 
-to the difference between \textsc{Pythia} 8 and \textsc{Herwig++}.
-\textsc{Pythia} 8 and \textsc{Sherpa} produce relatively similar images and so unsurprisingly, 
-the CNN performance is similar when trained/tested on either of these generators.  
-As also noted by Ref.~\cite{Barnard:2016qma}, when generators produce different images, 
-the CNN returns a different performance when training and testing with images from various simulators.  
-However, if the same network is used for testing and only the training sample is varied, 
-the gap in performance is mostly removed (see also~\cite{Komiske:2016rsd}).  
-One explanation is that the network is learning robust features for quark versus gluon tagging, 
-but the degree to which the features are expressed in the radiation patterns varies between generators.
+Fragmentation modeling could affect significantly the descriptions of quark and gluon jets and hence
+the performance of the CNN q/g tagger.
+Figure~\label{fig:cnn-avg:CNN} shows that the average image of quark and gluon jets simulated in 
+\textsc{Pythia} 8 and with \textsc{Herwig++}. It is noteworthy that there is a more significant difference between
+quark and gluon jets in \textsc{Pythia} 8 images as compared to that of \textsc{Herwig++}. Such difference mainly comes
+from the description of the quark jets. 
+
+%The radiation pattern inside gluon jets is similar between the two models, whereas there are larger differences for quark jets.  
+%In particular, quark and gluon jets are more different according to  relative to 
+%This is observed with the CNN in Fig.~\ref{fig:cnn-pythiasherpa}.
+%As gluon jets in \textsc{Herwig++} are more similar to quark jets than in \textsc{Pythia} 8, 
+%any observable (including the CNN tagger output) tends to have less discrimination power when tested in \textsc{Herwig++}.
+
+Although the images from \textsc{Pythia} 8 and \textsc{Herwig++} are different
+we would still want to know if the CNN tagger trained with these different images
+would still learn the essential difference between quark and gluons. Following the study
+of ~\cite{Barnard:2016qma}, the two networks are separately trained with \textsc{Pythia} 8 and \textsc{Herwig++}
+images and each of them is then tested on \textsc{Pythia} 8, \textsc{Sherpa} and \textsc{Herwig++}
+images. We noticed that the  if the same network is used for testing and only the training sample is varied, 
+the performance gap is small (see also~\cite{Komiske:2016rsd}) while the difference is large
+if the testing samples are different (mainly between \textsc{Pythia} and \textsc{Herwig++}).
+Hence the network is robust against the different fragmentation models and gives
+us the confidence applying the MC trained networks to data.
 
 \begin{figure}[htpb]
 \begin{center}
