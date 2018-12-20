@@ -19,6 +19,7 @@
 \usepackage{amsmath,diagbox,tabu}
 \usepackage{amsfonts}
 \usepackage{mathtools}
+\usepackage{slashed}
 
 
 \dept{Physics}
@@ -47,21 +48,18 @@
 
 \chapter{Standard Model and Theory of the Higgs Boson}
 \label{chap:theory}
-\section{Standard Model}
-\subsection{Particles as Fields}
-\subsection{Gauge Theory}
-\subsection{Quantum Chormodynamics}
+\input{chapters/theory/theory}
+
+\section{Field Theory and Standard Model}
+\input{chapters/theory/sm}
 
 \section{Higgs Physics}
+\input{chapters/theory/higgs}
 
-\subsection{The Broken Symmetry}
-\subsection{Unification of EW and Higgs Mechanism}
-\subsection{Higgs Phenomenology}
 
 \chapter{The Large Hadron Collider}
 \label{chap:collider}
-\section{Design of the Machine}
-\section{Luminosity and Energy}
+\input{chapters/LHC/LHC}
 
 \chapter{ATLAS Detector}
 \label{chap:detector}
@@ -121,7 +119,7 @@
 \section{Results}
 \subsection{VBF \Hbb Unblinded Results}
 \input{chapters/VBF/results}
-\subsection{Combination with other Higgs analyses}
+\subsection{Higgs Combination}
 %\input{chapters/VBF/combination}
 
 \clearpage
@@ -134,18 +132,24 @@
 \label{chap:btagging}
 \section{Introduction}
 \input{chapters/RNN/intro}
+\clearpage
 
 \section{Datasets and Object Definition}
 \input{chapters/RNN/samples}
+\clearpage
 
 \section{Recurrent Neural Network for \btagging}
 \input{chapters/RNN/rnn}
+\clearpage
 
 \section{RNN IP Tagger}
 \input{chapters/RNN/implementation}
+\clearpage
 
 \section{Performance}
 \input{chapters/RNN/results}
+
+\clearpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -156,59 +160,77 @@
 \section{Introduction}
 \input{chapters/CNN/intro}
 
+\clearpage
+
 \section{Datasets and Jet Labeling}
 \input{chapters/CNN/sample}
+\clearpage
 
 \section{Jets as Images}
 \input{chapters/CNN/images}
+\clearpage
 
 %\section{Convolutional Neural Network}
 %\input{chapters/CNN/cnn}
 
 \section{CNN q/g tagger}
 \input{chapters/CNN/tagger}
+\clearpage
 
 \section{Performance}
 \input{chapters/CNN/results}
+\clearpage
 
 \section{Visualization}
 \input{chapters/CNN/learning}
-
-\section{Limitations}
-
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%  gbb
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Measuremnts of $g\rightarrow b\bar{b}$ splitting in dense environment}
+\chapter{Measuremnts of \gbb splitting in dense environment}
 \label{chap:gbb}
 \section{Introduction}
 \input{chapters/gbb/intro}
+\clearpage
 
 \section{Vertex Variables}
+\label{sec:gbb-var}
 \input{chapters/gbb/variables}
+\clearpage
 
 \section{Dataset}
 \input{chapters/gbb/data}
+\clearpage
 
 \section{Selections}
+\label{sec:gbb-selection}
 \subsection{Objects}
 \input{chapters/gbb/objects}
 \subsection{Event Selection}
 \input{chapters/gbb/evtselection}
+\clearpage
 
-\section{Background Estimates}
+\section{Background Subtraction Method}
 \input{chapters/gbb/backgrounds}
+\clearpage
+
+\section{Background Estimate Results}
 \input{chapters/gbb/data_mc_comp}
+\clearpage
 
 \section{Unfolding}
+\label{sec:gbb-unfolding}
 \input{chapters/gbb/unfold}
+\clearpage
 
 \section{Results}
+\label{sec:gbb-results}
 \input{chapters/gbb/results}
+\clearpage
 
-\chapter{Prospects and Future Work}
 \chapter{Conclusions}
+\clearpage
 
 \appendix
 \chapter{Auxiliary Materials for VBF \Hbb Analysis}
@@ -219,9 +241,15 @@
 \section{Non-resonant Background Function Choice}
 \input{chapters/VBF/app-nonresbkg}
 
-\chapter{Design of the FTK DataFormatter Firmware}
-\chapter{Fast Simulation of Pattern Based Tracking Algorithm with Generative Adversarial Networks}
-\chapter{Adversarial Neural Network for Feature Invariant Classification Problem}
+\chapter{Auxiliary Materials for \gbb Analysis}
+\section{\subsdzero templates in Bins of Vertex Variables}
+\input{chapters/gbb/app-sd0templates}
+\clearpage
+\section{Systematic Uncertainty Size}
+\input{chapters/gbb/app-syssize}
+\clearpage
+\section{\subsdzero fits}
+\input{chapters/gbb/app-subsd0}
 
 \bibliographystyle{plain}
 \bibliography{bibtex/bib/ATLAS,bibtex/bib/CMS,bibtex/bib/ConfNotes,bibtex/bib/PubNotes,bibtex/vbf,bibtex/RNN,bibtex/qgnote,bibtex/gbb,bibtex/VBFPaper2016}
