@@ -1,14 +1,15 @@
 \label{sec:gbb-obj}
 
 \subsubsection{Primary Vertex and Track Selection}
-The primary hard scattering vertex for the event is chosen as the vertex with the highest $\sum p_{T}^{2}$ where the sum runs over the tracks associated to the vertex. Tracks which are used to determine the primary vertex need to pass the following selection:
-\begin{enumerate}
+The primary vertex is selected in the same way as defined in Sec.\ref{sec:vbf-objsel}.
+Tracks which are used in this study to build track jets need to pass the following requirements:
+\begin{itemize}
     \item $p_T>$ 0.5 GeV
     \item Number of Pixel hits greater than 1
     \item Number of SCT hits greater than 6
     \item $|d_0|<1$mm, with respect to primary vertex
     \item $|z_0\sin(\theta)|<1$mm, with respect to primary vertex
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{Jet Selection}
 In this study we use $R$=1.0 calorimeter jets and $R=0.2$ track jets. Calorimeter jets are clustered in $y-\phi$ space using the anti-$k_t$~\cite{Cacciari:2008gp} algorithm with $R=1.0$ reconstructed from topological calorimeter clusters~\cite{TopoClusters} using the local cluster weighting (LCW) algorithm \cite{EndcapTBelectronPion2002} and calibrated to account for the detector response. Track jets are reconstructed clustering inner detector tracks using the anti-$k_t$ algorithm and are required to have at least two tracks.
@@ -16,24 +17,23 @@ In this study we use $R$=1.0 calorimeter jets and $R=0.2$ track jets. Calorimete
 \noindent The $R = 1.0$ calorimeter jets are groomed using the trimming procedure~\cite{Krohn:2009th}, whereupon the $k_{t}$ subjets ~\cite{Cacciari200657} with $R=0.3$ are discarded if the fractional $p_{T}$ of the subject relative to the whole $R=1.0$ jet satisfies $f_\text{ cut}<0.05$.  
 
 \noindent The $R=0.2$ track jets are subject to the following selection, 
-\begin{enumerate}
+\begin{itemize}
 	\item $p_T>$10 GeV
 	\item $|\eta|<2.5$	
 	\item The track jet originates from the primary vertex (OriginIndex==0)
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{$b$-tagging}
 
-Jets are identified as $b$-jets using the multivariate discriminant $MV2c10$ \cite{btag} which includes impact parameter and secondary vertex information as inputs.  The chosen $MV2c10$ working point corresponds to an average $b$-tagging efficiency of 70\% for $b$-jets in simulated $t\bar{t}$ events.  
+Jets are identified as $b$-jets using the multivariate discriminant \textit{MV2c10} \cite{btag} which includes impact parameter and secondary vertex information as inputs. The chosen \textit{MV2c10} working point corresponds to an average $b$-tagging efficiency of 60\% for $b$-jets in simulated $t\bar{t}$ events.  
 
 \subsubsection{Ghost Association of Jets}
 
-We adopt a robust matching algorithm called ghost association~\cite{area} to associate $R=0.2$ track jets to $R=1.0$ jets. With this method, the 4-vector of the physics object is added to the inputs of the jet clustering algorithm but the object 4-vector has the $p_T$ set to an infinitesimal amount, hence called a ghost.  Jet clustering is then performed. This way, the ghost does not alter the clustering history, but the 4-vectors retain the original object direction and are clustered into a jet if the ghost 4-vector points within the active area of the jet.
+Ghost association~\cite{area} is adopted to associate $R=0.2$ track jets to $R=1.0$ jets. Similar to the ghost association of tracks to jet described in Sec.\ref{sec:vbf-objsel}, 4-vector of the track jets are added to the inputs of the calorimeter jet clustering algorithm but the object 4-vector has the $p_T$ set to an infinitesimal amount.  R=1.0 calorimeter jet clustering is then performed. R=0.2 track jets which are clustered into the R=1.0 calorimeter jet are then considered to be associated to the jet.  
 
 \subsubsection{Flavor Labeling of Jets in Simulation}
 
-The flavor content of the track jet is determined by ghost matching truth particles (weakly decaying $B$-hadrons and $c$-hadrons) to the track jet. For each jet, if a $B$-hadron is found to be associated to the jet, then the jet is labeled as a $b$-jet.  If there are no $B$-hadrons but a $c$-hadron is found to be associated to the jet, then the jet is labeled as a $c$-jet. Otherwise, the jet is labeled as a light-flavored jet. 
+The flavor content of the track jet is determined by ghost matching truth particles (weakly decaying $b$-hadrons and $c$-hadrons) to the track jet. For each jet, if a $b$-hadron is found to be associated to the jet, then the jet is labeled as a $b$-jet.  If there are no $b$-hadrons but a $c$-hadron is found to be associated to the jet, then the jet is labeled as a $c$-jet. Otherwise, the jet is labeled as a light-flavored jet. 
 
 \subsubsection{Truth Jets}
-
 All final state truth particles (ignoring truth pileup) with mean lifetimes longer than 30 ps, except muons and neutrinos, are used as input to the clustering of truth jets. 

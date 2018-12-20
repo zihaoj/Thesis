@@ -1,20 +1,22 @@
-In order to gain a deeper understanding of the physics learned by the CNN tagger, 
-we examine how the internal structure of the network relates to the properties of
-quark and gluon jets, following the strategy outlined in Ref.~\cite{deOliveira:2015xxd}.
-Figure~\ref{fig:correlation} shows, for each pixel of the jet image, the Pearson Correlation Coefficient
-of the pixel intensity with the final CNN tagger output.
-The intensity of the four pixels at the core of the jet are strongly correlated with CNN tagger output and
-are thus important to identify quark jets. The intensity of outer pixels in the jet image are instead anti-correlated with
-the CNN tagger output, in agreement with the intutition that gluon jets tend to feature a wider radiation pattern.
+Interpretability is always a concern for applying deep neural networks
+with complicated structures. It is essential for us to make sure that the
+CNN taggers we build yield results which at least conform to our physics intuition.
+The first cross check performed following the strategy in Ref.~\cite{deOliveira:2015xxd} calculates
+the Pearson Correlation Coefficient of the per pixel intensity with the CNN output score.
+As shown in Figure ~\ref{fig:correlation}, the pixel intensity of the core of the image is strongly
+ correlated with the output, meaning that the more heavily centered the image is the more likely
+the jet is a quark. The intensity of the outer peripheral pixels are anti-correlated with
+the CNN output, consistent with the fact that gluon jets tend to have a broader radiation pattern. 
 
-The discriminating information extracted by each convolutional filter can also be investigated.
-This is done by visualizing the average difference between the convolution of each filter with the input image for quark 
-and gluon jets.
-More formally, let $I_q$ and $I_g$ be the average quark and gluon jet images, respectively.
-The average difference between the convolution of a filter $w_i$ is obtained by computing $I_q * w_i - I_g * w_i$, where $*$ represents the convolution operator.
-The visualizations for the first convolutional layer of the CNN tagger are shown in Figure~\ref{fig:filters}.
-As the images are not rotated prior to training, 
-many of the filters are simply rotations of other filters.  Some of the filters show features that are readily interpretable in terms of physical notions such as the soft haze around a jet core, but others are more complex and require further study to understand.  
+The convolutional filters of CNN can be viewed as capturing features which are distinct to different
+class of images. Investigation of these filters will provide useful information of what the CNN regard as
+important difference between quarks and gluons. Formally, we examine the difference of applying the
+confolutional filters to the average image of quarks($I_q$) and gluons($I_g$), i.e. computing $I_q * w_i - I_g * w_i$,
+where $*$ is the convolution operator and $w_i$ denotes the individual filters. The visualizations for the
+filters in the first convolutional layer are shown in Figure~\ref{fig:filters}.
+Many such difference images are rotational copies of each other as the CNN is able to capture the rotational
+invariance. Some of these images are similar to the correlation plot in Figure ~\ref{fig:correlation} suggesting
+the radial image difference is one important feature while others are more complex. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -26,9 +28,6 @@ Per-pixel linear correlation with CNN tagger output.
 \end{center}
 \end{figure}
 
-The visualizations in Figures~\ref{fig:correlation} and~\ref{fig:filters} are an important start to probing 
-what the CNN is learning about the jet radiation pattern.  
- 
 \begin{figure}[htbp]
 \begin{center}
 \subfloat[][]{\includegraphics[width=0.9\textwidth]{figures/CNN/convimage_diff.pdf}}

@@ -66,17 +66,14 @@ are in the barrel-endcap transition region $1.2<|\eta|<2.1$. As shown in Fig.\re
 \end{center}
 \end{figure}
 
-\subsection{Pile-ups}
-\label{sec:cnn-pile-ups}
-
-The impact of pileup effects is also evaluated as the tower image is subject to contamination from pileup objects
+The impact of pileup effects is also evaluated as the calorimeter tower image is subject to contamination from pile-ups
 . The test sample is divided into both bins of $N_\text{PV}$
-and bins of $\mu$. As shown in Fig.~\ref{fig:cnn-pileup} and \ref{fig:cnn-pileup2}, the tagger is also robust agaisnt
+and bins of $\mu$. As shown in Fig.~\ref{fig:cnn-pileup} and \ref{fig:cnn-pileup2}, the tagger is robust agaisnt
 to in-time ($N_\text{PV}$) as well as out-of-time pile-up ($\mu$) variations.
 
 \begin{figure}[htpb]
 \begin{center}
-\includegraphics[width=0.5\textwidth]{figures/CNN/ROC_pt150_200_NPV.pdf}
+\includegraphics[width=0.6\textwidth]{figures/CNN/ROC_pt150_200_NPV.pdf}
 \caption{Gluon jet rejection as a function of the quark jet efficiency %\protect\subref{roc} 
 evaluated at different pileup conditions, 
 quantified by the number of reconstructed primary vertices ($N_\text{PV}$).}
@@ -115,15 +112,16 @@ from the description of the quark jets.
 %any observable (including the CNN tagger output) tends to have less discrimination power when tested in \textsc{Herwig++}.
 
 Although the images from \textsc{Pythia} 8 and \textsc{Herwig++} are different
-we would still want to know if the CNN tagger trained with these different images
-would still learn the essential difference between quark and gluons. Following the study
-of ~\cite{Barnard:2016qma}, the two networks are separately trained with \textsc{Pythia} 8 and \textsc{Herwig++}
+we still want to know if the CNN tagger trained with these different images
+would still learn the physics difference between quark and gluon jets. Following the study
+of ~\cite{Barnard:2016qma}, two networks are separately trained with \textsc{Pythia} 8 and \textsc{Herwig++}
 images and each of them is then tested on \textsc{Pythia} 8, \textsc{Sherpa} and \textsc{Herwig++}
-images. We noticed that the  if the same network is used for testing and only the training sample is varied, 
-the performance gap is small (see also~\cite{Komiske:2016rsd}) while the difference is large
+images. We noticed that the if the same network is used for testing and only the training sample is varied, 
+the performance gap is small (consistent with the result from ~\cite{Komiske:2016rsd}) while the difference is large
 if the testing samples are different (mainly between \textsc{Pythia} and \textsc{Herwig++}).
 Hence the network is robust against the different fragmentation models and gives
-us the confidence applying the MC trained networks to data.
+us the confidence applying the MC trained networks to data. Also, not surprisingly, since \textsc{Sherpa} employs similar fragmentation
+model as \textsc{Pythia}, the CNN tagger is essentially indifferent to these two models.
 
 \begin{figure}[htpb]
 \begin{center}
@@ -154,6 +152,3 @@ and \protect\subref{pythiaherwig} \textsc{Herwig} for jets with $150<\pt<200~\Ge
 \label{fig:cnn-pythiasherpa}
 \end{center}
 \end{figure}
-
-
-

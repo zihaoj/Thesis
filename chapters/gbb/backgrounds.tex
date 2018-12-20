@@ -1,3 +1,4 @@
+\label{sec:gbb-bkgsub}
 \subsection{Flavor Fractions}
 Post \btagging, a large fraction of events are backgrounds as shown in Table~\ref{tab:posttaggingflav}. To unfold the data, subtraction of the remnant background is necessary. It is a known problem that the nominal MC flavor fractions could deviate from the true values in data (see e.g.~\cite{ATLAS-CONF-2016-002}). To have good control over the flavor fractions, we seek to estimate the flavor fractions in bins of each observable by fitting the distributions of some variables, which may not be powerful enough to tag individual jets, are sensitive to the numbers of jets of different flavors. Once we fit the flavor composition, we apply $b$-tagging and examine the remaining difference between MC and data, and check if the difference lies within the uncertainty bands of the $b$-tagging systematic uncertainties. 
 
@@ -26,16 +27,17 @@ s_{j} = \textrm{sign}\left\{\ \sin\left(\arctan \left( \frac{p_{j,\ y}}{p_{j,\ x
 \end{equation}
  where $p_{j,\ x}$ and $p_{j,\ y}$ are the $x$ and $y$ components of the jet moments, respectively, and $\phi_{t}$ is the azimuthal angle of the track.
  
-For a given track jet, by construction we have at least two tracks as constituents of the jet (number of track constituents distributions are shown in Fig.\ref{fig:gbb-ntrk}). We take the sub-leading $s_{d_{0}}$ of the track (leading means highest value of $|s_{d_{0}}|$, sub-leading is second largest, etc.) as \subsdzero and build templates of different flavors using this variable to fit and derive the flavor fractions from data.   The second highest $s_{d_{0}}$ is used because it is less likely the result of mis-measured track parameters for non-$b$-jets.  For $b$-jets, the distributions of leading and sub-leading are very similar\footnote{See e.g. \href{https://indico.cern.ch/event/642521/contributions/2607425/subcontributions/230337/attachments/1517581/2369090/gbb_09_03_ZihaoJiang_Rel21Scrutiny.pdf}{these slides}.}. 
+For a given track jet, by construction we have at least two tracks as constituents of the jet. %(number of track constituents distributions are shown in Fig.\ref{fig:gbb-ntrk}).
+We take the sub-leading $s_{d_{0}}$ of the track (leading means highest value of $|s_{d_{0}}|$, sub-leading is second largest, etc.) as \subsdzero and build templates of different flavors using this variable to fit and derive the flavor fractions from data.   The second highest $s_{d_{0}}$ is used because it is less likely the result of mis-measured track parameters for non-$b$-jets.  For $b$-jets, the distributions of leading and sub-leading are very similar\footnote{See e.g. \href{https://indico.cern.ch/event/642521/contributions/2607425/subcontributions/230337/attachments/1517581/2369090/gbb_09_03_ZihaoJiang_Rel21Scrutiny.pdf}{these slides}.}. 
 
 
-\begin{figure}[htbp]
-  \centering
- \includegraphics[width=0.48\textwidth]{figures/gbb/Leading_trkjet_ntrk_PostTag.pdf}
- \includegraphics[width=0.48\textwidth]{figures/gbb/SubLeading_trkjet_ntrk_PostTag.pdf}\\
-\caption{The number of track distribution for leading (left) and sub-leading (right) track jets in MC prediction}
-  \label{fig:gbb-ntrk}
-\end{figure}
+%\begin{figure}[htbp]
+%  \centering
+% \includegraphics[width=0.48\textwidth]{figures/gbb/Leading_trkjet_ntrk_PostTag.pdf}
+% \includegraphics[width=0.48\textwidth]{figures/gbb/SubLeading_trkjet_ntrk_PostTag.pdf}\\
+%\caption{The number of track distribution for leading (left) and sub-leading (right) track jets in MC prediction}
+%  \label{fig:gbb-ntrk}
+%\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -177,10 +179,55 @@ Separate fits are performed for all the $\pm 1\sigma$ variations of detector sys
   \item \textbf{Fit range:} The nominal flavor fraction fit is performed in \subsdzero$\in[-40, 70]$. To avoid having the potential tail mis-modeling of \subsdzero affects the result, fits are separately performed excluding the tails on the left $[-40, -30]$ and right side $[60, 70]$ of the \subsdzero distributions. The $b\bar b$ fitted fraction differences between the left/right-excluded fits and the nominal fit are propagated to unfolding machinery as one source of uncertainty. 
   \item \textbf{Template merging scheme:} The merge of small components to form aggregated templates essentially fixes the relative fractions of these components. The systematic uncertainties caused by the merging scheme is estimated by varying the contribution of each merged component up and down by a factor of two. The template fits are performed for each of these variations. In total $8\times 2 =16$ such variations are propagated to unfolding.
   \item \textbf{Alternative discriminants:} The robustness of the choice using \subsdzero as our fitting templates is checked against another choice using the leading and third-leading $s_{d0}$ value of the track jets, which we define as \sdzero and \subsubsdzero respectively. Note that fitting with these two different variables serves only as a closure check for different background modeling as shown in Appendices~\ref{sec:gbb-app-sd0} and \ref{sec:gbb-app-subsubsd0}. The difference of fitted flavor fractions are not propagated as a systematic uncertainty associated with unfolding.
-  \item \textbf{Fitting with $p_T$ parameterized templates:} The nominal flavor fraction fit with inclusive \subsdzero templates are checked against fitting templates parameterized with track jets $p_T$. For each bin of observable, the flavor fraction fit is performed in four bins of leading (J1) and sub-leading (J2) track jet $p_T$: $(p_T(J1), p_T(J2))$. The four bins are $(p_T(J1)<200$~$\GeV, p_T(J2)<80$~$\GeV)$, $(p_T(J1)>200$~$\GeV, p_T(J2)<80$~$\GeV)$, $(p_T(J1)<200$~$\GeV, p_T(J2)>80$~$\GeV)$ and $(p_T(J1)>200$~~$\GeV, p_T(J2)>80$~$\GeV)$. The cross check is performed to check closure. The difference of fitted flavor fractions are not propagated as a systematic uncertainty associated with unfolding.
-  \item \textbf{Kinematic reweighting:} As noted in Sec. \ref{sec:gbb-eventselection}, the effects of applying kinematics reweighting is checked. A cross check is performed fitting data with templates derived from reweighted sample. The difference of fitted flavor fractions are not propagated as a systematic uncertainty associated with unfolding.
+  \item \textbf{Fitting with \pt parameterized templates:} The nominal flavor fraction fit with inclusive \subsdzero templates are checked against fitting templates parameterized with track jets \pt. For each bin of observable, the flavor fraction fit is performed in four bins of leading (J1) and sub-leading (J2) track jet \pt: $(p_T(J1), p_T(J2))$. The four bins are $(p_T(J1)<200$~$\GeV, p_T(J2)<80$~$\GeV)$, $(p_T(J1)>200$~$\GeV, p_T(J2)<80$~$\GeV)$, $(p_T(J1)<200$~$\GeV, p_T(J2)>80$~$\GeV)$ and $(p_T(J1)>200$~~$\GeV, p_T(J2)>80$~$\GeV)$. The cross check is performed to check closure. The difference of fitted flavor fractions are not propagated as a systematic uncertainty associated with unfolding.
+  \item \textbf{Kinematic reweighting:} After the event selection, there are mild disagreements between data and MC of jet kinematic properties. The impact of the disagreement on the final results is explored by reweighting the MC, event-by-event, by the ratio of the two dimensional leading and sub-leading track jets \pt and $\eta$ distributions between MC and data post \btagging as shown in Fig.~\ref{fig:gbb-reweightmap} \footnote {Note that $b$-tagging scale factors are applied prior to re-weighting.}. The mis-modeling could arise from the overall di-jet cross section, $R=1.0$ ghost matching efficiency and $b$-tagging efficiency as a function of \pt in the particular event topology. The data and MC comparison for the \pt of the $R=1.0$ and track jets are shown after applying $b$-tagging with and without kinematics reweighting in Fig.~\ref{fig:gbb-pT_largeR},\ref{fig:gbb-pT_leadtrkjets},\ref{fig:gbb-pT_subtrkjets}. We do not find the reweighting affects the flavor fit in any significant way and hence do not apply the reweighting for the nominal results and the difference of fitted flavor fractions are not propagated as a systematic uncertainty associated with unfolding.
+
+%\ref{fig:gbb-eta_largeR} \ref{fig:gbb-eta_leadtrkjets},\ref{fig:gbb-eta_subtrkjets}. The effects of applying kinematics reweighting is checked. A cross check is performed fitting data with templates derived from reweighted sample.
 
 \end{enumerate}
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.6\textwidth]{figures/gbb/pTReweightMap.pdf}
+\caption{The re-weighting factor applied to MC as a function of leading and sub-leading track jet \pt.}
+  \label{fig:gbb-reweightmap}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+ %\includegraphics[width=0.38\textwidth]{figures/gbb/LargeRJet_pT_NoReweight.pdf}
+ \includegraphics[width=0.38\textwidth]{figures/gbb/LargeRJet_pT_PreReweight.pdf}
+ \includegraphics[width=0.38\textwidth]{figures/gbb/LargeRJet_pT_Reweight.pdf}
+ \includegraphics[width=0.38\textwidth]{figures/gbb/LargeRJet_eta_PreReweight.pdf}
+ \includegraphics[width=0.38\textwidth]{figures/gbb/LargeRJet_eta_Reweight.pdf}
+\caption{Data/MC comparison of $R=1.0$ jet \pt (top) and $\eta$ (bottom) post $b$-tagging without kinematic reweighting (left) and post $b$-tagging with kinematic reweighting (right).}% The label of the $R=1.0$ jet flavor content ``XY'' denotes the leading and sub-leading track jet flavor. For example, the flavors of the leading and sub-leading track jet of a ``BL'' $R=1.0$ jet are `B' and `Light' respectively.}
+  \label{fig:gbb-pT_largeR}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+  %\includegraphics[width=0.38\textwidth]{figures/gbb/LeadTrkJet_pT_NoReweight.pdf}
+ \includegraphics[width=0.38\textwidth]{figures/gbb/LeadTrkJet_pT_PreReweight.pdf}
+ \includegraphics[width=0.38\textwidth]{figures/gbb/LeadTrkJet_pT_Reweight.pdf}
+ \includegraphics[width=0.38\textwidth]{figures/gbb/LeadTrkJet_eta_PreReweight.pdf}
+ \includegraphics[width=0.38\textwidth]{figures/gbb/LeadTrkJet_eta_Reweight.pdf}
+\caption{Data/MC comparison of leading track jets \pt (top) and $\eta$ (bottom) post $b$-tagging without kinematic reweighting (left) and post $b$-tagging with kinematic reweighting (right).} % The label of the $R=1.0$ jet flavor content ``XY'' denotes the leading and sub-leading track jet flavor. For example, the flavors of the leading and sub-leading track jet of a ``BL'' $R=1.0$ jet are `B' and `Light' respectively.}
+  \label{fig:gbb-pT_leadtrkjets}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+%\includegraphics[width=0.38\textwidth]{figures/gbb/SubLeadTrkJet_pT_NoReweight.pdf}
+\includegraphics[width=0.38\textwidth]{figures/gbb/SubLeadTrkJet_pT_PreReweight.pdf}
+ \includegraphics[width=0.38\textwidth]{figures/gbb/SubLeadTrkJet_pT_Reweight.pdf}
+\includegraphics[width=0.38\textwidth]{figures/gbb/SubLeadTrkJet_eta_PreReweight.pdf}
+ \includegraphics[width=0.38\textwidth]{figures/gbb/SubLeadTrkJet_eta_Reweight.pdf}
+\caption{Data/MC comparison of sub-leading track jets \pt (top) and $\eta$ (bottom) post $b$-tagging without kinematic reweighting (left) and post $b$-tagging with kinematic reweighting (right).}% The label of the $R=1.0$ jet flavor content ``XY'' denotes the leading and sub-leading track jet flavor. For example, the flavors of the leading and sub-leading track jet of a ``BL'' $R=1.0$ jet are `B' and `Light' respectively.}
+  \label{fig:gbb-pT_subtrkjets}
+\end{figure}
 
 
 
