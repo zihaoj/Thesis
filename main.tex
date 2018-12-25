@@ -10,7 +10,7 @@
 \usepackage{Suthesis-2e}
 \usepackage{notation}
 \usepackage{seqsplit}
-\usepackage{hyperref}
+\usepackage[hidelinks=true]{hyperref}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -20,6 +20,13 @@
 \usepackage{amsfonts}
 \usepackage{mathtools}
 \usepackage{slashed}
+
+\hypersetup{
+  colorlinks = true,
+  urlcolor   = green,
+  linkcolor  = blue,
+  citecolor  = red
+}
 
 
 \dept{Physics}
@@ -255,6 +262,6 @@
 \section{\subsdzero fits}
 \input{chapters/gbb/app-subsd0}
 
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 \bibliography{bibtex/bib/ATLAS,bibtex/bib/CMS,bibtex/bib/ConfNotes,bibtex/bib/PubNotes,bibtex/vbf,bibtex/RNN,bibtex/qgnote,bibtex/gbb,bibtex/VBFPaper2016}
 \end{document}
