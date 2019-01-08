@@ -1,7 +1,7 @@
 \label{sec:vbf-bdt}
 
 \subsection{BDT Input and Training}
-Evets passing the pre-selections are fed into Boosted Decision Tree (BDT) to find phase space with high signal purity.
+Events passing the pre-selections are fed into Boosted Decision Tree (BDT) to find phase space with high signal purity.
 The BDT is trained with scikit-learn package~\cite{scikit-learn}.
 The classifier has 200 trees and employs the AdaBoost method.
 The background sample is taken from data events with $80~\GeV < \Mbb <100$~\GeV~
@@ -42,7 +42,7 @@ structures in the \Mbb distribution.
 As shown in Figure~\ref{fig:vbf-BDTInputsCor}, most variables have a
 small correlation factor of less than 0.1 with \Mbb. 
 The BDT response of lower and upper data sidebands are checked and no obvious
-mass dependece is observed as shown in Figure\ref{fig:vbf-bdtsidebands}.
+mass dependence is observed as shown in Figure\ref{fig:vbf-bdtsidebands}.
 
 \begin{figure}[htbp]
   \centering

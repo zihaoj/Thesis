@@ -17,7 +17,7 @@ Typical CNNs are built with convolutional layers interleaved with pooling layers
 The CNN architecture used in this study follows the example of Ref.~\cite{Komiske:2016rsd} and consists of three blocks of a convolutional layer with a
 Rectified Linear Unit (ReLU) activation~\cite{RELU} and paired with a Max-pooling layer.
 The last dense layer has 128 neurons with a ReLU activation taking in the flattened output from the convolutional blocks.
-The output of the network is a softmax function~\cite{Goodfellow-et-al-2016-Book} of size two, 
+The output of the network is a softmax function~\cite{dlbook} of size two, 
 predicting the probability for the quark jet and the gluon jet class, respectively. 
 The convolutional layers consist of 128, 128 and 64 filters, with filter sizes of $5\times5$, $5\times5$ and $3\times3$, respectively.
 The Max-pooling layers perform a $2\times2$ downsampling with a stride length of 2.
@@ -36,7 +36,7 @@ An illustration of the architecture used is shown in Figure~\ref{fig:networkarch
 
 Training is performed by minimizing the categorical crossentropy~\cite{Goodfellow-et-al-2016-Book}.
 Minimization is performed with the Adam optimizer~\cite{DBLP:journals/corr/KingmaB14} 
-as implemented in Keras~\cite{chollet2015keras} 
+as implemented in Keras~\cite{keras}
 with a learning rate of 0.0001 over 50 iterations.
 Training is performed using a single NVidia Tesla K80 GPU with 224000 jet images, while 56000 jet images are used for testing.
 A typical training requires about 1 hour.

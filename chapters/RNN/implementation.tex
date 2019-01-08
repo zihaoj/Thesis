@@ -10,7 +10,7 @@ For each selected track, the variables provided to the network can be found in T
 \hline
    Track Variable  &  Description \\ \hline
    \hline
-   \multicolumn{2}{c}{Used in \textit{IP3D} and \textit{RNNIP} tager} \\ \hline
+   \multicolumn{2}{c}{Used in \textit{IP3D} and \textit{RNNIP} tagger} \\ \hline
 $\sdip$	& Lifetime signed transverse impact parameter significance, $d_{0} / \sigma_{d_0}$. The detailed sign determination is documented in Sec.\ref{sec:gbb-sd0}\\ \hline 
 $\szip$ & Lifetime signed longitudinal impact parameter significance, $z_{0} / \sigma_{z_0}$. The sign determination is similar to that of \sdip. \\ \hline
 Category \cite{ATL-PHYS-PUB-2015-022}		& A categorization of the tracks depending on the number of observed, expected,
@@ -41,12 +41,12 @@ The tracks within a jet has no natural ordering. Since RNN takes in sequential i
   \label{fig:rnn}
 \end{figure}
 
-The network was trained with 3.2 million jets and tested with an independent sample of 4 million jets. When evaluating the \textit{RNNIP}, all tracks satisfying the quality criteria listed above are used, although for the sake of training the sequence was truncated at 15 tracks. Since the fractions of the different flavor jets in $t\bar t$ sample are not even and the jet \pt distributions are different for different flavors, the jet \pt spectra and normalizaiton of $b$-jets and $c$-jets were reweighted to those of the light-jet to down-sample the light jets and train the neural network to be indifferent to the flavor specific \pt distributions. The entire network was trained for 50 epochs using \textsc{Keras}~\cite{keras} with the \textsc{Theano}~\cite{theano} backend and the Adam optimizer~\cite{ref:ADAM}. The \textit{RNNIP} tagger performance against \textit{IP3D} shown in Sec.\ref{sec:rnn-result-rnn} is trained with $t\bar{t}$ for simplicity, while the \textit{RNNIP} used for combination with other taggers as shown in Sec.\ref{sec:rnn-result-combination} is trained with a hybrid of $t\bar{t}$ and Z' sample to cover a wider range of \pt and analyses need.
+The network was trained with 3.2 million jets and tested with an independent sample of 4 million jets. When evaluating the \textit{RNNIP}, all tracks satisfying the quality criteria listed above are used, although for the sake of training the sequence was truncated at 15 tracks. Since the fractions of the different flavor jets in $t\bar t$ sample are not even and the jet \pt distributions are different for different flavors, the jet \pt spectra and normalization of $b$-jets and $c$-jets were re-weighted to those of the light-jet to down-sample the light jets and train the neural network to be indifferent to the flavor specific \pt distributions. The entire network was trained for 50 epochs using \textsc{Keras}~\cite{keras} with the \textsc{Theano}~\cite{theano} backend and the Adam optimizer~\cite{ref:ADAM}. The \textit{RNNIP} tagger performance against \textit{IP3D} shown in Sec.\ref{sec:rnn-result-rnn} is trained with $t\bar{t}$ for simplicity, while the \textit{RNNIP} used for combination with other taggers as shown in Sec.\ref{sec:rnn-result-combination} is trained with a hybrid of $t\bar{t}$ and Z' sample to cover a wider range of \pt and analyses need.
 
-Several variations of the architecutres and training procedures were considered but similar or worse tagger performance:
+Several variations of the architectures and training procedures were considered but similar or worse tagger performance:
 \begin{enumerate}
 \item Ordering tracks by $|\sdip^2 + \szip^2|$ or $\pt$
-\item Removing the 2D track category emdedding
+\item Removing the 2D track category embedding
 \item Using Gated Recurrent Units (GRU) ~\cite{ref:GRU,cho14}, a recent variant of LSTM, as the cell units of the RNN
  
 \end{enumerate}

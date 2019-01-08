@@ -11,7 +11,7 @@ the CNN output, consistent with the fact that gluon jets tend to have a broader 
 The convolutional filters of CNN can be viewed as capturing features which are distinct to different
 class of images. Investigation of these filters will provide useful information of what the CNN regard as
 important difference between quarks and gluons. Formally, we examine the difference of applying the
-confolutional filters to the average image of quarks($I_q$) and gluons($I_g$), i.e. computing $I_q * w_i - I_g * w_i$,
+convolutional filters to the average image of quarks($I_q$) and gluons($I_g$), i.e. computing $I_q * w_i - I_g * w_i$,
 where $*$ is the convolution operator and $w_i$ denotes the individual filters. The visualizations for the
 filters in the first convolutional layer are shown in Figure~\ref{fig:filters}.
 Many such difference images are rotational copies of each other as the CNN is able to capture the rotational

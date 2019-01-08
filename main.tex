@@ -20,6 +20,7 @@
 \usepackage{amsfonts}
 \usepackage{mathtools}
 \usepackage{slashed}
+\usepackage{url}
 
 \hypersetup{
   colorlinks = true,
@@ -238,6 +239,11 @@
 \input{chapters/gbb/unfold}
 \clearpage
 
+\section{Uncertainties}
+\label{sec:gbb-systs}
+\input{chapters/gbb/systematicuncerts}
+
+
 \section{Results}
 \label{sec:gbb-results}
 \input{chapters/gbb/results}
@@ -259,12 +265,19 @@
 \section{\subsdzero templates in Bins of Vertex Variables}
 \input{chapters/gbb/app-sd0templates}
 \clearpage
-\section{Systematic Uncertainty Size}
+\section{Flavor Fraction Fit Systematic Uncertainty Size}
 \input{chapters/gbb/app-syssize}
 \clearpage
 \section{\subsdzero fits}
 \input{chapters/gbb/app-subsd0}
+\clearpage
+\section{Unfolding Iteration Optimization}
+\input{chapters/gbb/app-itopt}
+\clearpage
+\section{Unfolding Technical Closure}
+\input{chapters/gbb/app-techclosure}
 
-\bibliographystyle{unsrt}
+\bibliographystyle{bibtex/bst/atlasBibStyleWithTitle}
+%\bibliographystyle{unsrtnat}
 \bibliography{bibtex/bib/ATLAS,bibtex/bib/CMS,bibtex/bib/ConfNotes,bibtex/bib/PubNotes,bibtex/vbf,bibtex/RNN,bibtex/qgnote,bibtex/gbb,bibtex/VBFPaper2016}
 \end{document}
