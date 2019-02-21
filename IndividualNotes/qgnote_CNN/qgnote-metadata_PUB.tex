@@ -1,0 +1,142 @@
+%-------------------------------------------------------------------------------
+% This file contains the title, author and abstract.
+% It also contains all relevant document numbers used by the different cover pages.
+%-------------------------------------------------------------------------------
+
+% Title
+\AtlasTitle{Quark versus Gluon Jet Tagging Using Jet Images with the ATLAS Detector}
+
+% Author - this does not work with revtex (add it after \begin{document})
+%\author{The ATLAS Collaboration}
+
+% Authors and list of contributors to the analysis
+% \AtlasAuthorContributor also adds the name to the author list
+% Include package latex/atlascontribute to use this
+% Use authblk package if there are multiple authors, which is included by latex/atlascontribute
+% \usepackage{authblk}
+% Use the following 3 lines to have all institutes on one line
+% \makeatletter
+% \renewcommand\AB@affilsepx{, \protect\Affilfont}
+% \makeatother
+% \renewcommand\Authands{, } % avoid ``. and'' for last author
+% \renewcommand\Affilfont{\itshape\small} % affiliation formatting
+% \AtlasAuthorContributor{First AtlasAuthorContributor}{a}{Author's contribution.}
+% \AtlasAuthorContributor{Second AtlasAuthorContributor}{b}{Author's contribution.}
+% \AtlasAuthorContributor{Third AtlasAuthorContributor}{a}{Author's contribution.}
+% \AtlasContributor{Fourth AtlasContributor}{Contribution to the analysis.}
+% \author[a]{Zihao Jiang}
+ %\author[b]{Benjamin Nachman}
+ %\author[c]{Francesco Rubbo}
+% \author[c]{Ariel Schwartzman}
+ %\author[a]{Lauren Tompkins}
+ %\affil[a]{Stanford University}
+ %\affil[b]{LBNL}
+ %\affil[c]{SLAC}
+
+
+ \AtlasAuthorContributor{Zihao Jiang}{a}{Main analyzer.}
+ \AtlasAuthorContributor{Benjamin Nachman}{b}{Image plots, LLH studies, editing.}
+ \AtlasAuthorContributor{Francesco Rubbo}{c}{Analyzer, editing.}
+ \AtlasAuthorContributor{Ariel Schwartzman}{c}{advising}
+\AtlasAuthorContributor{Lauren Tompkins}{a}{advising}
+\affil[a]{Stanford University}
+\affil[b]{LBNL}
+ \affil[c]{SLAC}
+
+
+% If a special author list should be indicated via a link use the following code:
+% Include the two lines below if you do not use atlasstyle:
+% \usepackage[marginal,hang]{footmisc}
+% \setlength{\footnotemargin}{0.5em}
+% Use the following lines in all cases:
+% \usepackage{authblk}
+% \author{The ATLAS Collaboration%
+% \thanks{The full author list can be found at:\newline
+%   \url{https://atlas.web.cern.ch/Atlas/PUBNOTES/ATL-PHYS-PUB-2016-007/authorlist.pdf}}
+% }
+
+% Draft version:
+% Should be 1.0 for the first circulation, and 2.0 for the second circulation.
+% If given, adds draft version on front page, a 'DRAFT' box on top of each other page, 
+% and line numbers.
+% Comment or remove in final version.
+%\AtlasVersion{2.0}
+
+% ATLAS reference code, to help ATLAS members to locate the paper
+\AtlasRefCode{PUB-JETM-2017-04}
+
+% ATLAS note number. Can be an COM, INT, PUB or CONF note
+% \AtlasNote{ATLAS-CONF-2016-XXX}
+\AtlasNote{ATL-PHYS-PUB-2017-017}
+% \AtlasNote{ATL-COM-PHYS-2016-XXX}
+
+% CERN preprint number
+% \PreprintIdNumber{CERN-PH-2016-XX}
+
+% ATLAS date - arXiv submission; usually filled in by the Physics Office
+% \AtlasDate{\today}
+
+% ATLAS heading - heading at top of title page. Set for TDR etc.
+% \AtlasHeading{ATLAS ABC TDR}
+
+% arXiv identifier
+% \arXivId{14XX.YYYY}
+
+% HepData record
+% \HepDataRecord{ZZZZZZZZ}
+
+% Submission journal and final reference
+% \AtlasJournal{Phys.\ Lett.\ B.}
+% \AtlasJournalRef{\PLB 789 (2014) 123}
+% \AtlasDOI{}
+
+% Abstract - % directly after { is important for correct indentation
+\AtlasAbstract{%
+
+Distinguishing quark-initiated from gluon-initiated jets is useful for many measurements and searches at the LHC.  
+This note presents a jet tagger for distinguishing quark-initiated from gluon-initiated jets, which uses the full radiation 
+pattern inside a jet processed as an image in a deep neural network classifier.
+The study is conducted using simulated dijet events in \mbox{$\sqrt{s}=13$ TeV $pp$} collisions with the ATLAS detector.
+Across a wide range of quark jet identification efficiencies, the neural network tagger achieves a gluon jet rejection that is comparable to or better than the performance 
+of the jet width and track multiplicity observables conventionally used for quark-versus-gluon jet tagging.
+}
+
+%-------------------------------------------------------------------------------
+% The following information is needed for the cover page. The commands are only defined
+% if you use the coverpage option in atlasdoc or use the atlascover package
+%-------------------------------------------------------------------------------
+
+% List of supporting notes  (leave as null \AtlasCoverSupportingNote{} if you want to skip this option)
+ \AtlasCoverSupportingNote{Internal note}{https://cds.cern.ch/record/2267927/}
+% \AtlasCoverSupportingNote{Short title note 2}{https://cds.cern.ch/record/YYYYYYY}
+%
+% OR (the 2nd option is deprecated, especially for CONF and PUB notes)
+%
+% Supporting material TWiki page  (leave as null \AtlasCoverTwikiURL{} if you want to skip this option)
+% \AtlasCoverTwikiURL{https://twiki.cern.ch/twiki/bin/view/Atlas/WebHome}
+
+% Comment deadline
+ \AtlasCoverCommentsDeadline{10 July 2017}
+
+% Analysis team members - contact editors should no longer be specified
+% as there is a generic email list name for the editors
+ \AtlasCoverAnalysisTeam{Zihao Jiang, Benjamin Nachman, Francesco Rubbo, Ariel Schwartzman, Lauren Tompkins}
+
+% Editorial Board Members - indicate the Chair by a (chair) after his/her name
+% Give either all members at once (then they appear on one line), or separately
+% \AtlasCoverEdBoardMember{EdBoard~Chair~(chair), EB~Member~1, EB~Member~2, EB~Member~3}
+% \AtlasCoverEdBoardMember{EdBoard~Chair~(chair)}
+% \AtlasCoverEdBoardMember{EB~Member~1}
+% \AtlasCoverEdBoardMember{EB~Member~2}
+% \AtlasCoverEdBoardMember{EB~Member~3}
+
+% A PUB note has readers and not an EdBoard -- give their names here (one line or several entries)
+% \AtlasCoverReaderMember{Reader~1, Reader~2}
+ \AtlasCoverReaderMember{David Rousseau, Andy Buckley}
+
+% Editors egroup
+% \AtlasCoverEgroupEditors{atlas-GROUP-2016-XX-editors@cern.ch}
+
+% EdBoard egroup
+% \AtlasCoverEgroupEdBoard{atlas-GROUP-2016-XX-editorial-board@cern.ch}
+

@@ -1,0 +1,1543 @@
+%-------------------------------------------------------------------------------
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL VBFPaper2016-v2.0-c29fed146812c825489f71fe6ecb8cfc7fd499b7/VBFPaper2016.tex   Wed May 23 19:24:58 2018
+%DIF ADD VBFPaper2016/VBFPaper2016.tex                                                 Thu May 31 16:30:16 2018
+% ATLAS paper format
+%-------------------------------------------------------------------------------
+\pdfoutput=1
+% The \pdfoutput command is needed by arXiv/JHEP/JINST to ensure use of pdflatex.
+% It should be included in the first 5 lines of the file.
+%-------------------------------------------------------------------------------
+% Specify where ATLAS LaTeX style files can be found.
+\newcommand*{\ATLASLATEXPATH}{latex/}
+% Use this variant if the files are in a central location, e.g. $HOME/texmf.
+% \newcommand*{\ATLASLATEXPATH}{}
+%-------------------------------------------------------------------------------
+%\documentclass[PAPER,USenglish,coverpage,texlive=2016, english]{\ATLASLATEXPATH atlasdoc}
+\documentclass[PAPER, american,coverpage,texlive=2016, english]{\ATLASLATEXPATH atlasdoc}
+% \documentclass[PAPER,USenglish]{\ATLASLATEXPATH atlasdoc}
+
+% The language of the document must be set: usually UKenglish or USenglish.
+% british and american also work!
+% Commonly used options:
+%  texlive=YYYY          Specify TeX Live version (2013 is default).
+%  atlasstyle=true|false Use ATLAS style for document (default).
+%  coverpage             Create ATLAS draft cover page for collaboration circulation.
+%                        See atlas-draft-cover.tex for a list of variables that should be defined.
+%  cernpreprint          Create front page for a CERN preprint.
+%                        See atlas-preprint-cover.tex for a list of variables that should be defined.
+%  PAPER                 The document is an ATLAS paper (draft).
+%  CONF                  The document is a CONF note (draft).
+%  PUB                   The document is a PUB note (draft).
+%  BOOK                  The document is of book form, like an LOI or TDR (draft)
+%  txfonts=true|false    Use txfonts rather than the default newtx - needed for arXiv submission.
+%  paper=a4|letter       Set paper size to A4 (default) or letter.
+\newcommand*{\VH}{\ensuremath{VH}\xspace}
+\newcommand*{\ttH}{\ensuremath{t\bar{t}H}\xspace}
+\newcommand*{\muH}{\ensuremath{\mu_{H}}\xspace}
+\newcommand*{\muVBF}{\ensuremath{\mu_{\text{VBF}}}\xspace}
+
+
+
+%-------------------------------------------------------------------------------
+% Extra packages:
+\usepackage[subfigure]{\ATLASLATEXPATH atlaspackage}
+% Commonly used options:
+%  biblatex=true|false   Use biblatex (default) or bibtex for the bibliography.
+%  backend=biber         Use the biber backend rather than bibtex.
+%  subfigure|subfig|subcaption  to use one of these packages for figures in figures.
+%  minimal               Minimal set of packages.
+%  default               Standard set of packages.
+%  full                  Full set of packages.
+%-------------------------------------------------------------------------------
+% Style file with biblatex options for ATLAS documents.
+\usepackage{\ATLASLATEXPATH atlasbiblatex}
+% \usepackage{subcaption}
+
+% Package for creating list of authors and contributors to the analysis.
+\usepackage{\ATLASLATEXPATH atlascontribute}
+
+% Useful macros
+\usepackage[process]{\ATLASLATEXPATH atlasphysics}
+% See doc/atlas_physics.pdf for a list of the defined symbols.
+% Default options are:
+%   true:  journal, misc, particle, unit, xref
+%   false: BSM, heppparticle, hepprocess, hion, jetetmiss, math, process, other, texmf
+% See the package for details on the options.
+
+% Files with references for use with biblatex.
+% Note that biber gives an error if it finds empty bib files.
+\addbibresource{VBFPaper2016.bib}
+\addbibresource{bibtex/bib/ATLAS.bib}
+\addbibresource{bibtex/bib/CMS.bib}
+\addbibresource{bibtex/bib/ConfNotes.bib}
+\addbibresource{bibtex/bib/PubNotes.bib}
+
+% Paths for figures - do not forget the / at the end of the directory name.
+\graphicspath{{logos/}{figures/}{figures/aux/}}
+
+% Add you own definitions here (file VBFPaper2016-defs.sty).
+\usepackage{VBFPaper2016-defs}
+
+\usepackage{multirow}
+\usepackage{seqsplit}
+
+
+
+%-------------------------------------------------------------------------------
+% Generic document information
+%-------------------------------------------------------------------------------
+
+% Title, abstract and document
+\input{VBFPaper2016-metadata}
+% Author and title for the PDF file
+\hypersetup{pdftitle={Search for Higgs Bosons Produced via Weak Boson Fusion and Decaying to Bottom Quark Pairs},pdfauthor={The ATLAS Collaboration}}
+
+%-------------------------------------------------------------------------------
+% Content
+%-------------------------------------------------------------------------------
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+
+\maketitle
+
+%-------------------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+%-------------------------------------------------------------------------------
+Following the discovery of a new particle with a mass of \SI{125}{\GeV} by the ATLAS and CMS Collaborations at the Large Hadron Collider (LHC)~~\cite{HIGG-2012-27, CMS-HIG-12-028},
+there has been an extensive effort to measure its properties and compare them with theoretical predictions for the Standard Model (SM) Higgs boson~\cite{HIGG-2013-01, HIGG-2013-17, HIGG-2013-17, HIGG-2014-11, HIGG-2015-07, CMS-HIG-14-016, CMS-HIG-14-028, CMS-HIG-16-041}.
+Precise measurements of the Higgs boson couplings to other SM particles provide insight into the nature of electroweak symmetry breaking since the values of the couplings are determined by the underlying \DIFdelbegin \DIFdel{symmetry breaking }\DIFdelend \DIFaddbegin \DIFadd{symmetry-breaking }\DIFaddend mechanism.
+The SM Higgs boson production rates and branching ratios are determined by the values of these couplings, and \DIFdelbegin \DIFdel{differences with respect to }\DIFdelend \DIFaddbegin \DIFadd{deviations from }\DIFaddend the predicted values may indicate new particles or forces beyond the Standard Model.
+The dominant decay of the SM Higgs boson is \DIFdelbegin \DIFdel{to }\DIFdelend \DIFaddbegin \DIFadd{into }\DIFaddend $b\bar b$, but the measurement of Higgs bosons in this decay mode is challenging
+because the dominant production mechanisms -- \DIFdelbegin \DIFdel{gluon-gluon }\DIFdelend \DIFaddbegin \DIFadd{gluon--gluon }\DIFaddend fusion (ggF) and \DIFdelbegin \DIFdel{vector boson }\DIFdelend \DIFaddbegin \DIFadd{vector-boson }\DIFaddend fusion (VBF) -- yield leading-order final states containing \DIFdelbegin \DIFdel{exclusively }\DIFdelend \DIFaddbegin \DIFadd{only }\DIFaddend hadronic particles.  These hadronic final states are difficult to distinguish from non-resonant $b$-quark production, which has a much larger production rate.
+Most previous measurements of $H\rightarrow b\bbar$ decays were made with the relatively rare process of Higgs \DIFaddbegin \DIFadd{boson }\DIFaddend production in association with a \DIFdelbegin \DIFdel{leptonically-decaying }\DIFdelend \DIFaddbegin \DIFadd{leptonically decaying }\DIFaddend vector boson (VH, where V \DIFdelbegin \DIFdel{is used to denote }\DIFdelend \DIFaddbegin \DIFadd{denotes }\DIFaddend a \Wboson or \Zboson \DIFaddbegin \DIFadd{boson}\DIFaddend ).
+The combined result for a Higgs boson with a mass of \SI{125}{\GeV} from the CDF and D0 experiments \DIFdelbegin \DIFdel{was }\DIFdelend \DIFaddbegin \DIFadd{is }\DIFaddend a signal strength $\mu=\sigma/\sigma_\text{SM}=1.9 \pm 0.8$ with a $2.8\sigma$ signal significance~\cite{Aaltonen:2012qt}.
+This was followed by measurements with higher significance from ATLAS of $\mu=0.90 \pm 0.27$ at \DIFdelbegin \DIFdel{$3.5\sigma$}\DIFdelend \DIFaddbegin \DIFadd{$3.6\sigma$}\DIFaddend ~\cite{HIGG-2016-29} and CMS of $\mu=1.1 \pm 0.3$ at $3.8\sigma$~\cite{CMS-HIG-16-044}.
+
+The VBF process, $pp\rightarrow qqH$, in which the Higgs boson is accompanied by two light-flavor quarks separated by a large rapidity gap,
+provides a striking experimental signature for distinguishing Higgs boson production from backgrounds.
+A measurement of $H\rightarrow b\bbar$ decay in VBF production mode provides information that is complementary to the measurement in VH production mode.
+The expected production rate $\sigma_\text{VBF} \times B(H\rightarrow b\bar b)$ is \SI{2.2}{\pb}, \DIFdelbegin \DIFdel{calculated }\DIFdelend \DIFaddbegin \DIFadd{reported }\DIFaddend by the LHC Higgs Cross Section Working Group~\cite{deFlorian:2016spz}.
+Using data collected at a center-of-mass energy $\sqrt{s} = \SI{8}{\TeV}$ \DIFaddbegin \DIFadd{and }\DIFaddend corresponding to an integrated luminosity of \SI{20.2}{\ifb}, the ATLAS experiment set a 95\% confidence level (CL) limit on the production rate of 4.4 times the expected production rate \DIFdelbegin \DIFdel{using }\DIFdelend \DIFaddbegin \DIFadd{from }\DIFaddend a VBF-dominated sample with a signal strength $\mu=-0.8 \pm 2.3$ times the predicted value~\cite{HIGG-2014-12}.
+The CMS Collaboration used approximately \SI{20}{\ifb} of \SI{8}{\TeV} data to measure a signal strength $\mu = 2.8^{+1.6}_{-1.4}$ corresponding to an observed significance of $2.2\sigma$~\cite{CMS-HIG-14-004}.  
+
+This article reports the results from a set of complementary search channels sensitive to SM Higgs boson production through VBF with decay \DIFdelbegin \DIFdel{to }\DIFdelend \DIFaddbegin \DIFadd{into }\DIFaddend $b\bbar$.
+Two of the search channels focus on the process $qqH(\rightarrow b\bbar)$ (Figure~\ref{fig:feynman_diagrams_VBF}) with central and forward jets.
+They are collectively referred to as the \textit{all-hadronic} channels because their event selection uses hadronic objects only.
+The third channel focuses on Higgs boson production in association with a high-momentum photon, $qqH(\rightarrow b\bbar)\gamma$ (Figure~\ref{fig:feynman_diagrams_VBFg}) and is referred to as the \textit{photon} channel.
+The presence of an associated photon suppresses the gluon-rich dominant non-resonant $b\bbar jj$ background~\cite{Gabrielli:2007wf, Gabrielli:2016mdd}, further increasing the sensitivity to the VBF final state.
+This channel was not included in any previous VBF results.
+
+\begin{figure}[htbp]
+\centering
+\subfigure[]{\includegraphics[width=0.35\textwidth]{Feynman_VBF_Hbb}\label{fig:feynman_diagrams_VBF}}
+\hspace{0.1 \textwidth}
+\subfigure[]{\includegraphics[width=0.35\textwidth]{Feynman_VBF_Hbb_Gamma}\label{fig:feynman_diagrams_VBFg}}
+\caption{Representative Feynman diagrams for Higgs boson production via \DIFdelbeginFL \DIFdelFL{weak boson }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{vector-boson }\DIFaddendFL fusion (a) \DIFdelbeginFL \DIFdelFL{with }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{without }\DIFaddendFL and (b) \DIFdelbeginFL \DIFdelFL{without }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{with }\DIFaddendFL an associated photon. The photon in the right-hand figure may be radiated from any quark leg or charged \DIFdelbeginFL \DIFdelFL{weak }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{vector }\DIFaddendFL boson.}
+\label{fig:feynman_diagrams_signal}
+\end{figure}
+
+In all three channels, the signal events are characterized by two central $b$-jets from the decay of a Higgs boson and two \DIFdelbegin \DIFdel{light quark }\DIFdelend \DIFaddbegin \DIFadd{light-quark }\DIFaddend jets with a large rapidity gap between them (VBF jets).
+Kinematic properties of the events are used as inputs to boosted decision trees (BDT) trained to classify events as signal-like or background-like.  Backgrounds include contributions from non-resonant jet pairs and from resonant production of $Z$ bosons.  
+%DIF > The signal is extracted from a simultaneous fit of the signal and the backgrounds to the di-$b$-jet invariant mass ($m_{bb}$) distribution in several regions defined by the BDT discriminant output value.
+The signal is extracted from a simultaneous fit \DIFdelbegin \DIFdel{of the signal and the backgrounds }\DIFdelend to the di-$b$-jet invariant mass ($m_{bb}$) distribution in several regions defined by the BDT discriminant output value. \DIFaddbegin \DIFadd{Non-resonant $b\bbar jj$ background and }\Zboson \DIFadd{(+$\gamma$) + jets background are estimated separately from the fit in each signal region.
+}\DIFaddend Both the inclusive Higgs boson production and the VBF production are measured and presented.
+The \textit{all-hadronic} channels are sensitive to ggF as well as VBF, but the photon channel is sensitive to VBF only.
+
+%-------------------------------------------------------------------------------
+\section{ATLAS detector}
+\label{sec:detector}
+
+%-------------------------------------------------------------------------------
+ATLAS~\cite{PERF-2007-01} is a \DIFdelbegin \DIFdel{multi-purpose }\DIFdelend \DIFaddbegin \DIFadd{multipurpose }\DIFaddend particle detector with a \DIFdelbegin \DIFdel{forward-backward }\DIFdelend \DIFaddbegin \DIFadd{forward--backward }\DIFaddend symmetric cylindrical geometry and nearly $4\pi$ coverage in solid angle\DIFdelbegin \footnote{\DIFdel{ATLAS uses a right-handed coordinate system with its origin at the nominal interaction point (IP) in the center of the detector and the $z$-axis along the beam pipe. The $x$-axis points from the IP to the center of the LHC ring, and the $y$-axis points upward. Cylindrical coordinates ($r$, $\phi$) are used in the transverse plane, $\phi$ being the azimuthal angle around the beam pipe. The pseudorapidity is defined in terms of the polar angle $\theta$ as $\eta = -\ln \tan(\theta/2)$.}}%DIFAUXCMD
+\addtocounter{footnote}{-1}%DIFAUXCMD
+\DIFdel{.}\DIFdelend \DIFaddbegin \DIFadd{.}\footnote{\DIFadd{ATLAS uses a right-handed coordinate system with its origin at the nominal interaction point (IP) in the center of the detector and the $z$-axis along the beam pipe. The $x$-axis points from the IP to the center of the LHC ring, and the $y$-axis points upward. Cylindrical coordinates ($r$, $\phi$) are used in the transverse plane, $\phi$ being the azimuthal angle around the beam pipe. The pseudorapidity is defined in terms of the polar angle $\theta$ as $\eta = -\ln \tan(\theta/2)$.}}
+\DIFaddend The interaction point is surrounded by inner tracking devices, a calorimeter system, and a muon spectrometer.
+
+The inner detector provides precision tracking of charged particles for pseudorapidities $|\eta| < 2.5$ and is surrounded by a superconducting solenoid providing a 2~T magnetic field.
+The inner detector consists of silicon pixel and microstrip detectors and a transition radiation tracker.
+One significant upgrade for the $\sqrt{s} = \SI{13}{\TeV}$ run is the \DIFdelbegin \DIFdel{Insertable B-Layer}\DIFdelend \DIFaddbegin \DIFadd{insertable B-layer}\DIFaddend ~\cite{CERN-LHCC-2010-013}, an additional pixel layer close to the interaction point.
+It provides high-resolution hits at a small radius to improve tracking performance.
+
+In the pseudorapidity region $|\eta| < 3.2$, high-granularity lead/liquid-argon (LAr) electromagnetic (EM) sampling calorimeters are used to measure EM showers from photons and electrons.
+An iron/scintillator tile calorimeter measures hadron energies for $|\eta| < 1.7$.
+The endcap and forward regions, spanning $1.5<|\eta| <4.9$, are also instrumented with LAr calorimeters for both \DIFaddbegin \DIFadd{the }\DIFaddend EM and hadronic measurements.
+
+The muon spectrometer consists of a large barrel and two endcap superconducting \DIFdelbegin \DIFdel{toroids }\DIFdelend \DIFaddbegin \DIFadd{toroid magnets }\DIFaddend with eight coils each, a system of trigger chambers, and precision tracking chambers providing triggering and tracking capabilities for muons in the ranges $|\eta| < 2.4$ and $|\eta| < 2.7$, respectively.
+
+A two-level trigger system selects events. The first-level trigger (L1), implemented in hardware, is followed by the software-based high-level trigger\DIFdelbegin \DIFdel{system (HLT)}\DIFdelend , which runs offline reconstruction and calibration software reducing the event rate to less than 1~kHz.
+
+%-------------------------------------------------------------------------------
+\section{Signal and background simulation}
+\label{sec:simulation}
+%-------------------------------------------------------------------------------
+%
+Simulated events are used for signal modeling, BDT training, and background shape determination.
+The signal models include both \DIFaddbegin \DIFadd{the }\DIFaddend Higgs boson VBF and ggF production contributions, as well as the small contribution from associated production with \DIFdelbegin \DIFdel{top-quarks }\DIFdelend \DIFaddbegin \DIFadd{top quarks }\DIFaddend (ttH) and vector bosons (VH).
+Simulated \textit{all-hadronic} signal events were generated at next-to-leading order in QCD with \POWHEGBOXV{v2}~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd}, using the CT10 parton distribution functions (PDFs)~\cite{Lai:2010vv} and \PYTHIA 8.212~\cite{Sjostrand:2014zea} for parton showering and fragmentation with the AZNLO tuned parameter set~\cite{STDM-2012-23}.
+Contributions from VH and ttH production were modeled with \PYTHIA 8.212\DIFaddbegin \DIFadd{, using the NNPDF PDF~\mbox{%DIFAUXCMD
+\cite{Ball:2012cx}}%DIFAUXCMD
+,  }\DIFaddend and with \MGMCatNLO v2.2.2 ~\cite{Alwall:2014hca} showered with \HERWIGpp 2.7.1~\cite{herwig} \DIFaddbegin \DIFadd{and using the NLO CT10 PDF}\DIFaddend , respectively.
+Simulated \Zjets events from strong and electroweak production were generated separately at leading order (LO) plus two partons with \MGMCatNLO v2.2.3 using the NNPDF PDFs \DIFdelbegin \DIFdel{~\mbox{%DIFAUXCMD
+\cite{Ball:2012cx} }%DIFAUXCMD
+}\DIFdelend and interfaced to \PYTHIA 8.205 with the A14 set of tuned parameters~\cite{ATL-PHYS-PUB-2014-021} for the \DIFdelbegin \DIFdel{underlying event }\DIFdelend \DIFaddbegin \DIFadd{underlying-event }\DIFaddend description.
+The non-resonant backgrounds in the \textit{all-hadronic} channels are derived exclusively from the data. 
+
+In the \textit{photon} channel, both the $jj\gamma b\bbar$ \DIFdelbegin \DIFdel{final state }\DIFdelend \DIFaddbegin \DIFadd{final-state }\DIFaddend signal and background events were generated at LO with \MGMCatNLO v2.3.3 using the PDF4LHC\_nlo\_mc PDFs~\cite{Butterworth:2015oua} and interfaced to \PYTHIA 8.212 with the A14 tuned parameter set.  The VH and ttH signals were modeled using the same samples as the \textit{all-hadronic} channels.
+Background events containing two $b$-quarks from the decay of a \Zboson boson, a photon, and two additional jets were generated separately for strong and electroweak processes.
+Non-resonant $\gamma$ + jets simulation events were generated by requiring the same final state as the signal and $Z + \gamma$ background events but excluding diagrams containing on-shell Higgs or \Zboson bosons. The non-resonant $\gamma$ + jets simulation sample is only used in BDT training, while the non-resonant background shape and normalization are obtained from a \DIFdelbegin \DIFdel{simultaneous }\DIFdelend fit to the $m_{bb}$ data distribution in signal regions (Section~\ref{sec:results}).
+
+Multiple $pp$ collisions were simulated with the soft QCD processes of \DIFdelbegin \DIFdel{Pythia }\DIFdelend \DIFaddbegin \PYTHIA \DIFaddend 8.186~\cite{Sjostrand:2007gs} using the A2 tuned parameter set~\cite{ATL-PHYS-PUB-2012-003} and the MSTW2008LO PDFs~\cite{Martin:2009iq}.
+These additional interactions were overlaid on the hard-scatter interaction of the signal and background \DIFdelbegin \DIFdel{samples
+}\DIFdelend \DIFaddbegin \DIFadd{samplesz
+}\DIFaddend according to the luminosity profile of the recorded data to model contributions from $pp$ interactions in both the same bunch crossing and neighboring bunch crossings (pileup).
+The response of the ATLAS detector to the generated events was then modeled using full simulation software~\cite{SOFT-2010-01} based on \GEANT4~\cite{Agostinelli:2002hh}, except for the $Z(b\bbar)+\text{jets}$ events, which were passed through a fast simulation where the full calorimeter simulation is replaced by a parameterization of shower shapes~\cite{ATL-PHYS-PUB-2010-013}.
+
+%-------------------------------------------------------------------------------
+\section{Datasets and object reconstruction}
+\label{sec:objects}
+%-------------------------------------------------------------------------------
+
+This analysis uses LHC $pp$ collision data at a center-of-mass energy of \SI{13}{\TeV} collected 
+between September 2015 and October 2016.
+The dataset corresponds to an integrated luminosity of  \SI{24.5}{\ifb} for the \textit{all-hadronic} channels and \SI{30.6}{\ifb} for the \textit{photon} channel. The difference in luminosity between the channels is due to limited availability of the triggers for the \textit{all-hadronic} channels during some periods of the \DIFdelbegin \DIFdel{data taking}\DIFdelend \DIFaddbegin \DIFadd{data-taking}\DIFaddend .  The trigger requirements are described in Section~\ref{sec:selection}.  Detector quality requirements are applied to ensure that the selected events are well measured. 
+Events are selected using the properties of jets and photons \DIFaddbegin \DIFadd{that are reconstructed }\DIFaddend as described briefly below. 
+
+Jets are reconstructed from topological calorimeter-cell clusters calibrated to the EM \DIFdelbegin \DIFdel{calorimeter }\DIFdelend scale.
+These clusters are inputs to the \antikt \DIFaddbegin \DIFadd{jet reconstruction }\DIFaddend algorithm~\cite{Cacciari:2008gp} with a radius parameter of $R=0.4$\DIFdelbegin \DIFdel{to reconstruct jets}\DIFdelend .
+A likelihood-based discriminant, the Jet Vertex Tagger~\cite{ATLAS-CONF-2014-018}, is applied to jets with transverse momenta $\pT < \SI{60}{\GeV}$ and $|\eta|<2.4$ to suppress jets originating from pileup vertices.
+The energy of a jet is corrected using \DIFaddbegin \DIFadd{scale }\DIFaddend factors derived from both \DIFaddbegin \DIFadd{the }\DIFaddend simulated events and an \textit{in situ}, data-based calibration~\cite{PERF-2016-04}
+comparing the $\pT$ balance between a jet and a reference object, such as a \Zboson boson, a photon, or a multijet system for various \DIFdelbegin \DIFdel{jet }\DIFdelend \DIFaddbegin \DIFadd{jet-}\DIFaddend $\pT$ ranges.
+In addition, a pileup subtraction algorithm is applied to reduce pileup contributions to the \DIFdelbegin \DIFdel{calorimeter based }\DIFdelend \DIFaddbegin \DIFadd{calorimeter-based }\DIFaddend jet energy.
+\DIFdelbegin \DIFdel{After these corrections, the full width at half maximum for the signal dijet invariant mass distribution $m_{bb}$ is }%DIFDELCMD < \SI{22}{\GeV} %%%
+\DIFdel{for the }\textit{\DIFdel{all-hadronic}} %DIFAUXCMD
+\DIFdel{channels and }%DIFDELCMD < \SI{27}{\GeV} %%%
+\DIFdel{for the }\textit{\DIFdel{photon}} %DIFAUXCMD
+\DIFdel{channel.  
+The difference is due to the different kinematic requirements for the jets.
+}\DIFdelend 
+
+A flavor-tagging algorithm MV2c10~\cite{PERF-2012-04,ATL-PHYS-PUB-2016-012} tags jets containing $b$-hadrons within the acceptance of the inner detector ($|\eta| < 2.5$)
+using log-likelihood ratios from three-dimensional impact parameter significance distributions, secondary vertex information, and the jet \pT and $\eta$.
+This information is input to a BDT that calculates the final discriminant.
+Three different flavor-tagging operating points are used\DIFaddbegin \DIFadd{, }\DIFaddend corresponding to $b$-tagging efficiencies of 70\%, 77\% and 85\%, respectively,
+as measured in $t\tbar$ events for jets having $\pt > \SI{20}{\GeV}$ and $|\eta |< 2.5$.
+\DIFaddbegin \DIFadd{The $c$-jet misidentification efficiencies are measured to be 8.2\%, 16\% and 32\%, respectively, and the light jet misidentification efficiencies are measured to be 0.3\%, 0.7\% and 3.0\%, respectively.
+Scale factors are applied to each selected $b$-jet to account for the $b-,c-$ and light flavor-tagging performance differences between data and simulation.
+}\DIFaddend Because the invariant mass $m_{bb}$ is an important discriminant against the non-resonant background,
+additional energy corrections are applied to $b$-jets after the jet selection and generic energy calibration. These additional corrections account for semileptonic decays and resolution effects such as energy losses outside of the jet cone~\cite{HIGG-2016-29}.
+\DIFdelbegin \DIFdel{Efficiency scale factors are applied to each selected $b$-jet to account for the flavor-tagging efficiency differences between data and simulation.  
+}\DIFdelend \DIFaddbegin \DIFadd{After these corrections, the full width at half maximum for the signal dijet invariant mass distribution, $m_{bb}$, is }\SI{22}{\GeV} \DIFadd{for the }\textit{\DIFadd{all-hadronic}} \DIFadd{channels and }\SI{27}{\GeV} \DIFadd{for the }\textit{\DIFadd{photon}} \DIFadd{channel.  
+The difference is due to the different kinematic requirements for the jets.
+}\DIFaddend 
+
+
+Photon reconstruction~\cite{PERF-2013-04} is seeded from clusters of energy deposits in the electromagnetic calorimeter. 
+The initial \DIFdelbegin \DIFdel{loose criteria-based selection }\DIFdelend \DIFaddbegin \DIFadd{selection based on }\textit{\DIFadd{loose}} \DIFadd{criteria }\DIFaddend uses shower shapes in the second layer of the electromagnetic calorimeter and the energy deposits in the hadronic calorimeter.
+The \DIFdelbegin \DIFdel{tight }\DIFdelend \DIFaddbegin \textit{\DIFadd{tight}} \DIFaddend identification adds information from the \DIFdelbegin \DIFdel{finely-segmented }\DIFdelend \DIFaddbegin \DIFadd{finely segmented }\DIFaddend first layer of the calorimeter, which provides good rejection of hadronic jets in which a neutral meson carries most of the jet energy.
+Clusters without any matching track or conversion vertex are classified as unconverted photon candidates.  Clusters with a matching vertex reconstructed from one or two tracks are converted photon candidates.
+Both \DIFaddbegin \DIFadd{the }\DIFaddend converted and unconverted photon candidates with transverse energy $\ET > \SI{30}{\GeV}$ in the pseudorapidity ranges $|\eta|<1.37$ or $1.52 < |\eta| < 2.37$ are used. \DIFaddbegin \DIFadd{The range $1.37 < |\eta| < 1.52$  is excluded because it is the gap between the barrel and endcap sections of the calorimeter.  
+}\DIFaddend To further suppress hadronic background from jets and neutral pions, an isolation requirement is applied to the photon candidates.
+The calorimeter isolation variable $\ET^\text{iso}$ is the sum of the transverse energy of three-dimensional positive-energy topological clusters~\cite{PERF-2014-07} reconstructed in the electromagnetic and hadronic calorimeters in a cone of \DIFaddbegin \DIFadd{size }\DIFaddend $\Delta R \equiv \sqrt{(\Delta\phi)^2+ (\Delta\eta)^2} =0.4$ around the photon candidate,
+where the $\Delta\eta\times\Delta\phi$ region of size $0.125\times 0.175$ around the photon cluster\DIFaddbegin \DIFadd{'s }\DIFaddend centroid is excluded.
+The isolation requirement, which depends explicitly on the photon transverse energy $\ET^\gamma$, is $\ET^\text{iso} < \SI{2.45}{\GeV} + 0.022 \times \ET^\gamma$.
+This requirement provides a signal efficiency around 98\% over the \ET range expected for the \textit{photon} channel.
+
+Electrons are reconstructed~\cite{ATLAS-CONF-2016-024} with a sliding-window algorithm based on the clusters of energy deposits in the electromagnetic calorimeter and matched to the tracks from the inner detector.
+Electron candidates must satisfy the \DIFdelbegin \DIFdel{tight }\DIFdelend \DIFaddbegin \textit{\DIFadd{tight}} \DIFaddend likelihood-based electron identification criteria~\cite{PERF-2016-01}, which combine the requirements of calorimeter shower shape, track-to-cluster association, and associated track qualities.
+Identified electrons are required to pass \DIFdelbegin \DIFdel{track }\DIFdelend \DIFaddbegin \DIFadd{track- }\DIFaddend and calorimeter-based isolation requirements and to have $\ET > \SI{27}{\GeV}$ and $|\eta|<2.47$.
+The track-based isolation requirement is a function of the electron \pT and is based on the other tracks around the \DIFdelbegin \DIFdel{electron associated }\DIFdelend \DIFaddbegin \DIFadd{electron-associated }\DIFaddend track within a variable cone size up to $\Delta R=0.2$.
+The calorimeter-based isolation criterion requires the sum of transverse energies of clusters not associated with an electron candidate \DIFdelbegin \DIFdel{around the electron track }\DIFdelend within a cone of $\Delta R=0.2$ \DIFaddbegin \DIFadd{around the electron track }\DIFaddend to be smaller than \SI{3.5}{\GeV}.
+
+Muons are reconstructed~\cite{PERF-2015-10} by combining \DIFdelbegin \DIFdel{both }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend inner detector and muon spectrometer measurements up to $|\eta|=2.5$.
+Muon candidates are required to have $\pT > \SI{25}{\GeV}$ and \DIFdelbegin \DIFdel{pass }\DIFdelend \DIFaddbegin \DIFadd{satisfy }\DIFaddend the \textit{medium} muon identification criteria~\cite{PERF-2015-10}.
+Identified muons must pass an isolation selection requiring the sum of transverse momenta of tracks within a cone of $\Delta R=0.2$ around the muon track, excluding the muon candidate, \DIFaddbegin \DIFadd{to }\DIFaddend be smaller than \SI{1.25}{\GeV}.
+
+Double-counting of photons, leptons, and jets is avoided by applying an overlap removal algorithm based on the $\Delta R $ distance metric.
+First, jets within \DIFdelbegin \DIFdel{$\Delta R < 0.2$ }\DIFdelend \DIFaddbegin \DIFadd{$\Delta R = 0.2$ }\DIFaddend of any identified photons, muons or electrons are removed.
+Then, any photons, muons and electrons \DIFdelbegin \DIFdel{within }\DIFdelend \DIFaddbegin \DIFadd{that lie }\DIFaddend $0.2 < \Delta R < 0.4$ from the jet axis are removed.
+Finally, photons within \DIFdelbegin \DIFdel{$\Delta R < 0.4$ }\DIFdelend \DIFaddbegin \DIFadd{$\Delta R = 0.4$ }\DIFaddend of an identified muon are removed, and electrons within \DIFdelbegin \DIFdel{$\Delta R < 0.4$ }\DIFdelend \DIFaddbegin \DIFadd{$\Delta R = 0.4$ }\DIFaddend of an identified photon are removed.
+
+%-------------------------------------------------------------------------------
+\section{Event selection}
+\label{sec:selection}
+%-------------------------------------------------------------------------------
+
+The event selection targets three distinct \DIFdelbegin \DIFdel{final state }\DIFdelend \DIFaddbegin \DIFadd{final-state }\DIFaddend topologies: two \textit{all-hadronic} channels and the \textit{photon} channel.
+The selection criteria are matched to a set of dedicated trigger algorithms used to identify events compatible with VBF $H\ra b\bbar$ production.
+In the following, the central region corresponds to $|\eta|<2.8$, and the forward regions correspond to the range $3.2 < |\eta|<4.4$.
+The channel definitions are
+\begin{itemize}
+   \item \textit{two-central}: at least one VBF jet is required to be in the forward region, and both $b$-tagged jets from the Higgs boson decay are in the central region,
+\item \textit{four-central}: both VBF jets and both $b$-tagged jets from the Higgs boson decay are found in the central region of the detector, and
+\item \textit{photon}: a photon and both $b$-tagged jets from the Higgs boson decay are found in the central region and both VBF jets are within the detector acceptance.
+\end{itemize}
+The selected events for the two \textit{all-hadronic} channels are mutually exclusive. 
+The small overlap between the \textit{photon} and \textit{all-hadronic} channels is removed with an explicit veto of any data events in the \textit{all-hadronic} selection passing the \textit{photon} selection.
+The 0.5\% overlap in the simulated signal \DIFdelbegin \DIFdel{data }\DIFdelend \DIFaddbegin \DIFadd{sample }\DIFaddend is ignored.
+
+\subsection{\textit{Two-central} channel trigger and event selection}
+
+The \textit{two-central} channel requires a central jet with $\ET > \SI{40}{\GeV}$, another central jet with $\ET > \SI{25}{\GeV}$, and a forward jet with $\ET > \SI{20}{\GeV}$ to pass the L1 trigger.
+
+In the high-level trigger, one central $b$-tagged jet~\cite{TRIG-2016-01} at \DIFaddbegin \DIFadd{the }\DIFaddend 70\% $b$-tagging efficiency working point with $\ET > \SI{80}{\GeV}$,
+another central $b$-tagged jet at \DIFaddbegin \DIFadd{the }\DIFaddend 85\% $b$-tagging efficiency working point with $\ET > \SI{60}{\GeV}$, and a forward jet with \ET at least \SI{45}{\GeV} are required.  \DIFaddbegin \DIFadd{The same $b$-tagging algorithm is used in the online selection as in the offline selection.  
+}\DIFaddend 
+
+Selected events must have at least \DIFdelbegin \DIFdel{4 }\DIFdelend \DIFaddbegin \DIFadd{four }\DIFaddend offline reconstructed jets with $\pT > \SI{20}{\GeV}$ and $|\eta|<4.4$.
+Among the selected jets, at least one jet must have $\pT > \SI{95}{\GeV}$, have $|\eta|<2.4$, and pass the 70\% $b$-tagging efficiency working point requirement. 
+The $|\eta|$ requirement is \DIFdelbegin \DIFdel{reduced with respect to }\DIFdelend \DIFaddbegin \DIFadd{narrower than }\DIFaddend the nominal requirement for $b$-tagging ($|\eta|<2.5$) for comparison with a supporting trigger used for validation.   
+\DIFdelbegin \DIFdel{One or more additional $b$-tagged jets are }\DIFdelend \DIFaddbegin \DIFadd{At least one additional jet is }\DIFaddend required to pass the 85\% $b$-tagging efficiency working point selection and have $\pT > \SI{70}{\GeV}$ and $|\eta|<2.5$.
+Finally, events are required to have at least one forward jet with $\pT > \SI{60}{\GeV}$.
+These thresholds were determined by the efficiency plateau of the trigger-jet transverse-energy requirements.
+The two highest-\pT $b$-tagged jets are chosen to form the Higgs boson candidate.
+Among the remaining jets, the two jets with highest invariant mass including at least one forward jet are designated as the VBF jets.
+
+
+\subsection{\textit{Four-central} channel trigger and event selection}
+
+The \textit{four-central} channel requires four central jets to pass the L1 trigger with $\ET > \SI{15}{\GeV}$.
+
+The \DIFaddbegin \DIFadd{requirements of the }\DIFaddend high-level trigger \DIFdelbegin \DIFdel{requirements }\DIFdelend varied during the course of data-taking.  In the first half, events were required to have two $b$-tagged jets with $\ET>\SI{45}{\GeV}$~passing the 70\% efficiency working point requirements for the trigger $b$-tagging algorithm. In the second half, the trigger\DIFaddbegin \DIFadd{'s }\DIFaddend jet $\ET$ thresholds were changed to \SI{35}{\GeV} and the $b$-tagging algorithm was tightened to operate at 60\% efficiency to achieve an overall lower rate of events passing the high-level trigger.
+
+The selected events are required to have at least \DIFdelbegin \DIFdel{4 }\DIFdelend \DIFaddbegin \DIFadd{four }\DIFaddend jets reconstructed with offline algorithms with $\pT > \SI{55}{\GeV}$ and $|\eta|<2.8$ to match the trigger requirements.
+At least two jets must pass the 70\% $b$-tagging efficiency working point requirement. 
+All $b$-tagged jets must be within the acceptance of the inner detector ($|\eta| < $ 2.5).  The two \DIFdelbegin \DIFdel{highest }\DIFdelend \DIFaddbegin \DIFadd{highest-}\DIFaddend \pT $b$-tagged jets form the Higgs boson candidate.
+Among the remaining jets, the pair of non-$b$-tagged jets with highest invariant mass is taken as the VBF jet pair.
+Finally, events containing at least one forward jet \DIFaddbegin \DIFadd{with $\pT > 60~\GeV$ }\DIFaddend are removed to avoid overlap with the \textit{two-central} channel.
+
+\subsection{\textit{Photon} channel trigger and event selection}
+
+The \textit{photon} channel requires a photon to pass the L1 trigger with $\ET > \SI{22}{\GeV}$.
+In the high-level trigger, a photon with $\ET > \SI{25}{\GeV}$ is required in addition to
+ at least four jets with $\ET > \SI{35}{\GeV}$ \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{and }\DIFaddend $|\eta|<4.9$, and at least one dijet pair with invariant mass greater than \SI{700}{\GeV}.
+For the first half of \DIFaddbegin \DIFadd{the }\DIFaddend data-taking, no online $b$-tagging requirements were applied;
+for the second half, which had increased instantaneous luminosity, at least one jet is required to be $b$-tagged at the 77\% efficiency working point.
+
+The event selection for the \textit{photon} channel requires a photon with $\ET > \SI{30}{\GeV}$ in the calorimeter regions $|\eta|<1.37$ or $1.52<|\eta|<2.37$.
+Events must have at least four jets, all satisfying $\pT > \SI{40}{\GeV}$ and $|\eta|<4.4$, with at least two jets in $|\eta|<2.5$ passing the 77\% $b$-tagging efficiency working point requirement. 
+The two highest-\pT $b$-tagged jets are taken to be the signal jets of the Higgs boson decay.
+Among the remaining jets, the pair with the highest invariant mass is chosen to be the VBF jet pair.
+The invariant mass of the VBF jets is required to be at least \SI{800}{\GeV} so that the trigger requirement \DIFaddbegin \DIFadd{imposed }\DIFaddend on the invariant mass is fully efficient.
+
+\DIFdelbegin %DIFDELCMD < \subsection{ The $bb$ system \pT requirement}
+%DIFDELCMD < 
+%%%
+\DIFdelend \DIFaddbegin \subsection{ The $bb$-system \pT requirement}
+\DIFaddend 
+
+The jet \pT thresholds in the trigger and the offline selection sculpt the $m_{bb}$ distribution.
+To remove this sculpting, which could bias the final $m_{bb}$ fit, the $bb$\DIFdelbegin \DIFdel{system }\DIFdelend \DIFaddbegin \DIFadd{-system }\DIFaddend $\pt$ in the \textit{two-central},  \textit{four-central}, and \textit{photon} channels is required to be larger than 150, 160, and \SI{80}{\GeV}, respectively.
+
+The full event selection, including the trigger requirements and offline requirements, is summarized in Table~\ref{tab:evtsel}.
+
+\begin{table}[htbp]
+   \caption{Trigger and event selection criteria for all search channels. L1 and HLT refer to the \DIFdelbeginFL \DIFdelFL{first level }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{first-level }\DIFaddendFL trigger and the high-level \DIFdelbeginFL \DIFdelFL{triggers}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{trigger}\DIFaddendFL , respectively. The \pT~ and $|\eta|$ requirements on the offline jets are used to match trigger selections and flavor-tagging requirements.
+   All the selection criteria are applied independently.}
+   \label{tab:evtsel}
+   \def\arraystretch{1.4}
+   \centering
+      {\footnotesize
+         \DIFdelbeginFL %DIFDELCMD < \begin{tabular}{ c | c | l }
+%DIFDELCMD <             %%%
+\DIFdelendFL \DIFaddbeginFL \begin{tabular}{ l | l | l }
+            \DIFaddendFL \hline \hline
+            \DIFdelbeginFL %DIFDELCMD < \multicolumn{3}{c}{ \textit{two-central} channel} %%%
+\DIFdelendFL \DIFaddbeginFL \multicolumn{3}{c}{ \textit{Two-central} channel} \DIFaddendFL \\
+            \hline
+        \multirow{4}{*}{Trigger}    &\multirow{2}{*}{L1}    & $\geq2$ central jets with $\ET > 40, 25$ \GeV{} \\
+                                    &                         & $\geq1$ forward jet with $\ET > 20$ \GeV{} \\
+            \cline{2-3}
+                                    &\multirow{2}{*}{HLT}   & $\geq2$ central $b$-jets at 70\%, 85\% efficiency working points with $\ET > 80, 60$ \GeV{} \\
+                                    &                         & $\geq1$ forward jet with $\ET > 45$ \GeV{} \\
+            \hline
+            \multicolumn{2}{c|}{\multirow{4}{*}{Offline}} & $\geq2$ $b$-jets at 70\%, 85\% efficiency working points with $\pt>95, 70$ \GeV{} and $|\eta|<2.5$  \\
+            \multicolumn{2}{c|}{}                         & $\geq1$ jet with $\pt>60$ \GeV{} and $3.2<|\eta|<4.4$  \\
+            \multicolumn{2}{c|}{}                        & $\geq1$ jet with $\pt>20$ \GeV{} and $|\eta|<4.4$ \\
+            \multicolumn{2}{c|}{}                       &  $\pt(bb)>160$ \GeV{} \\
+            \hline
+
+            \DIFdelbeginFL %DIFDELCMD < \multicolumn{3}{c}{\textit{four-central} channel} %%%
+\DIFdelendFL \DIFaddbeginFL \multicolumn{3}{c}{\textit{Four-central} channel} \DIFaddendFL \\
+            \hline
+            \DIFdelbeginFL %DIFDELCMD < \multirow{3}{*}{Trigger} %%%
+\DIFdelendFL \DIFaddbeginFL \multirow{2}{*}{Trigger} \DIFaddendFL & L1                    & $\geq4$ central jets with $\ET > 15$ \GeV{} \\
+            \cline{2-3}
+			                         & HLT   & $\geq2$ central $b$-jets at 70\% (or 60\%) efficiency working point with $\ET > 45$ \GeV{} (or 35 \GeV{}) \\
+            \hline
+            \multicolumn{2}{c|}{\multirow{4}{*}{Offline}} & $\geq2$ $b$-jets at 70\% efficiency working point with $\pt>55$ \GeV{} and $|\eta|<2.5$\\
+            \multicolumn{2}{c|}{}                         & $\geq2$ jets with $\pt>55$ \GeV{} and $|\eta|<2.8$  \\
+            \multicolumn{2}{c|}{}                         & No jet with $\pt>60$ \GeV{} and $3.2<|\eta|<4.4$    \\
+            \multicolumn{2}{c|}{}                        & $\pt(bb)>150$ \GeV{}                       \\
+            \hline
+
+            \DIFdelbeginFL %DIFDELCMD < \multicolumn{3}{c}{ \textit{photon} channel} %%%
+\DIFdelendFL \DIFaddbeginFL \multicolumn{3}{c}{ \textit{Photon} channel} \DIFaddendFL \\
+            \hline
+       \multirow{4}{*}{Trigger} &     L1                    & $\geq1$ photon with $\ET > 22$ \GeV{} \\
+            \cline{2-3}
+                                & \multirow{3}{*}{HLT}  & $\geq1$ photon with $\ET > 25$ \GeV{}\\
+								&         & $\geq4$ jets (or $\geq3$ jets and $\geq1$ $b$-jet at 77\% efficiency working point) with $\ET>35$ \GeV{} and $|\eta|<4.9$  \\
+                                &                         & $m_{jj}>$ 700 \GeV{} \\
+            \hline
+           \multicolumn{2}{c|}{\multirow{5}{*}{Offline}} & $\geq 1$ photon with $\ET > 30$ \GeV{} and $|\eta|<1.37$ or $1.52 < |\eta|<2.37$\\
+           \multicolumn{2}{c|}{}                         & $\geq2$ $b$-jets at 77\% efficiency working point with $\pt>40$ \GeV{} and $|\eta|<2.5$  \\
+           \multicolumn{2}{c|}{}                         & $\geq2$ jets with $\pt>40$ \GeV{} and $|\eta|<4.4$  \\
+           \multicolumn{2}{c|}{}                         & $m_{jj} >$ 800 \GeV{}      \\
+           \multicolumn{2}{c|}{}                        & $\pt(bb)>80$ \GeV{}                         \\
+
+            \hline \hline
+         \end{tabular}
+      }
+\end{table}
+
+
+
+
+%-------------------------------------------------------------------------------
+\section{Multivariate analysis}
+\label{sec:mva}
+%-------------------------------------------------------------------------------
+After the event selection requirements are applied, a set of BDTs classify events as being signal-like or background-like~\cite{scikit-learn,tmva}. 
+A separate BDT is trained for each channel with the AdaBoost~\cite{FREUND1997119} algorithm.
+Each BDT discriminant is constructed from a set of variables to maximize the separation between the signal and the dominant backgrounds. 
+The discriminant is then used to define event categories of varying signal purity.
+
+Since the observed signal is extracted from the $m_{bb}$ spectrum, the input variables for each BDT are chosen to have low correlation with the $bb$ invariant mass to prevent sculpting \DIFdelbegin \DIFdel{the $m_{bb}$ }\DIFdelend \DIFaddbegin \DIFadd{of the }\DIFaddend distribution.
+The number of input variables is minimized by excluding variables that give only marginal performance improvement.
+The following input variables are used for all channels, with $j1$ and $j2$ denoting the leading and sub-leading \pT\ VBF jets and with $b1$ and $b2$ denoting leading and sub-leading \pT\ Higgs boson $b$-jet candidates:
+\begin{itemize}
+\item $m_{jj}$: the invariant mass of the VBF jet pair.
+\item $\pT^{jj}$: the transverse momentum of the VBF jet pair.
+\item $N_\text{trk}^{j1}$, $N_\text{trk}^{j2}$: the number of tracks with $\pT > \SI{0.5}{\GeV}$ in the VBF jets, $j1$ and $j2$.  This variable discriminates between gluon jets, which are more abundant in the background processes, and \DIFdelbegin \DIFdel{light quark }\DIFdelend \DIFaddbegin \DIFadd{light-quark }\DIFaddend jets, which are present in the signal. The variable is only used for jets with $|\eta| <$ 2.5.
+\item $\pT^\text{balance}$: the ratio of the vectorial and scalar sums of the jet (and photon, if applicable) transverse momenta,
+$$\frac{\left| \overrightarrow{\pT}(j1)+\overrightarrow{\pT}(j2)+\overrightarrow{\pT}(b1)+\overrightarrow{\pT}(b2) \right| }{ \pT (j1)+\pT(j2)+\pT(b1)+\pT(b2)  }.$$
+This variable discriminates between electroweak signal processes, which typically are balanced, and \DIFdelbegin \DIFdel{multi-jet }\DIFdelend \DIFaddbegin \DIFadd{multijet }\DIFaddend QCD events, which are less balanced.
+\item $\cos{\theta}$: cosine of the angle between the normal directions of the planes spanned by the VBF jet pair and signal $b$-jet pair in the center-of-mass frame of the $jjbb$ system, which is related \DIFaddbegin \DIFadd{to }\DIFaddend the angular dynamics of the production mechanism.
+\end{itemize}
+
+In addition to these common variables, the \DIFdelbegin \textit{\DIFdel{four-central}} %DIFAUXCMD
+\DIFdel{and }\DIFdelend \textit{two-central} \DIFaddbegin \DIFadd{and }\textit{\DIFadd{four-central}} \DIFaddend channel BDTs include the following input variables:
+\begin{itemize}
+\item $\text{max} (\eta) \equiv \max( |\eta_{j1}|, |\eta_{j2}| )$: the maximum absolute value of the VBF jet pseudorapidity.
+\item \DIFdelbegin \DIFdel{$\eta* = \frac{1}{2}( |\eta_\text{j1}| + |\eta_\text{j2}| - |\eta_\text{b1}| - |\eta_\text{b2}|)$}\DIFdelend \DIFaddbegin \DIFadd{$\eta^* = \frac{1}{2}( |\eta_{j1}| + |\eta_{j2}| - |\eta_{b1}| - |\eta_{b2}|)$}\DIFaddend : the average pseudorapidity difference between VBF and signal jets.  This variable discriminates between QCD \DIFdelbegin \DIFdel{multi-jet }\DIFdelend \DIFaddbegin \DIFadd{multijet }\DIFaddend events, which have no average pseudorapidity difference, and VBF processes, where the VBF jets are on average more forward than the signal jets.    
+\item \DIFdelbegin \DIFdel{$\min\Delta R$(j1)}\DIFdelend \DIFaddbegin \DIFadd{$\min\Delta R(j1)$}\DIFaddend : minimum angular separation between the leading VBF jet and the closest jet with $\pT > \SI{20}{\GeV}$ and $|\eta| <4.4$ which is not a signal or VBF jet.
+\item \DIFdelbegin \DIFdel{$\min\Delta R$(j2)}\DIFdelend \DIFaddbegin \DIFadd{$\min\Delta R(j2)$}\DIFaddend : minimum angular separation between the sub-leading VBF jet and  the closest jet with $\pT > \SI{20}{\GeV}$ and $|\eta| <4.4$ which is not a signal or VBF jet.
+\item \DIFdelbegin \DIFdel{$\Delta m_\text{jj}$}\DIFdelend \DIFaddbegin \DIFadd{$\Delta m_{jj}$}\DIFaddend : the difference between the \DIFaddbegin \DIFadd{invariant mass of the }\DIFaddend VBF jet pair and the largest invariant mass \DIFaddbegin \DIFadd{of any }\DIFaddend jet pair in the event\DIFdelbegin \DIFdel{excluding the Higgs signal jets pair}\DIFdelend \DIFaddbegin \DIFadd{, excluding the two jets forming the Higgs boson candidate}\DIFaddend .
+\end{itemize}
+
+The \textit{photon} channel BDT includes the following variables in addition to the common variables:
+\begin{itemize}
+   \item $\Delta R(b1,\gamma)$, $\Delta R(b2,\gamma)$: angular separation between the signal $b$-jets and the photon.
+   \item $\Delta \eta_{jj}$: $\eta$ separation between the VBF jets.
+   \item $\text{centrality}(\gamma,jj)$: centrality of the photon \DIFdelbegin \DIFdel{with respect }\DIFdelend \DIFaddbegin \DIFadd{relative }\DIFaddend to the VBF jets:
+   $$\text{centrality}(\gamma,jj)=\left| \frac{y_{\gamma}-\frac{y_{j1}+y_{j2}}{2}}{y_{j1}-y_{j2}} \right| , $$
+    where $y$ is the rapidity.
+\item $\Delta\phi(bb,jj)$ : azimuthal angle between the VBF jet pair and the signal $b$-jet pair.
+\end{itemize}
+
+The training signal samples are the VBF signal simulation samples described in Section~\ref{sec:simulation}.
+For the \DIFdelbegin \textit{\DIFdel{four-central}} %DIFAUXCMD
+\DIFdel{and }\DIFdelend \textit{two-central} \DIFaddbegin \DIFadd{and }\textit{\DIFadd{four-central}} \DIFaddend channel BDTs, the training background sample is a set of data events in the mass sidebands $\SI{80}{\GeV} < m_{bb} < \SI{100}{\GeV}$ and $\SI{150}{\GeV}< m_{bb} < \SI{190}{\GeV}$.  
+Events from \Zjets production are not removed; however\DIFaddbegin \DIFadd{, }\DIFaddend they contribute 2(3)\% to the low mass sideband for the \textit{two(four)-central} channel.  
+Because data from the sidebands are used as the training sample for the hadronic channels, a three-fold validation of the BDT training is performed to limit possible over-training.
+The signal and background samples are randomly divided into three equal subsets which are then each used to train the BDT while the other two subsets are used for testing. 
+Equal discriminating power is found across all subsets.   \DIFaddbegin \DIFadd{The effect of potential bias on the $m_{bb}$ distribution  from over-training  was checked by repeating the analysis in the training and validation sets.  Additionally, Asimov datasets were produced by reweighting the sidebands to the observed difference in the ratio of events in the training and validation samples for each region.  No statistically significant bias was found in either study.
+}\DIFaddend In the \textit{photon} channel, there are not enough data events to form a training sample, so the non-resonant $\gamma$ + jets simulation sample is used as the background training sample. 
+The entire set of events is split into two samples for training and evaluation.
+To validate the modeling of the non-resonant QCD background, the simulated events are compared \DIFdelbegin \DIFdel{to }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend the data events in the mass sidebands ($m_{bb}< \SI{100}{\GeV}$ and $m_{bb}>\SI{140}{\GeV}$). 
+Correction functions are applied to reweight some of the kinematic distributions ($\Delta \eta_{jj}$, $\pT^{jj}$, $\pT^{\text{balance}}$, and minimum of $\Delta R(b1,\gamma)$ and $\Delta R(b2,\gamma)$) to improve the overall modeling by the non-resonant QCD simulation sample.
+The reweighting process is performed iteratively. 
+The correction function is determined for the kinematic distribution of one of the input variables.
+This function is then applied back to the non-resonant $\gamma$ + jets simulation sample to reweight the kinematic distribution of the input variable
+that the correction function is determined for. 
+At the same time, the kinematic distributions of other input variables correlated \DIFdelbegin \DIFdel{to }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend this input variable
+also show improved agreement with the data after the reweighting.
+The distributions of the other \DIFdelbegin \DIFdel{un-correlated }\DIFdelend \DIFaddbegin \DIFadd{uncorrelated }\DIFaddend input variables are not affected by the reweighting.
+The process is repeated to reweight the other three kinematic variables.
+
+The BDT responses for the signal and background samples are shown in Figure~\ref{fig:bdt_output_comparison}. 
+The output discriminant from each BDT is used to define several signal regions (SR).  The \textit{two-central} channel has two regions, the \textit{four-central} has four regions, and the \textit{photon} channel has three regions as summarized in Table~\ref{tab:region_definition}.  The \textit{four-central} channel does not include the full BDT range in the set of signal regions because including \DIFaddbegin \DIFadd{events with }\DIFaddend lower BDT response \DIFdelbegin \DIFdel{events }\DIFdelend did not improve the significance of the result.  
+These region definitions are optimized for sensitivity to the Higgs boson signal while \DIFdelbegin \DIFdel{maintaining }\DIFdelend \DIFaddbegin \DIFadd{limiting the }\DIFaddend maximum experimental uncertainty \DIFdelbegin \DIFdel{on }\DIFdelend \DIFaddbegin \DIFadd{of }\DIFaddend the \Zboson boson contribution in any signal region \DIFdelbegin \DIFdel{of }\DIFdelend \DIFaddbegin \DIFadd{to }\DIFaddend less than 1.5 times the Standard Model \Zboson boson prediction. The requirement on the precision of the \Zboson boson contribution is necessary because this contribution is a parameter in the fit and the signal regions must be large enough to ensure it is well measured.  
+
+
+\begin{figure}[htbp]
+\centering
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{BDT_response_2cen.pdf}
+%DIFDELCMD < \includegraphics[width=0.48\textwidth]{BDT_response_4cen.pdf}
+%DIFDELCMD < \includegraphics[width=0.48\textwidth]{BDT_response_photon}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_response_2cen.pdf}
+\includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_response_4cen.pdf}
+\includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_response_photon.pdf}
+\DIFaddendFL \caption{The BDT response $w$ for \DIFaddbeginFL \DIFaddFL{the }\DIFaddendFL signal and dominant backgrounds.  The \textit{two-central} channel is on the top left, the \textit{four-central} channel is on the top right, and the \textit{photon} channel is shown in the bottom row.
+For these plots, \DIFaddbeginFL \DIFaddFL{the }\DIFaddendFL background refers to the continuum background derived either from the $m_{bb}$ sidebands in data (\textit{all-hadronic} channels) or from the $\gamma$ + jets simulation sample (\textit{photon} channel).  }
+\label{fig:bdt_output_comparison}
+\end{figure}
+
+\begin{table}[hbtp]
+\caption{Criteria \DIFdelbeginFL \DIFdelFL{on }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{for }\DIFaddendFL the BDT responses used to define the signal regions (SR) for the three channels.}
+\label{tab:region_definition}
+\centering
+\DIFdelbeginFL %DIFDELCMD < \begin{tabular}{ccccc}
+%DIFDELCMD < \toprule
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \begin{tabular}{l|cccl}
+\hline
+ \hline
+ \DIFaddendFL Region                & SR IV           & SR III         & SR II          &SR I     \\
+ \DIFaddbeginFL \multicolumn{1}{c}{SR I}   \DIFaddendFL \\
+\DIFdelbeginFL %DIFDELCMD < \midrule                                                                                 
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \hline
+\DIFaddendFL \textit{\DIFdelbeginFL \DIFdelFL{four-central}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Four-central}\DIFaddendFL } & (0.002, 0.015] & (0.015, 0.026] & (0.026, 0.033] & $> 0.033$       \\
+\textit{\DIFdelbeginFL \DIFdelFL{two-central}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Two-central}\DIFaddendFL }  &                &                & $<-0.006$    & $\geq-0.006$    \\
+\textit{\DIFdelbeginFL \DIFdelFL{photon}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Photon}\DIFaddendFL }       &                & $<-0.05$       & [$-0.05$, \DIFdelbeginFL \DIFdelFL{0.3}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{0.30}\DIFaddendFL ] & \DIFdelbeginFL \DIFdelFL{$>0.3$         }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$>0.30$         }\DIFaddendFL \\
+ \DIFdelbeginFL %DIFDELCMD < \bottomrule
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \hline
+\hline
+\DIFaddendFL \end{tabular}
+\end{table}
+
+
+%-------------------------------------------------------------------------------
+\section{Background and signal modeling}
+\label{sec:backgrounds}
+%-------------------------------------------------------------------------------
+The main sources of background contributing to the final-state signatures are divided into two groups: processes with decay of a massive particle \DIFdelbegin \DIFdel{to }\DIFdelend \DIFaddbegin \DIFadd{into }\DIFaddend $b$-tagged jet pairs and processes with non-resonant $b$-tagged jet pairs.
+The resonant backgrounds are dominated by \Zboson (+$\gamma$) + jets, with small contributions from \Wboson (+$\gamma$) + jets.
+The non-resonant backgrounds are dominated by \DIFdelbegin \DIFdel{multi-jet }\DIFdelend \DIFaddbegin \DIFadd{multijet }\DIFaddend (+$\gamma$) production, with small contributions from $\ttbar$ (+$\gamma$) and single-top events.
+For all of the backgrounds, $b$-tagged jets may correspond to true $b$-jets or to \DIFdelbegin \DIFdel{mis-identified }\DIFdelend \DIFaddbegin \DIFadd{misidentified }\DIFaddend $c$\DIFaddbegin \DIFadd{-jets}\DIFaddend , $\tau$\DIFaddbegin \DIFadd{-jets}\DIFaddend , or light-flavor jets.
+Both the background and signal $m_{bb}$ shapes are parameterized with functions that are derived differently depending on whether they arise from a resonant or non-resonant process. The contributions from \Zboson (+$\gamma$) + jets and \DIFdelbegin \DIFdel{multi-jet }\DIFdelend \DIFaddbegin \DIFadd{multijet }\DIFaddend (+$\gamma$) production background processes are derived from fits to the $m_{bb}$ data distribution using template distributions or analytical functions constructed from sideband data regions or simulation samples. The contributions from other background processes are estimated from simulations.
+
+The Higgs boson and $Z\rightarrow \bbbar$ resonance shapes are parameterized with histogrammed Bukin functions~\cite{bukin} (\textit{\DIFdelbegin \DIFdel{two-channel}\DIFdelend \DIFaddbegin \DIFadd{two-central}\DIFaddend }  and \textit{four-central} channels) or  Crystal Ball functions~\cite{cb1,cb2} (\textit{photon} channel).
+In general, the $m_{bb}$ distributions are well modeled by these functions, and a closure test performed on a representative test dataset, called an Asimov dataset~\cite{Cowan:2010js}, composed of these distributions plus the non-resonant background indicates no bias \DIFdelbegin \DIFdel{on }\DIFdelend \DIFaddbegin \DIFadd{in }\DIFaddend the extracted signal normalization.
+
+In all channels, the non-resonant background distributions are \DIFaddbegin \DIFadd{modeled as polynomials and }\DIFaddend derived from data\DIFdelbegin \DIFdel{in a simultaneous fit with the }%DIFDELCMD < \Zboson %%%
+\DIFdel{boson and signal contributions (Section~\ref{sec:results})}\DIFdelend .  
+In the \textit{two-central} and \textit{four-central} channels, Bernstein polynomials are fit to the sidebands of the $m_{bb}$ distribution outside the signal region of $\SI{100}{\GeV} < m_{bb} < \SI{140}{\GeV}$ for each BDT region separately.   
+The \textit{photon} channel uses a general polynomial.  
+The \Zjets contribution is subtracted using predictions from simulations; tests showed that subtracting twice the prediction does not change the chosen function. 
+For all channels, the \DIFdelbegin \DIFdel{lowest order }\DIFdelend \DIFaddbegin \DIFadd{lowest-order }\DIFaddend polynomial which satisfies basic goodness-of-fit requirements, including $\chi^2$ and $F$-tests, is chosen as a candidate.
+Using Asimov \DIFdelbegin \DIFdel{data sets }\DIFdelend \DIFaddbegin \DIFadd{datasets }\DIFaddend derived from alternative background parameterizations which also satisfy these criteria in fits to the data sidebands, an additional \DIFdelbegin \DIFdel{function selection }\DIFdelend \DIFaddbegin \DIFadd{function-selection }\DIFaddend criterion is applied to ensure that the chosen function candidate does not create any significant spurious signal.  
+This criterion is that any function which \DIFdelbegin \DIFdel{allows a Higgs }\DIFdelend \DIFaddbegin \DIFadd{induces a spurious Higgs boson }\DIFaddend signal contribution with an absolute signal strength of one or larger in these Asimov datasets is discarded. 
+This requirement minimizes the possibility that the chosen function could generate a signal.  
+The alternative functions used include \DIFdelbegin \DIFdel{the }\DIFdelend \DIFaddbegin \DIFadd{a }\DIFaddend product of Bernstein polynomials and \DIFdelbegin \DIFdel{exponentials}\DIFdelend \DIFaddbegin \DIFadd{exponential functions}\DIFaddend , as well as \DIFdelbegin \DIFdel{the sum of exponentials}\DIFdelend \DIFaddbegin \DIFadd{a sum of exponential functions}\DIFaddend . 
+A third-order Bernstein polynomial is the \DIFdelbegin \DIFdel{lowest order }\DIFdelend \DIFaddbegin \DIFadd{lowest-order }\DIFaddend polynomial which satisfies these criteria for the \textit{two-central} and \textit{four-central} channel regions, except SR IV of the \textit{four-central} channel, which requires a fourth-order Bernstein polynomial. 
+The \textit{photon} channel uses a second-order polynomial.  
+
+
+The \Zboson($\rightarrow \bbbar$) + jets contribution plays an important role in the fit procedure because it contributes to the low $m_{bb}$ sideband and affects the continuum background determination.
+Studies have shown that typical methods of estimating uncertainties for a \DIFdelbegin \DIFdel{leading order }\DIFdelend \DIFaddbegin \DIFadd{leading-order }\DIFaddend \Zboson + jets simulation may not be appropriate in the regions of phase space used in this analysis\DIFdelbegin \DIFdel{including high }\DIFdelend \DIFaddbegin \DIFadd{, including high-}\DIFaddend \pT~boson production with widely separated jets~\cite{Rubin:2010xp}.  
+Therefore, its contribution is allowed to float independently in each BDT region.   
+In the \textit{two-central} and \textit{four-central} channels, the low mass sideband extends only to \SI{80}{\GeV} due to the trigger thresholds.   
+Therefore, it does not provide a strong constraint on the \DIFdelbegin \DIFdel{$Z$ }\DIFdelend \DIFaddbegin \Zboson\DIFadd{($\rightarrow \bbbar$) + jets }\DIFaddend contribution, and consequently the determination of this background contributes significantly to the overall uncertainty.  
+In the \textit{photon} channel, the sidebands extend to \SI{50}{\GeV}, allowing the fit to provide a strong constraint on the \Zboson($ \rightarrow \bbbar$) + jets contribution.
+
+A summary of the estimated number of signal events in the Higgs \DIFaddbegin \DIFadd{boson }\DIFaddend mass window of $\SI{100}{\GeV} < m_{bb} < \SI{140}{\GeV}$ is given in Table~\ref{tab:expected_signal}.  There is up to a 60\% contribution of ggF events to the Higgs \DIFaddbegin \DIFadd{boson }\DIFaddend signal in the  \textit{all-hadronic} channels in the least sensitive signal regions and up to a 20\% contribution in the \textit{photon} channel.
+
+\begin{table}[htbp]
+\caption{Expected numbers of signal events within the Higgs \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL mass window of $\SI{100}{\GeV} < m_{bb} < \SI{140}{\GeV}$ estimated from simulations. Statistical uncertainties are shown \DIFdelbeginFL \DIFdelFL{on }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{for }\DIFaddendFL the predictions from simulations.}
+\label{tab:expected_signal}
+\centering
+\resizebox{\textwidth}{!}{
+   \begin{tabular}{ l |r@{$\pm$}lr@{$\pm$}l|r@{$\pm$}lr@{$\pm$}lr@{$\pm$}lr@{$\pm$}l|r@{$\pm$}lr@{$\pm$}lr@{$\pm$}l}
+\hline
+\hline
+Channel      & \multicolumn{4}{c|}{\textit{two-central}} & \multicolumn{8}{c|}{\textit{four-central}} & \multicolumn{6}{c}{\textit{photon}} \\ \hline
+Region       & \multicolumn{2}{c|}{SR I}           & \multicolumn{2}{c|}{SR II  }         & \multicolumn{2}{c|}{SR I }  & \multicolumn{2}{c|}{SR II} & \multicolumn{2}{c|}{SR III} & \multicolumn{2}{c|}{SR IV}  & \multicolumn{2}{c|}{SR I}  & \multicolumn{2}{c|}{SR II}   & \multicolumn{2}{c}{SR III}   \\
+\hline
+ VBF   & 101.2&2.0 & 22.2 &0.9 & 51.6 &1.1 & 28.4 &0.9 & 43.1&1.0 & 41.9 &1.1 & 6.2 &0.1 & 5.5 &0.1 & 2.3 &0.1 \\
+ ggF   &  23.8&2.6 & 75.7 &6.1 & 11.3 &2.2 & 13.2 &1.5 & 43.4&3.8 & 127.0&6.5 & 0.5 &0.2 & 0.3 &0.1 & 0.8 &0.3 \\
+ VH    &   0.2&0.2 & 6.0  &1.2 & 1.2  &0.9 & 0.7  &0.3 & 3.9 &0.8 & 28.9 &2.6 & \multicolumn{2}{r}{$<$0.1} & \multicolumn{2}{r}{$<$0.1} & \multicolumn{2}{r}{$<$0.1} \\
+ ttH   &   2.0&0.2 & 14.6 &0.7 & 0.3  &0.1 & 1.0  &0.1 & 5.7 &0.3 & 20.2 &0.5 & \multicolumn{2}{r}{$<$0.1} & \multicolumn{2}{r}{$<$0.1} & 0.4 &0.1 \\
+\hline
+\hline
+\end{tabular}}
+\end{table}
+
+
+
+%-------------------------------------------------------------------------------
+\section{Systematic uncertainties}
+\label{sec:uncertainties}
+%-------------------------------------------------------------------------------
+The systematic uncertainties for the background and signal expectations are divided into experimental and theoretical uncertainties.
+The uncertainties discussed below affect only the \DIFdelbegin \DIFdel{simulations-based }\DIFdelend \DIFaddbegin \DIFadd{simulation-based }\DIFaddend signal and background predictions.
+They do not affect the \DIFdelbegin \DIFdel{background estimates in the }\textit{\DIFdel{all-hadronic}} %DIFAUXCMD
+\DIFdel{channels }\DIFdelend \DIFaddbegin \DIFadd{non-resonant background estimates }\DIFaddend because those estimates are derived from data alone.
+%DIF > They do not affect the background estimates in the \textit{all-hadronic} channels because those estimates are derived from data alone.
+All uncertainties are propagated to the BDT input variables and then to the final likelihood fits, with the exception of the luminosity uncertainty, which is taken as a constant uncertainty.
+In the likelihood fits for signal extraction, the \DIFdelbegin \DIFdel{experimental }\DIFdelend uncertainties affect the $m_{bb}$ spectrum modeling and normalization of signal processes in each region, as well as the $m_{bb}$ spectrum modeling of the \Zboson boson background.  \DIFdelbegin \DIFdel{Common sources of uncertainties are correlated between }\DIFdelend \DIFaddbegin \DIFadd{The impact of the uncertainties on the BDT output and $m_{bb}$ are determined together and fully correlated. 
+Uncertainties from sources common to }\DIFaddend the signal and \Zboson boson background \DIFaddbegin \DIFadd{are treated as correlated between the two}\DIFaddend .
+
+\subsection{Experimental uncertainties}
+\label{sec:expuncert}
+
+The uncertainty in the integrated luminosity is 2.2\% for the \textit{all-hadronic} channels and 2.1\% for the \textit{photon} channel with the difference due to the small difference in luminosity between the channels.
+It is derived, following a methodology similar to that detailed in Ref.~\cite{DAPR-2013-01} from a  calibration of the luminosity scale using $x$\nobreakdash\DIFdelbegin \DIFdel{-}\DIFdelend \DIFaddbegin \DIFadd{--}\DIFaddend $y$ beam-separation scans performed in August 2015 and May 2016.
+This systematic uncertainty is applied to all physics processes estimated with simulation samples.
+
+The most prominent sources of jet-related uncertainty are the uncertainties \DIFdelbegin \DIFdel{from the jet-energy }\DIFdelend \DIFaddbegin \DIFadd{in the jet energy }\DIFaddend scale (JES) and \DIFdelbegin \DIFdel{jet-energy }\DIFdelend \DIFaddbegin \DIFadd{jet energy }\DIFaddend resolution (JER).
+The JES uncertainty is determined primarily by using \Zboson, photon, and \DIFdelbegin \DIFdel{multi-jet balancing }\DIFdelend \DIFaddbegin \DIFadd{multijet }\pT\DIFadd{-balancing }\DIFaddend techniques in data~\cite{PERF-2016-04}.
+The per-jet uncertainty \DIFdelbegin \DIFdel{on }\DIFdelend \DIFaddbegin \DIFadd{in }\DIFaddend the energy scale varies from approximately 1\% to 5\% for the jets considered in this analysis.
+The systematic uncertainties of the additional \DIFaddbegin \DIFadd{energy corrections specific to }\DIFaddend $b$\DIFdelbegin \DIFdel{-jet specific energy corrections }\DIFdelend \DIFaddbegin \DIFadd{-jets }\DIFaddend are found to be negligible.
+
+The JER uncertainties are also determined \textit{in situ} via \Zboson, photon, and dijet \DIFdelbegin \DIFdel{balancing }\DIFdelend \DIFaddbegin \pT\DIFadd{-balancing }\DIFaddend techniques~\cite{PERF-2016-04}. 
+The systematic uncertainty due to the JER is calculated by \DIFdelbegin \DIFdel{shifting }\DIFdelend \DIFaddbegin \DIFadd{increasing }\DIFaddend the resolution within its uncertainties, smearing the jet energy by the \DIFdelbegin \DIFdel{shift }\DIFdelend \DIFaddbegin \DIFadd{resulting change }\DIFaddend in resolution, and comparing the result to the nominal shape and normalization in simulation. 
+The signal mass resolution varies by 3\% to 4\% due to the systematic uncertainty in the jet energy resolution.
+
+The uncertainties related to the $b$-tagging of jets are implemented as variations \DIFdelbegin \DIFdel{on }\DIFdelend \DIFaddbegin \DIFadd{of }\DIFaddend simulation correction factors (scale factors). These scale factors and their associated uncertainties are determined from data using \ttbar events,  \DIFdelbegin \DIFdel{semi-leptonic $b$-quark decays, }\DIFdelend $W+c$ and  $D^*$ events, and \DIFdelbegin \DIFdel{multi-jet }\DIFdelend \DIFaddbegin \DIFadd{multijet }\DIFaddend data~\cite{PERF-2012-04,ATL-PHYS-PUB-2016-012}.
+\DIFdelbegin \DIFdel{First, simulation efficiencies for $b$-, $c$-, and light-quark (including gluon) jets are corrected by }%DIFDELCMD < \pT%%%
+\DIFdel{-dependent scale factors and (for light jets) $\eta$-dependent scale factors.
+Then, the }\DIFdelend %DIF > First, simulation efficiencies for $b$-, $c$-, and light-quark (including gluon) jets are corrected by \pT-dependent scale factors and (for light jets) $\eta$-dependent scale factors.
+%DIF > Then, t
+\DIFaddbegin \DIFadd{The }\DIFaddend systematic uncertainties for each jet are propagated to a total event uncertainty.
+To simplify the computation and reduce the number of significant uncertainties, a principal-component analysis is performed over all of the contributing uncertainties to generate a reduced set of nuisance parameters.
+For $b$-jets, the uncertainty is approximately 2\%, while it is 10\% for $c$-jets and 30\% for light jets.  Scale factors for the online $b$-tagging algorithms and their uncertainties are derived \DIFdelbegin \DIFdel{with respect }\DIFdelend \DIFaddbegin \DIFadd{relative }\DIFaddend to the offline algorithms and applied to \DIFdelbegin \DIFdel{b-jets}\DIFdelend \DIFaddbegin \DIFadd{$b$-jets}\DIFaddend .  The uncertainties are typically 2--5\%.   
+
+The uncertainty \DIFdelbegin \DIFdel{on }\DIFdelend \DIFaddbegin \DIFadd{due to }\DIFaddend the jet vertex tagging requirement is measured in $\Zboson(\to \ell^+\ell^-)$ + 1-jet events.
+The uncertainty per event is less than 2\%~\cite{ATLAS-CONF-2014-018}.  
+It is determined by changing the jet scale factors by their uncertainties.
+
+To estimate the effects of uncertainties in the number of tracks associated \DIFdelbegin \DIFdel{to }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend a jet, tracks are removed or added according to the tracking efficiency and \DIFdelbegin \DIFdel{fake rate }\DIFdelend \DIFaddbegin \DIFadd{fake-rate }\DIFaddend estimates~\cite{PERF-2015-08,}.
+Uncertainties \DIFdelbegin \DIFdel{on }\DIFdelend \DIFaddbegin \DIFadd{in }\DIFaddend the modeling of track multiplicity are derived from the measurement of the charged-particle multiplicity inside jets from $\sqrt{s} = \SI{8}{\TeV}$ $pp$ collisions~\cite{STDM-2015-12}.
+These effects lead to an uncertainty \DIFdelbegin \DIFdel{on }\DIFdelend \DIFaddbegin \DIFadd{in }\DIFaddend the average number of charged particles associated \DIFdelbegin \DIFdel{to }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend the jet of approximately 10\%.
+\DIFdelbegin \DIFdel{The resulting uncertainties on the BDT outputs are calculated by randomly adding or removing charged particles in a jet.
+}\DIFdelend %DIF > The resulting uncertainties in the BDT outputs are calculated by randomly adding or removing charged particles to or from a jet.
+
+In the \textit{photon} channel, the analysis is not highly sensitive to photon energy uncertainties, so multiple sources of electromagnetic energy scale and resolution uncertainties are combined into a set of just two parameters. The uncertainties were derived from calibration studies in data and  \DIFaddbegin \DIFadd{data to }\DIFaddend simulation comparisons~\cite{ATL-PHYS-PUB-2016-015, ATL-PHYS-PUB-2016-014}.
+A data-driven  correction is applied to account for a shift between the data and simulation distributions of the photon isolation energy.
+The  difference between the uncorrected and corrected isolation energy is taken as a systematic uncertainty. 
+\DIFdelbegin \DIFdel{Systematic uncertainties on }\DIFdelend \DIFaddbegin 
+
+\DIFadd{Systematic uncertainties from }\DIFaddend electrons and muons are negligible and hence are neglected.
+
+\subsection{Theoretical uncertainties}
+\label{sec:theoryuncert}
+The value of the $H\ra\bbbar$ branching ratio and its uncertainty are from the recommendations of the LHC Higgs Cross Section Working Group for $m_H = \SI{125}{\GeV}$~\cite{deFlorian:2016spz} and 
+are calculated by the HDECAY program~\cite{Djouadi:1997yw}.
+Uncertainties in the cross section and acceptance for VBF and ggF signals due to the missing higher-order terms in perturbative QCD calculations are evaluated by varying the choice of renormalization scale and factorization scale independently by factors of 0.5 and 2.0.  
+Specific uncertainties are applied for ggF events with additional radiation which \DIFdelbegin \DIFdel{generate }\DIFdelend \DIFaddbegin \DIFadd{generates }\DIFaddend a VBF-like topology.  
+The ggF events are classified as VBF-like if they have at least two additional jets with an invariant mass \DIFdelbegin \DIFdel{of }\DIFdelend greater than \SI{400}{\GeV}.  The uncertainties \DIFaddbegin \DIFadd{in the cross section }\DIFaddend are approximately 20\% \DIFdelbegin \DIFdel{on the cross section }\DIFdelend in this phase space.     
+The \DIFdelbegin \DIFdel{combined cross section }\DIFdelend \DIFaddbegin \DIFadd{total cross-section }\DIFaddend and acceptance uncertainties \DIFdelbegin \DIFdel{on }\DIFdelend \DIFaddbegin \DIFadd{affect }\DIFaddend the signal yields \DIFdelbegin \DIFdel{vary }\DIFdelend \DIFaddbegin \DIFadd{by }\DIFaddend 4--15\% \DIFdelbegin \DIFdel{for }\DIFdelend \DIFaddbegin \DIFadd{in }\DIFaddend the \textit{all-hadronic} channels and 10--16\% \DIFdelbegin \DIFdel{for }\DIFdelend \DIFaddbegin \DIFadd{in }\DIFaddend the \textit{photon} channel.
+Uncertainties in the cross section and acceptance due to the choice of PDF are evaluated by varying \DIFaddbegin \DIFadd{the }\DIFaddend error eigenvectors of the nominal PDFs.  
+They result in 5--10\% uncertainties \DIFdelbegin \DIFdel{on }\DIFdelend \DIFaddbegin \DIFadd{in }\DIFaddend the signal yields.
+
+The uncertainty from the \DIFdelbegin \DIFdel{parton shower and underlying event }\DIFdelend \DIFaddbegin \DIFadd{parton-shower and underlying-event }\DIFaddend models is estimated by comparing the nominal sample, which uses \PYTHIA 8.2 for parton showering, \DIFdelbegin \DIFdel{to }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend an alternative sample using \DIFdelbegin %DIFDELCMD < \Herwig %%%
+\DIFdelend \DIFaddbegin \HERWIG \DIFaddend 7.0 for parton-shower generation. 
+This uncertainty \DIFdelbegin \DIFdel{varies }\DIFdelend \DIFaddbegin \DIFadd{is }\DIFaddend 4--12\%.  \DIFaddbegin \DIFadd{These uncertainties are also propagated to the $m_{bb}$ shape.  
+}\DIFaddend 
+
+The contributions of the VH and ttH Higgs \DIFaddbegin \DIFadd{boson }\DIFaddend production modes to the \textit{all-hadronic} channels' signal regions are small in the most sensitive signal regions (0.2--3\%)
+and rise to 20\% in the least sensitive regions.
+The \DIFdelbegin \DIFdel{yield }\DIFdelend \DIFaddbegin \DIFadd{contribution }\DIFaddend from these processes is included in the total Higgs \DIFaddbegin \DIFadd{boson }\DIFaddend yield, and 100\% uncertainty is taken \DIFdelbegin \DIFdel{on }\DIFdelend \DIFaddbegin \DIFadd{for }\DIFaddend their relative contribution.
+In the \textit{photon} analysis the ggF and ttH contributions are small, and 100\% uncertainty is assumed.
+The yield from these processes is added to the Higgs \DIFaddbegin \DIFadd{boson }\DIFaddend yields from VBF and VH processes.
+
+\DIFdelbegin %DIFDELCMD < \subsection{Non-resonant and \Zboson background uncertainties}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \subsection{Non-resonant and \Zboson boson background uncertainties}
+\DIFaddend \label{sec:fituncert}
+
+The uncertainty due to the non-resonant background modeling is included by determining the largest spurious signal induced in Asimov datasets derived with alternative functions which describe the data sidebands equally well.  
+These alternative functions must pass the $\chi^2$ and $F$-test as described in Section~\ref{sec:backgrounds}.  
+The size of the spurious signal is taken as the uncertainty and is typically 20--30\% of the expected Higgs \DIFaddbegin \DIFadd{boson }\DIFaddend signal.   This uncertainty is included in the total experimental uncertainties. 
+
+The uncertainties due to the \Zboson boson background fall into two categories.  
+Experimental uncertainties \DIFdelbegin \DIFdel{on }\DIFdelend \DIFaddbegin \DIFadd{in }\DIFaddend the observed \Zboson boson resonance shape are determined as described in Section~\ref{sec:expuncert}.    
+Normalization uncertainties are \DIFaddbegin \DIFadd{determined }\DIFaddend from the fit. 
+
+
+
+%-------------------------------------------------------------------------------
+\section{Fits for Higgs boson production}
+\label{sec:results}
+%-------------------------------------------------------------------------------
+%
+The inclusive Higgs boson signal strength $\muH$ and the VBF-specific strength $\muVBF$ are extracted from an extended \DIFdelbegin \DIFdel{maximum likelihood }\DIFdelend \DIFaddbegin \DIFadd{maximum-likelihood }\DIFaddend fit to the $b$-tagged dijet invariant mass spectrum $m_{bb}$ in data.
+The \textit{two-central} and \textit{four-central} channels use a joint binned likelihood fit with a bin size of \SI{0.5}{\GeV}.  The signal strength is common to the two channels.  The \textit{photon} channel, which has  fewer events, uses an unbinned fit to maximize \DIFaddbegin \DIFadd{the }\DIFaddend sensitivity.  The fit range is $\SI{80}{\GeV} <  m_{bb}  < \SI{200}{\GeV}$ for the \textit{two-central} and \textit{four-central} channels and $\SI{50}{\GeV} <  m_{bb} < \SI{250}{\GeV}$ for the \textit{photon} channel.  The different lower mass \DIFdelbegin \DIFdel{threshold }\DIFdelend \DIFaddbegin \DIFadd{bounds }\DIFaddend for the two fits is because the \textit{photon} channel has lower jet thresholds.  For the  \textit{two-central} and \textit{four-central} channel fits, there is no benefit to extending the fit range beyond an $m_{bb}$ of \SI{200}{\GeV}.
+
+In all cases, the likelihood is built from the product of Poisson probability terms across all channels and BDT regions with three contributions: non-resonant background, \Zboson boson events,  and Higgs boson signal events.  The parameterization of these contributions is described in Section~\ref{sec:backgrounds}.  The likelihood includes terms for systematic uncertainties implemented as nuisance parameters\DIFdelbegin \DIFdel{(NPs, labelled $\theta$).
+The NPs }\DIFdelend \DIFaddbegin \DIFadd{.
+The nuisance parameters }\DIFaddend describe the systematic uncertainties discussed in Section~\ref{sec:uncertainties} and are parameterized by Gaussian or log-normal priors.  
+Each prior constrains \DIFdelbegin \DIFdel{an NP }\DIFdelend \DIFaddbegin \DIFadd{a nuisance parameter }\DIFaddend to its nominal value within its associated uncertainty\DIFdelbegin \DIFdel{~$\sigma_{\theta_i}$}\DIFdelend .
+
+The strength of the Higgs boson signal, either inclusive or VBF-specific, is the parameter of interest. 
+Other free parameters include the shape parameters of the non-resonant background and the normalizations of the non-resonant and \Zboson boson backgrounds in each region.
+Signal-injection tests confirmed the linearity of the fit with no bias.
+The \textit{all-hadronic} and \textit{photon} results are also combined in a simultaneous likelihood fit with the signal strength treated as correlated across all analysis regions.
+In the case of the inclusive extraction of $\muH$, all production mechanisms (VBF, ggF, VH, and ttH) are considered as signal, and their ratios are fixed to the SM predictions.
+In the case of the VBF-only extraction of $\muVBF$, all channels include the contributions of ggF, ttH, and VH as nuisance parameters constrained to their \DIFdelbegin \DIFdel{standard model }\DIFdelend \DIFaddbegin \DIFadd{Standard Model }\DIFaddend expectations with the uncertainties described in Section~\ref{sec:theoryuncert}.
+
+With the exception of the $b$-tagging uncertainties, the experimental uncertainties are treated as fully correlated between the channels.
+The $b$-tagging uncertainties \DIFdelbegin \DIFdel{both for }\DIFdelend \DIFaddbegin \DIFadd{for both }\DIFaddend the offline and online algorithms are taken as \DIFaddbegin \DIFadd{fully }\DIFaddend uncorrelated between different working points.
+Treating them as correlated or uncorrelated has no impact on the overall result or uncertainty.
+Theoretical uncertainties\DIFdelbegin \DIFdel{including those on }\DIFdelend \DIFaddbegin \DIFadd{, including those in }\DIFaddend the QCD scale of the VBF process, \DIFaddbegin \DIFadd{the }\DIFaddend parton showering, \DIFaddbegin \DIFadd{the }\DIFaddend PDFs, and the ttH yield\DIFaddbegin \DIFadd{, }\DIFaddend are correlated.
+In general, background \DIFdelbegin \DIFdel{systematics }\DIFdelend \DIFaddbegin \DIFadd{systematic uncertainties }\DIFaddend such as non-resonant background normalization/parameterization, \Zboson boson normalization, and spurious signals are specific to each channel and consequently not correlated. 
+Systematic uncertainties related to the fit procedure are characterized by  \DIFdelbegin \DIFdel{spurious signal }\DIFdelend \DIFaddbegin \DIFadd{spurious-signal }\DIFaddend nuisance parameters.  
+These are treated as uncorrelated across the signal regions. 
+
+The $m_{bb}$ invariant mass distributions after the combined $\muVBF$ fits are shown
+in Figures~\ref{fig:higgsfit_2cen}--\ref{fig:mbb_postfit_photon} for each region and each channel. 
+The Higgs boson signal, \Zboson boson background, and non-resonant background yields in the Higgs boson mass window of $\SI{100}{\GeV} < m_{bb} < \SI{140}{\GeV}$ after performing \DIFaddbegin \DIFadd{the }\DIFaddend combined fit are shown in Table~\ref{tab:postfit_yields_vbffit}.
+
+A test statistic based on the profile likelihood function is used to \DIFdelbegin \DIFdel{quantify the compatibility of the dataset }\DIFdelend \DIFaddbegin \DIFadd{determine the probability that the dataset is compatible }\DIFaddend with the Higgs boson signal hypothesis.
+Distributions of the test statistic under the signal and null (background-only) hypotheses are estimated using asymptotic approximations~\cite{Cowan:2010js}.
+As no statistically significant signal is observed, the $\text{CL}_{\text{s}}$ technique~\cite{Read:2002hq} is used to derive 95\% CL upper limits on $H\rightarrow b\bar{b}$ production in both the inclusive and VBF channels.
+The likelihood fit results for the Higgs boson normalization are shown in Table~\ref{tab:higgs_significances_limits}, \DIFaddbegin \DIFadd{both }\DIFaddend for the individual channels and for the combined fits.
+The results are consistent with Standard Model expectations within the uncertainties. 
+A summary of the uncertainties is shown in Table~\ref{tab:systematic_uncertainty_summary}.  
+The \DIFaddbegin \DIFadd{effect of data statistical uncertainty on the Higgs signal strength is derived by fixing all nuisance parameters to their best-fit values and taking the differences between the central value and the 1$\sigma$ interval for the measured Higgs signal strength. 
+The effect from non-resonant background parameters is then derived as the difference in quadrature between the uncertainty effects on the Higgs signal strength derived by floating and fixing the corresponding nuisance parameters.
+A similar procedure is performed to calculate the impact of the other uncertainties with the order as shown in the table, where the effect is derived by floating all the parameters for the uncertainty terms above.
+The }\DIFaddend total uncertainty is dominated by statistical uncertainties, \DIFdelbegin \DIFdel{but the }\DIFdelend \DIFaddbegin \DIFadd{with important contributions from the determination of the non-resonant background parameters and $Z$ normalization due to the weak constraining power of the low $m_{bb}$ sideband.  The }\DIFaddend experimental systematic uncertainties, as defined in Section~\ref{sec:expuncert}, also contribute significantly \DIFaddbegin \DIFadd{to the total uncertainty}\DIFaddend .  
+Of these, the leading uncertainties are \DIFaddbegin \DIFadd{due to }\DIFaddend the JES and JER uncertainties, followed by $b$-tagging uncertainties.
+The spurious signal contributes an uncertainty of less than 0.1 for both the individual and combined signal extractions.
+
+The results for the extraction of $\muH$ and $\muVBF$ are also shown in Table~\ref{tab:higgs_significances_limits} and displayed in Figure~\ref{fig:summary}. 
+The observed significances \DIFaddbegin \DIFadd{and signal strengths }\DIFaddend are higher than the expected significances for all channels. 
+The observed significances of both the inclusive and VBF-only production are 1.9$\sigma$, compared with 0.9$\sigma$ expected for the inclusive production and 0.7$\sigma$ expected for the VBF production. \DIFaddbegin \DIFadd{The observed signal strength, $\muH$, is 2.4$^{+1.4}_{-1.3}$ for inclusive production, as compared with  1$\pm1.2$ expected.  For VBF production,  $\muVBF$  is observed to be  3.0$^{+1.7}_{-1.6}$, which can be compared with an expectation of $1\pm1.5$. 
+}\DIFaddend 
+
+\begin{figure}[htbp]
+  \centering
+ \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/VBF_Only_Extraction/comb_vbfonly_testVBF_ICHEP_2cen_SRI_vbfincl.pdf}
+%DIFDELCMD <  \includegraphics[width=0.48\textwidth]{figures/VBF_Only_Extraction/comb_vbfonly_testVBF_ICHEP_2cen_SRII_vbfincl.pdf}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/comb_vbfonly_testVBF_ICHEP_2cen_SRI_vbfincl.pdf}
+ \includegraphics[width=0.48\textwidth]{figures/FinalFigures/comb_vbfonly_testVBF_ICHEP_2cen_SRII_vbfincl.pdf}\DIFaddendFL \\
+
+\caption{Data and fit model comparison for the \DIFaddbeginFL \DIFaddFL{combined }\DIFaddendFL profile likelihood fit \DIFaddbeginFL \DIFaddFL{for }\muVBF \DIFaddendFL in the \textit{two-central} channel signal regions.  The \DIFdelbeginFL \DIFdelFL{shown }%DIFDELCMD < \muVBF %%%
+\DIFdelFL{value corresponds to the result of the }\DIFdelendFL combined fit \DIFdelbeginFL \DIFdelFL{of }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{includes }\DIFaddendFL all \DIFaddbeginFL \DIFaddFL{signal regions for the }\textit{\DIFaddFL{all-hadronic}} \DIFaddFL{and }\textit{\DIFaddFL{photon}} \DIFaddendFL channels. 
+The fitted continuum background is shown with a dashed green line, the fitted $Z$ \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL background \DIFdelbeginFL \DIFdelFL{in }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{with a dotted }\DIFaddendFL gray \DIFaddbeginFL \DIFaddFL{line}\DIFaddendFL , and the fitted Higgs \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL signal \DIFdelbeginFL \DIFdelFL{in }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{with a dash-dotted }\DIFaddendFL red \DIFaddbeginFL \DIFaddFL{line}\DIFaddendFL . The total fit is displayed with \DIFdelbeginFL \DIFdelFL{the }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{a solid }\DIFaddendFL blue line. The bottom panels show the residuals of the data \DIFdelbeginFL \DIFdelFL{with respect }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{relative }\DIFaddendFL to the continuum background fit, along with the \DIFdelbeginFL \DIFdelFL{fitted }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{simulated }\DIFaddendFL $Z$ \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL background \DIFdelbeginFL \DIFdelFL{(gray) }\DIFdelendFL and Higgs \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL signal \DIFdelbeginFL \DIFdelFL{(red) }\DIFdelendFL normalized to the fitted signal strengths.  Only statistical uncertainties are shown. }
+  \label{fig:higgsfit_2cen}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/VBF_Only_Extraction/comb_vbfonly_testVBF_ICHEP_4cen_SRI_vbfincl.pdf}
+%DIFDELCMD <  \includegraphics[width=0.48\textwidth]{figures/VBF_Only_Extraction/comb_vbfonly_testVBF_ICHEP_4cen_SRII_vbfincl.pdf}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/comb_vbfonly_testVBF_ICHEP_4cen_SRI_vbfincl.pdf}
+ \includegraphics[width=0.48\textwidth]{figures/FinalFigures/comb_vbfonly_testVBF_ICHEP_4cen_SRII_vbfincl.pdf}\DIFaddendFL \\
+ \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/VBF_Only_Extraction/comb_vbfonly_testVBF_ICHEP_4cen_SRIII_vbfincl.pdf}
+%DIFDELCMD <  \includegraphics[width=0.48\textwidth]{figures/VBF_Only_Extraction/comb_vbfonly_testVBF_ICHEP_4cen_SRIV_vbfincl.pdf}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/comb_vbfonly_testVBF_ICHEP_4cen_SRIII_vbfincl.pdf}
+ \includegraphics[width=0.48\textwidth]{figures/FinalFigures/comb_vbfonly_testVBF_ICHEP_4cen_SRIV_vbfincl.pdf}\DIFaddendFL \\
+
+\caption{Data and fit model comparison for the \DIFaddbeginFL \DIFaddFL{combined }\DIFaddendFL profile likelihood fit \DIFaddbeginFL \DIFaddFL{for }\muVBF \DIFaddendFL in the \textit{four-central} channel signal regions.  The \DIFdelbeginFL \DIFdelFL{shown }%DIFDELCMD < \muVBF %%%
+\DIFdelFL{value corresponds to the result of the }\DIFdelendFL combined fit \DIFdelbeginFL \DIFdelFL{of }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{includes }\DIFaddendFL all \DIFaddbeginFL \DIFaddFL{signal regions for the }\textit{\DIFaddFL{all-hadronic}} \DIFaddFL{and }\textit{\DIFaddFL{photon}} \DIFaddendFL channels.  The fitted continuum background is shown with a dashed green line, the fitted $Z$ \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL background \DIFdelbeginFL \DIFdelFL{in }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{with a dotted }\DIFaddendFL gray \DIFaddbeginFL \DIFaddFL{line}\DIFaddendFL , and the fitted Higgs \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL signal \DIFdelbeginFL \DIFdelFL{in }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{with a dash-dotted }\DIFaddendFL red \DIFaddbeginFL \DIFaddFL{line}\DIFaddendFL .  The total fit is displayed with \DIFdelbeginFL \DIFdelFL{the }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{a solid }\DIFaddendFL blue line. The bottom panels show the residuals of the data \DIFdelbeginFL \DIFdelFL{with respect }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{relative }\DIFaddendFL to the continuum background fit, along with the \DIFdelbeginFL \DIFdelFL{fitted }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{simulated }\DIFaddendFL $Z$ \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL background \DIFdelbeginFL \DIFdelFL{(gray) }\DIFdelendFL and Higgs \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL signal \DIFdelbeginFL \DIFdelFL{(red)  }\DIFdelendFL normalized to the the fitted signal strengths. Only statistical uncertainties are shown.}
+  \label{fig:higgsfit_4cen}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+\centering
+
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/VBF_Only_Extraction/comb_vbfonly_testchannel1_vbfg.pdf}
+%DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/VBF_Only_Extraction/comb_vbfonly_testchannel2_vbfg.pdf}
+%DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/VBF_Only_Extraction/comb_vbfonly_testchannel3_vbfg.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/comb_vbfonly_testchannel1_vbfg.pdf}
+\includegraphics[width=0.48\textwidth]{figures/FinalFigures/comb_vbfonly_testchannel2_vbfg.pdf}
+\includegraphics[width=0.48\textwidth]{figures/FinalFigures/comb_vbfonly_testchannel3_vbfg.pdf}
+\DIFaddendFL \caption{Data and fit model comparison for the \DIFaddbeginFL \DIFaddFL{combined }\DIFaddendFL profile likelihood fit \DIFaddbeginFL \DIFaddFL{for }\muVBF \DIFaddendFL in the \textit{photon} channel signal regions.  The \DIFdelbeginFL \DIFdelFL{shown }%DIFDELCMD < \muVBF %%%
+\DIFdelFL{value corresponds to the result of the }\DIFdelendFL combined fit \DIFdelbeginFL \DIFdelFL{of }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{includes }\DIFaddendFL all \DIFaddbeginFL \DIFaddFL{signal regions for the }\textit{\DIFaddFL{all-hadronic}} \DIFaddFL{and }\textit{\DIFaddFL{photon}} \DIFaddendFL channels. The fitted continuum background is shown with a dashed green line, the fitted $Z$ \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL background \DIFdelbeginFL \DIFdelFL{in }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{with a dotted }\DIFaddendFL gray \DIFaddbeginFL \DIFaddFL{line}\DIFaddendFL , and the fitted Higgs \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL signal \DIFdelbeginFL \DIFdelFL{in }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{with a dash-dotted }\DIFaddendFL red \DIFaddbeginFL \DIFaddFL{line}\DIFaddendFL .  The total fit is displayed with \DIFdelbeginFL \DIFdelFL{the }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{a solid }\DIFaddendFL blue line. The bottom panels show the residuals of the data \DIFdelbeginFL \DIFdelFL{with respect }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{relative }\DIFaddendFL to the continuum background fit, along with the simulated $Z$ \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL background \DIFdelbeginFL \DIFdelFL{(gray) }\DIFdelendFL and Higgs \DIFaddbeginFL \DIFaddFL{boson }\DIFaddendFL signal \DIFdelbeginFL \DIFdelFL{(red) }\DIFdelendFL normalized to the fitted signal strengths. Only statistical uncertainties are shown.}
+\label{fig:mbb_postfit_photon}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.49\textwidth]{Plot_mu_summary_VBF.pdf}
+%DIFDELCMD < \includegraphics[width=0.49\textwidth]{figures/VBF_Only_Extraction/Plot_mu_summary_VBFonly.pdf}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.49\textwidth]{figures/FinalFigures/Plot_mu_summary_VBF.pdf}
+\includegraphics[width=0.49\textwidth]{figures/FinalFigures/Plot_mu_summary_VBFonly.pdf}
+\DIFaddendFL 
+
+\caption{Summary of the \textit{all-hadronic}, \textit{photon} and combined results for the fitted signal strength parameters $\muH$ (left) and $\muVBF$ (right).
+  \DIFdelbeginFL \DIFdelFL{Green }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The inner error }\DIFaddendFL bars show the statistical uncertainties. \DIFdelbeginFL \DIFdelFL{Black }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The outer error }\DIFaddendFL bars show the total uncertainties.}
+  \label{fig:summary}
+\end{figure}
+
+
+\DIFaddbegin \begin{table}[htbp]
+   \caption{\DIFaddFL{Numbers of signal, background and data events within the Higgs boson mass window of $\SI{100}{\GeV} < m_{bb} < \SI{140}{\GeV}$. Signal and background yields are derived from the combined fit for the extraction of }\muVBF\DIFaddFL{. Uncertainties include both the statistical and systematic uncertainties.}}
+\label{tab:postfit_yields_vbffit}
+\centering
+\def\arraystretch{1.4}
+\resizebox{\textwidth}{!}{
+   \begin{tabular}{ l |r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l}
+\hline
+\hline
+Channel      & \multicolumn{4}{c|}{\textit{Two-central}} & \multicolumn{8}{c|}{\textit{Four-central}} & \multicolumn{6}{c}{\textit{Photon}} \\ \hline
+Region       & \multicolumn{2}{c|}{SR I}           & \multicolumn{2}{c|}{SR II  }         & \multicolumn{2}{c|}{SR I }  & \multicolumn{2}{c|}{SR II} & \multicolumn{2}{c|}{SR III} & \multicolumn{2}{c|}{SR IV}  & \multicolumn{2}{c|}{SR I}  & \multicolumn{2}{c|}{SR II}   & \multicolumn{2}{c}{SR III}   \\
+\hline
+Higgs boson & 340&$^{120}_{130}$ & 165&$^{50}_{29}$ & 167&$^{60}_{58}$ & 101&$^{40}_{21}$ & 183&$^{50}_{46}$ & 304&$^{100}_{51}$ & 21.1&$^{7.7}_{7.1}$ & 20.1&$^{9.5}_{7.2}$ & 10.6&$^{7.8}_{4.1}$ \\
+$Z$+jets ($Z\gamma$) & 470&$^{140}_{180}$ & 230&$^{210}_{230}$ & 22&$^{80}_{22}$ & 197&$^{90}_{95}$ & 720&$^{190}_{180}$ & 1 260&$^{270}_{250}$ & 5.8&$^{3.3}_{3.6}$ & 1.1&$^{5.8}_{1.1}$ & 9.8&$^{7.8}_{7.9}$ \\
+Non-resonant bkg & 34 620&$^{310}_{280}$ & 95 620&$^{420}_{420}$ & 12 870&$^{150}_{190}$ & 19 340&$^{200}_{240}$ & 59 340&$^{340}_{340}$ & 146 930&$^{630}_{510}$ & 140.4&$^{6.1}_{6.8}$ & 518&$^{10}_{13}$ & 1 296&$^{18}_{19}$ \\
+ [2px] \hline
+% Data & \multicolumn{2}{l|}{35 496} & \multicolumn{2}{l|}{95 802} & \multicolumn{2}{l|}{13 139} & \multicolumn{2}{l|}{19 611} & \multicolumn{2}{l|}{60 314} & \multicolumn{2}{l|}{148 413} & \multicolumn{2}{l|}{162} & \multicolumn{2}{l|}{ 565} & \multicolumn{2}{l}{1 270} \\
+ Data & \multicolumn{1}{r}{35 496} && \multicolumn{1}{r}{95 802} && \multicolumn{1}{r}{13 139} && \multicolumn{1}{r}{19 611} && \multicolumn{1}{r}{60 314} && \multicolumn{1}{r}{148 413} && \multicolumn{1}{l}{162} && \multicolumn{1}{r}{565} && \multicolumn{1}{r}{1 270} \\
+\hline
+\hline
+\end{tabular}}
+\end{table}
+
+
+\DIFaddend \begin{table}[hbtp]
+\small
+\caption{Expected and observed results \DIFdelbeginFL \DIFdelFL{on }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{for }\DIFaddendFL the Higgs boson production rate, for both inclusive production and \DIFdelbeginFL \DIFdelFL{for }\DIFdelendFL VBF production only, relative to the Standard Model prediction. Where the results are reported by channel, the fit is performed with that channel only.}
+\label{tab:higgs_significances_limits}
+
+\centering
+\def\arraystretch{1.4}
+\DIFdelbeginFL %DIFDELCMD < \begin{tabular}{l|lll|lll}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \begin{tabular}{l|rrr|rrr}
+\DIFaddendFL \hline
+\hline
+\multirow{2}{*}{Results} & \multicolumn{3}{c|}{Inclusive production} & \multicolumn{3}{c}{VBF production} \\
+\cline{2-7}
+& \textit{\DIFdelbeginFL \DIFdelFL{all-hadronic}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{All-hadronic}\DIFaddendFL } & \textit{\DIFdelbeginFL \DIFdelFL{photon}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Photon}\DIFaddendFL } & \DIFdelbeginFL \DIFdelFL{combined }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Combined }\DIFaddendFL & \textit{\DIFdelbeginFL \DIFdelFL{all-hadronic}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{All-hadronic}\DIFaddendFL } & \textit{\DIFdelbeginFL \DIFdelFL{photon}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Photon}\DIFaddendFL } & \DIFdelbeginFL \DIFdelFL{combined}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Combined}\DIFaddendFL \\
+\hline
+Expected significance & $0.5\sigma$ & $0.6\sigma$&  $0.9\sigma$ & $0.4\sigma$ & $0.6\sigma$&  $0.7\sigma$  \\
+Observed significance & $1.4\sigma$ & $1.3\sigma$&  $1.9\sigma$ & $1.4\sigma$ & $1.4\sigma$&  $1.9\sigma$  \\
+Expected limit on signal strength & $4.1^{+1.9}_{-1.2} $  & $3.4^{+1.5}_{-1.0}$ & $2.5^{+1.0}_{-0.7}$ & $5.9^{+2.6}_{-1.7} $  & $3.7^{+1.6}_{-1.0}$ & $3.0^{+1.3}_{-0.8}$ \\
+Observed limit on signal strength & 6.8 & 5.5 &  4.8 & 9.7 & 6.1 & 5.9 \\
+Expected signal strength  & $1\pm1.9$ & $1\pm1.7$ & $1\pm 1.2$ & $1\pm2.8$ & $1\pm1.8$ & $1\pm 1.5$   \\
+Observed signal strength  & $2.7^{+2.2}_{-2.0}$ & $2.3^{+1.9}_{-1.7}$ & $2.5^{+1.4}_{-1.3}$ & $4.1^{+3.2}_{-2.9}$ & $2.5^{+2.0}_{-1.9}$ & $3.0^{+1.7}_{-1.6}$ \\
+\hline
+\hline
+
+\end{tabular}
+\end{table}
+
+\begin{table}[hbtp]
+\centering
+% \caption{Uncertainties and their effects on the Higgs boson signal strength measurement, 
+% for inclusive production (\muH) and for VBF production only (\muVBF) by combining both \textit{all-hadronic} and \textit{photon} channels. 
+% Uncertainties are grouped into statistical uncertainties, which are related to data sample size and can be significantly reduced with increased integrated luminosity, and systematic uncertainties.
+% The data statistical uncertainty is derived by fixing all other parameters to their best fit values, except for the signal strength parameter, and finding the $1\sigma$ interval for the signal strength, corresponding to the region with likelihood values no more than 0.5 away from the maximum likelihood value. 
+% The effect from non-resonant background parameters is then derived as the subtraction in quadrature of the $1\sigma$ intervals derived by floating and fixing the corresponding nuisance parameters.
+% A similar procedure is performed to calculate the effects for other uncertainties, where the former interval is derived by floating all the parameters for the above uncertainty terms. 
+% }
+%DIF > \caption{Uncertainties and their effects on the Higgs boson signal strength measurement, 
+%DIF > for inclusive production (\muH) and for VBF production only (\muVBF) by combining both \textit{all-hadronic} channels with the \textit{photon} channel. 
+%DIF > % Uncertainties are grouped into statistical uncertainties, which are related to data sample size and can be significantly reduced with increased integrated luminosity, and systematic uncertainties.
+%DIF > Uncertainties are grouped into statistical and systematic uncertainties.
+%DIF > The data statistical uncertainty effect is derived by fixing all nuisance parameters to their best-fit values and taking the differences between the central value and the 1$\sigma$ interval for \muH (\muVBF). 
+%DIF > The effect from non-resonant background parameters is then derived as the difference in quadrature between the uncertainty effects on \muH (\muVBF) derived by floating and fixing the corresponding nuisance parameters.
+%DIF > A similar procedure is performed to calculate the effects for other uncertainties with the order as shown in the table, where the former interval is derived by floating all the parameters for the uncertainty terms above.
+%DIF > %A similar procedure is performed to calculate the effects for other uncertainties with the downward order as shown in the table, where the former interval is derived by floating all the parameters for the uncertainty terms above.
+%DIF > }
+\caption{Uncertainties and their effects on the Higgs boson signal strength \DIFdelbeginFL \DIFdelFL{measurement, 
+}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{in the combined fit
+}\DIFaddendFL for \DIFaddbeginFL \DIFaddFL{both the }\DIFaddendFL inclusive production (\muH) and \DIFdelbeginFL \DIFdelFL{for VBF }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{VBF-only }\DIFaddendFL production \DIFdelbeginFL \DIFdelFL{only }\DIFdelendFL (\muVBF)\DIFdelbeginFL \DIFdelFL{by combining both }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{.
+The combined fit includes all signal regions for the }\DIFaddendFL \textit{all-hadronic} \DIFaddbeginFL \DIFaddFL{channels }\DIFaddendFL and \textit{photon} \DIFdelbeginFL \DIFdelFL{channels}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{channel}\DIFaddendFL . 
+%DIF <  Uncertainties are grouped into statistical uncertainties, which are related to data sample size and can be significantly reduced with increased integrated luminosity, and systematic uncertainties.
+Uncertainties are grouped into statistical and systematic uncertainties.
+\DIFdelbeginFL \DIFdelFL{The data statistical uncertainty effect is derived by fixing all nuisance parameters to theirs best fit values and taking the differences between central value and 1$\sigma$ interval for }%DIFDELCMD < \muH %%%
+\DIFdelFL{(}%DIFDELCMD < \muVBF%%%
+\DIFdelFL{). 
+The effect from non-resonant background parameters are then derived as the quadrature subtraction between the uncertainty effects on }%DIFDELCMD < \muH %%%
+\DIFdelFL{(}%DIFDELCMD < \muVBF%%%
+\DIFdelFL{) derived by floating and fixing the corresponding nuisance parameters.
+A similar procedure is performed to calculate the effects for other uncertainties with the downward order as shown in table, where the former interval is derived by floating all the parameters for above uncertainty terms.
+}\DIFdelendFL }
+\label{tab:systematic_uncertainty_summary}
+\DIFdelbeginFL %DIFDELCMD < \footnotesize
+%DIFDELCMD < %%%
+\DIFdelendFL %DIF > \footnotesize
+\begin{tabular}{l|c|c}
+\hline
+\hline
+Uncertainty    &$\sigma(\muH)$ &$\sigma(\muVBF)$ \\
+\hline
+Total \DIFdelbeginFL \DIFdelFL{Stat. Uncertainty             }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{stat. uncertainty             }\DIFaddendFL &  $+$1.3 $-$1.3  &   $+$1.6 $-$1.5  \\
+\quad Data \DIFdelbeginFL \DIFdelFL{Stat. Uncertainty        }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{stat. uncertainty        }\DIFaddendFL &  $+$0.6 $-$0.6  &   $+$0.9 $-$0.9  \\
+\quad Non-resonant bkg              &  $+$1.0 $-$1.0  &   $+$1.2 $-$1.2  \\
+\quad \DIFdelbeginFL \DIFdelFL{Z}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$Z$}\DIFaddendFL +jets \DIFdelbeginFL \DIFdelFL{Normalization          }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{normalization          }\DIFaddendFL &  $+$0.5 $-$0.5  &   $+$0.5 $-$0.5  \\
+\hline
+Total \DIFdelbeginFL \DIFdelFL{Syst. Uncertainty             }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{syst. uncertainty             }\DIFaddendFL &  $+$0.6 $-$0.4  &   $+$0.6 $-$0.5  \\
+\quad Higgs \DIFdelbeginFL \DIFdelFL{Modeling                }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{boson modeling     }\DIFaddendFL &  $+$0.3 $-$0.1  &   $+$0.2 $-$0.1  \\
+\quad JES/JER                       &  $+$0.3 $-$0.2  &   $+$0.4 $-$0.2  \\
+\quad $b$-tagging (incl. trigger)   &  $+$0.2 $-$0.1  &   $+$0.2 $-$0.1  \\
+\quad Other \DIFdelbeginFL \DIFdelFL{Exp. Uncertainty        }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{exp. uncertainty        }\DIFaddendFL &  $+$0.4 $-$0.3  &   $+$0.4 $-$0.4  \\
+\hline
+Total                               &  $+$1.4 $-$1.3  &   $+$1.7 $-$1.6  \\
+\hline \hline
+\end{tabular}
+\end{table}
+
+\DIFdelbegin %DIFDELCMD < \begin{table}[htbp]
+%DIFDELCMD <    %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{Numbers of signal, background and data events within the Higgs mass window of $\SI{100}{\GeV} < m_{bb} < \SI{140}{\GeV}$. Signal and background yields are derived from the combined fit for the extraction of }%DIFDELCMD < \muVBF%%%
+\DIFdelFL{. Uncertainties include both statistical and systematic uncertainties.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{tab:postfit_yields_vbffit}
+%DIFDELCMD < \centering
+%DIFDELCMD < \def\arraystretch{1.4}
+%DIFDELCMD < \resizebox{\textwidth}{!}{
+%DIFDELCMD <    \begin{tabular}{ l |r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l}
+%DIFDELCMD < \hline
+%DIFDELCMD < \hline
+%DIFDELCMD < Channel      & \multicolumn{4}{c|}{\textit{two-central}} & \multicolumn{8}{c|}{\textit{four-central}} & \multicolumn{6}{c}{\textit{photon}} \\ \hline
+%DIFDELCMD < Region       & \multicolumn{2}{c|}{SR I}           & \multicolumn{2}{c|}{SR II  }         & \multicolumn{2}{c|}{SR I }  & \multicolumn{2}{c|}{SR II} & \multicolumn{2}{c|}{SR III} & \multicolumn{2}{c|}{SR IV}  & \multicolumn{2}{c|}{SR I}  & \multicolumn{2}{c|}{SR II}   & \multicolumn{2}{c}{SR III}   \\
+%DIFDELCMD < \hline
+%DIFDELCMD < Higgs & 340&$^{120}_{130}$ & 165&$^{50}_{29}$ & 167&$^{60}_{58}$ & 101&$^{40}_{21}$ & 183&$^{50}_{46}$ & 304&$^{100}_{51}$ & 21.1&$^{7.7}_{7.1}$ & 20.1&$^{9.5}_{7.2}$ & 10.6&$^{7.8}_{4.1}$ \\
+%DIFDELCMD < Z+jets (Z$\gamma$) & 470&$^{140}_{180}$ & 230&$^{210}_{230}$ & 22&$^{80}_{22}$ & 197&$^{90}_{95}$ & 720&$^{190}_{180}$ & 1260&$^{270}_{250}$ & 5.8&$^{3.3}_{3.6}$ & 1.1&$^{5.8}_{1.1}$ & 9.8&$^{7.8}_{7.9}$ \\
+%DIFDELCMD < Non-resonant bkg & 34 620&$^{310}_{280}$ & 95 620&$^{420}_{420}$ & 12 870&$^{150}_{190}$ & 19 340&$^{200}_{240}$ & 59 340&$^{340}_{340}$ & 146 930&$^{630}_{510}$ & 140.4&$^{6.1}_{6.8}$ & 518&$^{10}_{13}$ & 1296&$^{18}_{19}$ \\
+%DIFDELCMD <  [2px] \hline
+%DIFDELCMD <  Data & \multicolumn{2}{c|}{35 496} & \multicolumn{2}{c|}{95 802} & \multicolumn{2}{c|}{13 139} & \multicolumn{2}{c|}{19 611} & \multicolumn{2}{c|}{60 314} & \multicolumn{2}{c|}{148 413} & \multicolumn{2}{c|}{162} & \multicolumn{2}{c|}{565} & \multicolumn{2}{c}{1270} \\
+%DIFDELCMD < \hline
+%DIFDELCMD < \hline
+%DIFDELCMD < \end{tabular}}
+%DIFDELCMD < \end{table}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend % All figures and tables should appear before the summary and conclusion.
+\FloatBarrier
+
+%-------------------------------------------------------------------------------
+\section{Conclusions}
+\label{sec:conclusion}
+%-------------------------------------------------------------------------------
+A search is presented for Standard Model Higgs bosons produced through \DIFdelbegin \DIFdel{vector boson }\DIFdelend \DIFaddbegin \DIFadd{vector-boson }\DIFaddend fusion and decaying \DIFdelbegin \DIFdel{to }\DIFdelend \DIFaddbegin \DIFadd{into }\DIFaddend $\bbbar$ using three distinct event signatures including production with an associated photon. The results use up to \SI{30.6}{\ifb} of LHC $pp$ data at $\sqrt{s} = \SI{13}{\TeV}$ collected with the ATLAS detector.
+
+The combined observed (expected) 95\% CL upper limits on the Higgs boson production cross section times branching ratio are $4.8$ ($2.5^{+1.0}_{-0.7}$) times the Standard Model expectation for inclusive production, and $5.9$ ($3.0^{+1.3}_{-0.8}$) times the Standard Model expectation for VBF production.
+
+The measured Higgs boson signal strength \DIFdelbegin \DIFdel{with respect }\DIFdelend \DIFaddbegin \DIFadd{relative }\DIFaddend to the Standard Model prediction \muH for the three channels combined is $2.5^{+1.4}_{-1.3}$ . The combined VBF-only signal strength  \muVBF  is $3.0^{+1.7}_{-1.6}$.
+
+
+%-------------------------------------------------------------------------------
+\section*{\DIFdelbegin \DIFdel{Acknowledgements}\DIFdelend \DIFaddbegin \DIFadd{Acknowledgments}\DIFaddend }
+%-------------------------------------------------------------------------------
+
+% From https://twiki.cern.ch/twiki/bin/view/AtlasProtected/PubComAcknowledgement
+% Acknowledgements for papers with collision data
+% Version 14-Feb-2018
+
+% Standard acknowledgements start here
+%----------------------------------------------
+We thank CERN for the very successful operation of the LHC, as well as the
+support staff from our institutions without whom ATLAS could not be
+operated efficiently.
+
+We acknowledge the support of ANPCyT, Argentina; YerPhI, Armenia; ARC, Australia; BMWFW and FWF, Austria; ANAS, Azerbaijan; SSTC, Belarus; CNPq and FAPESP, Brazil; NSERC, NRC and CFI, Canada; CERN; CONICYT, Chile; CAS, MOST and NSFC, China; COLCIENCIAS, Colombia; MSMT CR, MPO CR and VSC CR, Czech Republic; DNRF and DNSRC, Denmark; IN2P3-CNRS, CEA-DRF/IRFU, France; SRNSFG, Georgia; BMBF, HGF, and MPG, Germany; GSRT, Greece; RGC, Hong Kong SAR, China; ISF, I-CORE and Benoziyo Center, Israel; INFN, Italy; MEXT and JSPS, Japan; CNRST, Morocco; NWO, Netherlands; RCN, Norway; MNiSW and NCN, Poland; FCT, Portugal; MNE/IFA, Romania; MES of Russia and NRC KI, Russian Federation; JINR; MESTD, Serbia; MSSR, Slovakia; ARRS and MIZ\v{S}, Slovenia; DST/NRF, South Africa; MINECO, Spain; SRC and Wallenberg Foundation, Sweden; SERI, SNSF and Cantons of Bern and Geneva, Switzerland; MOST, Taiwan; TAEK, Turkey; STFC, United Kingdom; DOE and NSF, United States of America. In addition, individual groups and members have received support from BCKDF, the Canada Council, CANARIE, CRC, Compute Canada, FQRNT, and the Ontario Innovation Trust, Canada; EPLANET, ERC, ERDF, FP7, Horizon 2020 and Marie Sk{\l}odowska-Curie Actions, European Union; Investissements d'Avenir Labex and Idex, ANR, R{\'e}gion Auvergne and Fondation Partager le Savoir, France; DFG and AvH Foundation, Germany; Herakleitos, Thales and Aristeia programmes co-financed by EU-ESF and the Greek NSRF; BSF, GIF and Minerva, Israel; BRF, Norway; CERCA Programme Generalitat de Catalunya, Generalitat Valenciana, Spain; the Royal Society and Leverhulme Trust, United Kingdom.
+
+The crucial computing support from all WLCG partners is acknowledged gratefully, in particular from CERN, the ATLAS Tier-1 facilities at TRIUMF (Canada), NDGF (Denmark, Norway, Sweden), CC-IN2P3 (France), KIT/GridKA (Germany), INFN-CNAF (Italy), NL-T1 (Netherlands), PIC (Spain), ASGC (Taiwan), RAL (UK) and BNL (USA), the Tier-2 facilities worldwide and large non-WLCG resource providers. Major contributors of computing resources are listed in Ref.~\cite{ATL-GEN-PUB-2016-002}.
+%----------------------------------------------
+
+
+
+
+%-------------------------------------------------------------------------------
+\clearpage
+%\appendix
+%\part*{Appendix}
+%\addcontentsline{toc}{part}{Appendix}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% If you use biblatex and either biber or bibtex to process the bibliography
+% just say \printbibliography here
+\printbibliography
+% If you want to use the traditional BibTeX you need to use the syntax below.
+%\bibliographystyle{bibtex/bst/atlasBibStyleWoTitle}
+%\bibliography{VBFPaper2016,bibtex/bib/ATLAS}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% Print the list of contributors to the analysis
+% The argument gives the fraction of the text width used for the names
+%-------------------------------------------------------------------------------
+%\clearpage
+%\PrintAtlasContribute{0.30}
+
+%-------------------------------------------------------------------------------
+\clearpage
+\appendix
+\part*{Auxiliary material}
+\addcontentsline{toc}{part}{Auxiliary material}
+%-------------------------------------------------------------------------------
+
+The following material is intended for use in public presentations and on public web pages.
+The material will not be included in the submission to the journal.
+
+At the end of the paper approval procedure, this information will be split into a separate document.
+%-- see \texttt{atlas-auxmat.tex}.
+%
+\section{Event variables used for BDT training (signal vs. background comparison)}
+
+\begin{figure}[htbp]
+  \centering
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_cosTheta_boost2cen.pdf}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_deltaMJJ2cen.pdf}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_cosTheta_boost2cen.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_deltaMJJ2cen.pdf}
+
+\DIFaddendFL 
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_eta_J_star2cen.pdf}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_max_J1J22cen.pdf}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_eta_J_star2cen.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_max_J1J22cen.pdf}
+
+\DIFaddendFL 
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_mindRJ1_Ex2cen.pdf}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_mindRJ2_Ex2cen.pdf}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_mindRJ1_Ex2cen.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_mindRJ2_Ex2cen.pdf}
+
+\DIFaddendFL 
+
+  \caption{Distributions of the input variables for the \textit{two-central} channel BDT training for signal and sideband data. \DIFdelbeginFL \DIFdelFL{j1 }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$j1$ }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{j2 }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$j2$ }\DIFaddendFL denote the leading \pT{} and sub-leading \pT{} VBF jets, respectively.  Cosine of the angle between the planes spanned by the VBF jet pair and signal pair in the center-of-mass frame of the  system ($\cos{\theta}$) is shown in upper left plot.  The difference between the VBF jet pair and the largest invariant mass jet pair in the event excluding the Higgs signal jets pair ($\Delta m_{jj}$) is shown in upper right plot.  The average distance between signal and VBF jets ($\eta^{*}$) is shown in middle left plot.  The maximum absolute value of $\eta$ for a VBF jet (max ($\eta(ji),(j2)$)) is shown in middle right plot.   Minimum angular separation between the VBF jet, \DIFdelbeginFL \DIFdelFL{j1 }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$j1$ }\DIFaddendFL or \DIFdelbeginFL \DIFdelFL{j2}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$j2$}\DIFaddendFL ,  and the closest jet which is not a VBF or signal jet (\DIFdelbeginFL \DIFdelFL{$\min\Delta R$(j(1,2}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$\min\Delta R(j1,j2)$}\DIFaddendFL ) \DIFdelbeginFL \DIFdelFL{)) }\DIFdelendFL is shown in lower plots.}
+%  \caption{Distributions of the input variables for the \textit{two-central} channel BDT training for signal and sideband data. j1 and j2 denote the leading \pT{} and sub-leading \pT{} VBF jets, respectively. $\cos{\theta}$ is the cosine of the angle between the planes spanned by the VBF jet pair and signal pair in the center-of-mass frame of the  system.   $\Delta m_{jj}$ is  the difference between the VBF jet pair and the largest invariant mass jet pair in the event excluding the Higgs signal jets pair.  $\eta^{*}$ is the average distance between signal and VBF gets.  max ($\eta(ji),(j2)$) is the maximum absolute value of $\eta$ for a VBF jet.  $\min\Delta R$(j(1,2)) is minimum angular separation between the VBF jet, j1 or j2,  and the closest jet which is not a VBF or signal jet.}
+  \label{fig:bdtvar2cen1}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_mJJ2cen.pdf}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_pTJJ2cen.pdf}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_mJJ2cen.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_pTJJ2cen.pdf}
+
+\DIFaddendFL 
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_QGTaggerJ22cen.pdf}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_pT_balance2cen.pdf}
+%DIFDELCMD <   %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_QGTaggerJ22cen.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_pT_balance2cen.pdf}
+  \DIFaddendFL \caption{Distributions of the input variables for the \textit{two-central} channel BDT training for signal and sideband data. The invariant mass of the VBF jets ($m_{\text{jj}}$) is shown in upper left plot. The \pT{} of the VBF jets ($p_{\text{T~jj}}$) is shown in upper right plot.   The ratio of the vectorial and scalar sums of the jet transverse momenta ($p^{\text{balance}}_{\text{T}}$) is shown in lower right plot.  The number of tracks associated to the sub-leading VBF jet ($N_{\mathrm trk}^{j2}$) is shown in lower left plot.}
+%  \caption{Distributions of the input variables for the \textit{two-central} channel BDT training for signal and sideband data. $m_{\text{jj}}$ and $p_{\text{T~jj}}$ are the invariant mass and \pT{} of the VBF jets.  $p^{\text{balance}}_{\text{T}}$, the ratio of the vectorial and scalar sums of the jet transverse momenta.  $N_{\mathrm trk}^{j2}$ is the number of tracks associated to the sub-leading VBF jet.}
+  \label{fig:bdtvar2cen2}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_cosTheta_boost4cen.pdf}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_deltaMJJ4cen.pdf}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_cosTheta_boost4cen.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_deltaMJJ4cen.pdf}
+
+\DIFaddendFL 
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_eta_J_star4cen.pdf}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_max_J1J24cen.pdf}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_eta_J_star4cen.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_max_J1J24cen.pdf}
+
+\DIFaddendFL 
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_mindRJ1_Ex4cen.pdf}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_mindRJ2_Ex4cen.pdf}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_mindRJ1_Ex4cen.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_mindRJ2_Ex4cen.pdf}
+
+\DIFaddendFL 
+
+  \caption{Distributions of the input variables for the \textit{four-central} channel BDT training for signal and sideband data. j1 and j2 denote the leading \pT{} and sub-leading \pT{} VBF jets, respectively.  Cosine of the angle between the planes spanned by the VBF jet pair and signal pair in the center-of-mass frame of the  system ($\cos{\theta}$) is shown in upper left plot.  The difference between the VBF jet pair and the largest invariant mass jet pair in the event excluding the Higgs signal jets pair ($\Delta m_{jj}$) is shown in upper right plot.  The average distance between signal and VBF jets ($\eta^{*}$) is shown in middle left plot.  The maximum absolute value of $\eta$ for a VBF jet (max ($\eta(ji),(j2)$)) is shown in middle right plot.   Minimum angular separation between the VBF jet, j1 or j2,  and the closest jet which is not a VBF or signal jet ($\min\Delta R$(j(1,2))) is shown in lower plots.}
+%  \caption{Distributions of the input variables for the \textit{four-central} channel BDT training for signal and sideband data. j1 and j2 denote the leading \pT{} and sub-leading \pT{} VBF jets, respectively.  $\cos{\theta}$ is the cosine of the angle between the planes spanned by the VBF jet pair and signal pair in the center-of-mass frame of the  system.   $\Delta m_{jj}$ is  the difference between the VBF jet pair and the largest invariant mass jet pair in the event excluding the Higgs signal jets pair.  $\eta^{*}$ is the average distance between signal and VBF gets.  max ($\eta(ji),(j2)$) is the maximum absolute value of $\eta$ for a VBF jet.  $\min\Delta R$(j(1,2)) is minimum angular separation between the VBF jet, j1 or j2,  and the closest jet which is not a VBF or signal jet.}
+  \label{fig:bdtvar4cen1}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_mJJ4cen.pdf}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_pTJJ4cen.pdf}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_mJJ4cen.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_pTJJ4cen.pdf}
+
+\DIFaddendFL 
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_QGTaggerJ14cen.pdf}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_QGTaggerJ24cen.pdf}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_QGTaggerJ14cen.pdf}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_QGTaggerJ24cen.pdf}
+
+\DIFaddendFL 
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{figures/aux/inclusive/BDT_input_pT_balance4cen.pdf}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_pT_balance4cen.pdf}
+
+\DIFaddendFL 
+
+  \caption{Distributions of the input variables for the \textit{four-central} channel BDT training for signal and sideband data. The invariant mass of the VBF jets ($m_{\text{jj}}$) is shown in upper left plot. The \pT{} of the VBF jets ($p_{\text{T~jj}}$) is shown in upper right plot.   The ratio of the vectorial and scalar sums of the jet transverse momenta ($p^{\text{balance}}_{\text{T}}$) is shown in lower right plot.  The number of tracks associated to the sub-leading VBF jet ($N_{\mathrm trk}^{j2}$) is shown in lower left plot.}
+ %  \caption{Distributions of the input variables for the \textit{four-central} channel BDT training for signal and sideband data. $m_{jj}$ and $p_{\text{T}~jj}$ are the invariant mass and \pT{} of the VBF jets.  $p^\text{balance}_\text{T}$, the ratio of the vectorial and scalar sums of the jet transverse momenta.  $N_{\text{trk}}^{j2}$ is the number of tracks associated to the sub-leading VBF jet.   }
+  \label{fig:bdtvar4cen2}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{BDT_input_dRB1Ph}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{BDT_input_dRB2Ph}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_dRB1Ph}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_dRB2Ph}
+
+\DIFaddendFL 
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{BDT_input_mJJ}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{BDT_input_dEtaJJ}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_mJJ}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_dEtaJJ}
+
+\DIFaddendFL 
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{BDT_input_pTJJ}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{BDT_input_pTBal}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_pTJJ}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_pTBal}
+
+\DIFaddendFL 
+
+  \caption{Distributions of the input variables for the \textit{photon} channel BDT training for signal and background MC.
+    The distributions of angular separation between the signal $b$-jets and the photon ($\Delta R(b1,\gamma)$, $\Delta R(b2,\gamma)$) are shown in upper plots . The distribution of the invariant mass ($m_{jj}$) of the VBF jets is shown in middle left plot.
+    The distribution of pseudorapidity difference between the VBF jets ($\Delta \eta_{jj}$) is shown in middle right plot.
+    The distribution of \pT{} of the VBF jets ($p_{\text{T}~jj}$) is shown in lower left plot.
+    The ratio of the vectorial and scalar sums of the jet and photon transverse momenta ($p^\text{balance}_\text{T}$) is shown in lower right plot. }
+%  \caption{Distributions of the input variables for the \textit{photon} channel BDT training for signal and background MC.  $\Delta R(b1,\gamma)$, $\Delta R(b2,\gamma)$: angular separation between the signal $b$-jets and the photon.$m_{jj}$ and $p_{\text{T}~jj}$ are the invariant mass and \pT{} of the VBF jets.  $p^\text{balance}_\text{T}$, the ratio of the vectorial and scalar sums of the jet and photon transverse momenta. $\Delta \eta_{jj}$ is the pseudorapidity difference between the VBF jets.}
+  \label{fig:bdtvar1}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{BDT_input_nTrkPt5J1}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{BDT_input_nTrkPt5J2}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_nTrkPt5J1}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_nTrkPt5J2}
+
+\DIFaddendFL 
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{BDT_input_cenPhJJ}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{BDT_input_cosThetaC}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_cenPhJJ}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_cosThetaC}
+
+\DIFaddendFL 
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{BDT_input_dPhiBBJJ}
+%DIFDELCMD <   %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/BDT_input_dPhiBBJJ}
+  \DIFaddendFL \caption{Distributions of the input variables for the \textit{photon} channel BDT training for signal and background MC.  The number of tracks associated to the (sub-)leading VBF jet distributions ($N_{\text{trk}}^{j1(2)}$) are shown in upper plots.   The distribution of cosine of the angle between the planes spanned by the VBF jet pair and signal pair in the center-of-mass frame of the  system ($\cos{\theta}$) is shown in middle right plot. The distribution of centrality of the photon with respect to the VBF jets ($\text{centrality}(\gamma,jj)$) is shown in middle left plot.  The azimuthal angle between the VBF jet pair and the signal $b$-jet pair ($\Delta\phi(bb,jj)$) is shown in lower plot.}
+%  \caption{Distributions of the input variables for the \textit{photon} channel BDT training for signal and background MC. $N_{\text{trk}}^{j1(2)}$ is the number of tracks associated to the (sub-)leading VBF jet.   $\cos{\theta}$ is the cosine of the angle between the planes spanned by the VBF jet pair and signal pair in the center-of-mass frame of the  system. $\text{centrality}(\gamma,jj)$: is the centrality of the photon with respect to the VBF jets. $\Delta\phi(bb,jj)$  is the azimuthal angle between the VBF jet pair and the signal $b$-jet pair.}
+  \label{fig:bdtvar2}
+\end{figure}
+
+\clearpage
+
+\section{Event variables used for BDT training (data vs. MC validation)}
+\begin{figure}[htbp]
+  \centering
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{photon_C_2tag4pjet_0ptv_SR_pTJJ}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{photon_C_2tag4pjet_0ptv_SR_dEtaJJ}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/photon_C_2tag4pjet_0ptv_SR_pTJJ}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/photon_C_2tag4pjet_0ptv_SR_dEtaJJ}
+
+\DIFaddendFL 
+
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.48\textwidth]{photon_C_2tag4pjet_0ptv_SR_pTBal}
+%DIFDELCMD <   \includegraphics[width=0.48\textwidth]{photon_C_2tag4pjet_0ptv_SR_mJJ}
+%DIFDELCMD < 
+%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.48\textwidth]{figures/FinalFigures/photon_C_2tag4pjet_0ptv_SR_pTBal}
+  \includegraphics[width=0.48\textwidth]{figures/FinalFigures/photon_C_2tag4pjet_0ptv_SR_mJJ}
+
+\DIFaddendFL 
+
+  \caption{\textit{photon} channel comparison of selected kinematic distributions between data and simulation after pre-selection cuts, and after correction scale factors are applied to the simulated non-resonant background. The total simulated  background yield is normalized to the data. The unstacked red open histogram is the Higgs signal scaled up by factor of 100. The size of the statistical uncertainty for the total simulated background is indicated by the hatched band.}
+  \label{fig:bdtvar3}
+\end{figure}
+
+
+\section{Correlation between the BDT response and the dijet invariant mass $m_{bb}$}
+
+\begin{figure}[htbp]
+  \centering
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.49\textwidth]{figures/aux/inclusive/VBF_BDT_sidebands_2cen}
+%DIFDELCMD <   \includegraphics[width=0.49\textwidth]{figures/aux/inclusive/VBF_BDT_sidebands_4cen}
+%DIFDELCMD <   \includegraphics[width=0.49\textwidth]{figures/aux/vbfg_bdt_in_sideband}
+%DIFDELCMD <   %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.49\textwidth]{figures/FinalFigures/VBF_BDT_sidebands_2cen}
+  \includegraphics[width=0.49\textwidth]{figures/FinalFigures/VBF_BDT_sidebands_4cen}
+  \includegraphics[width=0.49\textwidth]{figures/FinalFigures/vbfg_bdt_in_sideband}
+  \DIFaddendFL \caption{Comparison of the BDT response distributions between lower and upper data sideband events for the the \textit{two-central} (top left), \textit{four-central} (top right)  and \textit{photon} (bottom) channels. The lower sideband refers to a mass range of $m_{bb}<\SI{100}{\GeV}$, and the upper sideband refers to a mass range of $m_{bb}>\SI{140}{\GeV}$. 
+	 Good agreement between the lower and upper sideband data indicates low correlation between the BDT response and the final discriminant variable $m_{bb}$.
+  }
+\end{figure}
+
+\clearpage
+
+\section{Event displays of selected candidate events}
+
+\subsection{\textit{photon} channel}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{JiveXML_303560_1025741560-RZ-EventInfo-2017-07-25-16-20-44}
+
+\includegraphics[width=0.9\textwidth]{VP1_zbbg_303560_1025741560}
+\caption{Displays of a $Z(\bbbar)jj\gamma$ candidate event with \DIFdelbeginFL \DIFdelFL{$m_{bb}=\SI{99.1}{\GeV}$}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$m_{bb}=\SI{99}{\GeV}$}\DIFaddendFL .  The top display in the $\rho-z$ plane shows inner detector tracks, calorimeter clusters, and hadronic jets.  The cones representing the anti-$k_t$ jets are colored magenta for the forward jets and orange for the $b$-tagged jets.  The region containing the photon candidate is colored yellow, highlighting significant energy deposited in the liquid-argon calorimeter. The bottom display shows a three-dimensional view of the same event.}
+\label{fig:event_displays_photon_91}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{JiveXML_302956_1228205769-RZ-LegoPlot-EventInfo-2017-07-25-16-37-02}
+
+\includegraphics[width=0.8\textwidth]{VP1_hbbg_302956_1228205769}
+\caption{Displays of a $H(\bbbar)jj\gamma$ candidate event with \DIFdelbeginFL \DIFdelFL{$m_{bb}=\SI{115.5}{\GeV}$}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$m_{bb}=\SI{116}{\GeV}$}\DIFaddendFL .  The top display in the $\rho-z$ plane shows inner detector tracks, calorimeter clusters, and hadronic jets.  The cones representing the anti-$k_t$ jets are colored magenta for the forward jets and orange for the $b$-tagged jets.  The region containing the photon candidate is colored yellow, highlighting significant energy deposited in the liquid-argon calorimeter.  The transverse energies of the various objects are compared in the lego plot. The bottom display shows a three-dimensional view of the same event.  One of the b-tagged jets includes a high-momentum muon, shown in the bottom right corner.}
+\label{fig:event_displays_photon_125}
+\end{figure}
+
+\subsection{\textit{2-central} channel}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{JiveXML_303943_370722583-RZ-EventInfo-2018-02-12-09-40-28}
+\caption{Display of a 2-central $H(\bbbar)jj$ candidate event with \DIFdelbeginFL \DIFdelFL{$m_{bb}=\SI{107.8}{\GeV}$}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$m_{bb}=\SI{108}{\GeV}$}\DIFaddendFL .  
+The display in the $\rho-z$ plane shows inner detector tracks, calorimeter clusters, and hadronic jets.
+The cones representing the anti-$k_t$ jets are colored magenta for the forward jets and orange for the $b$-tagged jets.
+}
+\label{fig:event_display1_2central}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{JiveXML_303943_371172152-RZ-LegoPlot-EventInfo-2018-02-12-09-32-13}
+\caption{Display of a 2-central $H(\bbbar)jj$ candidate event with \DIFdelbeginFL \DIFdelFL{$m_{bb}=\SI{147.2}{\GeV}$}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$m_{bb}=\SI{147}{\GeV}$}\DIFaddendFL .  
+The display in the $\rho-z$ plane shows inner detector tracks, calorimeter clusters, and hadronic jets.  
+The cones representing the anti-$k_t$ jets are colored magenta for the forward jets and orange for the $b$-tagged jets.
+}
+\label{fig:event_display2_2central}
+\end{figure}
+
+\clearpage
+
+\section{Invariant mass spectra}
+
+\begin{figure}[htbp]
+\centering
+\DIFdelbeginFL %DIFDELCMD < \subfigure[]{\includegraphics[width=0.48\textwidth]{figures/aux/mbbpTcut_2cen} }
+%DIFDELCMD < \subfigure[]{\includegraphics[width=0.48\textwidth]{figures/aux/mbbpTcut_4cen} }
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \subfigure[]{\includegraphics[width=0.48\textwidth]{figures/FinalFigures/mbbpTcut_2cen} }
+\subfigure[]{\includegraphics[width=0.48\textwidth]{figures/FinalFigures/mbbpTcut_4cen} }
+\DIFaddendFL \caption{Effect of the $\pT$ requirement on the $bb$ invariant mass spectrum of non-resonant background for the (a) \textit{two-central} and (b) \textit{four-central} channels. Blue curves show the sculpted $m_{bb}$ structure by the jet $\pT$ thresholds in the trigger and offfline selection with double peaks presented. 
+Red curve presents the $m_{bb}$ distribution after applying $p_{\mathrm{T}}^{bb}>\SI{150}{\GeV}\,(\SI{160}{\GeV})$ in \textit{two-central} (\textit{four-central}) channel.}
+\label{fig:ptbb_cut_allhead}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\centering
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.5\textwidth]{figures/aux/photon_mBB_pTBB_2tag_a}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.5\textwidth]{figures/FinalFigures/photon_mBB_pTBB_2tag_a}
+\DIFaddendFL \caption{Effect of the $\pT$ requirement on the $bb$ invariant mass spectrum of non-resonant background for the \textit{photon} channel. Blue curves show the sculpted $m_{bb}$ structure by the jet $\pT$ thresholds in the trigger and offfline selection with double peaks presented. 
+Red curve presents the $m_{bb}$ distribution after applying $p_{\mathrm{T}}^{bb}>\SI{80}{\GeV}$ in \textit{photon}  channel.}
+\label{fig:ptbb_cut}
+\end{figure}
+
+\clearpage
+\section{The results of the combined fit}
+
+
+\begin{table}[htbp]
+   \caption{Numbers of signal, background and data events within the Higgs mass window of $\SI{100}{\GeV} < m_{bb} < \SI{140}{\GeV}$.
+Signal and background yields are derived from the combined fit for the extraction of \muH. Uncertainties include both statistical and systematic uncertainties.}
+\label{tab:postfit_yields_hbbfit}
+\centering
+\def\arraystretch{1.4}
+\DIFdelbeginFL %DIFDELCMD < \resizebox{\textwidth}{!}{
+%DIFDELCMD <    \begin{tabular}{ l |r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l}
+%DIFDELCMD < \hline
+%DIFDELCMD < \hline
+%DIFDELCMD < Channel      & \multicolumn{4}{c|}{\textit{two-central}} & \multicolumn{8}{c|}{\textit{four-central}} & \multicolumn{6}{c}{\textit{photon}} \\ \hline
+%DIFDELCMD < Region       & \multicolumn{2}{c|}{SR I}           & \multicolumn{2}{c|}{SR II  }         & \multicolumn{2}{c|}{SR I }  & \multicolumn{2}{c|}{SR II} & \multicolumn{2}{c|}{SR III} & \multicolumn{2}{c|}{SR IV}  & \multicolumn{2}{c|}{SR I}  & \multicolumn{2}{c|}{SR II}   & \multicolumn{2}{c}{SR III}   \\
+%DIFDELCMD < \hline
+%DIFDELCMD < Higgs & 310&$^{100}_{120}$ & 253&$^{90}_{92}$ & 156&$^{43}_{51}$ & 105&$^{44}_{26}$ & 224&$^{55}_{80}$ & 480&$^{260}_{170}$ & 18.5&$^{5.8}_{6.2}$ & 17.3&$^{7.8}_{6.1}$ & 11.4&$^{7.1}_{5.3}$ \\
+%DIFDELCMD < Z+jets (Z$\gamma$) & 470&$^{130}_{200}$ & 250&$^{230}_{210}$ & 19&$^{81}_{19}$ & 200&$^{110}_{100}$ & 720&$^{200}_{170}$ & 1290&$^{250}_{270}$ & 5.6&$^{3.2}_{3.5}$ & 0.9&$^{5.7}_{0.9}$ & 10.3&$^{8.9}_{8.8}$ \\
+%DIFDELCMD < Non-resonant bkg & 34630&$^{300}_{300}$ & 95520&$^{410}_{440}$ & 12890&$^{160}_{150}$ & 19340&$^{220}_{210}$ & 59300&$^{360}_{320}$ & 146740&$^{530}_{570}$ & 141.4&$^{6.1}_{6.5}$ & 519&$^{10}_{13}$ & 1297&$^{18}_{19}$ \\
+%DIFDELCMD < [2px] \hline
+%DIFDELCMD <  Data & \multicolumn{2}{c|}{35496} & \multicolumn{2}{c|}{95802} & \multicolumn{2}{c|}{13139} & \multicolumn{2}{c|}{19611} & \multicolumn{2}{c|}{60314} & \multicolumn{2}{c|}{148413} & \multicolumn{2}{c|}{162} & \multicolumn{2}{c|}{565} & \multicolumn{2}{c}{1270} \\
+%DIFDELCMD < \hline
+%DIFDELCMD < \hline
+%DIFDELCMD < \end{tabular}}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \resizebox{\textwidth}{!}{
+   \begin{tabular}{ l |r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l|r@{$^{+}_{-}$}l}
+\hline
+\hline
+Channel      & \multicolumn{4}{c|}{\textit{Two-central}} & \multicolumn{8}{c|}{\textit{Four-central}} & \multicolumn{6}{c}{\textit{Photon}} \\ \hline
+Region       & \multicolumn{2}{c|}{SR I}           & \multicolumn{2}{c|}{SR II  }         & \multicolumn{2}{c|}{SR I }  & \multicolumn{2}{c|}{SR II} & \multicolumn{2}{c|}{SR III} & \multicolumn{2}{c|}{SR IV}  & \multicolumn{2}{c|}{SR I}  & \multicolumn{2}{c|}{SR II}   & \multicolumn{2}{c}{SR III}   \\
+\hline
+Higgs & 310&$^{100}_{120}$ & 253&$^{90}_{92}$ & 156&$^{43}_{51}$ & 105&$^{44}_{26}$ & 224&$^{55}_{80}$ & 480&$^{260}_{170}$ & 18.5&$^{5.8}_{6.2}$ & 17.3&$^{7.8}_{6.1}$ & 11.4&$^{7.1}_{5.3}$ \\
+Z+jets (Z$\gamma$) & 470&$^{130}_{200}$ & 250&$^{230}_{210}$ & 19&$^{81}_{19}$ & 200&$^{110}_{100}$ & 720&$^{200}_{170}$ & 1 290&$^{250}_{270}$ & 5.6&$^{3.2}_{3.5}$ & 0.9&$^{5.7}_{0.9}$ & 10.3&$^{8.9}_{8.8}$ \\
+Non-resonant bkg & 34 630&$^{300}_{300}$ & 95 520&$^{410}_{440}$ & 12 890&$^{160}_{150}$ & 19 340&$^{220}_{210}$ & 59 300&$^{360}_{320}$ & 146 740&$^{530}_{570}$ & 141.4&$^{6.1}_{6.5}$ & 519&$^{10}_{13}$ & 1 297&$^{18}_{19}$ \\
+[2px] \hline
+Data & \multicolumn{1}{r}{35 496} && \multicolumn{1}{r}{95 802} && \multicolumn{1}{r}{13 139} && \multicolumn{1}{r}{19 611} && \multicolumn{1}{r}{60 314} && \multicolumn{1}{r}{148 413} && \multicolumn{1}{l}{162} && \multicolumn{1}{r}{ 565} && \multicolumn{1}{r}{1 270} \\
+\hline
+\hline
+\end{tabular}}
+\DIFaddendFL \end{table}
+
+
+\begin{table}[hbtp]
+\caption{The fitted values of the $Z$ normalization parameter $\mu_Z$ for the different channels. The individual $\mu_Z$ values are obtained from a simultaneous fit for the extraction of $\muVBF$.%  for each of the channels floating independently . 
+\label{tab:Zyield}}
+\centering
+\DIFdelbeginFL %DIFDELCMD < \begin{tabular}{ccccc}
+%DIFDELCMD < \toprule
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \begin{tabular}{l|cccc}
+\hline
+\hline
+\DIFaddendFL Region                & SR \DIFdelbeginFL \DIFdelFL{IV           }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{I           }\DIFaddendFL & SR \DIFdelbeginFL \DIFdelFL{III         }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{II         }\DIFaddendFL & SR \DIFdelbeginFL \DIFdelFL{II          }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{III         }\DIFaddendFL & SR \DIFdelbeginFL \DIFdelFL{I           }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{IV           }\DIFaddendFL \\
+\DIFdelbeginFL %DIFDELCMD < \midrule                                                                                 
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \hline
+\DIFaddendFL \textit{\DIFdelbeginFL \DIFdelFL{two-central}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Two-central}\DIFaddendFL }  & \DIFaddbeginFL \DIFaddFL{2.2 $\pm$ 0.7  }\DIFaddendFL & \DIFdelbeginFL %DIFDELCMD < &   %%%
+\DIFdelendFL 0.4 $\pm$ 0.4  &                \DIFdelbeginFL \DIFdelFL{2.2 $\pm$ 0.7   }\DIFdelendFL \DIFaddbeginFL &                  \DIFaddendFL \\
+\textit{\DIFdelbeginFL \DIFdelFL{four-central}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Four-central}\DIFaddendFL } & \DIFdelbeginFL \DIFdelFL{0.9 }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{0.3 }\DIFaddendFL $\pm$ \DIFdelbeginFL \DIFdelFL{0.2 }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{1.1  }\DIFaddendFL & \DIFdelbeginFL \DIFdelFL{1.4 $\pm$ 0.4 }%DIFDELCMD < & %%%
+\DIFdelendFL 1.2 $\pm$ 0.6  & \DIFdelbeginFL \DIFdelFL{0.3 }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{1.4 }\DIFaddendFL $\pm$ \DIFdelbeginFL \DIFdelFL{1.1      }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{0.4  }& \DIFaddFL{0.9 $\pm$ 0.2       }\DIFaddendFL \\
+\textit{\DIFdelbeginFL \DIFdelFL{photon}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Photon}\DIFaddendFL }       & \DIFdelbeginFL %DIFDELCMD < &    %%%
+\DIFdelFL{0.8 }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{2.5 }\DIFaddendFL $\pm$ \DIFdelbeginFL \DIFdelFL{0.7    }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{1.5  }\DIFaddendFL & 0.2 $\pm$ 1.2  & \DIFdelbeginFL \DIFdelFL{2.5 }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{0.8 }\DIFaddendFL $\pm$ \DIFdelbeginFL \DIFdelFL{1.5        }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{0.7  }&                       \DIFaddendFL \\
+\DIFdelbeginFL %DIFDELCMD < \bottomrule
+%DIFDELCMD < %%%
+\DIFdelendFL %DIF > Region                & SR IV           & SR III         & SR II          & SR I           \\
+%DIF > %\midrule                                                                                 
+%DIF > \hline
+%DIF > \textit{two-central}  &                &                & 0.4 $\pm$ 0.4 &  2.2 $\pm$ 0.7   \\
+%DIF > \textit{four-central} & 0.9 $\pm$ 0.2  & 1.4 $\pm$ 0.4  & 1.2 $\pm$ 0.6 &  0.3 $\pm$ 1.1      \\
+%DIF > \textit{photon}       &                & 0.8 $\pm$ 0.7  & 0.2 $\pm$ 1.2 &  2.5 $\pm$ 1.5        \\
+\DIFaddbeginFL \hline
+\hline
+\DIFaddendFL \end{tabular}
+\end{table}
+
+
+
+\clearpage
+
+\section{Studies of systematic uncertainties}
+
+\begin{figure}[htbp]
+  \centering
+ \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.8\textwidth]{figures/VBFHbb_Combined_pulls_125.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.8\textwidth]{figures/FinalFigures/VBFHbb_Combined_pulls_125.pdf}
+\DIFaddendFL \caption{Impact and pull of systematic uncertainties for the fitted Higgs boson \DIFdelbeginFL \DIFdelFL{signal-strength }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{signal strength }\DIFaddendFL parameter $\muH$. The systematic uncertainties are listed in decreasing order of their impact on $\mu_H$. The filled black circles show the deviation of the fitted nuisance parameters from their nominal values. The associated error bars show the post-fit uncertainties of the nuisance parameters relative to their nominal uncertainties. Only nuisance parameters with impact greater than 2\% are shown.}
+  \label{fig:higgsfitpull_inclusive}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+  \centering
+ \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.8\textwidth]{figures/VBF_Only_Extraction/VBFHbb_Combined_vbfonly_pulls_125.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.8\textwidth]{figures/FinalFigures/VBFHbb_Combined_vbfonly_pulls_125.pdf}
+\DIFaddendFL \caption{Impact and pull of systematic uncertainties for the fitted Higgs boson \DIFdelbeginFL \DIFdelFL{signal-strength }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{signal strength }\DIFaddendFL parameter $\muVBF$. The systematic uncertainties are listed in decreasing order of their impact on $\muVBF$. The filled black circles show the deviation of the fitted nuisance parameters from their nominal values. The associated error bars show the post-fit uncertainties of the nuisance parameters relative to their nominal uncertainties. Only nuisance parameters with impact greater than 2\% are shown.}
+  \label{fig:higgsfitpull_vbf}
+\end{figure}
+
+
+
+\begin{table}[htbp]
+\centering
+  \caption{Summary of post-fit impact of considered nuisance parameters on the measurement of the Higgs boson signal strength $\muVBF$. Each absolute uncertainty is defined as the shift in the fitted $\mu$ value when the corresponding nuisance parameter is varied by $\pm 1 \sigma$, where $\sigma$ is the uncertainty on that nuisance parameter.  The largest source of uncertainty in its kind is shown.}
+    \label{tab:signalsyst}
+\DIFdelbeginFL %DIFDELCMD < \begin{tabular}{lll}
+%DIFDELCMD <     %%%
+\DIFdelendFL \DIFaddbeginFL \begin{tabular}{l|cc}
+    \DIFaddendFL \hline \DIFaddbeginFL \hline
+\DIFaddendFL Uncertainty source                                                         & Uncertainty $\Delta \muH$ & \multicolumn{1}{c}{Uncertainty $\Delta \muVBF$} \\
+    \hline
+Jet energy resolution                                                      & 0.12                      & 0.15                                            \\
+Jet energy scale                                                           & 0.08                      & 0.14                                            \\
+b-tagging efficiency                                                       & 0.04                      & 0.10                                            \\
+q/g-tagging (\#charged particles)                                          & 0.07                      & 0.08                                            \\
+VBF scale uncertainty                                                      & 0.07                      & 0.12                                            \\
+Parton shower uncertainty                                                  & 0.07                      & 0.12                                            \\
+Luminosity                                                                 & 0.05                      & 0.08                                            \\
+ggF yield in \textit{photon} channel                                       & 0.08                      & 0.06                                            \\
+ggF scale uncertainty in \textit{all had.} channel                         & 0.08                      & 0.02                                            \\
+PDF Uncertainty in \textit{all had.} channel                               & 0.06                      & 0.02                                            \\
+     \hline \DIFaddbeginFL \hline
+\DIFaddendFL \end{tabular}
+\end{table}
+
+
+\begin{table}[hbtp]
+\centering
+\caption{Uncertainties and their effects on the Higgs boson signal strength measurement, 
+for inclusive production (\muH) and for VBF production only (\muVBF) by performing fit for each channel. 
+Uncertainties are grouped as the statistical uncertainty and the systematic uncertainty. 
+%DIF >  The statistical uncertainty is highly related to data statistics and can be significant reduced with increased data luminosity,
+The \DIFdelbeginFL \DIFdelFL{statistical uncertainty is highly related to }\DIFdelendFL data \DIFdelbeginFL \DIFdelFL{statistics and can be significant reduced with increased data luminosity, 
+The data }\DIFdelendFL statistical uncertainty effect is derived by fixing all nuisance parameters to theirs best fit values and taking the differences between central value and 1~$\sigma$ interval for signal strength. The effect from non-resonant background parameters are then derived as the quadrature subtraction between the uncertainty effects on the signal strength derived by floating and fixing the corresponding nuisance parameters.
+A similar procedure is performed to calculate the effects for other uncertainties with the downward order as shown in table, where the former interval is derived by floating all the parameters for above uncertainty terms.
+%The values of the parameter at which twice the negative log-likelihood changes by one set the uncertainty due to that parameter. 
+}
+\label{tab:app_systematic_uncertainty_summary}
+\DIFdelbeginFL %DIFDELCMD < \footnotesize
+%DIFDELCMD < %%%
+\DIFdelendFL %DIF > \footnotesize
+\begin{tabular}{l|cc|cc}
+\hline
+\hline
+\multirow{2}{*}{Uncertainty}    &\multicolumn{2}{c|}{$\sigma(\muH)$} &\multicolumn{2}{c}{$\sigma(\muVBF)$} \\
+\cline{2-5}
+& \textit{\DIFdelbeginFL \DIFdelFL{all-hadronic}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{All-hadronic}\DIFaddendFL } & \textit{\DIFdelbeginFL \DIFdelFL{photon}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Photon}\DIFaddendFL }      & \textit{\DIFdelbeginFL \DIFdelFL{all-hadronic}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{All-hadronic}\DIFaddendFL } & \textit{\DIFdelbeginFL \DIFdelFL{photon}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Photon}\DIFaddendFL }  \\
+\hline
+Total Stat. Uncertainty            & $+$1.9 $-$1.9  &  $+$1.7 $-$1.7    &  $+$2.8 $-$2.8  &  $+$1.9 $-$1.8    \\
+\quad Data Stat. Uncertainty       & $+$0.7 $-$0.7  &  $+$1.4 $-$1.3    &  $+$1.1 $-$1.1  &  $+$1.5 $-$1.5    \\
+\quad Non-resonant bkg             & $+$1.5 $-$1.5  &  $+$1.0 $-$1.0    &  $+$2.2 $-$2.2  &  $+$1.1 $-$1.1    \\
+\quad Z+jets Normalization         & $+$1.0 $-$1.0  &  $+$0.1 $-$0.2    &  $+$1.4 $-$1.4  &  $+$0.1 $-$0.2    \\
+\hline
+Total Syst. Uncertainty            & $+$1.1 $-$0.6  &  $+$0.6 $-$0.2    &  $+$1.5 $-$0.8  &  $+$0.6 $-$0.3    \\
+\quad Higgs Modeling               & $+$0.8 $-$0.3  &  $+$0.4 $-$0.2    &  $+$0.8 $-$0.2  &  $+$0.4 $-$0.2    \\
+\quad JES/JER                      & $+$0.5 $-$0.3  &  $+$0.4 $-$0.2    &  $+$0.8 $-$0.4  &  $+$0.4 $-$0.2    \\
+\quad $b$-tagging (incl. trigger)  & $+$0.3 $-$0.1  &  $+$0.2 $-$0.03   &  $+$0.4 $-$0.1  &  $+$0.2 $-$0.1    \\
+\quad Other Exp. Uncertainty       & $+$0.5 $-$0.4  &  $+$0.2 $-$0.1    &  $+$0.9 $-$0.7  &  $+$0.2 $-$0.1    \\
+%Statistical              & $+$1.5 $-$1.5    &   $+$1.7 $-$1.7     &   $+$1.0 $-$1.0   & $+$2.2 $-$2.2   & $+$1.9 $-$1.8 & $+$1.2 $-$1.2 \\
+%\Zjets Normalization     & $+$1.0 $-$1.0    &   $+$0.2 $-$0.2     &   $+$0.5 $-$0.5   & $+$1.4 $-$1.4   & $+$0.1 $-$0.2 & $+$0.5 $-$0.5 \\
+%Higgs Signal Modeling    & $+$0.8 $-$0.3    &   $+$0.4 $-$0.2     &   $+$0.3 $-$0.1   & $+$0.8 $-$0.2   & $+$0.4 $-$0.2 & $+$0.2 $-$0.1 \\
+%JES/JER                  & $+$0.5 $-$0.3    &   $+$0.4 $-$0.2     &   $+$0.3 $-$0.2   & $+$0.8 $-$0.4   & $+$0.4 $-$0.2 & $+$0.4 $-$0.2 \\
+%b-tagging                & $+$0.3 $-$0.1    &   $+$0.2 $-$0.1     &   $+$0.2 $-$0.1   & $+$0.4 $-$0.1   & $+$0.2 $-$0.1 & $+$0.2 $-$0.1 \\
+%Other Experimental Uncertainties  & $+$0.8 $-$0.7  &   $+$0.2 $-$0.1   &   $+$0.7 $-$0.6   & $+$1.4 $-$1.2   & $+$0.2 $-$0.1  & $+$1.0 $-$0.9       \\
+\hline
+Total                    & $+$2.2 $-$2.0    &   $+$1.9 $-$1.7       & $+$3.2 $-$2.9   & $+$2.0 $-$1.9   \\
+\hline \hline
+\end{tabular}
+\end{table}
+
+
+% \begin{figure}[tbph]
+%   \begin{center}
+%     \includegraphics[width=\textwidth]{./figures/aux/logSoB/VBFg_logSoB_allhadronic_HiggsOnly.pdf}
+%     \caption{Event yield as a function of log(S/B) for data, backgrounds and the Higgs boson signal for \textit{all-hadronic} channel. The $m_{b\bar{b}}$ distributions in all regions are combined into log(S/B), where S (B) is the fitted signal (background). The background and signal distributions are derived by using asimov dataset. The data pull, defined as residual of data with respected to background divided by the background statistical uncertainty, is shown in lower pad. The signal pull with respected to background-only prediction is shown in solid filled histogram.}
+%     \label{fig:logSoB_allhadronic_Higgs}
+%   \end{center}
+% \end{figure}
+
+% \begin{figure}[tbph]
+%   \begin{center}
+%     \includegraphics[width=\textwidth]{./figures/aux/logSoB/VBFg_logSoB_photon_HiggsOnly.pdf}
+%     \caption{Event yield as a function of log(S/B) for data, backgrounds and the Higgs boson signal for \textit{photon} channel. The $m_{b\bar{b}}$ distributions in all regions are combined into log(S/B), where S (B) is the fitted signal (background). The background and signal distributions are derived by using asimov dataset. The data pull, defined as residual of data with respected to background divided by the background statistical uncertainty, is shown in lower pad. The signal pull with respected to background-only prediction is shown in solid filled histogram.}
+%     \label{fig:logSoB_photon_Higgs}
+%   \end{center}
+% \end{figure}
+
+\begin{figure}[tbph]
+  \begin{center}
+    \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{./figures/aux/logSoB/VBFg_logSoB_Combined_HiggsOnly.pdf}
+%DIFDELCMD <     %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/FinalFigures/VBFg_logSoB_Combined_HiggsOnly.pdf}
+    \DIFaddendFL \caption{Event yield as a function of log(S/B) for data, backgrounds and the Higgs boson signal for \textit{all-hadronic} and \textit{photon} channels combined. The $m_{b\bar{b}}$ distributions in all regions are combined into log(S/B), where S (B) is the fitted signal (background). The background and signal distributions are derived by using asimov dataset. The data pull, defined as residual of data with respected to background divided by the background statistical uncertainty, is shown in lower pad. The signal pull with respected to background-only prediction is shown in solid filled histogram.}
+    \label{fig:logSoB_combined_Higgs}
+  \end{center}
+\end{figure}
+
+% \begin{figure}[tbph]
+%   \begin{center}
+%     \includegraphics[width=\textwidth]{./figures/aux/logSoB/VBFg_logSoB_allhadronic.pdf}
+%     \caption{Event yield as a function of log(S/B) for data, non-resonant background, Z boson background and the Higgs boson signal for \textit{all-hadronic} channel. 
+%     The $m_{b\bar{b}}$ distributions in all regions are combined into log(S/B), where S (B) is the fitted signal (background). The background and signal distributions are derived by using asimov dataset. The data pull, defined as residual of data with respected to non-resonant background divided by the non-resonant background statistical uncertainty, is shown in lower pad. The signal and Z boson background pulls with respected to non-resonant background-only prediction are shown in solid filled histograms.}
+%     \label{fig:logSoB_allhadronic}
+%   \end{center}
+% \end{figure}
+
+% \begin{figure}[tbph]
+%   \begin{center}
+%     \includegraphics[width=\textwidth]{./figures/aux/logSoB/VBFg_logSoB_photon.pdf}
+%     \caption{Event yield as a function of log(S/B) for data, non-resonant background, Z boson background and the Higgs boson signal for \textit{photon} channel. 
+%     The $m_{b\bar{b}}$ distributions in all regions are combined into log(S/B), where S (B) is the fitted signal (background). The background and signal distributions are derived by using asimov dataset. The data pull, defined as residual of data with respected to non-resonant background divided by the non-resonant background statistical uncertainty, is shown in lower pad. The signal and Z boson background pulls with respected to non-resonant background-only prediction are shown in solid filled histograms.}
+%     \label{fig:logSoB_photon}
+%   \end{center}
+% \end{figure}
+
+\begin{figure}[tbph]
+  \begin{center}
+    \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{./figures/aux/logSoB/VBFg_logSoB_Combined.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/FinalFigures/VBFg_logSoB_Combined.pdf}
+\DIFaddendFL \caption{Event yield as a function of log(S/B) for data, non-resonant background, \DIFdelbeginFL \DIFdelFL{Z }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$Z$ }\DIFaddendFL boson background and the Higgs boson signal for \textit{all-hadronic} and \textit{photon} channels combined. 
+    The $m_{b\bar{b}}$ distributions in all regions are combined into log(S/B), where S (B) is the fitted signal (background). The background and signal distributions are derived by using asimov dataset. The data pull, defined as residual of data with respected to non-resonant background divided by the non-resonant background statistical uncertainty, is shown in lower pad. The signal and \DIFdelbeginFL \DIFdelFL{Z }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$Z$ }\DIFaddendFL boson background pulls with respected to non-resonant background-only prediction are shown in solid filled histograms.}
+    \label{fig:logSoB_combined}
+  \end{center}
+\end{figure}
+
+
+\end{document}

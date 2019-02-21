@@ -1,0 +1,452 @@
+%-------------------------------------------------------------------------------
+% This file provides a skeleton ATLAS document.
+%-------------------------------------------------------------------------------
+% \pdfoutput=1
+% The \pdfoutput command is needed by arXiv/JHEP/JINST to ensure use of pdflatex.
+% It should be included in the first 5 lines of the file.
+%-------------------------------------------------------------------------------
+% Specify where ATLAS LaTeX style files can be found.
+\newcommand*{\ATLASLATEXPATH}{latex/}
+% Use this variant if the files are in a central location, e.g. $HOME/texmf.
+% \newcommand*{\ATLASLATEXPATH}{}
+%-------------------------------------------------------------------------------
+\documentclass[UKenglish,texlive=2013]{\ATLASLATEXPATH atlasdoc}
+% The language of the document must be set: usually UKenglish or USenglish.
+% british and american also work!
+% Commonly used options:
+%  texlive=YYYY          Specify TeX Live version (2013 is default).
+%  atlasstyle=true|false Use ATLAS style for document (default).
+%  coverpage             Create ATLAS draft cover page for collaboration circulation.
+%                        See atlas-draft-cover.tex for a list of variables that should be defined.
+%  cernpreprint          Create front page for a CERN preprint.
+%                        See atlas-preprint-cover.tex for a list of variables that should be defined.
+%  PAPER                 The document is an ATLAS paper (draft).
+%  CONF                  The document is a CONF note (draft).
+%  PUB                   The document is a PUB note (draft).
+%  BOOK                  The document is of book form, like an LOI or TDR (draft)
+%  txfonts=true|false    Use txfonts rather than the default newtx - needed for arXiv submission.
+%  paper=a4|letter       Set paper size to A4 (default) or letter.
+
+%-------------------------------------------------------------------------------
+% Extra packages:
+\usepackage{\ATLASLATEXPATH atlaspackage}
+% Commonly used options:
+%  biblatex=true|false   Use biblatex (default) or bibtex for the bibliography.
+%  backend=biber         Use the biber backend rather than bibtex.
+%  subfigure|subfig|subcaption  to use one of these packages for figures in figures.
+%  minimal               Minimal set of packages.
+%  default               Standard set of packages.
+%  full                  Full set of packages.
+%-------------------------------------------------------------------------------
+% Style file with biblatex options for ATLAS documents.
+\usepackage{\ATLASLATEXPATH atlasbiblatex}
+
+% Package for creating list of authors and contributors to the analysis.
+\usepackage{\ATLASLATEXPATH atlascontribute}
+
+% Useful macros
+\usepackage{\ATLASLATEXPATH atlasphysics}
+% See doc/atlas_physics.pdf for a list of the defined symbols.
+% Default options are:
+%   true:  journal, misc, particle, unit, xref
+%   false: BSM, heppparticle, hepprocess, hion, jetetmiss, math, process, other, texmf
+% See the package for details on the options.
+
+% Files with references for use with biblatex.
+% Note that biber gives an error if it finds empty bib files.
+%\addbibresource{atlas-document.bib}
+\usepackage{gbb_int-defs}
+\addbibresource{bibtex/bib/ATLAS.bib}
+\addbibresource{int.bib}
+
+% Paths for figures - do not forget the / at the end of the directory name.
+\graphicspath{{logos/}{figures/}}
+
+% Add you own definitions here (file atlas-document-defs.sty).
+%\usepackage{atlas-document-defs}
+
+
+%-------------------------------------------------------------------------------
+% Some new shortcuts
+%-------------------------------------------------------------------------------
+%\def\dPMETsecondLargeRjet{\ensuremath{ \Delta\phi(\Ptmiss,2^{\text{nd}} \text{large-R jet})}}
+
+
+\newcommand\drbb{{ \ensuremath{\Delta R(b_1, b_2)} }}
+\newcommand\mll{{ \ensuremath{m(\ell^+,\ell^-)} }}
+\newcommand\ptll{{ \ensuremath{p_T(\ell^+,\ell^-)} }}
+\newcommand\mbl{{ \ensuremath{m(b,\ell)} }}
+\newcommand\mmmbl{{ \text{min-max}\ \mbl }}
+
+
+%-------------------------------------------------------------------------------
+% Generic document information
+%-------------------------------------------------------------------------------
+
+% Title, abstract and document 
+\input{int-metadata}
+% Author and title for the PDF file
+\hypersetup{pdftitle={ATLAS document},pdfauthor={The ATLAS Collaboration}}
+
+%-------------------------------------------------------------------------------
+% Content
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+% List of contributors - print here or after the Bibliography.
+%\PrintAtlasContribute{0.30}
+\clearpage
+
+\section{Changelog}
+\label{sec:change}
+
+\begin{description}
+\item[Version 0.8] Post-first-circulation of the paper draft.  Added App.~\ref{sec:app-scalefactors} with an uncertainty on the variable-dependence of the scale factors.   Also added a new background uncertainty from comparing Pythia and Sherpa for the background templates (see Sec.~\ref{sec:systs:background}).
+\item[Version 0.7] Synched with paper draft, includes truth-level comparisons; version to be used for SM closure.  In the course of validating the truth-level comparisons (see App.~\ref{sec:app-truthpreds}), a small bug was fixed in the way track jets are matched to large R jets; in particular, the full four-vector of the ghosts are now scaled by a huge number before re-running jet finding whereas before, the mass was not touched.  As a result of the same exercise, it was also found that the truth-level selection was not exactly as advertised; instead of requiring the two leading $R=0.2$ jets to be truth $b$-tagged any two $b$-tagged $R=0.2$ jets were used.  This is why the efficiency factor was so close to unity, whereas now it is close to the efficiency corresponding to the $b$-tagging working point.  Finally, muons are now excluded from truth track jets, whereas they were before.  This is now coherent with the large R jets.  It has been checked that the impact of this choice on the observables is smaller than the uncertainty in any bin.  Finally, we have also modified the fit ranges for $s_{d_0}$ which improves the $\chi^2$ of the fit (but does not change the central values by much) and have decorrelated the fit range and background statistics uncertainties across bins (before, was fully correlated and thus artificially small).
+\item[Version 0.6] Takes into account feedback from EB; version to be used for SM approval.
+\item[Version 0.5] We have switched to using the most recent Rel 21 recommendation of JES and b-tagging calibrations. The truthprob attribute is fixed in the derivation. We have now included tracking efficiency, fake rates and $d_0$ smearing uncertainties. 
+\item[Version 0.4] We have added a todo list based on feedback we received during the EB request (some of the minor changes are also already added).
+\item[Version 0.3] We have moved to a looser b-tagging to increase the stats for the light template.  The fit is now more stable.  Additional supporting plots have been added.  Background stat uncertainties now properly included.  Version used for EB request.
+\item[Version 0.2] This now includes the complete analysis pass for all variables.  We now also have nearly all uncertainties except a few tracking ones that are pending due to an updated derivation that is ready.  The Sherpa comparison has been added.  The text has been updated and the results section includes the final results with error bars.
+\item[Version 0.1] This includes a complete pass through the analysis for $\Delta R$. We are still awaiting STDM9 for Sherpa/Herwig as well as the necessary truth information to apply the efficiency and fake tracking uncertainties.  These will be added asap.  We plan to add the other observables prior to the SM EB request, for Version 0.2.
+\end{description}
+
+
+%\section{Todo List}
+%\label{sec:todo}
+
+%\begin{enumerate}
+%\item Find quantitative evidence for the poor modeling of the leading $s_{d_0}$ for the background, or switch to the leading $s_{d_0}$ for the fits.
+%\item{Add more interpretations (truth level generator parameter variations) of the results}
+%\end{enumerate}
+
+\clearpage
+
+%-------------------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+%-------------------------------------------------------------------------------
+\input{sections/intro}
+
+\clearpage
+
+%-------------------------------------------------------------------------------
+%\section{ATLAS detector}
+%\label{sec:detector}
+%-------------------------------------------------------------------------------
+
+%The ATLAS detector~\cite{PERF-2007-01} ...
+% \input{sections/atlas-detector}
+
+
+%-------------------------------------------------------------------------------
+\section{Data and Simulated Samples}
+\label{sec:data-mc}
+%-------------------------------------------------------------------------------
+\input{sections/data}
+
+\clearpage
+
+%-------------------------------------------------------------------------------
+%\section{Simulated Samples}
+%\label{sec:mc}
+%-------------------------------------------------------------------------------
+%\input{sections/mc}
+
+\clearpage
+
+%-------------------------------------------------------------------------------
+\section{Object Definitions}
+\label{sec:objects}
+%-------------------------------------------------------------------------------
+\input{sections/objects}
+
+\clearpage
+
+%-------------------------------------------------------------------------------
+\section{Event Selection}
+\label{sec:evtselection}
+%-------------------------------------------------------------------------------
+\input{sections/evtselection}
+
+\clearpage
+
+%-------------------------------------------------------------------------------
+\section{Observables}
+\label{sec:variables}
+%-------------------------------------------------------------------------------
+\input{sections/variables}
+
+\clearpage
+
+%-------------------------------------------------------------------------------
+\section{Background Estimation}
+\label{sec:backgrounds}
+%-------------------------------------------------------------------------------
+\input{sections/backgrounds}
+
+\clearpage
+
+%-------------------------------------------------------------------------------
+\section{Data / MC studies}
+\label{sec:datamc}
+%-------------------------------------------------------------------------------
+\input{sections/data_mc_comp}
+
+\clearpage
+
+%-------------------------------------------------------------------------------
+\section{Unfolding procedure}
+\label{sec:unfold}
+%-------------------------------------------------------------------------------
+\input{sections/unfold}
+
+\clearpage
+
+\section{Systematic Uncertainties}
+\label{sec:systs}
+%-------------------------------------------------------------------------------
+\input{sections/systematicuncerts}
+
+\clearpage
+
+%-------------------------------------------------------------------------------
+\section{Results}
+\label{sec:results}
+%-------------------------------------------------------------------------------
+
+Figure~\ref{fig:results} presents a summary of the results.
+
+\begin{figure}[htpb!]
+\begin{center}
+\includegraphics[width=0.45\linewidth]{figures/Unfolding/dR_unfolded_data.pdf}\includegraphics[width=0.45\linewidth]{figures/Unfolding/dphi_unfolded_data.pdf}\\
+\includegraphics[width=0.45\linewidth]{figures/Unfolding/ZpT_unfolded_data.pdf}\includegraphics[width=0.45\linewidth]{figures/Unfolding/fracmasspt_unfolded_data.pdf}
+\caption[]{The unfolded data compared with Pythia. The data points have error bars that are the statistical uncertainties and the bands are the total systematic uncertainties described in Sec.~\ref{sec:systs}.} 
+\label{fig:results}
+\end{center}
+\end{figure}
+
+\section{Interpretation}
+\label{sec:interp}
+
+The data will be made available through HepData so MC authors will be able to compare their models with our data at a later time.  However, it is interesting to provide some comparisons in the ATLAS paper.  Due to the large MC sizes needed for this study, we have privately produced a series of samples discussed in this section.  This setup has been extensively validated, as discussed in Appendix~\ref{sec:app-truthpreds}.  
+
+% All figures and tables should appear before the summary and conclusion.
+% The package placeins provides the macro \FloatBarrier to achieve this.
+\FloatBarrier
+
+
+%-------------------------------------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+%-------------------------------------------------------------------------------
+
+We have performed a measurement of $g\rightarrow b\bar{b}$ in the small opening angle regime; the first such measurement with multiple bins below $\Delta R= 0.4$.  Key observables related to the gluon and $b\bar{b}$ kinematics are unfolded to particle-level and compared with MC generators formally at leading logarithm accuracy.  The overall agreement between the simulation and the data is excellent, with some indication of mis-modeling in low $\Delta R$ (low $z$, low mass) regimes.  Interestingly, the $b\bar{b}$ opening angle with respect to the gluon production plane seems to indicate less polarization than predicted by Pythia 8.  This puzzle and the results in general are important inputs for the MC community and will hopefully help to improve our understanding of massive splitting in QCD as well as an important background for many high $p_\text{T}$ searches and measurements with Higgs bosons.
+
+
+%% %-------------------------------------------------------------------------------
+%% \section*{Acknowledgements}
+%% %-------------------------------------------------------------------------------
+
+%% %\input{acknowledgements/Acknowledgements}
+
+%% The \texttt{atlaslatex} package contains the acknowledgements that were valid 
+%% at the time of the release you are using.
+%% These can be found in the \texttt{acknowledgements} subdirectory.
+%% When your ATLAS paper or PUB/CONF note is ready to be published,
+%% download the latest set of acknowledgements from:\\
+%% \url{https://twiki.cern.ch/twiki/bin/view/AtlasProtected/PubComAcknowledgements}
+
+%% The supporting notes for the analysis should also contain a list of contributors.
+%% This information should usually be included in \texttt{mydocument-metadata.tex}.
+%% The list should be printed either here or before the table of contents.
+
+
+%-------------------------------------------------------------------------------
+\clearpage
+\appendix
+\part*{Appendix}
+\addcontentsline{toc}{part}{Appendix}
+%-------------------------------------------------------------------------------
+
+\clearpage
+\section{\subsdzero templates}
+\label{sec:app-sd0templates}
+\input{sections/app-sd0templates}
+
+\clearpage
+\section{Systematics effects on templates}
+\label{sec:app-sysvariations}
+\input{sections/app-sysvariations}
+
+\clearpage
+\section{Fit cross check with \sdzero}
+\label{sec:app-sd0}
+\input{sections/app-sd0}
+
+\clearpage
+\section{Fit cross check with \subsubsdzero}
+\label{sec:app-subsubsd0}
+\input{sections/app-subsubsd0}
+
+\clearpage
+\section{\subsdzero and \subsubsdzero correlation}
+\label{sec:app-sd0corr}
+\input{sections/app-sd0correlation}
+
+\clearpage
+\section{Unnormalized Mass}
+\label{sec:app-trkmass}
+\input{sections/app-trkmass}
+
+\clearpage
+\section{Additional Truth Distributions}
+\label{sec:app-truth}
+\input{sections/app-truthother}
+
+\clearpage
+\section{Additional Truth Predictions}
+\label{sec:app-truthpreds}
+
+We have a standalone Pythia 8.X implementation that runs the full analysis on the fly in order to significantly reduce the storage space.  Furthermore, in order to speed up the generation, the analysis is only run on events that have a $b$-quark somewhere in the event and the cutflow is run in series so that it skips the event if it fails any point of the cutflow.  In this way, we can generate 10x the current Pythia sample size in a matter of hours using local computing resources.  The purpose of this section is to describe all of the validation we did to ensure that our private setup gives identical results to the ATLAS official setup.
+
+\begin{enumerate}
+\item Algorithm comparison.  Our derivation saves all truth particles prior to Geant4.  For many tens of events (that pass all cuts in the xAOD version), we wrote all of the particles to a text file and passed them through our private setup (injecting them at the point where we would normally get the particles from Pythia directly).  This results in exactly the same observables up to floating point precision.
+\item Event comparison.  We translated the standalone analysis code into EventLoop (different person who wrote the xAOD analysis version) so we can run over exactly the same events as the main analysis code.  Over about one thousand events, we choose exactly the same events and for those events, the observables are exactly the same, up to floating point precision.
+\item Physics comparison.  Supporting plots are in Fig.~\ref{fig:resultsvalidation} and~\ref{fig:resultsvalidation3}.
+\begin{enumerate}
+	\item EvtGen.  Running EvtGen privately before Pythia 8.2 is a bit painful as there is no easy way of doing it (in 8.2, there is a UserHook that makes it very easy to use).  Therefore, we have checked running Pythia 8.2 + EvtGen and Pythia 8.2 without EvtGen.  We tried to match the EvtGen settings as close as possible with the ATLAS ones.  However, we could not get the ATLAS .DEC file to work so we used the default EvtGen one.  We understand from e.g. \href{https://indico.cern.ch/event/537435/contributions/2184669/attachments/1286455/1913828/EvtGen_ATLAS.pdf}{this link} that the changes between the two files are relatively minor.
+	\item Pythia version.  Some of the variations we use (Sec.~\ref{sec:interp}) are only available in Pythia 8.2.  We have thus checked the difference between 8.2 and 8.186 (ATLAS samples).  This difference is negligible for our observables.  For the Pythia 8.186 setup, we have matched all of the Pythia parameters from what the ATLAS log.generate file says was changed from the default.
+\end{enumerate}
+Since the MC stat uncertainty of our private samples is (much) better than the official samples, we can only confirm the physics setup within the precision of the ATLAS samples.   There are no obvious trends across any of the observables and the $\chi^2/\text{NDF}$ (NDF = N-1 since they are normalized) are 0.4, 1.3, 1.2, 1.3 for $\Delta\phi, \Delta R$, $\log(m/p_\text{T})$, and $z$, respectively.   These correspond to $p$-values of 0.8, 0.3, 0.3, 0.9, 0.3, respectively.  There is no single deviation larger than $2\sigma$ and only three single bins that deviate by more than $1.5\sigma$.
+\end{enumerate}
+
+\begin{figure}[htpb!]
+\begin{center}
+\includegraphics[width=0.45\linewidth]{figures/Validation/dphi_unfolded_truth_comparisons.pdf}\includegraphics[width=0.45\linewidth]{figures/Validation/ZpT_unfolded_truth_comparisons.pdf}\\
+\includegraphics[width=0.45\linewidth]{figures/Validation/dR_unfolded_truth_comparisons.pdf}\includegraphics[width=0.45\linewidth]{figures/Validation/fracmasspt_unfolded_truth_comparisons.pdf}\\
+\caption[]{Physics validation studies on the private production setup.  Details are in the text.} 
+\label{fig:resultsvalidation}
+\end{center}
+\end{figure}
+
+\begin{figure}[htpb!]
+\begin{center}
+\includegraphics[width=0.45\linewidth]{figures/Validation/dphi_unfolded_truth_comparisons2.pdf}\includegraphics[width=0.45\linewidth]{figures/Validation/ZpT_unfolded_truth_comparisons2.pdf}\\
+\includegraphics[width=0.45\linewidth]{figures/Validation/dR_unfolded_truth_comparisons2.pdf}\includegraphics[width=0.45\linewidth]{figures/Validation/fracmasspt_unfolded_truth_comparisons2.pdf}\\
+\caption[]{An illustration that the reweighting preserves the Sherpa response matrix for the `response matrix' component of the fragmentation uncertainty.} 
+\label{fig:resultsvalidation3}
+\end{center}
+\end{figure}
+
+\clearpage
+\section{Scale-factor Observable-dependence}
+\label{sec:app-scalefactors}
+
+Flavor-tagging scale factors from the $b$-tagging group are applied to the tagged jets in this analysis.  However, there could be a residual scale-factor from the fact that our jets are by construction not-isolated (and those used for the calibration are isolated).  This section provides a conservative $\Delta R(b,b)$-dependence scale-factor.  First, it is important to analyze where a residual scale-factor could affect the analysis as the flavor-fractions are extracted in-situ (Sec.~\ref{sec:backgrounds}).  Consider a simplified case of two bins and only BB and non-BB (NB).\\
+
+bin 1: a*BB1+b*NB1\\
+bin 2: c*BB2+d*NB2\\
+
+Where $a,b,c,d$ are the relative fractions of BB and NB in each of the bins such that the sum of all bin contents is the same in data and MC. Suppose there is a scale factor which is different between bins 1 and 2.  i.e. \\
+
+bin 1: $f_1$*a*BB1+$g_1$*b*NB1\\
+bin 2: $f_2$*c*BB2+$g_2$*d*NB2\\
+
+where $f$ is the BB scale factor and $g$ is the NB scale factor.\\
+
+Then, we do the background fit and subtract $g_1$*b*NB1 from the first bin and $g_2$*d*NB2 from the second bin.  We are left with\\
+
+$f_1$*a*BB1 in the first bin and\\
+$f_2$*c*BB2 in the second bin.\\
+
+The unfolding is supposed to correct for $f_1$*a and $f_2$*c (since we normalize, it has to correct for slightly less than that).  Importantly, we are not sensitive to the $g_i$, as these are completely accounted for in the background subtraction step.\\
+
+If the $b$-tagging efficiency and scale factor are independent of the variable, then $f_1=f_2=f$ and we are not sensitive once the normalization is performed.  However, if there is an observable-dependent scale-factor for the signal, we need to either correct for it or apply an uncertainty.  The Run 2 $g\rightarrow bb$ scale factor study (Ref.~\cite{ATLAS-CONF-2016-039}) did not actually extract the scale-factors (it only plotted distributions).  This was also not done at 8 TeV (Ref.~\cite{ATLAS-CONF-2016-002}), but enough information was provided there to estimate the scale-factors.  In particular, one can use the pre- and post-tagging $\Delta R$ distributions reproduced in Fig.~\ref{fig:appscalefactors1}.  The reason this cannot be done in-situ with our selection is that our pre-tagging purity is too low.  It is enhanced in the performance study by using a muon-in-jet tag.  It may be possible in the future to combine that approach with the differential cross-section measurement, but that is beyond our scope.  We therefore re-cast the performance study to set an uncertainty.
+
+\begin{figure}[htpb!]
+\begin{center}
+\includegraphics[width=0.45\linewidth]{figures/scalefactors/fig_05a.pdf}\includegraphics[width=0.45\linewidth]{figures/scalefactors/fig_05b.pdf}
+\caption[]{The pre- and post-tagging $\Delta R$ distribution from Ref.~\cite{ATLAS-CONF-2016-002}.} 
+\label{fig:appscalefactors1}
+\end{center}
+\end{figure}
+
+The plots from Fig.~\ref{fig:appscalefactors1} show that the MC agrees well with the data within uncertainties.  If you look carefully at the left plot, there does seem to be a systematic slope in the data/MC ratio.  It is not possible to know (given that we no longer have access to the original data) if this is explained by a correlated uncertainty across bins or if this is actually evidence for a $\Delta R$-dependent scale factor.  We take the conservative approach and assume it is due to a scale-factor.  The data and simulation are used to minimize the following loss function:
+
+\begin{align}
+\sum_i&\left(\frac{\text{data after tag in bin $i$}}{\text{data before tag in bin $i$}}-\frac{\text{MC after tag in bin $i$}}{\text{MC before tag in bin $i$}}\right)^2\\
+&=\left(\frac{\text{data after tag in bin $i$}}{\text{data before tag in bin $i$}}-\frac{(a\Delta R_i+b)(\text{signal in bin $i$ after})+(c\Delta R_i+d)(\text{background in bin $i$ after})}{\text{MC before tag in bin $i$}}\right)^2,
+\end{align}
+
+where $a,b,c,d$ are fitting parameters.  We find that $a\approx -0.62$ and $b\approx 1.93$.  Without access to the full covariance matrix, we (conservatively) choose to take this correction as an uncertainty instead of applying the correction and taking the uncertainty on the correction as the uncertainty.   The resulting uncertainty is about 15\% across the $\Delta R$ range for this measurement (note that we are not sensitive to any overall scale-factor).
+
+It is straightforward to apply this uncertainty to the $\Delta R$ distribution, but we also need to determine the impact on the other observables as well.  This is shown in Fig.~\ref{fig:appscalefactors2},~\ref{fig:appscalefactors3}, and~\ref{fig:appscalefactors4}.  The scale-factor has essentially no impact (less than 1\%) on the $\Delta\phi$ and $z(p_\text{T}$) distributions, but has a small effect on the $\rho$ distribution (as expected as wider angles leads to higher mass).
+
+\begin{figure}[htpb!]
+\begin{center}
+\includegraphics[width=0.45\linewidth]{figures/scalefactors/dR_versus_R.pdf}\includegraphics[width=0.45\linewidth]{figures/scalefactors/Z_versus_R.pdf}
+\includegraphics[width=0.45\linewidth]{figures/scalefactors/dR_versus_dphi.pdf}\includegraphics[width=0.45\linewidth]{figures/scalefactors/rho_versus_R.pdf}
+\caption[]{The distribution of a given observable conditioned on $\Delta R$.} 
+\label{fig:appscalefactors2}
+\end{center}
+\end{figure}
+
+\begin{figure}[htpb!]
+\begin{center}
+\includegraphics[width=0.45\linewidth]{figures/scalefactors/R_rw.pdf}\includegraphics[width=0.45\linewidth]{figures/scalefactors/Z_rw.pdf}
+\includegraphics[width=0.45\linewidth]{figures/scalefactors/dphi_rw.pdf}\includegraphics[width=0.45\linewidth]{figures/scalefactors/rho_rw.pdf}
+\caption[]{Before and after applying the scale-factor $\Delta R$-dependence.} 
+\label{fig:appscalefactors3}
+\end{center}
+\end{figure}
+
+\begin{figure}[htpb!]
+\begin{center}
+\includegraphics[width=0.45\linewidth]{figures/scalefactors/R_rw_ratio.pdf}\includegraphics[width=0.45\linewidth]{figures/scalefactors/Z_rw_ratio.pdf}
+\includegraphics[width=0.45\linewidth]{figures/scalefactors/dphi_rw_ratio.pdf}\includegraphics[width=0.45\linewidth]{figures/scalefactors/rho_rw_ratio.pdf}
+\caption[]{The ratio of the two distributions shown in Fig.~\ref{fig:appscalefactors3}.} 
+\label{fig:appscalefactors4}
+\end{center}
+\end{figure}
+
+\clearpage
+
+%-------------------------------------------------------------------------------
+% If you use biblatex and either biber or bibtex to process the bibliography
+% just say \printbibliography here
+\printbibliography
+% If you want to use the traditional BibTeX you need to use the syntax below.
+%\bibliographystyle{bibtex/bst/atlasBibStyleWoTitle}
+%\bibliography{atlas-document,bibtex/bib/ATLAS}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% Print the list of contributors to the analysis
+% The argument gives the fraction of the text width used for the names
+%-------------------------------------------------------------------------------
+\clearpage
+\PrintAtlasContribute{0.30}
+
+%-------------------------------------------------------------------------------
+\clearpage
+\appendix
+\part*{Auxiliary material}
+\addcontentsline{toc}{part}{Auxiliary material}
+%-------------------------------------------------------------------------------
+
+%% In an ATLAS paper, auxiliary plots and tables that are supposed to be made public 
+%% should be collected in an appendix that has the title \enquote{Auxiliary material}.
+%% This appendix should be printed after the Bibliography.
+%% At the end of the paper approval procedure, this information can be split into a separate document
+%% -- see \texttt{atlas-auxmat.tex}.
+
+%% In an ATLAS note, use the appendices to include all the technical details of your work
+%% that are relevant for the ATLAS Collaboration only (e.g.\ dataset details, software release used).
+%% This information should be printed after the Bibliography.
+
+\end{document}

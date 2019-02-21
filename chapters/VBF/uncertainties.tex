@@ -21,7 +21,7 @@ Several uncertainties are applied to the MC simulation samples to take into acco
 
 \paragraph{Trigger efficiencies}
 
-The per-jet online b-tagging efficiency with respect to the offline b-tagging efficiency is measured in $t\bar t$ events. 
+The per-jet online \btagging efficiency with respect to the offline \btagging efficiency is measured in $t\bar t$ events. 
 To cover the event topology dependence, a scale factor applied to the leading b-tagged jet is derived as a function of the jet $\eta$. 
 
 \paragraph{JVT efficiency}
@@ -59,16 +59,10 @@ random number $r$ is drawn from a Gaussian distribution with mean 0 and sigma eq
 one.  The jet 4-momentum is then scaled by a factor $1+r$.  By definition, such uncertainty
 is one-sided, since jets in simulation cannot be under-smeared. 
 We compute the normalization and shape uncertainties in the final distributions 
-and symmetrize them to define a corresponding "down'' variation.
+and symmetrize them to define a corresponding ``down'' variation.
 
 \paragraph{\btagging}
 %\label{sec:vbf-syst_btag}
-
-The effects of uncertainties in efficiencies for the heavy flavor tagging of jets by
-the MV2c10 tagger have been evaluated. This analysis uses the operating points 
-with approximately 60\%, 70\% and 85\% efficiency for $b$-quark jets. 
-These efficiencies are measured
-from data for each jet flavor.
 
 Simulation efficiencies for $b$ and $c$ quarks have to be corrected by a
 $\pt$-dependent factor. In the case of light flavor jets, the corrections also 
@@ -90,12 +84,6 @@ is affected by the modeling of the charged multiplicity in jet fragmentation and
 track multiplicity reconstruction. The estimation of the corresponding uncertainties is 
 described in Ref.~\cite{qgtagging}. A total of 5 nuisance parameters is used to parametrize these
 uncertainties and the impact on the results presented in this note is found to be negligible.
-
-\subsubsection{Analytical and Theoretical Modeling uncertainties of signal}
-\label{sec:vbf-syst_model}
-
-Uncertainties in the modeling both of the non-resonant background shape and the theory and phenomenological modeling uncertainties of the Monte Carlo simulation samples are described here.
-
 
 \paragraph{Non-resonant background}
 The non-resonant background is modeled with an analytical function, either O(3) or O(4) Bernstein polynomial. 
@@ -172,7 +160,7 @@ uncertainties to standard non-VBF ggF+GE2j category.
 
 Overall, if VBF topology uncertainties are only applied to low $p_T(H)$ events, this source 
 of ucnertainty is $<3\%$ in all signal regions. If the uncertainty is extended to high $p_T(H)$ events and as well as non-VBF ggF+GE2j events, the uncertainty
-is about $20\%$. We take this conservative extended version of uncertainty for ggF events.
+is about $20\%$. We take this very conservative extended version of uncertainty for ggF events.
 
 %\begin{table}[htbp]
 %\centering
@@ -228,10 +216,10 @@ The yield is also assigned with 100\% uncertainty.
 
 \begin{figure}[htbp]
   \centering
- \includegraphics[width=0.42\textwidth]{figures/VBF/Mbb_VH_2cen.pdf}
- \includegraphics[width=0.42\textwidth]{figures/VBF/Mbb_ttH_2cen.pdf}\\
- \includegraphics[width=0.42\textwidth]{figures/VBF/Mbb_VH_4cen.pdf}
- \includegraphics[width=0.42\textwidth]{figures/VBF/Mbb_ttH_4cen.pdf}
+ \includegraphics[width=0.35\textwidth]{figures/VBF/Mbb_VH_2cen.pdf}
+ \includegraphics[width=0.35\textwidth]{figures/VBF/Mbb_ttH_2cen.pdf}\\
+ \includegraphics[width=0.35\textwidth]{figures/VBF/Mbb_VH_4cen.pdf}
+ \includegraphics[width=0.35\textwidth]{figures/VBF/Mbb_ttH_4cen.pdf}
  \caption{\Mbb distributions of \VH (left) and \ttH (right) for \twocentral (top) and \fourcentral (bottom) channels passing event pre-selection. }
   \label{fig:Mbb-ttH-VH}
 \end{figure}

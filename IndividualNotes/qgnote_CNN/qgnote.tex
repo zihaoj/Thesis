@@ -1,0 +1,200 @@
+%-------------------------------------------------------------------------------
+% This file provides a skeleton ATLAS document.
+%-------------------------------------------------------------------------------
+% \pdfoutput=1
+% The \pdfoutput command is needed by arXiv/JHEP/JINST to ensure use of pdflatex.
+% It should be included in the first 5 lines of the file.
+%-------------------------------------------------------------------------------
+% Specify where ATLAS LaTeX style files can be found.
+\newcommand*{\ATLASLATEXPATH}{latex/}
+% Use this variant if the files are in a central location, e.g. $HOME/texmf.
+% \newcommand*{\ATLASLATEXPATH}{}
+%-------------------------------------------------------------------------------
+\documentclass[UKenglish,texlive=2016]{\ATLASLATEXPATH atlasdoc}
+% The language of the document must be set: usually UKenglish or USenglish.
+% british and american also work!
+% Commonly used options:
+%  texlive=YYYY          Specify TeX Live version (2016 is default).
+%  atlasstyle=true|false Use ATLAS style for document (default).
+%  coverpage             Create ATLAS draft cover page for collaboration circulation.
+%                        See atlas-draft-cover.tex for a list of variables that should be defined.
+%  cernpreprint          Create front page for a CERN preprint.
+%                        See atlas-preprint-cover.tex for a list of variables that should be defined.
+%  PAPER                 The document is an ATLAS paper (draft).
+%  CONF                  The document is a CONF note (draft).
+%  PUB                   The document is a PUB note (draft).
+%  BOOK                  The document is of book form, like an LOI or TDR (draft)
+%  txfonts=true|false    Use txfonts rather than the default newtx - needed for arXiv submission.
+%  paper=a4|letter       Set paper size to A4 (default) or letter.
+
+%-------------------------------------------------------------------------------
+% Extra packages:
+\usepackage{\ATLASLATEXPATH atlaspackage}
+% Commonly used options:
+%  biblatex=true|false   Use biblatex (default) or bibtex for the bibliography.
+%  backend=biber         Use the biber backend rather than bibtex.
+%  subfigure|subfig|subcaption  to use one of these packages for figures in figures.
+%  minimal               Minimal set of packages.
+%  default               Standard set of packages.
+%  full                  Full set of packages.
+%-------------------------------------------------------------------------------
+% Style file with biblatex options for ATLAS documents.
+\usepackage{\ATLASLATEXPATH atlasbiblatex}
+
+% Package for creating list of authors and contributors to the analysis.
+\usepackage{\ATLASLATEXPATH atlascontribute}
+
+% Useful macros
+\usepackage{\ATLASLATEXPATH atlasphysics}
+% See doc/atlas_physics.pdf for a list of the defined symbols.
+% Default options are:
+%   true:  journal, misc, particle, unit, xref
+%   false: BSM, heppparticle, hepprocess, hion, jetetmiss, math, process, other, texmf
+% See the package for details on the options.
+
+% Files with references for use with biblatex.
+% Note that biber gives an error if it finds empty bib files.
+\addbibresource{qgnote.bib}
+\addbibresource{bibtex/bib/ATLAS.bib}
+\addbibresource{bibtex/bib/CMS.bib}
+\addbibresource{bibtex/bib/ConfNotes.bib}
+\addbibresource{bibtex/bib/PubNotes.bib}
+
+% Paths for figures - do not forget the / at the end of the directory name.
+\graphicspath{{logos/}{figures/}}
+
+% Add you own definitions here (file qgnote-defs.sty).
+\usepackage{qgnote-defs}
+
+%-------------------------------------------------------------------------------
+% Generic document information
+%-------------------------------------------------------------------------------
+
+% Title, abstract and document 
+\input{qgnote-metadata}
+% Author and title for the PDF file
+\hypersetup{pdftitle={ATLAS document},pdfauthor={The ATLAS Collaboration}}
+
+%-------------------------------------------------------------------------------
+% Content
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+% List of contributors - print here or after the Bibliography.
+\PrintAtlasContribute{0.30}
+\clearpage
+
+%-------------------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+%-------------------------------------------------------------------------------
+
+\input{tex/intro.tex}
+
+%%-------------------------------------------------------------------------------
+%\section{ATLAS detector}
+%\label{sec:detector}
+%-------------------------------------------------------------------------------
+
+%The ATLAS detector~\cite{PERF-2007-01} ...
+% \input{atlas-detector}
+
+
+%-------------------------------------------------------------------------------
+\section{Quark and gluon jet images}
+\label{sec:images}
+%-------------------------------------------------------------------------------
+
+\input{tex/images.tex}
+
+%-------------------------------------------------------------------------------
+\section{CNN tagger}
+\label{sec:tagger}
+%-------------------------------------------------------------------------------
+
+\input{tex/tagger.tex}
+
+%-------------------------------------------------------------------------------
+\subsection{Pileup dependence}
+\label{sec:pileup}
+%-------------------------------------------------------------------------------
+
+\input{tex/pileup.tex}
+
+%-------------------------------------------------------------------------------
+\subsection{Fragmentation modeling}
+\label{sec:frag}
+%-------------------------------------------------------------------------------
+
+\input{tex/modeling.tex}
+
+%-------------------------------------------------------------------------------
+\subsection{Visualizing learned information}
+\label{sec:learningaboutlearning}
+%-------------------------------------------------------------------------------
+
+\input{tex/learning.tex}
+
+%-------------------------------------------------------------------------------
+%\section{Topology dependence}
+%\label{sec:topo}
+%-------------------------------------------------------------------------------
+
+%\input{tex/topo.tex}
+
+
+% All figures and tables should appear before the summary and conclusion.
+% The package placeins provides the macro \FloatBarrier to achieve this.
+ \FloatBarrier
+
+
+%-------------------------------------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+%-------------------------------------------------------------------------------
+
+This note presents the first full simulation study of deep learning with jet images.  Convolutional neural networks are used to distinguish images of the radiation pattern inside quark jets from the pattern inside gluon jets.  Across a wide range of quark jet efficiencies, the CNN tagger achieves a gluon jet rejection that is comparable to or better than the performance of classical quark versus gluon  tagging observables jet width and track multiplicity.  Furthermore, the origin of the CNN performance is investigated, including a variation of experimental conditions.  The image-based approach described in this note is a promising avenue for future research to confront a variety of tagging challenges.
+
+%-------------------------------------------------------------------------------
+%\section*{Acknowledgements}
+%-------------------------------------------------------------------------------
+
+%\input{acknowledgements/Acknowledgements}
+
+%-------------------------------------------------------------------------------
+\clearpage
+%\appendix
+%\part*{Appendix}
+%\addcontentsline{toc}{part}{Appendix}
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+% If you use biblatex and either biber or bibtex to process the bibliography
+% just say \printbibliography here
+\printbibliography
+% If you want to use the traditional BibTeX you need to use the syntax below.
+%\bibliographystyle{bibtex/bst/atlasBibStyleWoTitle}
+%\bibliography{qgnote,bibtex/bib/ATLAS}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% Print the list of contributors to the analysis
+% The argument gives the fraction of the text width used for the names
+%-------------------------------------------------------------------------------
+\clearpage
+\PrintAtlasContribute{0.30}
+
+%-------------------------------------------------------------------------------
+\clearpage
+%\appendix
+%\part*{Auxiliary material}
+%\addcontentsline{toc}{part}{Auxiliary material}
+%-------------------------------------------------------------------------------
+
+
+\end{document}

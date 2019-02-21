@@ -1,0 +1,161 @@
+%-------------------------------------------------------------------------------
+% Xhh4b internal support note for the 2015 data analysis
+%-------------------------------------------------------------------------------
+% Specify where ATLAS LaTeX style files can be found.
+\newcommand*{\ATLASLATEXPATH}{latex/}
+% Use this variant if the files are in a central location, e.g. $HOME/texmf.
+% \newcommand*{\ATLASLATEXPATH}{}
+%-------------------------------------------------------------------------------
+\documentclass[USenglish,texlive=2013]{\ATLASLATEXPATH atlasdoc}
+
+% Use biblatex and biber for the bibliography
+\usepackage{\ATLASLATEXPATH atlaspackage}
+\usepackage{subfig}
+\usepackage{\ATLASLATEXPATH atlasbiblatex}
+
+% Package for creating list of authors and contributors to the analysis.
+\usepackage{\ATLASLATEXPATH atlascontribute}
+
+% Useful macros
+\usepackage[BSM=true]{\ATLASLATEXPATH atlasphysics}
+
+% Add your own definitions
+\input{jetetmisssymbols.tex}
+\usepackage{Xhh4b-defs}
+\usepackage{multirow}
+\usepackage{pgffor}
+\usepackage{tabu}
+\newcommand{\szip}{S_{z{_0}}}
+\newcommand{\sdip}{S_{d{_0}}}
+\newcommand{\ptfrac}{p_{\rm T}^{\rm frac}}
+\newcommand{\drtj}{\Delta R(\textrm{track,\ jet})}
+\newcommand{\mvnote}{MV2c10 is a high level BDT tagger which integrates IP3D outputs outputs with additional vertex information from JetFitter and SV1.}
+
+%% use [disable] to disable todo notes
+\usepackage[disable]{todonotes}
+%% \usepackage{todonotes}
+%% \addtolength{\paperwidth}{5cm}
+%% \addtolength{\marginparwidth}{5cm}
+
+
+% Files with references for use with biblatex.
+% Note that biber gives an error if it finds empty bib files.
+\addbibresource{RNNIPTag_INT.bib}
+\addbibresource{bibtex/bib/ATLAS.bib}
+
+% Paths for figures
+\graphicspath{{logos/}{figures/}}
+
+%-------------------------------------------------------------------------------
+% Generic document information
+%-------------------------------------------------------------------------------
+% Title, abstract and document 
+\input{RNNIPTag_INT-metadata}
+% Author and title for the PDF file
+\hypersetup{pdftitle={ATLAS draft},pdfauthor={The ATLAS Collaboration}}
+
+% Author and title for the PDF file
+\hypersetup{pdftitle={Identification of Jets Containing $b$-Hadrons with Recurrent Neural Networks at the ATLAS Experiment},pdfauthor={ATLAS Collaboration}}
+
+% sideways
+\usepackage{rotating}
+%Better control of verbatim environment
+\usepackage{fancyvrb}
+
+%-------------------------------------------------------------------------------
+% This is where the document really begins
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+% Keep track of version changes
+\setcounter{secnumdepth}{0}
+%\input{Sections/changelog}
+%\clearpage
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+%-------------------------------------------------------------------------------
+% Print the list of contributors to the analysis
+% The argument gives the fraction of the text width used for the names
+%-------------------------------------------------------------------------------
+\PrintAtlasContribute{0.25}
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\listoftodos
+
+%-------------------------------------------------------------------------
+\section{Introduction}
+\input{sections/intro}
+%-------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------
+%\section{ATLAS Detector}
+%\label{sec:det}
+%\input{sections/detector}
+%Know it~\cite{ref:AtlasDet}. Love it.
+%-------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------
+\section{Event Samples, Object Selection, Association and Flavor Labeling}
+\label{sec:samples}
+\input{sections/samples}
+%-------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------
+%\section{Object selection, association and flavor labeling}
+%\label{sec:object-definitions}
+%\input{Sections/reco_selection}
+%-------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------
+\section{Recurrent Neural Network Based $b$-Tagging}
+\label{sec:rnn}
+\input{sections/rnn}
+%-------------------------------------------------------------------------
+
+
+
+%-------------------------------------------------------------------------
+\section{Performance Results}
+\label{sec:results}
+\input{sections/results}
+%-------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------
+\section{Conclusions}
+\label{sec:conclusion}
+\input{sections/conclusion}
+%-------------------------------------------------------------------------
+
+
+\printbibliography
+
+
+\pagebreak
+
+\appendix
+\part*{Appendix}
+\addcontentsline{toc}{part}{Appendix}
+
+\input{appendices/sampleDetails.tex}
+%\clearpage
+%\input{appendices/rnn_info.tex}
+%% \clearpage
+\input{appendices/optimization.tex}
+%% \clearpage
+%% \input{appendices/software.tex}
+\clearpage
+
+
+\end{document}

@@ -1,5 +1,5 @@
-The simulated $t\bar{t}$ and Z' production corresponding to $\sqrt{s}=$13~TeV proton-proton
-collisions is used to study the tagger performance. Events are generated with the
+The simulated $t\bar{t}$ and Z' productions corresponding to $\sqrt{s}=$13~TeV proton-proton
+collisions are used to study the tagger performance. Events are generated with the
 next-to-leading order generator \powheg{}~\cite{bib:powheg} and the \textsc{CT10}~\cite{Lai:2010vv}
 parton distribution functions, interfaced with \pythia{}~\cite{pythia2} for parton showing and
 fragmentation. \textsc{EvtGen}~\cite{Lange:2001uf} is used to model the decays of
@@ -11,19 +11,17 @@ Event vertex, track and jet reconstructions follow exactly the same approach as 
 
 The tracks used in the $b$-tagging algorithms are associated to jets
 using the angular separation $\Delta R$ between the track and the jet axis.
-The $\Delta R$ requirement varies as a function of jet $\pt$,
-being wide for low $\pt$ jets and narrower for high $\pt$ jets which tend to be more
-collimated~\cite{ref:btagPaper}.
+The $\Delta R$ requirement varies as a function of jet $\pt$~\cite{ref:btagPaper}.
 A similar geometric matching scheme to match jets with truth $b$-hadrons, $c$-hadrons and $\tau$-leptons
 is used to label the flavor jets as $b$, $c$, light, or $\tau$ jets in simulation as described in ~\cite{ATL-PHYS-PUB-2015-022}.
 
 A jet is considered as $b$-tagged if the output
 discriminant of the tagging algorithm
 is above certain threshold. Several such thresholds,
-or ``working points'' (WP), are defined, in such a way as to correspond to
-a average efficiency when applied to $b$-jets from a sample of
+or ``working points'' (WP), are defined, which correspond to
+an average efficiency when applied to $b$-jets from pa sample of
 inclusive $t\bar{t}$ events. This study focuses on the tagger performance at
 70\% $b$-tagging efficiency WP, which would retain the majority of the $b$-jets.
 In addition, tagger performance for flat efficiency working points will also be considered,
-which are $\pt$ dependent threshold for the tagger discriminant such that the \btagging efficiency
-is uniform as a function of $\pt$.
+which are $\pt$ dependent threshold such that the \btagging efficiency
+is uniform in bins of jet $\pt$.

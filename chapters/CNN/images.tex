@@ -10,24 +10,17 @@ higher qualities than images based on reconstructed quatities which are degraded
 finite detector resolution and noise. 
 
 \subsubsection{tracks}
-Track reconstructions follow the same procedure as described in Chapter\ref{chap:reconstruction}. Tight quality
+Track reconstructions follow the same procedure as described in Chapter \ref{chap:reconstruction}. Tight quality
 criteria~\cite{ATL-PHYS-PUB-2015-051} on the track properties are used to mitigate the impact of pile-up as well as
 to reject spurious (fake) tracks that result from multiple charged particles or noise.
 Tracks used for this study are required to have $p_\text{T} > 0.5~\GeV$ and to originate from the hard-scatter primary vertex. 
-Tracks are assigned to primary vertices based on the track-to-vertex matching resulting from the vertex reconstruction.
-Tracks not included in vertex reconstruction are assigned to the nearest vertex based on the
-distance $|\Delta z \times \sin\theta|$, up to a maximum distance of 3 mm.
-The track to jet association scheme is ghost-association same as documented in Sec.\ref{sec:vbf-objsel}.
+The track to jet association scheme is ghost-association same as documented in Sec. \ref{sec:vbf-objsel}.
 
 
 \subsubsection{calorimeter clusters}
 The first type of energy information considered is topological calorimeter-cell 
-clusters (topo-clusters)~\cite{PERF-2014-07}.
-The algorithm uses as seeds calorimeter cells
-with energy significance $|E_\text{cell}|/\sigma_\text{noise}>4$,
-iteratively combines all neighbouring cells with
-$|E_\text{cell}|/\sigma_\text{noise}>2$ and finally adds neighbouring cells
-without any significance requirement.
+clusters (topo-clusters) as described in Sec. \ref{sec:reco-jets}.
+
 %Topo-clusters at the EM scale are used as input for jet reconstruction with 
 %with distance parameter $R=0.4$, as provided by FastJet~\cite{Cacciari:2011ma}.  
 
@@ -50,16 +43,16 @@ the jet radius $R=0.4$.
 \subsubsection{truth particles}
 Truth-particle jets in Monte Carlo (MC) simulation are built from generated stable particles with a mean lifetime $\tau>30$~ps, 
 excluding muons and neutrinos.
-As with the detector-level jets, truth-particle jets are clustered with the anti-$k_t$ $R=0.4$ algorithm.
+Similar to the detector-level jets, truth-particle jets are clustered with the anti-$k_t$ $R=0.4$ algorithm.
 The $p_\text{T}$ of the truth-particle jet is used to select the jets.
 Two $p_\text{T}$ ranges are considered for this study: $150~\GeV<p_\text{T}<200~\GeV$ and $400~\GeV<p_\text{T}<500~\GeV$.
 
 
 \subsection{Image Formation}
 
-There is an extensive literature on formation of jet images images. In line with the work such as~\cite{Cogan:2014oua,Almeida:2015jua}, the first step in constructing a jet image rotates and Lorentz boost all of the constituents inside a jet so that $\phi_\text{jet}=\eta_\text{jet}=0$. Then, the jet is cropped into a grid of size $16\times 16$ in $\eta$ and $\phi$ with pixel sizes $0.05\times 0.05$ and centered.  The intensity of each pixel is the total $p_\text{T}$ within the pixel, using a particular type of constituents (calorimeter-cell clusters, towers, tracks, or truth particles). Each image is then normalized so that $\sum_i I_i=1$, where $I_i$ is the intensity of the $i^\text{th}$ pixel. Normalization is performed for the tagger to learn only the information orthogonal to the jet transverse momentum.  %Normalization is known to remove useful discrimination information, but studies suggest the impact is small and it is useful for training. For an extensive description of the impact of image preprocessing on the information content of a jet image, see Ref.~\cite{deOliveira:2015xxd}.
+There is an extensive literature on formation of jet images images. In line with the work such as~\cite{Cogan:2014oua,Almeida:2015jua}, the first step in constructing a jet image rotates and Lorentz boost all of the constituents inside a jet so that $\phi_\text{jet}=\eta_\text{jet}=0$. Then, the jet is cropped into a grid of size $16\times 16$ in $\eta$ and $\phi$ with pixel sizes $0.05\times 0.05$ and centered.  The intensity of each pixel is the total $p_\text{T}$ within the pixel, of a particular type of constituents (calorimeter-cell clusters, towers, tracks, or truth particles). Each image is then normalized so that $\sum_i I_i=1$, where $I_i$ is the intensity of the $i^\text{th}$ pixel. Normalization is performed for the tagger to learn only the information orthogonal to the jet transverse momentum.  %Normalization is known to remove useful discrimination information, but studies suggest the impact is small and it is useful for training. For an extensive description of the impact of image preprocessing on the information content of a jet image, see Ref.~\cite{deOliveira:2015xxd}.
 
-One representative set of gluon jet images using different inputs is shown in Figure~\ref{fig:cnn-oneimage} and the average quark and gluon jet images and their differences are shown in Figure~\ref{fig:cnn-avg:truthtrack} and Figure~\ref{fig:cnn-avg:clustertower}. As clearly show, Jet images are extremely sparse. Only when shown in average form would one see a difference between quark and gluon jets in ensemble level. As expected, the radiation pattern around the core is broader for gluon jets relative to quark jets.
+One representative set of gluon jet images using different inputs is shown in Figure~\ref{fig:cnn-oneimage} and the average quark and gluon jet images and their differences are shown in Figure~\ref{fig:cnn-avg:truthtrack} and Figure~\ref{fig:cnn-avg:clustertower}, which sho that jet images are extremely sparse. Only when shown in average form would one see a difference between quark and gluon jets in ensemble level. As expected, the radiation pattern around the core is broader for gluon jets relative to quark jets.
 The slightly reduced central activity in track images shown in Figure~\ref{fig:cnn-avg:truthtrack} is compatible with the lower track reconstruction efficiency at the core of the jet~\cite{Aaboud:2017all}.
 Topo-cluster images are found to be more collimated than tower images (Figure~\ref{fig:cnn-avg:clustertower}) as a result of the built-in noise suppression mechanism that removes some of the soft large-angle radiation.
 

@@ -6,7 +6,7 @@ Rule-based and closed-form solutions to image classification problems were the m
 CNNs are a class of neural networks based on convolutional layers which are modular sets of weights (convolutional filters) that operate on a small $m\times n$ patch of the input image at a time. The output of each filter is the dot-product between the weights and the pixels in the corresponding patch. Each filter is then \emph{convolved} with the input image, sliding across the entire image with a pre-determined stride and taking dot-products. It is important to note that the same set of weights for a given filter is used for the entire image otherwise the number of parameters for a CNN will explode and the network is impossible to train. The output of the operation is a new convolved image with size smaller or equal to the original image. A non-linear activation function is typically applied to each pixel of the convolved image.
 Common to CNN architectures are non-covolutional down-sampling layers such as Max-pooling~\cite{MAXPOOL}.
 Such layer takes non-overlapping patches of convolution outputs as input, and outputs the maximum value for each patch.
-Typical CNNs are built with convolutional layers interleaved with pooling layers. 
+Typical CNNs are built with convolutional layers interleaved with pooling layers of different types. 
 
 %The depth of the network is determined by the number of convolutions concatenated in the network.
 %The sets of filters, the activations and the Max-pooling constitute the fundamental building block for CNNs.
@@ -41,8 +41,4 @@ with a learning rate of 0.0001 over 50 iterations.
 Training is performed using a single NVidia Tesla K80 GPU with 224000 jet images, while 56000 jet images are used for testing.
 A typical training requires about 1 hour.
 The network is retrained for each of the two $p_\text{T}$ ranges considered.
-
 The output of the network corresponding to the quark jet class is used as a discriminant (\textit{CNN tagger}).
-The discriminating power of the CNN tagger is compared with that of individual physically motivated observables, the calorimeter jet width $w$ and the number of tracks $n_\text{track}$, and their combination with the 2D binned likelihood ratio (LLH) in Figure~\ref{fig:classifiers}.  Simple thresholds are applied to construct the $n_\text{track}$ and jet width curves.  Interestingly, the CNN tagger has a similar performance to the classic $n_\text{track}$+jet width tagger that has been extensively studied in the past for quark versus gluon jet tagging~\cite{Aad:2014gea,ATLAS-CONF-2016-034}.  
-The overall performance improves with $p_\text{T}$ as does the importance of $n_\text{track}$ relative to jet width since the number of particles inside quark and gluon jets increases with $p_\text{T}$.
-

@@ -1,0 +1,244 @@
+%-------------------------------------------------------------------------------
+% This file provides a skeleton ATLAS paper.
+%-------------------------------------------------------------------------------
+% \pdfoutput=1
+% The \pdfoutput command is needed by arXiv/JHEP/JINST to ensure use of pdflatex.
+% It should be included in the first 5 lines of the file.
+% \pdfinclusioncopyfonts=1
+% This command may be needed in order to get \ell in PDF plots to appear. Found in
+% https://tex.stackexchange.com/questions/322010/pdflatex-glyph-undefined-symbols-disappear-from-included-pdf
+%-------------------------------------------------------------------------------
+% Specify where ATLAS LaTeX style files can be found.
+\newcommand*{\ATLASLATEXPATH}{latex/}
+% Use this variant if the files are in a central location, e.g. $HOME/texmf.
+% \newcommand*{\ATLASLATEXPATH}{}
+%-------------------------------------------------------------------------------
+\documentclass[PAPER, atlasdraft=true, texlive=2016, UKenglish,coverpage]{\ATLASLATEXPATH atlasdoc}
+% The language of the document must be set: usually UKenglish or USenglish.
+% british and american also work!
+% Commonly used options:
+%  atlasdraft=true|false This document is an ATLAS draft.
+%  texlive=YYYY          Specify TeX Live version (2016 is default).
+%  coverpage             Create ATLAS draft cover page for collaboration circulation.
+%                        See atlas-draft-cover.tex for a list of variables that should be defined.
+%  cernpreprint          Create front page for a CERN preprint.
+%                        See atlas-preprint-cover.tex for a list of variables that should be defined.
+%  NOTE                  The document is an ATLAS note (draft).
+%  PAPER                 The document is an ATLAS paper (draft).
+%  CONF                  The document is a CONF note (draft).
+%  PUB                   The document is a PUB note (draft).
+%  BOOK                  The document is of book form, like an LOI or TDR (draft)
+%  txfonts=true|false    Use txfonts rather than the default newtx
+%  paper=a4|letter       Set paper size to A4 (default) or letter.
+
+%-------------------------------------------------------------------------------
+% Extra packages:
+\usepackage{\ATLASLATEXPATH atlaspackage}
+\usepackage{comment}
+\usepackage{booktabs}
+% Commonly used options:
+%  biblatex=true|false   Use biblatex (default) or bibtex for the bibliography.
+%  backend=bibtex        Use the bibtex backend rather than biber.
+%  subfigure|subfig|subcaption  to use one of these packages for figures in figures.
+%  minimal               Minimal set of packages.
+%  default               Standard set of packages.
+%  full                  Full set of packages.
+%-------------------------------------------------------------------------------
+% Style file with biblatex options for ATLAS documents.
+\usepackage{\ATLASLATEXPATH atlasbiblatex}
+
+% Useful macros
+\usepackage{\ATLASLATEXPATH atlasphysics}
+% See doc/atlas_physics.pdf for a list of the defined symbols.
+% Default options are:
+%   true:  journal, misc, particle, unit, xref
+%   false: BSM, heppparticle, hepprocess, hion, jetetmiss, math, process, other, texmf
+% See the package for details on the options.
+
+% Files with references for use with biblatex.
+% Note that biber gives an error if it finds empty bib files.
+% \addbibresource{atlas-document.bib}
+\addbibresource{bib/ATLAS.bib}
+\addbibresource{bib/CMS.bib}
+\addbibresource{bib/ConfNotes.bib}
+\addbibresource{bib/PubNotes.bib}
+\addbibresource{int.bib}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{snakes}
+\tikzset{
+    fermion/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+     gluon/.style={decorate, draw=black,
+        decoration={coil,amplitude=3pt, segment length=5pt}},
+}
+
+% Paths for figures - do not forget the / at the end of the directory name.
+\graphicspath{{logos/}{figures/}}
+
+% Add you own definitions here (file atlas-document-defs.sty).
+
+\usepackage{atlas-paper-defs}
+
+%-------------------------------------------------------------------------------
+% Generic document information
+%-------------------------------------------------------------------------------
+
+% Title, abstract and document 
+\input{atlas-paper-metadata}
+% Author and title for the PDF file
+\hypersetup{pdftitle={ATLAS document},pdfauthor={The ATLAS Collaboration}}
+
+%-------------------------------------------------------------------------------
+% Content
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+
+%-------------------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+\input{sections/intro}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{ATLAS detector}
+\label{sec:detector}
+\input{sections/detector}
+
+
+%-------------------------------------------------------------------------------
+\section{Datasets}
+\label{sec:data}
+\input{sections/datasets}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{Object and Event Selection}
+\label{sec:obj}
+\input{sections/objects}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{Observables}
+\label{sec:obs}
+\input{sections/observables}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{Background Estimation}
+\label{sec:analysis}
+\input{sections/backgrounds}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{Unfolding}
+\label{sec:unfold}
+%-------------------------------------------------------------------------------
+
+After subtracting the background from the detector-level distributions, as described in Sec.~\ref{sec:analysis}, the data are corrected for resolution and acceptance effects.  The fiducial volume of the measurement is described by the particle-level object and event selection in Sec.~\ref{sec:obj}.  First, the data are corrected for events that pass the detector-level selection but not the particle-level selection using the simulations introduced in Sec.~\ref{sec:data}.  Then, the iterative Bayes (IB) unfolding technique~\cite{DAgostini:1994zf} is used to correct for the detector resolution in events that pass both the detector-level and particle-level selections.  The IB method is applied with four iterations implemented in the RooUnfold framework~\cite{Adye:2011gm}.  After the application of the response matrix, a final correction is applied to account for events that pass the particle-level but not detector-level selection.  Uncertainties on the unfolding procedure are described in Sec.~\ref{sec:systs}.
+
+%-------------------------------------------------------------------------------
+\section{Uncertainties}
+\label{sec:systs}
+\input{sections/systematics}
+%-------------------------------------------------------------------------------
+
+%\clearpage
+
+%-------------------------------------------------------------------------------
+\section{Results}
+\label{sec:result}
+\input{sections/results}
+%-------------------------------------------------------------------------------
+
+\FloatBarrier
+
+%-------------------------------------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+%-------------------------------------------------------------------------------
+
+This paper presents a measurement of various properties of $g\rightarrow b\bar{b}$ at high $p_\text{T}$ and low $\Delta R(b,b)$ from 33 fb$^{-1}$ of $\sqrt{s}=13$ TeV $pp$ collisions recorded by the ATLAS detector.  A flavor-fraction fit is used to remove contributions from processes other than $g\rightarrow b\bar{b}$.  The fitted fractions significantly disagree with the pre-fit \PYTHIA predictions and suggest that further studies could improve the modeling of analyses sensitive to these fractions.  The measured properties are unfolded to correct for the detector acceptance and resolution for direct comparison to particle-level models.  Comparisons are made at particle level between the distributions and various models of jet formation. Simulations from the \SHERPA event generator generally provide a better model than \PYTHIA, especially for the $\Delta\mathrm{\theta}_\text{ppg,gbb}$ observable which is sensitive to the modeling of the gluon polarization. The particle-level spectra are publicly available~\cite{hepdata} for further interpretation and can be used to validate QCD MC predictions and tune their models' free parameters.
+
+%-------------------------------------------------------------------------------
+\section*{Acknowledgements}
+%-------------------------------------------------------------------------------
+
+% Acknowledgements for papers with collision data
+% Version 14-Feb-2018
+
+% Standard acknowledgements start here
+%----------------------------------------------
+We thank CERN for the very successful operation of the LHC, as well as the
+support staff from our institutions without whom ATLAS could not be
+operated efficiently.
+
+We acknowledge the support of ANPCyT, Argentina; YerPhI, Armenia; ARC, Australia; BMWFW and FWF, Austria; ANAS, Azerbaijan; SSTC, Belarus; CNPq and FAPESP, Brazil; NSERC, NRC and CFI, Canada; CERN; CONICYT, Chile; CAS, MOST and NSFC, China; COLCIENCIAS, Colombia; MSMT CR, MPO CR and VSC CR, Czech Republic; DNRF and DNSRC, Denmark; IN2P3-CNRS, CEA-DRF/IRFU, France; SRNSFG, Georgia; BMBF, HGF, and MPG, Germany; GSRT, Greece; RGC, Hong Kong SAR, China; ISF, I-CORE and Benoziyo Center, Israel; INFN, Italy; MEXT and JSPS, Japan; CNRST, Morocco; NWO, Netherlands; RCN, Norway; MNiSW and NCN, Poland; FCT, Portugal; MNE/IFA, Romania; MES of Russia and NRC KI, Russian Federation; JINR; MESTD, Serbia; MSSR, Slovakia; ARRS and MIZ\v{S}, Slovenia; DST/NRF, South Africa; MINECO, Spain; SRC and Wallenberg Foundation, Sweden; SERI, SNSF and Cantons of Bern and Geneva, Switzerland; MOST, Taiwan; TAEK, Turkey; STFC, United Kingdom; DOE and NSF, United States of America. In addition, individual groups and members have received support from BCKDF, the Canada Council, CANARIE, CRC, Compute Canada, FQRNT, and the Ontario Innovation Trust, Canada; EPLANET, ERC, ERDF, FP7, Horizon 2020 and Marie Sk{\l}odowska-Curie Actions, European Union; Investissements d'Avenir Labex and Idex, ANR, R{\'e}gion Auvergne and Fondation Partager le Savoir, France; DFG and AvH Foundation, Germany; Herakleitos, Thales and Aristeia programmes co-financed by EU-ESF and the Greek NSRF; BSF, GIF and Minerva, Israel; BRF, Norway; CERCA Programme Generalitat de Catalunya, Generalitat Valenciana, Spain; the Royal Society and Leverhulme Trust, United Kingdom.
+
+The crucial computing support from all WLCG partners is acknowledged gratefully, in particular from CERN, the ATLAS Tier-1 facilities at TRIUMF (Canada), NDGF (Denmark, Norway, Sweden), CC-IN2P3 (France), KIT/GridKA (Germany), INFN-CNAF (Italy), NL-T1 (Netherlands), PIC (Spain), ASGC (Taiwan), RAL (UK) and BNL (USA), the Tier-2 facilities worldwide and large non-WLCG resource providers. Major contributors of computing resources are listed in Ref.~\cite{ATL-GEN-PUB-2016-002}.
+%----------------------------------------------
+
+
+
+%-------------------------------------------------------------------------------
+\clearpage
+%\appendix
+%\part*{Appendix}
+%\addcontentsline{toc}{part}{Appendix}
+%-------------------------------------------------------------------------------
+
+%In a paper, an appendix is used for technical details that would otherwise disturb the flow of the paper.
+%Such an appendix should be printed before the Bibliography.
+
+%-------------------------------------------------------------------------------
+% If you use biblatex and either biber or bibtex to process the bibliography
+% just say \printbibliography here
+\printbibliography
+% If you want to use the traditional BibTeX you need to use the syntax below.
+%\bibliographystyle{bib/bst/atlasBibStyleWoTitle}
+%\bibliography{atlas-document,bib/ATLAS,bib/CMS,bib/ConfNotes,bib/PubNotes}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% Auxiliary material - comment out the following line if you do not have any
+\include{atlas-document-auxmat}
+%-------------------------------------------------------------------------------
+
+\clearpage
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.48\textwidth]{figures/Canv_Fit_dphi_LpT_INF_SpT_INF_coarse_x}
+ \includegraphics[width=0.48\textwidth]{figures/Canv_Fit_b0_25_dphi_0_3_LpT_INF_SpT_INF_coarse_y}\\
+\caption{The distribution of $\subsdzero$ in simulation, post-fit, for the higher $p_\text{T}$ track-jet (left) and for the lower $p_\text{T}$ track-jet (right) in the bin $0<\Delta\mathrm{\theta}_\text{ppg,gbb}<\pi/5$. The three components are the signal double-$b$ (`BB'), the background single $b$ (`B'), and the background non-$b$ components (`L+C').  Percentages reported in the legend indicate the pre- and post-fit fraction of each component.  Only data and MC statistical uncertainties are shown.}
+  \label{fig:fits2}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.48\textwidth]{figures/Canv_Fit_zpt_LpT_INF_SpT_INF_coarse_x}
+ \includegraphics[width=0.48\textwidth]{figures/Canv_Fit_b0_25_zpt_0_3_LpT_INF_SpT_INF_coarse_y.pdf}\\
+\caption{The distribution of $\subsdzero$ in simulation, post-fit, for the higher $p_\text{T}$ track-jet (left) and for the lower $p_\text{T}$ track-jet (right) in the bin $0.0<z(p_\text{T})<0.1$. The three components are the signal double-$b$ (`BB'), the background single $b$ (`B'), and the background non-$b$ components (`L+C').  Percentages reported in the legend indicate the pre- and post-fit fraction of each component.  Only data and MC statistical uncertainties are shown.}
+  \label{fig:fits3}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.48\textwidth]{figures/Canv_Fit_M_LpT_INF_SpT_INF_coarse_x}
+ \includegraphics[width=0.48\textwidth]{figures/Canv_Fit_b0_25_M_0_3_LpT_INF_SpT_INF_coarse_y}\\
+\caption{The distribution of $\subsdzero$ in simulation, post-fit, for the higher $p_\text{T}$ track-jet (left) and for the lower $p_\text{T}$ track-jet (right) in the bin $-3.0<\log(m/p_\text{T})<-2.2$. The three components are the signal double-$b$ (`BB'), the background single $b$ (`B'), and the background non-$b$ components (`L+C').  Percentages reported in the legend indicate the pre- and post-fit fraction of each component.  Only data and MC statistical uncertainties are shown.}
+  \label{fig:fits4}
+\end{figure}
+
+%-------------------------------------------------------------------------------
+% Extra tables etc. for HepData - comment in the following line if you have any
+% \include{atlas-document-hepdata}
+%-------------------------------------------------------------------------------
+
+\end{document}

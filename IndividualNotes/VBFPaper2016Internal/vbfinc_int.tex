@@ -1,0 +1,309 @@
+%-------------------------------------------------------------------------------
+% This file provides a skeleton ATLAS document.
+%-------------------------------------------------------------------------------
+% \pdfoutput=1
+% The \pdfoutput command is needed by arXiv/JHEP/JINST to ensure use of pdflatex.
+% It should be included in the first 5 lines of the file.
+%-------------------------------------------------------------------------------
+% Specify where ATLAS LaTeX style files can be found.
+\newcommand*{\ATLASLATEXPATH}{latex/}
+% Use this variant if the files are in a central location, e.g. $HOME/texmf.
+% \newcommand*{\ATLASLATEXPATH}{}
+%-------------------------------------------------------------------------------
+\documentclass[UKenglish,texlive=2013]{\ATLASLATEXPATH atlasdoc}
+% The language of the document must be set: usually UKenglish or USenglish.
+% british and american also work!
+% Commonly used options:
+%  texlive=YYYY          Specify TeX Live version (2013 is default).
+%  atlasstyle=true|false Use ATLAS style for document (default).
+%  coverpage             Create ATLAS draft cover page for collaboration circulation.
+%                        See atlas-draft-cover.tex for a list of variables that should be defined.
+%  cernpreprint          Create front page for a CERN preprint.
+%                        See atlas-preprint-cover.tex for a list of variables that should be defined.
+%  PAPER                 The document is an ATLAS paper (draft).
+%  CONF                  The document is a CONF note (draft).
+%  PUB                   The document is a PUB note (draft).
+%  BOOK                  The document is of book form, like an LOI or TDR (draft)
+%  txfonts=true|false    Use txfonts rather than the default newtx - needed for arXiv submission.
+%  paper=a4|letter       Set paper size to A4 (default) or letter.
+
+%-------------------------------------------------------------------------------
+% Extra packages:
+\usepackage{\ATLASLATEXPATH atlaspackage}
+% Commonly used options:
+%  biblatex=true|false   Use biblatex (default) or bibtex for the bibliography.
+%  backend=biber         Use the biber backend rather than bibtex.
+%  subfigure|subfig|subcaption  to use one of these packages for figures in figures.
+%  minimal               Minimal set of packages.
+%  default               Standard set of packages.
+%  full                  Full set of packages.
+%-------------------------------------------------------------------------------
+% Style file with biblatex options for ATLAS documents.
+\usepackage{\ATLASLATEXPATH atlasbiblatex}
+
+% Package for creating list of authors and contributors to the analysis.
+\usepackage{\ATLASLATEXPATH atlascontribute}
+
+% Useful macros
+\usepackage[process=true]{\ATLASLATEXPATH atlasphysics}
+% See doc/atlas_physics.pdf for a list of the defined symbols.
+% Default options are:
+%   true:  journal, misc, particle, unit, xref
+%   false: BSM, heppparticle, hepprocess, hion, jetetmiss, math, process, other, texmf
+% See the package for details on the options.
+
+% Files with references for use with biblatex.
+% Note that biber gives an error if it finds empty bib files.
+\addbibresource{vbfinc_int.bib}
+\addbibresource{bibtex/bib/ATLAS.bib}
+\addbibresource{bibtex/bib/CMS.bib}
+\addbibresource{bibtex/bib/PubNotes.bib}
+\addbibresource{bibtex/bib/ConfNotes.bib}
+
+% Paths for figures - do not forget the / at the end of the directory name.
+\graphicspath{{logos/}{figures/}}
+
+% Add you own definitions here (file vbfinc_int-defs.sty).
+\usepackage{vbfinc_int-defs}
+
+\usepackage{multirow}
+\usepackage{seqsplit}
+
+%-------------------------------------------------------------------------------
+% Generic document information
+%-------------------------------------------------------------------------------
+
+% Title, abstract and document 
+\input{vbfinc_int-metadata}
+% Author and title for the PDF file
+\hypersetup{pdftitle={ATLAS document},pdfauthor={The ATLAS Collaboration}}
+
+% for our to-do list
+%\setcounter{section}{-1}
+
+
+%-------------------------------------------------------------------------------
+% Content
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+% List of contributors - print here or after the Bibliography.
+%\PrintAtlasContribute{0.30}
+%\clearpage
+
+%-------------------------------------------------------------------------------
+\section*{Updates From Previous Version}
+\label{todo}
+\input{tex/todo}
+
+
+%-------------------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+%-------------------------------------------------------------------------------
+
+\input{tex/intro}
+
+%-------------------------------------------------------------------------------
+\section{Analysis Strategy}
+\label{sec:strategy}
+%-------------------------------------------------------------------------------
+\input{tex/strategy}
+%The ATLAS detector~\cite{PERF-2007-01} ...
+% \input{atlas-detector}
+
+%-------------------------------------------------------------------------------
+\section{Data and Monte Carlo Samples}
+\label{sec:datamc}
+%-------------------------------------------------------------------------------
+\input{tex/datamc}
+
+%-------------------------------------------------------------------------------
+\section{Object and Event Selection}
+\label{sec:objevt}
+%-------------------------------------------------------------------------------
+\input{tex/objevt}
+%-------------------------------------------------------------------------------
+\section{Trigger Emulation}
+\label{sec:trig}
+%-------------------------------------------------------------------------------
+\input{tex/trig}
+
+
+\section{Event Weights}
+\label{sec:weights}
+%-------------------------------------------------------------------------------
+\input{tex/weights}
+
+%-------------------------------------------------------------------------------
+\section{Analysis}
+\label{sec:analysis}
+%-------------------------------------------------------------------------------
+After the event pre-selection has been applied, the analysis first uses a BDT to classify events as signal-like or background-like. Using the BDT score several signal regions are defined.  Then the \Mbb distribution of the Higgs candidates is fit to a general function plus signal and $Z$-boson templates simultaneously in all regions. Details are described in the following sections.  
+
+\subsection{BDT Definition and Training}
+\label{sec:bdt}
+\input{tex/bdt}
+
+\clearpage
+
+\subsection{Fit  Strategy and Background Determination}
+\label{sec:fitbkgds}
+\input{tex/fitbkgds}
+%You can find some text snippets that can be used in papers in \texttt{template/atlas-snippets.tex}.
+%Some of the snippets need the \texttt{jetetmiss} option passed to \texttt{atlasphysics}.
+%\input{atlas-snippets}
+%You can find some text snippets that can be used in papers in \texttt{template/atlas-snippets.tex}.
+%Some of the snippets need the \texttt{jetetmiss} option passed to \texttt{atlasphysics}.
+%\input{atlas-snippets}
+%-------------------------------------------------------------------------------
+\subsection{Results}
+\label{sec:result}
+%-------------------------------------------------------------------------------
+\input{tex/results}
+% All figures and tables should appear before the summary and conclusion.
+% The package placeins provides the macro \FloatBarrier to achieve this.
+% \FloatBarrier
+
+%-------------------------------------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+%-------------------------------------------------------------------------------
+
+We have performed a search for Higgs boson decays to $b$-quarks in a sample enriched in events produced by vector boson fusion. A fitted signal strength for $H\rightarrow bb$, $\mu_H$, of $2.7^{+2.2}_{-2.0}$ is observed, compared to an expectation of $1.0^{+1.9}_{-1.9}$. A fitted signal strength for VBF $H\rightarrow bb$, $\mu_{VBF}$, of $4.1^{+3.2}_{-2.9}$ is observed, compared to an expectation of $1.0^{+2.8}_{-2.8}$.  A combined fit with an analysis targeting $H\rightarrow b\bar{b}$ with the addition of a photon, yields $\mu_H = 2.5^{+1.4}_{-1.3}$ corresponding to an observed significance of $1.9\sigma$ ($0.8\sigma$ expected). A combined fit for $\mu_{VBF} = 3.0^{+1.7}_{-1.6}$ corresponds to an observed significance of $1.9\sigma$ ($0.7\sigma$ expected). 
+
+
+%-------------------------------------------------------------------------------
+\clearpage
+\appendix
+\part*{Appendix}
+\addcontentsline{toc}{part}{Appendix}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\clearpage
+\section{VBF Jets Kinematics}
+\label{sec:app-kinematics}
+\input{tex/app-kinematics}
+
+%-------------------------------------------------------------------------------
+\clearpage
+\section{BDT} 
+\label{sec:app-bdt}
+\input{tex/app-bdt}
+
+%-------------------------------------------------------------------------------
+\clearpage
+\section{b-jet energy correction}
+\label{sec:app-masscorrection}
+\input{tex/app-masscorrection}
+
+%-------------------------------------------------------------------------------
+%\clearpage
+\section{$Z\rightarrow b \bar b$ Injection Test}
+\label{sec:app-zinjection}
+\input{tex/app-znorm}
+
+%-------------------------------------------------------------------------------
+\clearpage
+\section{Zmumu Validation}
+\label{sec:app-zmm}
+\input{tex/app-zmm}
+
+%-------------------------------------------------------------------------------
+\clearpage
+%\section{Float $Z\rightarrow b \bar b$ normalization}
+%\label{sec:app-znorm}
+%\input{tex/app-znorm}
+\section{Constraint of $Z\rightarrow b \bar b$ normalization}
+\label{sec:app-zcon}
+\input{tex/app-zcon}
+%-------------------------------------------------------------------------------
+\clearpage
+
+\section{Strategies for including $Z\rightarrow b \bar b$ constraints in the fitting procedure}
+\label{sec:app-zstrat}
+\input{tex/app-zstrat}
+
+%-------------------------------------------------------------------------------
+\clearpage
+\section{Background functional form study for subtracting twice Standard Model \zjets{} in data sideband}
+\label{sec:app-nonresonantbkg}
+\input{tex/app-nonresonantbkg}
+
+%-------------------------------------------------------------------------------
+\clearpage
+\section{Alternative BDT Regions Definition for \twocentral channel}
+\label{sec:app-alternative2cen}
+\input{tex/app-alternative2cen}
+
+%-------------------------------------------------------------------------------
+\clearpage
+\clearpage
+\section{Alternative BDT Strategy}
+\label{sec:app-oldbdtregions}
+\input{tex/app-oldbdtregions}
+
+%-------------------------------------------------------------------------------
+\clearpage
+\section{Alternative Fitting Strategy}
+\label{sec:app-oldfitbkgds}
+\input{tex/app-oldfitbkgds}
+
+%-------------------------------------------------------------------------------
+\clearpage
+\section{Validation of Background Similarity Assumption}
+\label{sec:app-LinearityTest}
+\input{tex/app-LinearityTest}
+
+
+%-------------------------------------------------------------------------------
+\clearpage
+\section{MC Datasets and Analysis Code Documentation}
+\label{sec:app-code}
+\input{tex/app-code}
+
+
+
+%In a paper, an appendix is used for technical details that would otherwise disturb the flow of the paper.
+%Such an appendix should be printed before the Bibliography.
+
+
+%-------------------------------------------------------------------------------
+% If you use biblatex and either biber or bibtex to process the bibliography
+% just say \printbibliography here
+\printbibliography
+% If you want to use the traditional BibTeX you need to use the syntax below.
+%\bibliographystyle{bibtex/bst/atlasBibStyleWoTitle}
+%\bibliography{vbfinc_int,bibtex/bib/ATLAS,bibtex/bib/CMS,bibtex/bib/ConfNotes,bibtex/bib/PubNotes}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% Print the list of contributors to the analysis
+% The argument gives the fraction of the text width used for the names
+%-------------------------------------------------------------------------------
+\clearpage
+\PrintAtlasContribute{0.30}
+
+%-------------------------------------------------------------------------------
+%\clearpage
+%\appendix
+%\part*{Auxiliary material}
+%\addcontentsline{toc}{part}{Auxiliary material}
+%-------------------------------------------------------------------------------
+
+%In an ATLAS paper, auxiliary plots and tables that are supposed to be made public 
+%should be collected in an appendix that has the title \enquote{Auxiliary material}.
+%This appendix should be printed after the Bibliography.
+%At the end of the paper approval procedure, this information can be split into a separate document
+-%- see \texttt{atlas-auxmat.tex}.
+
+%In an ATLAS note, use the appendices to include all the technical details of your work
+%that are relevant for the ATLAS Collaboration only (e.g.\ dataset details, software release used).
+%This information should be printed after the Bibliography.
+
+\end{document}
