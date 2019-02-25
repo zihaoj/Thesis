@@ -12,7 +12,7 @@ that particular region.
 
 The integrated luminosity measurement has an uncertainty of 3.4\%. This systematic uncertainty
 is applied to all physics processes estimated with MC simulated samples normalized 
-to the measured integrated luminosity: \zjets{} and Higgs production. {\it Ed. Note: this will be updated after the unblinding.}
+to the measured integrated luminosity: \zjets{} and Higgs production.
 
 \subsubsection{Uncertainties on object definitions}
 \label{sec:vbf-syst_objects}
@@ -33,6 +33,7 @@ accounting for the efficiency uncertainty~\cite{JVTwiki}.
 
 \paragraph{Jet energy scale}
 %\label{sec:vbf-syst_jes}
+
 The jet energy scale and its uncertainty have been derived combining information from test-beam data, 
 LHC collision data and simulation \cite{JESwiki}. The jet
 energy scale uncertainty is split into 4 uncorrelated sources, 
@@ -44,7 +45,7 @@ observables computed using jet kinematics.
 
 \paragraph{Jet energy resolution}
 %\label{sec:vbf-syst_jer}
-[The jet energy resolution (JER) has been measured separately for data and simulation 
+The jet energy resolution (JER) has been measured separately for data and simulation 
 using in-situ techniques. The \texttt{JERUncertaintyProvider}
 tool~\cite{jeruncertaintyprovider} was used to obtain the expected fractional
 $p_T$ resolution for a given jet as a function of its $p_T$ and rapidity. 
@@ -57,7 +58,7 @@ In order to propagate the uncertainty in the $p_T$ resolution, for each jet a
 random number $r$ is drawn from a Gaussian distribution with mean 0 and sigma equal 
  to the difference in quadrature between the fractional $p_T$ resolution with the tool and the nominal
 one.  The jet 4-momentum is then scaled by a factor $1+r$.  By definition, such uncertainty
-is one-sided, since jets in simulation cannot be under-smeared. 
+is one-sided, since jets in simulation cannot be made to have a better resolution than exists in the simulation.
 We compute the normalization and shape uncertainties in the final distributions 
 and symmetrize them to define a corresponding ``down'' variation.
 
@@ -83,7 +84,7 @@ The track multipicity discrimination power for quark/gluon separation in simulat
 is affected by the modeling of the charged multiplicity in jet fragmentation and the modeling of the
 track multiplicity reconstruction. The estimation of the corresponding uncertainties is 
 described in Ref.~\cite{qgtagging}. A total of 5 nuisance parameters is used to parametrize these
-uncertainties and the impact on the results presented in this note is found to be negligible.
+uncertainties and the impact on the results presented in this thesis is found to be negligible.
 
 \paragraph{Non-resonant background}
 The non-resonant background is modeled with an analytical function, either O(3) or O(4) Bernstein polynomial. 
@@ -124,7 +125,8 @@ this treatment in general leads to larger variations than the independent variat
 and factorization scales. 
 
 The QCD scale uncertainty for ggF follows the \textit{2017 scheme} recommended by 
-WG1 in the follow-up of March meeting 2017 ~\cite{QCDscale_ggF}. In total, nine independent 
+LCH Higgs working group, which is a group to produce agreements on Higgs theoretical properties,
+in the follow-up of March meeting 2017 ~\cite{QCDscale_ggF}. In total, nine independent 
 variations in six categories are considered. The terms and corersponding uncertainty sources 
 are the following:
 
@@ -145,7 +147,7 @@ However, it is worth noting that these terms only matter for events which
 at truth level are generated in VBF topology. An event falls into Stage one classification 
 of VBF topology if the truth Higgs has $p_T<200GeV$ and 
 \begin{enumerate}
-\item $MJJ>400 GeV$ and $|\textnormal{rapidity(J1)-rapidity(J2)}|>2.8$ ( loose VBF, events having >3 jets),
+\item $MJJ>400 GeV$ and $|\textnormal{y(J1)-y(J2)}|>2.8$ ( loose VBF, events having $>3$ jets),
 \item Pass loose VBF selection $\overrightarrow{p_{T}}(J1)+\overrightarrow{p_{T}}(J2)+\overrightarrow{p_{T}}(Higgs)<25GeV$ (tight VBF, events having ~2 jets),
 \end{enumerate}
 where the VBF jets are defined as the leading two jets aside from the Higgs. We note that $80\%$ of the events have $p_T(H)>200GeV$ and 

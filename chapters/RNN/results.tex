@@ -65,7 +65,7 @@ However, one can examine how the RNN discriminant $D_{\mathrm{RNN}}$ depends on 
 \subsection{Combination with ATLAS Taggers}
 
 \label{sec:rnn-result-combination}
-The ultimate goal of the study is to improve the $b$-tagging performance. One possible critique of the \textit{RNNIP} Tagger is that the correlation of the track parameters stem from the fact that there exist secondary vertices in the $b$-hadron decay chain. If such correlation is already captured by other taggers such as \textit{SV1}, the overall performance of the combined tagger may not be improved. As shown in Fig.\ref{fig:combtagger}, combined with other baseline taggers of \textit{MV2} and another newly designed soft muon tagger which seeks to incorporate the muon information from the semi-leptonic decays, the RNN IP tagger does provide orthogonal information and boosts the combined algorithm performance for $c$-jet rejection, in high $b$-tagging efficiency regime and high $\pt$ regime. 
+The ultimate goal of the study is to improve the $b$-tagging performance. One possible critique of the \textit{RNNIP} Tagger is that the correlation of the track parameters stem from the fact that there exist secondary vertices in the $b$-hadron decay chain. If such correlation is already captured by other taggers such as \textit{SV1}, the overall performance of the combined tagger may not be improved. As shown in Fig.\ref{fig:combtagger}, combined with other baseline taggers of \textit{MV2} and another newly designed soft muon tagger which seeks to incorporate the muon information from the semi-leptonic decays, the RNN IP tagger does provide orthogonal information and boosts the combined algorithm performance\cite{ATL-PHYS-PUB-2017-013}. Specifically, for $b$-light discrimination, the algorithm improves high \pt light jet rejection by a factor of 2 at 70\% standard WP. The high efficiency $b$-ligth discrimination for low \pt regime is also improved by a factor of 1.4 at 90\%WP. For $c$-jet rejection, the algorithm is improved by a factor of around 1.2 in both low and high \pt regime. 
 
 
 \begin{figure}[htbp]
@@ -75,6 +75,6 @@ The ultimate goal of the study is to improve the $b$-tagging performance. One po
  \includegraphics[width=0.48\textwidth]{figures/RNN/LRej_Zprime_combtagger.png}
  \includegraphics[width=0.48\textwidth]{figures/RNN/CRej_Zprime_combtagger.png}
 
- \caption{Light-flavor (left) and c-jet rejection (right) as a function of b-jet efficiency for \textit{MV2} (black line), \textit{MV2Mu} (red line), \textit{MV2MuRNN} (blue line). The algorithm evaluation is performed on $t\bar t$ (top) and Z' (botom) events. The ratio reported on the bottom of the figure is calculated for each \textit{MV2} variant (\textit{MV2Mu} and \textit{MV2MuRNN}) with respect to \textit{MV2}.}
+ \caption{Light-flavor (left) and c-jet rejection (right) as a function of b-jet efficiency for \textit{MV2} (black line), \textit{MV2Mu} (red line), \textit{MV2MuRNN} (blue line). The algorithm evaluation is performed on $t\bar t$ (top) and Z' (botom) events. The ratio reported on the bottom of the figure is calculated for each \textit{MV2} variant (\textit{MV2Mu} and \textit{MV2MuRNN}) with respect to \textit{MV2} \cite{ATL-PHYS-PUB-2017-013}.}
   \label{fig:combtagger}
 \end{figure}
