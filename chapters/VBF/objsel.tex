@@ -1,6 +1,6 @@
 \label{sec:vbf-objsel}
 
-The VBF \Hbb events have four jets in the final states.
+The VBF \Hbb events have four jets in the final state.
 The identification of the $b$-jets requires reconstruction of
 {\it central} jets within the tracker coverage ($|\eta|<2.5$), while
 the identification of forward VBF jets requires reconstruction
@@ -21,7 +21,7 @@ Several jet properties are computed using tracks associated to the jets. The tra
 \item Track must be associated to the primary vertex, or $|z_0^{\rm PV}sin(\theta)| < 3$ mm  where $z_0^{\rm PV}$ represents the $z$ position of the track with respect to the primary vertex.
 \end{itemize}
 
-The track to jet matching is performed using ghost-association~\cite{GhostMatching,jetareas,atlasjetsub}, which provides a robust matching procedure that makes use of the area of the jet~\cite{GhostMatching}. In this procedure, the track four-vectors are used with track jet \pT set to an infinitesimal amount (the ``ghosts"), and re-clustering is performed using the R=0.4 anti-$k_t$
+The track to jet matching is performed using ghost-association~\cite{GhostMatching,jetareas,atlasjetsub}, which provides a robust matching procedure that makes use of the area of the jet~\cite{GhostMatching}. In this procedure, the track four-vectors are used with track jet \pT set to an infinitesimal amount (the ``ghosts"), and re-clustering with calorimeter constituents is performed using the R=0.4 anti-$k_t$
 algorithm.  Tracks which are clustered into the jet are then considered to be associated to the jet.  
 The primary vertex is defined as the vertex in the event with the highest $\Sigma$ \pT$^2$ of the tracks associated to the vertex and at least two tracks.
 
@@ -50,17 +50,17 @@ The primary vertex is defined as the vertex in the event with the highest $\Sigm
 %follow the~\textit{Loose} selection detailed
 %in~\cite{ATLAS-CONF-2015-029}. 
 
-Jet reconstructions and calibrations follow the description in Chapter \ref{chap:reconstruction}.
+Jet reconstruction and calibration follows the description in Chapter \ref{chap:reconstruction}.
 This analysis uses exclusively anti-$k_t$ R=0.4 jets.
 Jets with $\pt < 60$ \GeV~and $|\eta| <$ 2.4 need to satisfy the
-Jet Vertex Tagger selection to ensure their origins are hard scattering vertices.
+Jet Vertex Tagger, which is a pile-up jet rejection tool\cite{ATLAS-CONF-2014-018}, selection to ensure their origins are hard scattering vertices.
 All jets are required to have $\pt>20$ \GeV and $|\eta|<4.4$.
 
 
 \subsubsection{\bjets}
 
 \label{sec:vbf-btagging}
-The {\it MV2}-tagger as will be explained in Chapter \ref{chap:rnn} is used to identify \bjets. Specifically its variation {\it MV2c10} trained with $10\%$ $c$-jets in the training sample is used for this analysis.
+The {\it MV2}-tagger as will be explained in Chapter \ref{chap:btagging} is used to identify \bjets. Specifically its variation {\it MV2c10} trained with $10\%$ $c$-jets in the training sample is used for this analysis.
 
 %weights of three \btagging algorithms (JetFitter, IP3D and SV1) as
 %well as $\pt$ and $\eta$ of the jet as an input to a neural network
@@ -84,8 +84,8 @@ In order to correct for differences in the \btagging performance between the dat
 \subsubsection{Jet track distributions for quark/gluon separation}
 \label{sec:vbf-qgtagging}
 
-The VBF jets in signal are expected to originate from a light quark, 
-while in background they come from gluons.
+The VBF jets in the signal are expected to originate from a light quark, 
+while in the backgrounds they primarily come from gluons.
 
 The track multiplicity in the jet, \ntrk, is exploited to discriminate between quark- or gluon- initiated jets in the BDT, as gluon has larger color factor and hence larger average number of \ntrk. A dedicated study~\cite{qgtagging}  provides MC calibrations for the $n_{\rm track}$ distribution, as well as shape-based uncertainties.
 

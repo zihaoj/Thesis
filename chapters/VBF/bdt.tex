@@ -1,9 +1,9 @@
 \label{sec:vbf-bdt}
 
 \subsection{BDT Input and Training}
-Events passing the pre-selections are fed into Boosted Decision Tree (BDT) to find phase space with high signal purity.
-The BDT is trained with \texttt{scikit-learn} package~\cite{scikit-learn}.
-The classifier has 200 trees and employs the AdaBoost method.
+Events passing the pre-selections are fed into a Boosted Decision Tree (BDT) to find phase space with high signal purity.
+The BDT, which is an ensemble of tree based algorithm combines week tree leaners through boosting algorithm, is trained with \texttt{scikit-learn} package~\cite{scikit-learn}. Interested readers please refer to books such as \cite{BDTBOOK} for more information.
+The classifier has 200 trees and employs the Adaptive Boosting method \cite{adaboost}.
 The background sample is taken from data events with $80~\GeV < \Mbb <100$~\GeV~
 and $150~\GeV<\Mbb<190$~\GeV~and contains approximately 690k events for
 the \fourcentral channel and 90k events for the \twocentral channel.
@@ -40,7 +40,9 @@ The correlation between the input variables and the \Mbb value of the event
 is examined to ensure that the variables chosen will not create artificial
 structures in the \Mbb distribution.
 As shown in Figure~\ref{fig:vbf-BDTInputsCor}, most variables have a
-small correlation factor of less than 0.1 with \Mbb. 
+small correlation factor of less than 0.1 with \Mbb. The most correlated variable
+is $\Delta M_{\rm JJ}$, which uses the information of the \bjets, but as shown in Fig.\ref{deltaMjj},
+have similar shapes in the sidebands and very different shape for signal.
 The BDT response of lower and upper data sidebands are checked and no obvious
 mass dependence is observed as shown in Figure\ref{fig:vbf-bdtsidebands}.
 
@@ -54,6 +56,14 @@ mass dependence is observed as shown in Figure\ref{fig:vbf-bdtsidebands}.
   \label{fig:vbf-BDTInputsCor}
 \end{figure}
 
+\begin{figure}[htbp]
+  \centering
+ \includegraphics[width=0.48\textwidth]{figures/VBF/deltaMJJ_2cen.pdf}
+ \includegraphics[width=0.45\textwidth]{figures/VBF/deltaMJJ_4cen.pdf}
+\caption{Comparison of the $\Delta M_{\rm JJ}$ variable in data sidebands and signal for \twocentral (left) and \fourcentral (right). }
+  \label{fig:vbf-deltaMjj}
+\end{figure}
+
 
 \begin{figure}[htbp]
   \centering
@@ -62,7 +72,6 @@ mass dependence is observed as shown in Figure\ref{fig:vbf-bdtsidebands}.
 \caption{Comparison of the BDT response distributions between lower and upper data sideband events for the \twocentral (left) and \fourcentral channels. No obvious BDT response dependence on \Mbb is observed. }
   \label{fig:vbf-bdtsidebands}
 \end{figure}
-
 
 
 
@@ -109,7 +118,8 @@ background samples, but less than the VBF \Hbb sample in both cases.
 \subsection{Signal Regions}
 For the \twocentral channel, we choose a region in which
 a sufficiently large number of \zjets{} events pass the BDT to
-adequately control the contribution of this background in the final fit.
+adequately control the contribution of this background in the final fit. The reason
+of this choice will be discussed in details in Sec.\ref{sec:vbf-statanalysis}.
 The top 80\% of the VBF signal events pass this requirement to define the first signal region.
 The second encompasses the remainder of the BDT distribution. This definition of the regions
 is a conservative approach that ensures a constraining power of the \zjets{} contribution

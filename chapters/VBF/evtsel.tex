@@ -12,9 +12,9 @@ These two categories are designed to be exclusive and are fed by two separate tr
 
 \subsubsection{Trigger Definitions}
 
-\paragraph{\fourcentral:} Two triggers are used for this channel depending on the data taking periods. The pre-ICHEP dataset (data taking periods A-D of year 2016) uses HLT\_2j45\_bmv2c2070\_split\_2j45, which requires four central Level-1 jet objects, referred to as regions of interest (ROI),  with \ET $>$ 15 \GeV~( L1\_4J15).  In the HLT, two of these jets are required to have an HLT jet \ET of at least 45 \GeV~and be tagged with the 70\% working point of online $b$-tagging algorithm. The integrated luminosity of this pre-ICHEP trigger is 9.4~\ifb. Post-ICHEP (data taking periods E-L) due to the bandwidth limit, this analysis switched to using the HLT\_2J35\_bmv2c60\_2J35 trigger is used, which is seeded by the same L1 object.  In the HLT two of these jets are required to have an HLT jet \ET of at least 35 \GeV~and be tagged with the 60\% working point of online $b$-tagging algorithm. The integrated luminosity of this trigger is 13.3~\ifb.
+\paragraph{\fourcentral:} Two triggers are used for this channel depending on the data taking periods. The first dataset (data taking periods A-D of year 2016) uses HLT\_2j45\_bmv2c2070\_split\_2j45, which requires four central Level-1 jet objects, referred to as regions of interest (ROI),  with \ET $>$ 15 \GeV~( L1\_4J15).  In the HLT, two of these jets are required to have an HLT jet \ET of at least 45 \GeV~and be tagged with the 70\% working point of online $b$-tagging algorithm. The integrated luminosity of this first trigger is 9.4~\ifb. In the second dataset (data taking periods E-L) due to the bandwidth limit imposed by increasing luminosity, this analysis switched to using the HLT\_2J35\_bmv2c60\_2J35 trigger, which is seeded by the same L1 object.  In the HLT two of these jets are required to have an HLT jet \ET of at least 35 \GeV~and be tagged with the 60\% working point of online $b$-tagging algorithm. The integrated luminosity of this trigger is 13.3~\ifb.
 
-\paragraph{\twocentral:} The HLT\_j80\_bmv2c2070\_split\_j60\_bmv2c2085\_split\_j45\_320eta490 is used for this channel for the entire dataset.  At L1, it requires at least one central jet with a Level-1 ROI \ET of 40 \GeV~and $|\eta| < 2.5$.  Additionally it requires another central jet with ROI \ET $>$ 25 \GeV~and a third, forward jet with ROI \ET of at least 20 and  $3.1 < |\eta| < 4.9$.   At the HLT one central jet \btagged  with the 70\% online working point with at least 80 \GeV~is required, in addition to a second jet with at least 60 \GeV~tagged at the looser 85\% working point. Lastly, the forward jet is required to have \ET $>$ 45 \GeV~at the HLT.
+\paragraph{\twocentral:} The HLT\_j80\_bmv2c2070\_split\_j60\_bmv2c2085\_split\_j45\_320eta490 is used for this channel for the entire dataset.  At L1, it requires at least one central jet with a Level-1 ROI \ET of 40 \GeV~and $|\eta| < 2.5$.  Additionally it requires another central jet with ROI \ET $>$ 25 \GeV~and a third, forward jet with ROI \ET of at least 20 and  $3.1 < |\eta| < 4.9$.   At the HLT one central jet \btagged  with the 70\% online working point and at least 80 \GeV~is required, in addition to a second jet with at least 60 \GeV~tagged at the looser 85\% working point. Lastly, the forward jet is required to have \ET $>$ 45 \GeV~at the HLT.
 
 
 \subsubsection{Event Pre-Selection and Jet Assignment}
@@ -22,7 +22,7 @@ These two categories are designed to be exclusive and are fed by two separate tr
 
 \paragraph{\fourcentral:} Events are required to pass the \fourcentral trigger depending on the data taking period. At least two offline jets with \pT $>$ 55 \GeV~and ($|\eta| < 2.5$) which pass the offline \btagging at the medium working point are required for the event to pass pre-selection.  These jets also have to be matched to the HLT trigger \btagged trigger objects. Two additional jets with \pT $>$ 55 \GeV~and  ($|\eta| < 2.8$) are also required. If there is a jet with \pT $>$ 60 \GeV~and 3.2 $< |\eta| <$ 4.4 the event is vetoed in order to avoid overlap with the \twocentral channel.
 
-All pairs of \btagged jets passing the medium working point are considered and the high \pT  pair becomes our Higgs candidate.  All pairs of non-\btagged jets are also considered and the highest invariant mass pair form the VBF jets. Events in which the VBF jets pair cannot be formed are rejected.
+All pairs of \btagged jets passing the medium working point are considered and the highest \pT  pair becomes our Higgs candidate.  All pairs of non-\btagged jets are also considered and the highest invariant mass pair form the VBF jets. Events in which the VBF jets pair cannot be formed are rejected.
 %The VBF jet assignment fails where there are only four jets above the \pT threshold, of which three are $b$-tagged.
 %These events are rejected. 
 
@@ -36,7 +36,7 @@ Jet assignment proceeds as follows.  All pairs of \btagged jets passing the loos
 %Lastly, only events with a Higgs candidate transverse momentum, \pTbb, greater than 160 \GeV~are considered.  This requirement is needed to remove kinematic sculpting of the \Mbb{} distribution in the low \Mbb{} region.  \Mbb{} is correlated with \pTbb{}, and the \pTbb{} distribution has a turn-on due to the jet \pT requirements. Figure~\ref{fig:mbb_ptcuts} shows the \Mbb distribution for a variety of \pTbb cuts for the background sample for the \twocentral channel on the right.  As the \pTbb{} cut is increased, the distribution assumes a regular falling spectrum.  The sculpting is worse for the \twocentral channel than the \fourcentral channel due to the higher threshold jet requirements.
 
 
-\paragraph{\pTbb cut:} Common to both channels is a \pTbb cut applied at the last step of pre-selection. As shown in Fig. \ref{fig:vbf-mbb_ptcuts}, the jet trigger and kinematic requirements sculpt the \Mbb distribution. A \pTbb cut at 150\GeV and 160\GeV is applied to \fourcentral and \twocentral channels smooth the \Mbb distribution.
+\paragraph{\pTbb cut:} Common to both channels is a \pTbb cut applied at the last step of pre-selection. This cut effectively is a also a cut on the \pT of both \bjets. As shown in Fig. \ref{fig:vbf-mbb_ptcuts}, the jet trigger and kinematic requirements sculpt the \Mbb distribution. A \pTbb cut at 150\GeV and 160\GeV is applied to \fourcentral and \twocentral channels smooth the \Mbb distribution.
 
 \begin{figure}[htbp]
   \centering
@@ -56,8 +56,7 @@ Jet assignment proceeds as follows.  All pairs of \btagged jets passing the loos
 %With exception of the trigger requirements, the same requirements are placed on the data and MC samples.  In the MC15 samples the trigger decision is missing for the \twocentral channel, therefore an alternative emulation is used, described briefly in Section~\ref{sec:vbf-trig}.
 
 
-The details of the event selection are summarized in Table~\ref{tab:evtsel}. 
-Jet \pT thresholds and $|\eta|$ requirements are chosen so that the efficiency of selecting a jet at trigger level that would pass the offline selection is at least 97\%. Cut flows for both selections are displayed in Tables~\ref{tab:cutflow_4cen} and~\ref{tab:cutflow_2cen}.
+The details of the event selection are summarized in Table~\ref{tab:evtsel}. Cut flows for both selections are displayed in Tables~\ref{tab:cutflow_4cen} and~\ref{tab:cutflow_2cen}.
 
 
 \begin{table}[htbp]
@@ -123,7 +122,7 @@ Jet Assignment         & 9065632    & 250.2    & 1037.5    & 42163.0    & 667.9 
 $\pTbb>150\GeV$        & 3755031    & 158.0    & 685.4     & 27202.8    & 486.5    \\ \hline
 Photon veto in data    & 3754301    & 158.0    & 685.4     & 27202.8    & 486.5    \\ \hline
 \end{tabular}
-  \caption{Cutflow for the \fourcentral events.  MC events are normalized to cross section times branching ratio.  The total number of data events is after the application of the derivation skimming whereas the MC events are the total number of events in the MC samples. *The data number of total events is the number of all events after the derivation skim.}
+  \caption{Cutflow for the \fourcentral events.  MC events are normalized to cross section times branching ratio.  The total number of data events is after the application of the derivation skimming whereas the MC events are the total number of events in the MC samples scaled to the luminosity of the corresponding datasets (9.4\ifb and 13.3\ifb for first and second datasets respectively). *The data number of total events is the number of all events after the derivation skim.}
   \label{tab:cutflow_4cen}
 \end{table}
 
@@ -144,7 +143,7 @@ Jet Assignment              & 2527300    & 208.1    & 176.0    & 5307.6     & 16
 $\pTbb>160\GeV$             & 884095     & 147.3    & 126.5    & 3565.7     & 122.4      \\ \hline
 Photon veto in data         & 883906     & 147.3    & 126.5    & 3565.7     & 122.4      \\ \hline
 \end{tabular}
-   \caption{Cutflow for the \twocentral events. MC events are normalized to cross section times branching ratio. The total number of data events is after the application of the derivation skimming whereas the MC events are the total number of events in the MC samples. *The data number of total events is the number of all events after the derivation skim.}
+   \caption{Cutflow for the \twocentral events. MC events are normalized to cross section times branching ratio. The total number of data events is after the application of the derivation skimming whereas the MC events are the total number of events in the MC samples scaled to the total luminosity (24.5\ifb). *The data number of total events is the number of all events after the derivation skim.}
    \label{tab:cutflow_2cen}
 \end{table}
 
