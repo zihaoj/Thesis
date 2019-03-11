@@ -29,7 +29,7 @@ s_{j} = \textrm{sign}\left\{\ \sin\left(\arctan \left( \frac{p_{j,\ y}}{p_{j,\ x
  where $p_{j,\ x}$ and $p_{j,\ y}$ are the $x$ and $y$ components of the jet moments, respectively, and $\phi_{t}$ is the azimuthal angle of the track.
  
 For a given track jet, by construction we have at least two tracks as constituents of the jet. %(number of track constituents distributions are shown in Fig.\ref{fig:gbb-ntrk}).
-We take the sub-leading $s_{d_{0}}$ of the track (leading means highest value of $|s_{d_{0}}|$, sub-leading is second largest, etc.) as \subsdzero and build templates of different flavors using this variable to fit and derive the flavor fractions from data.   The second highest $s_{d_{0}}$ is used because it is less likely the result of mis-measured track parameters for non-$b$-jets. 
+We take the sub-leading $s_{d_{0}}$ of the track (leading means highest value of $|s_{d_{0}}|$, sub-leading is second largest, etc.) as \subsdzero and build templates of different flavors using this variable to fit and derive the flavor fractions from data.   The second highest $s_{d_{0}}$ is used because it is less likely the result of mis-measured track parameters for non-$b$-jets. For illustration of the impact parameter significance please refer back to Fig.\ref{fig:reco-trkdef}.
 
 
 %\begin{figure}[htbp]
@@ -49,10 +49,11 @@ An $m$ flavor component template fit ($m = 3$ for the fit we perform) is carried
 \begin{equation}
 p(y_i|\vec{\theta}) = \frac{\exp{(-\vec{\theta} \vec{\cdot x_i)}} {(\vec{\theta}} \vec{\cdot x_i})^{y_i}}{y_i !}, 
 \end{equation}
-where $\vec{x_i}=(x_{i1}...,x_{ij}...,x_{im}) \in \mathbb{R}^m$ is vector, and each component denotes the $i^{th}$ bin value in the normalized templates for the $j^{th}$ flavor ($b$, $c$, light and etc.).   We determine the flavor fractions by finding the $\vec{\theta}$ that maximizes $\mathcal{L}$. The fit is carried out by the MIGRAD function of the MINUIT package. 
+where $\vec{x_i}=(x_{i1}...,x_{ij}...,x_{im}) \in \mathbb{R}^m$ is a vector, and each component denotes the $i^{th}$ bin value in the normalized templates for the $j^{th}$ flavor ($b$, $c$ and light).   We determine the flavor fractions by finding the $\vec{\theta}$ that maximizes $\mathcal{L}$. The fit is carried out by the MIGRAD function of the MINUIT package. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\subsdzero Templates }
+\label{sec:gbb-subdzerotemplates}
 
 The flavor contents of the two $R=0.2$ jets in a $R=1.0$ jet are correlated. 
 Tagging one of the $b$ jets increases the probability of the other track jet 
@@ -112,7 +113,7 @@ out most of the background processes.
 However, double $b$-tagging strategy would also yield background templates with large 
 statistical fluctuations. In Fig. \ref{fig:gbb-template-leadtight-medium} the comparison 
 of the templates derived from single $b$-tagging and double $b$-tagging (at 70\% $b$-
-efficiency for both jets) in one bin of $\Delta R$ is shown. The considerable statistical uncertainties
+efficiency for both jets) in one bin of $\Delta R$ is shown. The considerable statistical uncertainties ($\geq 10\%$ relative uncertainty per bin in template)
 of double $b$-tagging strategy lead us to use single $b$-tagging strategy instead. 
 
 
@@ -170,7 +171,7 @@ BB  & 0.16 & 0.17  & 0    \\ \hline
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Systematic Uncertainty from Flavor Fraction Fits}
+\subsection{Systematic Uncertainty from Flavor Fraction Fits and Validation Checks}
 \label{sec:gbb-sub_systematics}
 
 Separate fits are performed for all the $\pm 1\sigma$ variations of detector systematics listed in Section~\ref{sec:gbb-systs:exp} and propagated through fits. In addition, a number of systematic uncertainties specific for the flavor fraction fits are taken into account for the background determination of the nominal fit:
@@ -200,9 +201,7 @@ Separate fits are performed for all the $\pm 1\sigma$ variations of detector sys
  %\includegraphics[width=0.38\textwidth]{figures/gbb/LargeRJet_pT_NoReweight.pdf}
  \includegraphics[width=0.38\textwidth]{figures/gbb/LargeRJet_pT_PreReweight.pdf}
  \includegraphics[width=0.38\textwidth]{figures/gbb/LargeRJet_pT_Reweight.pdf}
- \includegraphics[width=0.38\textwidth]{figures/gbb/LargeRJet_eta_PreReweight.pdf}
- \includegraphics[width=0.38\textwidth]{figures/gbb/LargeRJet_eta_Reweight.pdf}
-\caption{Data/MC comparison of $R=1.0$ jet \pt (top) and $\eta$ (bottom) post $b$-tagging without kinematic re-weighting (left) and post $b$-tagging with kinematic re-weighting (right).}% The label of the $R=1.0$ jet flavor content ``XY'' denotes the leading and sub-leading track jet flavor. For example, the flavors of the leading and sub-leading track jet of a ``BL'' $R=1.0$ jet are `B' and `Light' respectively.}
+\caption{Data/MC comparison of $R=1.0$ jet post $b$-tagging without kinematic re-weighting (left) and post $b$-tagging with kinematic re-weighting (right).}% The label of the $R=1.0$ jet flavor content ``XY'' denotes the leading and sub-leading track jet flavor. For example, the flavors of the leading and sub-leading track jet of a ``BL'' $R=1.0$ jet are `B' and `Light' respectively.}
   \label{fig:gbb-pT_largeR}
 \end{figure}
 
@@ -212,9 +211,7 @@ Separate fits are performed for all the $\pm 1\sigma$ variations of detector sys
   %\includegraphics[width=0.38\textwidth]{figures/gbb/LeadTrkJet_pT_NoReweight.pdf}
  \includegraphics[width=0.38\textwidth]{figures/gbb/LeadTrkJet_pT_PreReweight.pdf}
  \includegraphics[width=0.38\textwidth]{figures/gbb/LeadTrkJet_pT_Reweight.pdf}
- \includegraphics[width=0.38\textwidth]{figures/gbb/LeadTrkJet_eta_PreReweight.pdf}
- \includegraphics[width=0.38\textwidth]{figures/gbb/LeadTrkJet_eta_Reweight.pdf}
-\caption{Data/MC comparison of leading track jets \pt (top) and $\eta$ (bottom) post $b$-tagging without kinematic re-weighting (left) and post $b$-tagging with kinematic re-weighting (right).} % The label of the $R=1.0$ jet flavor content ``XY'' denotes the leading and sub-leading track jet flavor. For example, the flavors of the leading and sub-leading track jet of a ``BL'' $R=1.0$ jet are `B' and `Light' respectively.}
+\caption{Data/MC comparison of leading track jets \pt post $b$-tagging without kinematic re-weighting (left) and post $b$-tagging with kinematic re-weighting (right).} % The label of the $R=1.0$ jet flavor content ``XY'' denotes the leading and sub-leading track jet flavor. For example, the flavors of the leading and sub-leading track jet of a ``BL'' $R=1.0$ jet are `B' and `Light' respectively.}
   \label{fig:gbb-pT_leadtrkjets}
 \end{figure}
 
@@ -224,8 +221,6 @@ Separate fits are performed for all the $\pm 1\sigma$ variations of detector sys
 %\includegraphics[width=0.38\textwidth]{figures/gbb/SubLeadTrkJet_pT_NoReweight.pdf}
 \includegraphics[width=0.38\textwidth]{figures/gbb/SubLeadTrkJet_pT_PreReweight.pdf}
  \includegraphics[width=0.38\textwidth]{figures/gbb/SubLeadTrkJet_pT_Reweight.pdf}
-\includegraphics[width=0.38\textwidth]{figures/gbb/SubLeadTrkJet_eta_PreReweight.pdf}
- \includegraphics[width=0.38\textwidth]{figures/gbb/SubLeadTrkJet_eta_Reweight.pdf}
-\caption{Data/MC comparison of sub-leading track jets \pt (top) and $\eta$ (bottom) post $b$-tagging without kinematic re-weighting (left) and post $b$-tagging with kinematic re-weighting (right).}% The label of the $R=1.0$ jet flavor content ``XY'' denotes the leading and sub-leading track jet flavor. For example, the flavors of the leading and sub-leading track jet of a ``BL'' $R=1.0$ jet are `B' and `Light' respectively.}
+\caption{Data/MC comparison of sub-leading track jets \pt post $b$-tagging without kinematic re-weighting (left) and post $b$-tagging with kinematic re-weighting (right).}% The label of the $R=1.0$ jet flavor content ``XY'' denotes the leading and sub-leading track jet flavor. For example, the flavors of the leading and sub-leading track jet of a ``BL'' $R=1.0$ jet are `B' and `Light' respectively.}
   \label{fig:gbb-pT_subtrkjets}
 \end{figure}

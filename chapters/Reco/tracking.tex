@@ -30,7 +30,7 @@ On top of the criteria of loose tracks, the tight track criteria\cite{ATL-PHYS-P
 \item Silicon hits $\geq$ 11 (if $|\eta|\geq 1.65$)
 \end{itemize}
 
-The reconstruction efficiency of tracks depend on the type of decay, initial particle momentum and psuedorapidity and so on. Fig. \ref{fig:reco-trackingeff} shows the per-track tracking efficiency as a function of parent particle \pt in different decay modes. Particularly relevant for this thesis is the efficiency of tracking for $B$ mesons, which with loose track requirement stays reasonably above 85\% up to 1\TeV. When the pile-up contribution goes up, accidental combinations of hits could also pass all the cuts we apply to the track candidates and yield so called ``fake'' tracks. This effect is estimated to be $\leq 5\%$ for the loose category tracks with $\mu = 30$ as shown in Fig.\ref{fig:reco-trackingfake}.
+The reconstruction efficiency of tracks depend on the type of decay, initial particle momentum and psuedorapidity and so on. Fig. \ref{fig:reco-trackingeff} shows the per-track tracking efficiency as a function of parent particle \pt in different decay modes. Particularly relevant for this thesis is the efficiency of tracking for $B$ mesons, which with loose track requirement stays reasonably above 85\% up to 1\TeV. When the pile-up contribution goes up, accidental combinations of hits could also pass all the cuts we apply to the track candidates and yield so called ``fake'' tracks. This effect is estimated to be $\leq 5\%$ for the loose category tracks with $\mu = 30$ as shown in Fig.\ref{fig:reco-trackingfake}.  The illustration of track parameters including $\sdip$ are presented in Fig.\ref{fig:reco-trkdef}. The $d_0$ and $z_0$ parameters and their associated significance are very important for identification of $b$-hadrons and will be discussed more in details in Chapter \ref{chap:rnn} and Chapter \ref{chap:gbb}.
 
 
 \begin{figure}[htpb!]
@@ -49,6 +49,14 @@ The reconstruction efficiency of tracks depend on the type of decay, initial par
 \end{center}
 \end{figure}
 
+\begin{figure}[htpb!]
+\begin{center}
+  \includegraphics[width=0.55\linewidth]{figures/Reco/trackpar.png}
+\caption{Tracking parameter definitions. Tracks are parameterized by their five helix parameters. The $d_0$ and $z_0$ are the transversal and longitudinal impact parameters. The $\sigma(d_0)$and $\sigma(z_0)$ are defined as the uncertainty of the impact parameters. The $\sdip=\frac{d_0}{\sigma(d_0)}$ and $\szip=\frac{z_0}{\sigma(z_0)}$ are defined as the signifance of the impact parameters.}
+\label{fig:reco-trkdef}
+\end{center}
+\end{figure}
+
 
 The reconstructed tracks can help us find the event primary vertex, where the proton-proton hard scattering takes place. The set of tracks which are considered for vertices finding need to pass \cite{ATL-PHYS-PUB-2015-026}:
 
@@ -62,14 +70,6 @@ The reconstructed tracks can help us find the event primary vertex, where the pr
 \item No pixel holes
 \item At most 1 SCT holes
 \end{itemize}
-
-%\begin{figure}[htpb!]
-%\begin{center}
-%  \includegraphics[width=0.55\linewidth]{figures/Reco/trackpar.png}
-%\caption{Tracking parameter definitions. Tracks are parameterized by their five helix parameters. The $d_0$ and $z_0$ are the transversal and longitudinal impact parameters. The $\sigma(d0)=\frac{\d_0}{}$ and $\sigma(z0)$ are defined as the impact parameter significance
-%\label{fig:reco-trkdef}
-%\end{center}
-%\end{figure}
 
 The vertices finding algorithm, documented in \cite{PERF-2015-01}, starts with a seed position which is the mode of the z coordinates of all tracks. Knowing the seed, the algorithm iteratively calculates the vertex position by down-weighting the tracks which are far away and not compatible with this vertex. Each iteration re-calculates the vertex position. Tracks which are 7 $\sigma$ away are considered to not belong to this vertex and pooled for the iteration of finding the next vertex. Among all the vertices considered with at least two tracks associated to them, the one with highest track $\sum\pt^2$ is usually deemed as the primary vertex.
 

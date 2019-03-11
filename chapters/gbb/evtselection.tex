@@ -1,6 +1,6 @@
 \label{sec:gbb-eventselection}
 
-The overall event selection strategy aims to enhance the purity of gluon splitting to $b \bar b$ events. The gluon splitting process dominates at low $\Delta R$. To isolate this process, we require events to have one $R=1.0$ jet, which is the proxy of the gluon. The $R=1.0$ jet is required to have at least two ghost associated $R=0.2$ track jets, which are proxies of the splitting products of the gluon. The leading track jet is then $b$-tagged. 
+The overall event selection strategy aims to enhance the purity of gluon splitting to $b \bar b$ events among background events which are composed of two jets but one of them being a $c$ or light jet. The gluon splitting process dominates at low $\Delta R$. To isolate this process, we require events to have one $R=1.0$ jet, which is the proxy of the gluon. The $R=1.0$ jet is required to have at least two ghost associated $R=0.2$ track jets, which are proxies of the splitting products of the gluon. The leading track jet is then $b$-tagged. 
 
 The un-prescaled HLT item \textbf{HLT\_j420\_a10\_lcw\_L1J100} triggers on events which have $R=1.0$ jets. The leading $R=1.0$ jet is required to have $p_T>450$ GeV to be on the trigger efficiency pleateu. 
 
@@ -10,5 +10,5 @@ The detailed event selection goes as the following:
 	\item Pass the $R=1.0$ single jet trigger: \textbf{HLT\_j420\_a10\_lcw\_L1J100}
 	\item The leading $R=1.0$ jet in the event has $p_T>450$ GeV
         \item The leading $R=1.0$ jet in the event has at least two $R=0.2$ jets ghost matched
-	\item The leading track jet passes the 60\% $b$-tagging efficiency working point
+	\item The leading track jet passes the 60\% $b$-tagging efficiency working point. The choice of single $b$-tagging strategy is based on upon statistical considerations and is discussed in details in Sec.\ref{sec:gbb-subdzerotemplates}.
 \end{enumerate}

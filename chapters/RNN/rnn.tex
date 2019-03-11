@@ -1,6 +1,7 @@
 \subsection{Limitations of \textit{IP3D} Algorithm}
 
-The $b$-hadron decay gives birth to a number of charged particles with large impact parameters emerging from the same secondary vertex or multiple vertices. Given that they have the same origin, these track impact parameters are correlated. Given that the jet is a $b$-jet and there is a track with large impact parameter, the probability of finding some other high impact parameter tracks in the jet is high, while the light-jet track impact parameters shall be independent as the non-zero impact parameters mostly arise from random measurement errors. The 2D distribution of transverse impact parameter significance (\sdip) for the leading and sub-leading $\sdip$ tracks are shown in Figure~\ref{fig:ip_corr} for $b$-jets, where a correlation can clearly be seen, and light flavor-jets, where no such correlation is observed.
+The $b$-hadron decay gives birth to a number of charged particles with large impact parameters emerging from the same secondary vertex or multiple vertices. Given that they have the same origin, these track impact parameters are correlated. Given that the jet is a $b$-jet and there is a track with large impact parameter, the probability of finding some other high impact parameter tracks in the jet is high, while the light-jet track impact parameters shall be independent as the non-zero impact parameters mostly arise from random measurement errors. The 2D distribution of transverse impact parameter significance (\sdip) for the leading and sub-leading $\sdip$ tracks are shown in Figure~\ref{fig:ip_corr} for $b$-jets, where a correlation can clearly be seen, and light flavor-jets, where no such correlation is observed. For illustration of the impact parameter significance please refer back to Fig.\ref{fig:reco-trkdef}.
+
 
 \begin{figure}[htbp]
   \centering
@@ -9,7 +10,6 @@ The $b$-hadron decay gives birth to a number of charged particles with large imp
 \caption{The distribution of the \sdip for the leading and sub-leading $|\sdip|$ significance track in $b$-jets (left) and light jets (right). }
   \label{fig:ip_corr}
 \end{figure}
-
 
 The baseline \textit{IP3D} $b$-tagging algorithm uses 3D likelihood templates in $\sdip$, $\szip$, and a track quality categorization to compute three per-flavor conditional likelihoods, $p_b$, $p_c$, and $p_{\textrm{light}}$. These likelihood templates are derived from histograms with 35 bins in $\sdip$, 20 bins in $\szip$, and 14 bins in track category, where each category corresponds to a different track quality~\cite{ATL-PHYS-PUB-2015-022}. Direct estimate of the joint probability distribution of these three variables is not possible, as the joint distribution has a total bin count of $35 \times 20 \times 14 \times 3 = 29,400$ if we want to maintain the same resolution as for the marginal distribution of each variable. In addition, extending the template to account for additional kinematic variables and the variable number of tracks within the jet is even more computationally expensive, as the number of template bins would grow exponentially.
 

@@ -1,4 +1,4 @@
-The discriminating power of the CNN tagger is compared with that of individual physically motivated observables, the calorimeter jet width $w$ and the number of tracks $n_\text{track}$, and their combination with the 2D binned likelihood ratio (LLH) in Figure~\ref{fig:classifiers}.  Simple thresholds are applied to construct the $n_\text{track}$ and jet width curves.  Overall, the performance of CNN tagger is better than the jet level quantities and comparable to their combination in both kinematic regimes considered, $150<\pt<200~\GeV$ and $400<\pt<500~\GeV$. For high energy jets, it is noteworthy that $n_\text{track}$ is significantly better than jet width since the number of tracks increases significantly with \pt. 
+The discriminating power of the CNN tagger is compared with that of individual physically motivated observables, the calorimeter jet width $w$ and the number of tracks $n_\text{track}$, and their combination with the 2D binned likelihood ratio (LLH) in Figure~\ref{fig:classifiers}.  Simple thresholds are applied to construct the $n_\text{track}$ and jet width curves.  Overall, the performance of CNN tagger is better than the jet level quantities and comparable to their combination in both kinematic regimes considered, $150<\pt<200~\GeV$ and $400<\pt<500~\GeV$. For high energy jets, it is that the combined likelihood tagger performs as well as CNN tagger. This might be due to the fact that the pixel size of the CNN is not fine enough to resolve high \pt jets which are more collimated. 
 
 \begin{figure}[htpb]
 \begin{center}
@@ -19,13 +19,14 @@ It is expected that the tagger based on different inputs would have different pe
 by different experimental effects. While the calorimeter towers and cluster images include both neutral and charged quark
 and gluon decay daughters, the tracks only account the charged particles the momenta of which have better resolution
 in general for low and moderate \pt particles. While the tower images have fixed spatial resolution,
-clusters retains the full granularity of the calorimeters. The calorimeter based images shall have larger dependence on pile-ups.
+clusters retains the full granularity of the calorimeters. The calorimeter based images have larger dependence on pile-up.
 The best CNN q/g tagger performance is obtained using combined image of calorimeter tower and track images as shown in
 Figure~\ref{fig:cnn-input}.
 The two types of image can be thought as two different colors of the image and hence the input image is of size $16\times 16\times 2$.
 As shown in the left plot of Fig.~\ref{fig:cnn-input}, the reconstruction image at low \pt regime can achieve performance as good as
 the truth image which has full resolution. This suggests that the image formation is optimal and reached the theoretical best. On the other hand,
-there is a small performance gap between the truth and reconstructed image for high \pt regime as shown in the right plot of Fig.~\ref{fig:cnn-input}.
+there is a small performance gap between the truth and reconstructed image for high \pt regime as shown in the right plot of Fig.~\ref{fig:cnn-input},
+as tracking reconstruction performance degrades when \pt of trakcs are high. 
 
 \begin{figure}[htpb]
 \begin{center}
@@ -119,8 +120,7 @@ images and each of them is then tested on \textsc{Pythia} 8, \textsc{Sherpa} and
 images. We noticed that the if the same network is used for testing and only the training sample is varied, 
 the performance gap is small (consistent with the result from ~\cite{Komiske:2016rsd}) while the difference is large
 if the testing samples are different (mainly between \textsc{Pythia} and \textsc{Herwig++}).
-Hence the network is robust against the different fragmentation models and gives
-us the confidence applying the MC trained networks to data. Also, not surprisingly, since \textsc{Sherpa} employs similar fragmentation
+Hence the network is robust against the different fragmentation models. Also, not surprisingly, since \textsc{Sherpa} employs similar fragmentation
 model as \textsc{Pythia}, the CNN tagger is essentially indifferent to these two models.
 
 \begin{figure}[htpb]

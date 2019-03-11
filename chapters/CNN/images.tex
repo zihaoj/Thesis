@@ -3,10 +3,10 @@
 For this study, jets clustered the anti-$k_t$ jet algorithm~\cite{Cacciari:2008gp}
 are used and are required to have $|\eta|<2.1$ such that they remain fully within the
 tracker coverage.
-For reconstruction study, three types of constituents for jet image formations
+For the reconstruction study, three types of constituents for jet image formations
 are considered: tracks, calorimeter clusters and calorimeter towers. The truth level images
-based on truth particles are also considered as performance benchmark as they have
-higher qualities than images based on reconstructed quatities which are degraded by
+based on truth particles are also considered as performance benchmark as they
+contian the highest possible information, in contrast to images based on reconstructed quatities which are degraded by
 finite detector resolution and noise. 
 
 \subsubsection{tracks}
@@ -37,7 +37,9 @@ to the single tower.
 Cells which extend beyond the tower boundary contribute to multiple
 towers, depending on the overlap fraction of the cell area with the towers.
 In the following, towers are matched geometrically to jets built from topo-clusters, by considering all the towers within
-the jet radius $R=0.4$.
+the jet radius $R=0.4$. Compared to the calorimeter clusters, towers may retain the information of soft components of the jet which get
+accidentally clustered. 
+
 
 %An overall jet calibration corrects the detector-level jet $p_\text{T}$ to the particle-level jet $p_\text{T}$ on average~\cite{Aad:2014bia}.   
 \subsubsection{truth particles}
@@ -50,11 +52,11 @@ Two $p_\text{T}$ ranges are considered for this study: $150~\GeV<p_\text{T}<200~
 
 \subsection{Image Formation}
 
-There is an extensive literature on formation of jet images images. In line with the work such as~\cite{Cogan:2014oua,Almeida:2015jua}, the first step in constructing a jet image rotates and Lorentz boost all of the constituents inside a jet so that $\phi_\text{jet}=\eta_\text{jet}=0$. Then, the jet is cropped into a grid of size $16\times 16$ in $\eta$ and $\phi$ with pixel sizes $0.05\times 0.05$ and centered.  The intensity of each pixel is the total $p_\text{T}$ within the pixel, of a particular type of constituents (calorimeter-cell clusters, towers, tracks, or truth particles). Each image is then normalized so that $\sum_i I_i=1$, where $I_i$ is the intensity of the $i^\text{th}$ pixel. Normalization is performed for the tagger to learn only the information orthogonal to the jet transverse momentum.  %Normalization is known to remove useful discrimination information, but studies suggest the impact is small and it is useful for training. For an extensive description of the impact of image preprocessing on the information content of a jet image, see Ref.~\cite{deOliveira:2015xxd}.
+There is an extensive literature on formation of jet images images. In line with the work such as~\cite{Cogan:2014oua,Almeida:2015jua}, the first step in constructing a jet image rotates and Lorentz boost all of the constituents inside a jet so that $\phi_\text{jet}=\eta_\text{jet}=0$. Then, the jet is cropped into a grid of size $16\times 16$ in $\eta$ and $\phi$ with pixel sizes $0.05\times 0.05$ and centered.  The intensity of each pixel is the total $p_\text{T}$ within the pixel, of a particular type of constituents (calorimeter-cell clusters, towers, tracks, or truth particles). Each image is then normalized so that $\sum_i I_i=1$, where $I_i$ is the intensity of the $i^\text{th}$ pixel. Normalization is performed for the tagger to not learn the modeling of the \pt.  %Normalization is known to remove useful discrimination information, but studies suggest the impact is small and it is useful for training. For an extensive description of the impact of image preprocessing on the information content of a jet image, see Ref.~\cite{deOliveira:2015xxd}.
 
-One representative set of gluon jet images using different inputs is shown in Figure~\ref{fig:cnn-oneimage} and the average quark and gluon jet images and their differences are shown in Figure~\ref{fig:cnn-avg:truthtrack} and Figure~\ref{fig:cnn-avg:clustertower}, which sho that jet images are extremely sparse. Only when shown in average form would one see a difference between quark and gluon jets in ensemble level. As expected, the radiation pattern around the core is broader for gluon jets relative to quark jets.
+One representative set of gluon jet images using different inputs is shown in Figure~\ref{fig:cnn-oneimage} and the average quark and gluon jet images and their differences are shown in Figure~\ref{fig:cnn-avg:truthtrack} and Figure~\ref{fig:cnn-avg:clustertower}, which sho that jet images are extremely sparse. Only when averaged over would one see a difference between quark and gluon jets at the ensemble level. As expected, the radiation pattern around the core is broader for gluon jets relative to quark jets.
 The slightly reduced central activity in track images shown in Figure~\ref{fig:cnn-avg:truthtrack} is compatible with the lower track reconstruction efficiency at the core of the jet~\cite{Aaboud:2017all}.
-Topo-cluster images are found to be more collimated than tower images (Figure~\ref{fig:cnn-avg:clustertower}) as a result of the built-in noise suppression mechanism that removes some of the soft large-angle radiation.
+Topo-cluster images are found to be more collimated than tower images (Figure~\ref{fig:cnn-avg:clustertower}) as a result of the clustering algorithm removing some of the soft large-angle radiation.
 
 \begin{figure}[htpb]
 \begin{center}
