@@ -126,7 +126,7 @@ and factorization scales.
 
 The QCD scale uncertainty for ggF follows the \textit{2017 scheme} recommended by 
 LCH Higgs working group, which is a group to produce agreements on Higgs theoretical properties,
-in the follow-up of March meeting 2017 ~\cite{QCDscale_ggF}. In total, nine independent 
+in the follow-up of March meeting 2017~\cite{QCDscale_ggF}. In total, nine independent 
 variations in six categories are considered. The terms and corersponding uncertainty sources 
 are the following:
 
@@ -139,30 +139,36 @@ are the following:
 \item \textit{qmt}, uncertainties of top quark mass
 \end{enumerate}
 
-The dominant source of uncertainty for this analysis comes from the term \textit{mig12} (size of $~17-18\%$), 
-which is the leading source of uncertainty in high $p_T(H)$ event topology. 
 
-Naively, one would assume uncertainties due to VBF topology terms are considerable. 
-However, it is worth noting that these terms only matter for events which 
-at truth level are generated in VBF topology. An event falls into Stage one classification 
-of VBF topology if the truth Higgs has $p_T<200GeV$ and 
-\begin{enumerate}
-\item $MJJ>400 GeV$ and $|\textnormal{y(J1)-y(J2)}|>2.8$ ( loose VBF, events having $>3$ jets),
-\item Pass loose VBF selection $\overrightarrow{p_{T}}(J1)+\overrightarrow{p_{T}}(J2)+\overrightarrow{p_{T}}(Higgs)<25GeV$ (tight VBF, events having ~2 jets),
-\end{enumerate}
-where the VBF jets are defined as the leading two jets aside from the Higgs. We note that $80\%$ of the events have $p_T(H)>200GeV$ and 
-these events would not fall into the VBF category. Hence, the VBF topology uncertainties would not even apply in the \textit{2017 scheme} for most of our events. 
-For our application, we could extend the definition of VBF topology to high $p_T(H)$ events and take the \textit{vbf2j} and \textit{vbf3j} values
-for low $p_T(H)$ VBF topology to be the uncertainty for high $p_T(H)$ events as well. (\textit{vbf2j} and \textit{vbf3j} are defined as constants.)
+One caveat of this scheme is that it only defines the VBF topology uncertainties for $p_T(H)<200\GeV$ events.
+While for your phase space more, because of the $p_T(b\bar{b})$ cut, more than $80\%$ events have $p_T(H)>200\GeV$.
+To be conservative, we extrapolated the low $p_T(H)$ VBF topology event to the high $p_T(H)$ regime. This uncertainty
+becomes the dominant source among all terms of ggF scale uncertainty.
 
-We also notice that the \textit{2017 scheme} has a different definition of VBF jets, which selects the leading two jets aside from Higgs,  from the 
-offline selection we apply in this analysis, which seeks a pair of jets that maximizes the $MJJ$ value. Hence if an event which is categorized by \textit{2017 scheme}
-as non-VBF, the scheme lacks a term to properly count the 2J VS. 3J truth event topology uncertainty. Therefore, we also propagate the VBF topology 2J VS. 3J
-uncertainties to standard non-VBF ggF+GE2j category. 
-
-Overall, if VBF topology uncertainties are only applied to low $p_T(H)$ events, this source 
-of ucnertainty is $<3\%$ in all signal regions. If the uncertainty is extended to high $p_T(H)$ events and as well as non-VBF ggF+GE2j events, the uncertainty
-is about $20\%$. We take this very conservative extended version of uncertainty for ggF events.
+%The dominant source of uncertainty for this analysis comes from the term \textit{mig12} (size of $~17-18\%$), 
+%which is the leading source of uncertainty in high $p_T(H)$ event topology. 
+%
+%Naively, one would assume uncertainties due to VBF topology terms are considerable. 
+%However, it is worth noting that these terms only matter for events which 
+%at truth level are generated in VBF topology. An event falls into Stage one classification 
+%of VBF topology if the truth Higgs has $p_T<200GeV$ and 
+%\begin{enumerate}
+%\item $MJJ>400 GeV$ and $|\textnormal{y(J1)-y(J2)}|>2.8$ ( loose VBF, events having $>3$ jets),
+%\item Pass loose VBF selection $\overrightarrow{p_{T}}(J1)+\overrightarrow{p_{T}}(J2)+\overrightarrow{p_{T}}(Higgs)<25GeV$ (tight VBF, events having ~2 jets),
+%\end{enumerate}
+%where the VBF jets are defined as the leading two jets aside from the Higgs. We note that $80\%$ of the events have $p_T(H)>200GeV$ and 
+%these events would not fall into the VBF category. Hence, the VBF topology uncertainties would not even apply in the \textit{2017 scheme} for most of our events. 
+%For our application, we could extend the definition of VBF topology to high $p_T(H)$ events and take the \textit{vbf2j} and \textit{vbf3j} values
+%for low $p_T(H)$ VBF topology to be the uncertainty for high $p_T(H)$ events as well. (\textit{vbf2j} and \textit{vbf3j} are defined as constants.)
+%
+%We also notice that the \textit{2017 scheme} has a different definition of VBF jets, which selects the leading two jets aside from Higgs,  from the 
+%offline selection we apply in this analysis, which seeks a pair of jets that maximizes the $MJJ$ value. Hence if an event which is categorized by \textit{2017 scheme}
+%as non-VBF, the scheme lacks a term to properly count the 2J VS. 3J truth event topology uncertainty. Therefore, we also propagate the VBF topology 2J VS. 3J
+%uncertainties to standard non-VBF ggF+GE2j category. 
+%
+%Overall, if VBF topology uncertainties are only applied to low $p_T(H)$ events, this source 
+%of ucnertainty is $<3\%$ in all signal regions. If the uncertainty is extended to high $p_T(H)$ events and as well as non-VBF ggF+GE2j events, the uncertainty
+%is about $20\%$. We take this very conservative extended version of uncertainty for ggF events.
 
 %\begin{table}[htbp]
 %\centering

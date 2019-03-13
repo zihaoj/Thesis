@@ -2,7 +2,7 @@
 
 \subsection{BDT Input and Training}
 Events passing the pre-selections are fed into a Boosted Decision Tree (BDT) to find phase space with high signal purity.
-The BDT, which is an ensemble of tree based algorithm combines week tree leaners through boosting algorithm, is trained with \texttt{scikit-learn} package~\cite{scikit-learn}. Interested readers please refer to books such as \cite{BDTBOOK} for more information.
+The BDT, which is an ensemble of tree based algorithm combines week tree leaners through boosting algorithm, is trained with \texttt{scikit-learn} package~\cite{scikit-learn}. Interested readers please refer to books such as \cite{BDTBOOK} for more information of tree-based classifiers.
 The classifier has 200 trees and employs the Adaptive Boosting method \cite{adaboost}.
 The background sample is taken from data events with $80~\GeV < \Mbb <100$~\GeV~
 and $150~\GeV<\Mbb<190$~\GeV~and contains approximately 690k events for
@@ -41,7 +41,7 @@ is examined to ensure that the variables chosen will not create artificial
 structures in the \Mbb distribution.
 As shown in Figure~\ref{fig:vbf-BDTInputsCor}, most variables have a
 small correlation factor of less than 0.1 with \Mbb. The most correlated variable
-is $\Delta M_{\rm JJ}$, which uses the information of the \bjets, but as shown in Fig.\ref{deltaMjj},
+is $\Delta M_{\rm JJ}$, which uses the information of the \bjets, but as shown in Fig.\ref{fig:vbf-deltaMjj},
 have similar shapes in the sidebands and very different shape for signal.
 The BDT response of lower and upper data sidebands are checked and no obvious
 mass dependence is observed as shown in Figure\ref{fig:vbf-bdtsidebands}.
